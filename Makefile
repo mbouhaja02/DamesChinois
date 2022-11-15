@@ -3,17 +3,16 @@ HEIGHT ?= 4
 MANSUBA_FLAGS = -DWIDTH=$(WIDTH) -DHEIGHT=$(HEIGHT)
 CFLAGS = -Wall -Wextra -std=c99 -g3 $(MANSUBA_FLAGS)
 
-simo: geometry.o
-	gcc -std=c99 -lm .c -o hi
+
+all: project
 
 %.o: %.c
 	gcc -c $(CFLAGS) $<
 
-project: # (Add your dependency here, e.g "project.o")
-	# (Add your compile command here, e.g "gcc $(CFLAGS) project.o -o project")
-	gcc 
-test_project: # (Add your dependency here, e.g "test.o")
-	# (Add your compile command here, e.g "gcc $(CFLAGS) test.o -o test_project")
+project: project.o
+	gcc $(CFLAGS) project.o -o project
 
-clean:
-	rm -f *.o *~
+test_project: test.o
+	gcc $(CFLAGS) test.o -o test_project
+
+	rm -f project test_project *.o *~
