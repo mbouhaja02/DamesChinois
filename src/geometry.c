@@ -1,7 +1,7 @@
-#include<stdlib.h>
-#include<string.h>
-#include<stdio.h>
-#include<geometry.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "geometry.h"
 
 /*const char* place_to_string(enum color_t c, enum sort_t s)
 {
