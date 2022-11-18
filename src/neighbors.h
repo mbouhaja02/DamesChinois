@@ -2,6 +2,7 @@
 #define __NEIGHBORS_H__
 
 #include "geometry.h"
+#include <limits.h>
 
 /** The number of relations in the code */
 #define MAX_RELATIONS 1
@@ -28,8 +29,7 @@ struct neighbors_t {
     integer `seed`. `seed` must be less than MAX_RELATIONS.
     Can be called multiple times. */
 void init_neighbors(unsigned int seed);
-  if (seed < MAX_RELATIONS)
-  {}
+  
 
 /** Returns the neighbor of the place `idx`, in direction `d`, and
     UINT_MAX if there is no such neighbor (or any other kind of error) */
