@@ -19,9 +19,6 @@ void init_neighbors(unsigned int seed)
 unsigned int get_neighbor(unsigned int idx, enum dir_t d)
 {   
     neighbor n;
-  
-  
-  
-  
+    
     return 
 }
