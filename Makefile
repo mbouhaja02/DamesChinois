@@ -14,7 +14,7 @@ project: # (Add your dependency here, e.g "project.o")
 geometry: geometry.o
 	gcc $(CFLAGS) geometry.o -o geometry
 
-wolrd: wolrd.o
+world: wolrd.o
 	gcc $(CFLAGS) world.o -o world
 
 neighbors: neighbors.o
