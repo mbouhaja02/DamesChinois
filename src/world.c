@@ -9,7 +9,7 @@ struct world_t{
     int positions[WORLD_SIZE][2];
 };
 
-struct world_t w;
+static struct world_t w;
 
 /** Initializes a world (NO_COLOR, NO_SORT everywhere)
     Always returns the same pointer */

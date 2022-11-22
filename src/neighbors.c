@@ -13,7 +13,7 @@ struct neighbors_t neighbors;
     Can be called multiple times. */
 void init_neighbors(unsigned int seed){
     if ( seed < MAX_RELATIONS ) {
-        neighbors 
+        neighbors ;
     }
 }
   
