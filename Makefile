@@ -5,24 +5,19 @@ CFLAGS = -Wall -Wextra -std=c99 -g3 $(MANSUBA_FLAGS)
 SRCS = wolrd.c neighbors.c
 OBJS = $(SRCS:.c = .o)
 
-all: project
+all: test_project
 
-%.o: %.c
+%.o: src/%.c
 	gcc -c $(CFLAGS) $<
 
-project: # (Add your dependency here, e.g "project.o")
-	# (Add your compile command here, e.g "gcc $(CFLAGS) project.o -o project")
-geometry: geometry.o
-	gcc $(CFLAGS) geometry.o -o geometry
+%.o: tst/%.c
+	gcc -c $(CFLAGS) $<
 
-world: wolrd.o
-	gcc $(CFLAGS) world.o -o world
+project: project.o
+	cc $(CFLAGS) project.o -o project
 
-neighbors: neighbors.o
-	gcc $(CFLAGS) neighbors.o -o neighbors
-
-test_project: test.o
-	gcc $(CFLAGS) test.o -o test_project
+test_project: tests.o
+	gcc $(CFLAGS) $^ -o test_project
 
 clean:
 	rm -f project test_project *.o *~

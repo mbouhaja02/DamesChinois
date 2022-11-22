@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "geometry.h"
-#include "world.h"
-#include "neighbors.h"
+#include "../src/geometry.h"
+#include "../src/world.h"
+#include "../src/neighbors.h"
 
 w = world_init();
 init_neighbors(0); // Use seed 0 at the beginning of a game
@@ -16,5 +16,6 @@ while nobody has won:
   current_player = next_player(current_player)
 
 int main() { 
+    
     return 0;
 }
