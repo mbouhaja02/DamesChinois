@@ -1,10 +1,13 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 #include <string.h>
 
 #include "../src/geometry.h"
 #include "../src/world.h"
 #include "../src/neighbors.h"
+#include "../src/geometry.c"
+#include "../src/world.c"
+#include "../src/neighbors.c"
 
 /*w = world_init();
 init_neighbors(0); // Use seed 0 at the beginning of a game
@@ -16,8 +19,10 @@ while nobody has won:
   current_player = next_player(current_player)*/
 
 int main() { 
-
-    place_to_string (2,1); //geometry.c
+    enum color_t c = 2;
+    enum sort_t s = 1;
+    
+    place_to_string (c,s); //geometry.c
     dir_to_string(3);
     struct world_t* w;
     w=world_init();
@@ -26,3 +31,4 @@ int main() {
     for (int i=0 ; i<WORLD_SIZE ; i++ ) {
     }
 }
+

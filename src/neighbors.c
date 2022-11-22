@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 #include "geometry.h"
 #include <limits.h> 
 #include "neighbors.h"
