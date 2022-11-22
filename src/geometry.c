@@ -37,7 +37,7 @@ const char* place_to_string(enum color_t c, enum sort_t s)
 
   
   
-  return  printf(" 8 the color is %s and sort is %s \n", str, str2 );
+  return  printf("the color is %s and sort is %s \n", str, str2 );
 }
 
 const char* dir_to_string(enum dir_t d)
@@ -86,3 +86,4 @@ int main()
   char* str2 = dir_to_string(3);
   
   return 0;
+}
