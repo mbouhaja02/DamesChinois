@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "geometry.h"
-#include <limits.h> 
 #include "neighbors.h"
 
 
