@@ -53,8 +53,9 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
     by UINT_MAX.  */
 struct neighbors_t get_neighbors(unsigned int idx)
 {   struct neighbors_t jiran;
-    for (int j=-4;j<5 ;j++){
-        jiran[j]={get_neighbor(idx,j),;
+    for ( enum dir_t j = SEAST;j<NWEST ;j++){
+        jiran.n[j+4].i = get_neighbor(idx,j);
+        jiran.n[j+4].d = j;
     }
     return jiran;
 }
