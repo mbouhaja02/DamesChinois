@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "../src/geometry.h"
@@ -18,16 +19,14 @@ while nobody has won:
   current_player = next_player(current_player)*/
 
 int main() { 
-    enum color_t c = 2;
-    enum sort_t s = 1;
-    
-    place_to_string (c,s); //geometry.c
+
+    place_to_string (2,1); //geometry.c
     dir_to_string(3);
     struct world_t* w;
     w=world_init();
     world_get (w , 3);
     world_set(w,3,1);
     for (int i=0 ; i<WORLD_SIZE ; i++ ) {
+      printf("{%d , %d }\n" , w->positions[i][1],w->positions[i][2]);
     }
 }
-
