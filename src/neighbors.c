@@ -12,7 +12,9 @@ struct neighbors_t neighbors;
     integer `seed`. `seed` must be less than MAX_RELATIONS.
     Can be called multiple times. */
 void init_neighbors(unsigned int seed){
-
+    if ( seed < MAX_RELATIONS ) {
+        
+    }
 }
   
 
