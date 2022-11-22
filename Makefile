@@ -6,7 +6,7 @@ SRCS = world.c neighbors.c geometry.c
 OBJS = $(SRCS:.c=.o)
 
 <<<<<<< HEAD
-all: test_project
+all: test_project 
 =======
 all: test_project 
 >>>>>>> 740335a39d35f2bab07e010dc9bb9e02a1e8ef1d
