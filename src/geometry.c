@@ -80,13 +80,3 @@ const char* dir_to_string(enum dir_t d)
   return printf("the directions of the pawn is %s \n", str);
 }
 
-<<<<<<< HEAD
-=======
-int main()
-{
-  char* str = place_to_string(2, 1);
-  char* str2 = dir_to_string(3);
-  
-  return 0;
-}
->>>>>>> 740335a39d35f2bab07e010dc9bb9e02a1e8ef1d
