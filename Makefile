@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -std=c99 -g3 $(MANSUBA_FLAGS)
 SRCS = wolrd.c neighbors.c
 OBJS = $(SRCS:.c = .o)
 
-all: test_project
+all: test_project clean_bin
 
 %.o: src/%.c
 	gcc -c $(CFLAGS) $<
@@ -15,6 +15,8 @@ all: test_project
 
 project: project.o
 	cc $(CFLAGS) project.o -o project
+tests: tests.o 
+	gcc $(CFLAGS) $^ -o tests
 
 test_project: tests.o
 	gcc $(CFLAGS) $^ -o test_project
