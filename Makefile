@@ -5,11 +5,7 @@ CFLAGS = -Wall -Wextra -std=c99 -g3 $(MANSUBA_FLAGS)
 SRCS = world.c neighbors.c geometry.c
 OBJS = $(SRCS:.c=.o)
 
-<<<<<<< HEAD
 all: test_project 
-=======
-all: test_project 
->>>>>>> 740335a39d35f2bab07e010dc9bb9e02a1e8ef1d
 
 %.o: src/%.c
 	gcc -c $(CFLAGS) $<
@@ -20,11 +16,7 @@ all: test_project
 project: project.o $(OBJS)
 	cc $(CFLAGS) project.o -o project
 
-<<<<<<< HEAD
-test_project: tests.o 
-=======
 test_project: tests.o $(OBJS)
->>>>>>> 740335a39d35f2bab07e010dc9bb9e02a1e8ef1d
 	gcc $(CFLAGS) $^ -o test_project
 
 clean:
