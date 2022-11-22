@@ -16,7 +16,6 @@ while nobody has won:
   current_player = next_player(current_player)*/
 
 int main() { 
-<<<<<<< HEAD
 
     place_to_string (2,1); //geometry.c
     dir_to_string(3);
@@ -26,8 +25,4 @@ int main() {
     world_set(w,3,1);
     for (int i=0 ; i<WORLD_SIZE ; i++ ) {
     }
-=======
-    
-  return 0;
->>>>>>> 740335a39d35f2bab07e010dc9bb9e02a1e8ef1d
 }
