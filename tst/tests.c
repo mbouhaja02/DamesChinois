@@ -1,10 +1,13 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 #include <string.h>
 
 #include "../src/geometry.h"
 #include "../src/world.h"
 #include "../src/neighbors.h"
+#include "../src/geometry.c"
+#include "../src/world.c"
+#include "../src/neighbors.c"
 
 /*w = world_init();
 init_neighbors(0); // Use seed 0 at the beginning of a game
