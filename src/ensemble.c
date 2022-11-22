@@ -6,7 +6,3 @@
 #include "neighbors.h"
 #include "wolrd.h"
 
-int main()
-{
-    return 0;
-}
