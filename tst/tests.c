@@ -19,7 +19,7 @@ while nobody has won:
   current_player = next_player(current_player)*/
 
 int main() { 
-
+    
     place_to_string (2,1); //geometry.c
     dir_to_string(3);
     struct world_t* w;
@@ -28,5 +28,6 @@ int main() {
     world_set(w,3,1);
     for (int i=0 ; i<WORLD_SIZE ; i++ ) {
       printf("{%d , %d }\n" , w->positions[i][1],w->positions[i][2]);
+      
     }
 }

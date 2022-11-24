@@ -3,40 +3,51 @@
 #include "geometry.h"
 
 const char* place_to_string(enum color_t c, enum sort_t s)
-{
-  char* str;
+{ char* description[100];
+  int i = 0, j = 0;
+  char* color;
   switch (c)
   {
     case 0:
-      str = "no color";
+      color = "no color ";
       break;
     case 1:
-      str = "black";
+      color = "black ";
       break;
     case 2:
-      str = "white";
+      color = "white ";
       break;
     default:
-      str = "ERROR 404";
+      color = "ERROR 404 ";
   }
-  char* str2;
+  char* sort;
   switch (s)
   {
     case 0:
-      str2 = "nothing";
+      sort = "nothing";
       break;
     case 1:
-      str2 = "pawn";
+      sort = "pawn";
       break;
     
     default:
-      str2 = "ERROR 404";
+      sort = "ERROR 404";
       
   }
-
   
-  
-  return  printf("the color is %s and sort is %s \n", str, str2 );
+  while (color[i] != '\0') {
+    description[j] = color[i];
+      i++;
+      j++;
+  description[j] = ","
+  i = 0;
+  while (sort[i] != '\0') {
+    description[j+1] = sort[i];
+    i++;
+    j++;
+    }
+    description[j] = '\0';
+  return description ; 
 }
 
 const char* dir_to_string(enum dir_t d)
@@ -73,9 +84,8 @@ const char* dir_to_string(enum dir_t d)
       break;
     default:
       str = "ERROR 404 ";
-      break;
   }
-
-  return printf("the directions of the pawn is %s \n", str);
+  return str ;
 }
+
 
