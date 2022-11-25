@@ -1,29 +1,37 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#define FALSE (1==0)
-#define TRUE  (1==1)
-
 #include "geometry.h"
 #include "neighbors.h"
-#include "wolrd.h"
-BOOL mvt_disponible_en_direction(struct world_t w; unsigned char idx, enum dir_t d){
+#include "world.h"
+#include "ensemble.h"
+
+struct mouvement_dispo;
+int mvt_disponible_en_direction(struct world_t w; unsigned char idx, enum dir_t d){
     unsigned int n = get_neighbor(idx,j);
     if (w.positions[n][1]==1);{
-        return TRUE;
+        return 0;
     }
-    return FALSE ; 
+    return 1; 
 }
-
-struct ensemble mvts_disponibles (struct world_t w; unsigned char idx)
-{}
-    struct neighbors_t mvts_dispo;  
+int place_visited (struct ensemble, place ){
+    for (int i =0; i < ensemble.taille; i++){
+        if (place == ensemble.positions[i]){
+            retrun 0;
+        }
+    }
+    return 1;
+}
+struct mouvement_dispo mvts_disponibles (struct world_t w; unsigned char idx; struct mouvement_dispo md ) 
+{   int* i = 0; 
+    mouvement_dispo.taille = i 
     for (enum dir_t j = SEAST; j < NWEST ;j++)
-    {
-        if (mvt_disponible_en_direction(w,idx,j)){
-            mvts_dispo.positions[j]=get_neighbor(idx,j);
+    {   
+        if (mvt_disponible_en_direction(w,idx,j)==1){
+            mvts_dispo.positions[j+4]=get_neighbor(idx,j+4);
         else
-            mvts_disponibles(w,get_neighbor(idx,j));
+            if ()
+            mvts_disponibles(w,get_neighbor(idx,j+4));
         
         }
     }
