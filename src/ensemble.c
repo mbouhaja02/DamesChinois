@@ -28,3 +28,9 @@ struct positions_white{
 struct positions_black{
     struct ensemble={NB};
 }
+
+struct mouvement_dispo{
+    struct ensemble={MV};
+}
+
+
