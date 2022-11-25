@@ -38,15 +38,17 @@ const char* place_to_string(enum color_t c, enum sort_t s)
   while (color[i] != '\0') {
     description[j] = color[i];
       i++;
-      j++;
-  description[j] = ","
+      j++; }
+  description[j] = ",";
   i = 0;
+ 
   while (sort[i] != '\0') {
     description[j+1] = sort[i];
     i++;
     j++;
     }
     description[j] = '\0';
+  
   return description ; 
 }
 

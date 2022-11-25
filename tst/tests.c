@@ -5,12 +5,10 @@
 #include "../src/geometry.h"
 #include "../src/world.h"
 #include "../src/neighbors.h"
-#include "../src/geometry.c"
-#include "../src/world.c"
-#include "../src/neighbors.c"
 
-/*w = world_init();
-init_neighbors(0); // Use seed 0 at the beginning of a game
+
+/*w = world_init();*/
+/*init_neighbors(0); // Use seed 0 at the beginning of a game
 current_player = get_random_player();
 while nobody has won:
   p = choose_random_piece_belonging_to(w, current_player)
@@ -26,8 +24,8 @@ int main() {
     w=world_init();
     world_get (w , 3);
     world_set(w,3,1);
-    for (int i=0 ; i<WORLD_SIZE ; i++ ) {
+    /*for (int i=0 ; i<WORLD_SIZE ; i++ ) {
       printf("{%d , %d }\n" , w->positions[i][1],w->positions[i][2]);
-      
-    }
+      */
+    
 }

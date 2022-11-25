@@ -16,8 +16,8 @@ all: test_project
 project: project.o $(OBJS)
 	cc $(CFLAGS) project.o -o project
 
-test_project: tests.o 
-	gcc $(CFLAGS) $^ -o test_project
+test_project: tests.o $(OBJS)
+	gcc $(CFLAGS) $^  -o test_project
 
 clean:
 	rm -f project test_project *.o *~
