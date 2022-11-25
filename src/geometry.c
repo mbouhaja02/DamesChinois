@@ -3,54 +3,39 @@
 #include "geometry.h"
 
 const char* place_to_string(enum color_t c, enum sort_t s)
-{ char* description[100];
-  int i = 0, j = 0;
-  char* color;
-  switch (c)
+{ 
+ 
+  char* str;
+  int t = c + 10 * s;
+  switch (t)
   {
     case 0:
-      color = "no color ";
+      str = "no color no pawn";
       break;
-    case 1:
-      color = "black ";
+    case 10:
+      str = "attention pawn with no color";
       break;
     case 2:
-      color = "white ";
-      break;
-    default:
-      color = "ERROR 404 ";
-  }
-  char* sort;
-  switch (s)
-  {
-    case 0:
-      sort = "nothing";
+      str = "no pawn to associate a color";
       break;
     case 1:
-      sort = "pawn";
+      str = "no pawn to associate a color";
       break;
-    
+    case 11:
+      str = "pawn with black color";
+      break;
+    case 12:
+      str = "pawn with white color";
+      break;
     default:
-      sort = "ERROR 404";
-      
+      str = "Max colors or Max pawns";
   }
   
-  while (color[i] != '\0') {
-    description[j] = color[i];
-      i++;
-      j++; }
-  description[j] = ",";
-  i = 0;
- 
-  while (sort[i] != '\0') {
-    description[j+1] = sort[i];
-    i++;
-    j++;
-    }
-    description[j] = '\0';
+  return str;
   
-  return description ; 
-}
+  }
+
+  
 
 const char* dir_to_string(enum dir_t d)
 {
