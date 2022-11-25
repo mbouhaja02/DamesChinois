@@ -7,11 +7,24 @@
 #include "wolrd.h"
 
 
+typedef struct ensemble
+
 struct ensemble{
-    int nbr_pawn_player;
-    unsigned int positions_init[nbr_pawn_player * 2] = {0};
-    unsigned int positionw_black[nbr_pawn_player] = {0};
-    unsigned int positions_white[nbr_pawn_player] = {0};
+    unsigned int taille;
+    unsigned int positions[taille];
+    
 } ensemble;
 
-typedef struct ensemble
+
+
+struct positions_init{
+    struct ensemble={NP};
+}
+
+struct positions_white{
+    struct ensemble={NW};
+}
+
+struct positions_black{
+    struct ensemble={NB};
+}
