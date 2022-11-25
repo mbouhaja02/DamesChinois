@@ -14,17 +14,9 @@ int mvt_disponible_en_direction(struct world_t w; unsigned char idx, enum dir_t 
     }
     return 1; 
 }
-int place_visited (struct ensemble, place ){
-    for (int i =0; i < ensemble.taille; i++){
-        if (place == ensemble.positions[i]){
-            retrun 0;
-        }
-    }
-    return 1;
-}
-struct mouvement_dispo mvts_disponibles (struct world_t w; unsigned char idx; struct mouvement_dispo md ) 
+
+struct ensemble mvts_disponibles (struct world_t w; unsigned char idx; struct ensemble* md ) 
 {   int* i = 0; 
-    mouvement_dispo.taille = i 
     for (enum dir_t j = SEAST; j < NWEST ;j++)
     {   
         if (mvt_disponible_en_direction(w,idx,j)==1){

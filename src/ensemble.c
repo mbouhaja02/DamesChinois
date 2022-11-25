@@ -14,7 +14,6 @@ struct ensemble{
 }
 
 
-
 void positions_init(struct ensemble* pi){
     pi->taille=0;
 }
@@ -23,6 +22,11 @@ void ajout_position(struct ensemble* p , int place ){
     p->positions[p->taille]=place ;
     p->taille+=1;
 }
+/*void supprimer_position(struct ensemble* p , int place){
+    p->taille-=1
+
+}*/
+
 void black_list(struct ensemble* pw, struct world_t w){
     for (int i=0 ; i< WORLD_SIZE ; i++){
         if (world_get(w,i)== "BLACK"){
