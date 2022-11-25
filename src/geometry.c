@@ -3,7 +3,8 @@
 #include "geometry.h"
 
 const char* place_to_string(enum color_t c, enum sort_t s)
-{ char* description[100];
+{ 
+  char* description[100];
   int i = 0, j = 0;
   char* color;
   switch (c)
@@ -34,12 +35,13 @@ const char* place_to_string(enum color_t c, enum sort_t s)
       sort = "ERROR 404";
       
   }
+
   
   while (color[i] != '\0') {
     description[j] = color[i];
       i++;
       j++;
-  description[j] = ","
+  description[j] = ",";
   i = 0;
   while (sort[i] != '\0') {
     description[j+1] = sort[i];
@@ -48,6 +50,7 @@ const char* place_to_string(enum color_t c, enum sort_t s)
     }
     description[j] = '\0';
   return description ; 
+}
 }
 
 const char* dir_to_string(enum dir_t d)
