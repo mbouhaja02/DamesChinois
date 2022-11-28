@@ -20,7 +20,7 @@ struct neighbors_t neighbors;
     UINT_MAX if there is no such neighbor (or any other kind of error) */
 unsigned int get_neighbor(unsigned int idx, enum dir_t d){
     switch (d)
-    {   int i= idx;
+    {   unsigned int i = idx;
         case 1 :
             i++;
             break;
@@ -58,4 +58,5 @@ struct neighbors_t get_neighbors(unsigned int idx)
         nbr.n[j+4].d = j;
     }
     return nbr;
+    
 }

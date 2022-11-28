@@ -6,7 +6,7 @@
 
 #include "geometry.h"
 #include "neighbors.h"
-#include "wolrd.h"
+#include "world.h"
 
 struct ensemble;
 
@@ -18,6 +18,8 @@ void black_list(struct ensemble* pw, struct world_t w);
 
 void white_list(struct ensemble* pb, struct world_t w);
 
-int place_visited (struct ensemble p, place );
+int place_visited (struct ensemble p, int place );
+
+void concatener_ensembles(struct ensemble* a, struct ensemble b );
 
 #endif 

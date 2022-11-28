@@ -5,6 +5,8 @@
 #include "../src/geometry.h"
 #include "../src/world.h"
 #include "../src/neighbors.h"
+#include "../src/ensemble.h"
+#include "../src/movements.h"
 
 
 /*w = world_init();*/
@@ -24,8 +26,6 @@ int main() {
     w=world_init();
     world_get (w , 3);
     world_set(w,3,1);
-    /*for (int i=0 ; i<WORLD_SIZE ; i++ ) {
-      printf("{%d , %d }\n" , w->positions[i][1],w->positions[i][2]);
-      */
+    
     
 }
