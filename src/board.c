@@ -13,7 +13,7 @@
 
 struct world_t* debut(){
     struct world_t* w = world_init();
-    for(int i =0 ; i<HEIGHT; i++){
+    for(int i =0 ; i<10; i++){
         int nbr = HEIGHT*i;
         int nbr2 = HEIGHT*i + WIDTH-1;
         world_set_sort( w, nbr, 1);
@@ -29,30 +29,33 @@ void begin(){
 
     struct world_t* w = debut();
 
-    for (int h = 0; h < HEIGHT; h++){
-        printf("\t %d", h);
+    for (int h = 0; h < WIDTH; h++){
+        printf("\t 0%d", h);
+        
     }
-    for(int i =0; i < 10; i++){
-        printf("%d\t", i+1);
-        for(int j = 0; j < 10; j++){
+    printf("\n \n");
+    for(int i =0; i < HEIGHT; i++){
+        printf("0%d\t ", i);
+        for(int j = 0; j < WIDTH; j++){
             
             int nbr = i * HEIGHT + j;
             if (world_get_sort( w, nbr) == 0){
-                printf(" N\t");
+                printf(" .\t");
             }
-            if (world_get_sort( w, nbr) == 1){
-                if (world_get(w, nbr) == 1){
-                    printf(" B\t");
-                }
-                if (world_get(w, nbr) == 2){
+            if (world_get_sort( w, nbr) == 1 && world_get(w, nbr) == 1){
+               printf(" B\t");
+            }
+                
+            if (world_get(w, nbr) == 2 && world_get(w, nbr) == 2){
                     printf(" W\t");
                 }
                 
             }
+        printf("\n");
             
         }
-        printf("\n");
+        
     }
     
-}
+
 
