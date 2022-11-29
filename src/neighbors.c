@@ -20,33 +20,33 @@ struct neighbors_t neighbors;
     UINT_MAX if there is no such neighbor (or any other kind of error) */
 unsigned int get_neighbor(unsigned int idx, enum dir_t d){
     switch (d)
-    {   unsigned int i = idx;
+    {   ;
         case 1 :
-            i++;
+            idx++;
             break;
         case 2 : 
-            i=i-WIDTH+1;
+            idx=idx-WIDTH+1;
             break;
         case 3 : 
-            i=i-WIDTH;
+            idx=idx-WIDTH;
             break;
         case 4 : 
-            i=i-WIDTH-1;
+            idx=idx-WIDTH-1;
             break;
         case -1 : 
-            i=i-1;
+            idx=idx-1;
             break;
         case -2 : 
-            i=i-1+WIDTH;
+            idx=idx-1+WIDTH;
             break;
         case -3: 
-            i=i+WIDTH;
+            idx=idx+WIDTH;
             break;
         case -4 : 
-            i=i+1+WIDTH;
+            idx=idx+1+WIDTH;
             break;
-        default : return i;
-    return i ;
+        default : return idx;
+    return idx ;
     }
 }
 /** Returns the list of the neighbors of the place `idx`, terminated

@@ -21,12 +21,7 @@ while nobody has won:
 
 int main() { 
     
-    place_to_string (2,1); //geometry.c
-    dir_to_string(3);
-    struct world_t* w;
-    w=world_init();
-    world_get (w , 3);
-    world_set(w,3,1);
+    
     begin();
     
     
