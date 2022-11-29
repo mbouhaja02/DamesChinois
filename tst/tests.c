@@ -7,6 +7,7 @@
 #include "../src/neighbors.h"
 #include "../src/ensemble.h"
 #include "../src/movements.h"
+#include "../src/board.h"
 
 
 /*w = world_init();*/
@@ -26,6 +27,7 @@ int main() {
     w=world_init();
     world_get (w , 3);
     world_set(w,3,1);
+    begin();
     
     
 }

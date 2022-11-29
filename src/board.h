@@ -15,6 +15,9 @@
 #include "world.h"
 #include "ensemble.h"
 
+struct world_t* debut();
+void begin();
+
 
 
 

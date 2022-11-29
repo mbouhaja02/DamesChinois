@@ -2,7 +2,7 @@ WIDTH ?= 5
 HEIGHT ?= 4
 MANSUBA_FLAGS = -DWIDTH=$(WIDTH) -DHEIGHT=$(HEIGHT)
 CFLAGS = -Wall -Wextra -std=c99 -g3 $(MANSUBA_FLAGS)
-SRCS = world.c neighbors.c geometry.c ensemble.c movements.c 
+SRCS = world.c neighbors.c geometry.c ensemble.c movements.c board.c 
 OBJS = $(SRCS:.c=.o)
 
 all: test_project
