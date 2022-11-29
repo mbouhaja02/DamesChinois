@@ -26,14 +26,14 @@ void ajout_position(struct ensemble* p , int place ){
 
 void black_list(struct ensemble* pw, struct world_t* w){
     for (int i=0 ; i< WORLD_SIZE ; i++){
-        if (world_get(w,i) == "BLACK"){
+        if (world_get(w,i) == 1){
             ajout_position( pw, i);
         }
     }
 }
 void white_list(struct ensemble* pb, struct world_t* w){
     for (int i=0 ; i< WORLD_SIZE ; i++){
-        if (world_get(w,i) == "WHITE"){
+        if (world_get(w,i) == 2){
             ajout_position( pb, i);
         }
     }
