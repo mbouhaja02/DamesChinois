@@ -19,8 +19,8 @@ int Victoire_Simple(struct world_t w , unsigned int place , enum color_t joueur 
     else 
         depart_autre_joueur = black_list ( depart_autre_joueur, w);
     }
-    if ((place_visited(depart_autre_joueur , place ) && (tours < MAX_TURNS)){
-        return 1;
+    if ((place_visited(depart_autre_joueur , place ) && (tours < MAX_TURNS))){
+                return 1;
     }
     return 0; 
 }
