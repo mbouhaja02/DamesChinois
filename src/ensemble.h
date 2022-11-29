@@ -1,5 +1,5 @@
-#ifndef ENSEMBLE_H
-#define ENSEMBLE_H
+#ifndef __ENSEMBLE_H_
+#define __ENSEMBLE_H_
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -7,8 +7,15 @@
 #include "geometry.h"
 #include "neighbors.h"
 #include "world.h"
+#include "ensemble.h"
+#include "movements.h"
 
-struct ensemble;
+struct ensemble {
+    unsigned int taille;
+    unsigned int positions[WORLD_SIZE];
+    
+};
+
 
 void positions_init(struct ensemble* pi);
 

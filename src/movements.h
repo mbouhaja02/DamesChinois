@@ -9,6 +9,8 @@
 #include "neighbors.h"
 #include "world.h"
 #include "ensemble.h"
+#include "movements.h"
+
 
 /* Fonction qui retourne l'ensemble des déplacements simple possible */
 void deplacements_simple(struct world_t* w , unsigned int idx , struct ensemble* ds);

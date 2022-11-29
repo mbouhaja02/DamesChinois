@@ -5,20 +5,15 @@
 #include "geometry.h"
 #include "neighbors.h"
 #include "world.h"
+#include "ensemble.h"
+#include "movements.h"
 
 
-struct ensemble {
-    unsigned int taille;
-    unsigned int positions[WORLD_SIZE];
-    
-};
-
-
-void positions_init( struct ensemble* pi ) {
+void positions_init(struct ensemble* pi ) {
     pi-> taille = 0 ;
 }
 
-void ajout_position(struct ensemble* p , int place ){
+void ajout_position(struct ensemble* p ,unsigned int place ){
     p->positions[p->taille]=place ;
     p->taille+=1;
 }

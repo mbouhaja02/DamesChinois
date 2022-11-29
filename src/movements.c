@@ -9,6 +9,9 @@
 #include "movements.h"
 
 
+
+
+
 /* Fonction qui retourne l'ensemble des déplacements simple possible */
 void deplacements_simple(struct world_t* w , unsigned int idx , struct ensemble* ds){
     unsigned int gn;
@@ -48,9 +51,9 @@ void saut_multiple(struct world_t* w , unsigned int idx , struct ensemble* sm){
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
 struct ensemble* mvts_disponibles (struct world_t* w, unsigned int idx, struct ensemble* md ) 
 {  
-    struct ensemble* sm;
+    struct ensemble sm;
     deplacements_simple( w , idx , md );
-    saut_multiple( w , idx , sm);
-    concatener_ensembles ( md , sm );
+    saut_multiple( w , idx , &sm);
+    concatener_ensembles ( md , &sm );
     return md;
 }
