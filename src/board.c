@@ -29,8 +29,8 @@ void begin(){
 
     struct world_t* w = debut();
 
-    for (int h = 0; h < WIDTH; h++){
-        printf("\t 0%d", h);
+    for (int h = 'A'; h <'A'+WIDTH; h++){
+        printf("\t  %c", h);
         
     }
     printf("\n \n");
