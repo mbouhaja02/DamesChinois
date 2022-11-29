@@ -24,11 +24,6 @@ struct world_t* debut(){
     return w;
 
 }
-rand() % (upper – lower + 1)) + lower 
-int choose_random_piece_belonging_to(w, current_player)
-
-choose_random_move_for_piece(w, p)
-struct world_t move_piece(w, m)
 
 void begin(){
 
