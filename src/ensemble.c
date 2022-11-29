@@ -26,21 +26,21 @@ void ajout_position(struct ensemble* p , int place ){
 
 void black_list(struct ensemble* pw, struct world_t* w){
     for (int i=0 ; i< WORLD_SIZE ; i++){
-        if (world_get(w,i)== "BLACK"){
+        if (world_get(w,i) == "BLACK"){
             ajout_position( pw, i);
         }
     }
 }
 void white_list(struct ensemble* pb, struct world_t* w){
     for (int i=0 ; i< WORLD_SIZE ; i++){
-        if (world_get(w,i)== "WHITE"){
+        if (world_get(w,i) == "WHITE"){
             ajout_position( pb, i);
         }
     }
 }
 
 int place_visited (struct ensemble* ens, unsigned int place ){
-    for (int i =0; i < ens->taille; i++){
+    for (unsigned int i =0; i < ens->taille; i++){
         if (place == ens->positions[i]){
             return 0;
         }
@@ -49,7 +49,7 @@ int place_visited (struct ensemble* ens, unsigned int place ){
 }
 
 void concatener_ensembles(struct ensemble* a, struct ensemble* b ){
-    for (int i=0 ; i < b->taille; i++){
+    for (unsigned int i=0 ; i < b->taille; i++){
         ajout_position( a , b->positions[i]);
     }
 }
