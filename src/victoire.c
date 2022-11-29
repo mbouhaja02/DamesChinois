@@ -8,14 +8,14 @@
 #include "ensemble.h"
 #include "movements.h"
 
-
+#define MAX_TURNS 10
 /* fonction qui prend l'ensemble des positions initiales de l'autre
  joueur et cherche si le prochain tour ( s'il en reste )du joueur 
  l'emmenera vers une des positions de départ dans l'ensemble */
 int Victoire_Simple(struct world_t *w , unsigned int place , enum color_t joueur , unsigned int tours ) {
     struct ensemble* depart_autre_joueur ;
     if (joueur == 1 ){
-        white_list (depart_autre_joueur, w );
+        white_list(depart_autre_joueur, w );
     }
     else {
         black_list ( depart_autre_joueur, w);
@@ -35,14 +35,14 @@ int Victoire_complexe(struct world_t* w , unsigned int tours , enum color_t joue
     struct ensemble* positions_joueur ;
 
     if (joueur == 1 ){
-        white_list (depart_autre_joueur, w );
-        black_list (positions_joueur, wt);
+        white_list(depart_autre_joueur, w );
+        black_list(positions_joueur, wt);
     }
     else {
-        black_list ( depart_autre_joueur, w);
-        white_list (positions_joueur, wt);
+        black_list( depart_autre_joueur, w);
+        white_list(positions_joueur, wt);
     }
-    if (depart_autre_joueur = positions_joueur) {
+    if (depart_autre_joueur == positions_joueur && (tours < MAX_TURNS)) {
         return 1 ; 
     }
     return 0 ; 

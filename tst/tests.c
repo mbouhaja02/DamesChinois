@@ -8,6 +8,7 @@
 #include "../src/ensemble.h"
 #include "../src/movements.h"
 #include "../src/board.h"
+#include "../src/victoire.h"
 
 
 /*w = world_init();*/
