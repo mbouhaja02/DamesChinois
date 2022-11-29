@@ -22,4 +22,4 @@ struct ensemble saut_multiple(struct world_t w , unsigned char idx , struct ense
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
 struct ensemble mvts_disponibles (struct world_t w, unsigned char idx, struct ensemble* md );
 
-#endif __MOVEMENTS_H__
+#endif //__MOVEMENTS_H__

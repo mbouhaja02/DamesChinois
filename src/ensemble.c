@@ -11,7 +11,7 @@ struct ensemble {
     unsigned int taille;
     unsigned int positions[WORLD_SIZE];
     
-}
+};
 
 
 void positions_init( struct ensemble* pi ) {
@@ -24,32 +24,33 @@ void ajout_position(struct ensemble* p , int place ){
 }
 
 
-void black_list(struct ensemble* pw, struct world_t w){
+void black_list(struct ensemble* pw, struct world_t* w){
     for (int i=0 ; i< WORLD_SIZE ; i++){
         if (world_get(w,i)== "BLACK"){
             ajout_position( pw, i);
         }
     }
 }
-void white_list(struct ensemble* pb, struct world_t w){
+void white_list(struct ensemble* pb, struct world_t* w){
     for (int i=0 ; i< WORLD_SIZE ; i++){
         if (world_get(w,i)== "WHITE"){
             ajout_position( pb, i);
         }
     }
 }
-int place_visited (struct ensemble, place ){
-    for (int i =0; i < ensemble.taille; i++){
-        if (place == ensemble.positions[i]){
-            retrun 0;
+
+int place_visited (struct ensemble* ens, unsigned int place ){
+    for (int i =0; i < ens->taille; i++){
+        if (place == ens->positions[i]){
+            return 0;
         }
     }
     return 1;
 }
 
-void concatener_ensembles(struct ensemble* a, struct ensemble b ){
-    for (int i=0 , i < b.taille, i++){
-        ajout_position( a , b.positions[i]);
+void concatener_ensembles(struct ensemble* a, struct ensemble* b ){
+    for (int i=0 ; i < b->taille; i++){
+        ajout_position( a , b->positions[i]);
     }
 }
 
