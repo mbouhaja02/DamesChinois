@@ -29,11 +29,13 @@ void begin(){
 
     struct world_t* w = debut();
 
-    
+    for (int h = 0; h < HEIGHT; h++){
+        printf("\t %d", h);
+    }
     for(int i =0; i < 10; i++){
         printf("%d\t", i+1);
         for(int j = 0; j < 10; j++){
-            printf("\n");
+            
             int nbr = i * HEIGHT + j;
             if (world_get_sort( w, nbr) == 0){
                 printf(" N\t");
