@@ -12,14 +12,15 @@
 /* fonction qui prend l'ensemble des positions initiales de l'autre
  joueur et cherche si le prochain tour ( s'il en reste )du joueur 
  l'emmenera vers une des positions de départ dans l'ensemble */
-int Victoire_Simple(struct world_t w , unsigned int place , enum color_t joueur , unsigned int tours ) {
+int Victoire_Simple(struct world_t *w , unsigned int place , enum color_t joueur , unsigned int tours ) {
     struct ensemble* depart_autre_joueur ;
-    if (joueur == "BLACK" ){
-        depart_autre_joueur = white_list (depart_autre_joueur, w );
-    else 
-        depart_autre_joueur = black_list ( depart_autre_joueur, w);
+    if (joueur == 1 ){
+        white_list (depart_autre_joueur, w );
     }
-    if ((place_visited(depart_autre_joueur , place ) && (tours < MAX_TURNS)){
+    else {
+        black_list ( depart_autre_joueur, w);
+    }
+    if (place_visited(depart_autre_joueur , place ) && (tours < MAX_TURNS)){
         return 1;
     }
     return 0; 
@@ -33,15 +34,15 @@ int Victoire_complexe(struct world_t* w , unsigned int tours , enum color_t joue
     struct ensemble* depart_autre_joueur ;
     struct ensemble* positions_joueur ;
 
-    if (joueur == "BLACK" ){
-        depart_autre_joueur = white_list (depart_autre_joueur, w );
-        positions_joueur = black_list (positions_joueur, wt);
-
-    else 
-        depart_autre_joueur = black_list ( depart_autre_joueur, w);
-        positions_joueur = white_list (positions_joueur, wt);
+    if (joueur == 1 ){
+        white_list (depart_autre_joueur, w );
+        black_list (positions_joueur, wt);
     }
-    if depart_autre_joueur = positions_joueur {
+    else {
+        black_list ( depart_autre_joueur, w);
+        white_list (positions_joueur, wt);
+    }
+    if (depart_autre_joueur = positions_joueur) {
         return 1 ; 
     }
     return 0 ; 
