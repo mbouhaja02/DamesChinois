@@ -30,19 +30,19 @@ void begin(){
     struct world_t* w = debut();
 
     printf("\t 0\t 1\t 2\t 3\t 4\t 5\t 6\t 7\t 8\t 9 \n");
-    for(int i =0; i < HEIGHT; i++){
+    for(int i =0; i < 10; i++){
         printf("%d\t", i+1);
-        for(int j = 0; j < WIDTH; j++){
+        for(int j = 0; j < 10; j++){
             int nbr = i * HEIGHT + j;
             if (world_get_sort( w, nbr) == 0){
-                printf("N\t");
+                printf(" N\t");
             }
             if (world_get_sort( w, nbr) == 1){
                 if (world_get(w, nbr) == 1){
-                    printf("B\t");
+                    printf(" B\t");
                 }
                 if (world_get(w, nbr) == 2){
-                    printf("W\t");
+                    printf(" W\t");
                 }
                 
             }
