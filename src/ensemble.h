@@ -9,8 +9,11 @@
 #include "world.h"
 #include "movements.h"
 
-
-struct ensemble;
+struct ensemble{
+    unsigned int taille;
+    unsigned int positions[WORLD_SIZE];
+    
+};
 
 void positions_init(struct ensemble* pi);
 

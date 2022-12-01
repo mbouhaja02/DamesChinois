@@ -10,11 +10,7 @@
 
 
 
-struct ensemble{
-    unsigned int taille;
-    unsigned int positions[WORLD_SIZE];
-    
-};
+
 
 
 

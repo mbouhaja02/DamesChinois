@@ -9,12 +9,15 @@
 #include "movements.h"
 #include "victoire.h"
 
-#define MAX_TURNS 10
+
 /* fonction qui prend l'ensemble des positions initiales de l'autre
  joueur et cherche si le prochain tour ( s'il en reste )du joueur 
  l'emmenera vers une des positions de départ dans l'ensemble */
+ struct ensemble;
+ 
 int Victoire_Simple(struct world_t* w , unsigned int place , enum color_t joueur , unsigned int tours ) {
     struct ensemble* depart_autre_joueur ;
+    positions_init(depart_autre_joueur);
     if (joueur == 1 ){
         white_list(depart_autre_joueur, w );
     }

@@ -9,6 +9,7 @@
 #include "../src/movements.h"
 #include "../src/board.h"
 #include "../src/victoire.h"
+#include "../src/partie.h"
 
 
 /*w = world_init();*/
@@ -22,9 +23,21 @@ while nobody has won:
 void begin(); 
 
 int main() { 
-    
-    
-    begin();
-    
-    
+    struct world_t* w = world_init();
+    unsigned int seed = 0;
+    init_neighbors(0);
+    enum color_t current_player = get_random_player();
+    for(unsigned int j = 0 ; j < MAX_TURNS; j++){
+      unsigned int p = choose_random_piece_belonging_to(w, current_player);
+      unsigned int m = choose_random_move_for_piece(w, p);
+      w = move_piece(w, m, p, current_player);
+      if (Victoire_Simple(w, p, current_player, j) == 1)
+          return "le jeu est terminé";
+      current_player = next_player(current_player);
+    }
 }
+
+    
+    
+    
+
