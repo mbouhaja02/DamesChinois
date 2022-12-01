@@ -2,11 +2,21 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "ensemble.h"
 #include "geometry.h"
 #include "neighbors.h"
 #include "world.h"
-#include "ensemble.h"
 #include "movements.h"
+
+
+
+struct ensemble{
+    unsigned int taille;
+    unsigned int positions[WORLD_SIZE];
+    
+};
+
+
 
 
 void positions_init(struct ensemble* pi ) {
