@@ -23,6 +23,7 @@ while nobody has won:
 void begin(); 
 
 int main() { 
+  
     struct world_t* w = world_init();
     unsigned int seed = 0;
     init_neighbors(0);
