@@ -40,6 +40,7 @@ enum color_t next_player(enum color_t current_player){
         return 2;
     if (current_player == 2)
         return 1;
+    return 0;
 }
 
 
