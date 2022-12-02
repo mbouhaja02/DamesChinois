@@ -2,15 +2,21 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "ensemble.h"
 #include "geometry.h"
 #include "neighbors.h"
 #include "world.h"
-#include "ensemble.h"
 #include "movements.h"
 
 
-void positions_init(struct ensemble* pi ) {
-    pi-> taille = 0 ;
+
+
+
+
+
+
+void positions_init(struct ensemble* pi) {
+    pi->taille = 0 ;
 }
 
 void ajout_position(struct ensemble* p ,unsigned int place ){
@@ -34,7 +40,7 @@ void white_list(struct ensemble* pb, struct world_t* w){
     }
 }
 
-int place_visited (struct ensemble* ens, unsigned int place ){
+int place_visited(struct ensemble* ens, unsigned int place ){
     for (unsigned int i =0; i < ens->taille; i++){
         if (place == ens->positions[i]){
             return 0;

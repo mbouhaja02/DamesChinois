@@ -13,7 +13,7 @@
 
 
 
-
+#define MAX_TURNS 10
 
 int Victoire_Simple(struct world_t* w , unsigned int place , enum color_t joueur , unsigned int tours ) ;
 
