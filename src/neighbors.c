@@ -7,6 +7,8 @@
 
 struct neighbors_t neighbors[WORLD_SIZE];
 
+
+/*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx, enum dir_t d){
     int j = 0;
     while (j < WORLD_SIZE){
@@ -23,7 +25,7 @@ void add_neighbor(unsigned int idx, enum dir_t d){
 }
 
 
-
+/*L'initialisation simple de la board lorsque le seed = 0 donc on distingue 9 cas possible*/
 void init_simple_board(){
 
     // for i in range WORLD_SIZE :
@@ -40,7 +42,7 @@ void init_simple_board(){
             
             
 
-            switch(i)
+            switch(i)   //lorsque le pawn est sur les corner
             {
                 case 0:
                     add_neighbor(i, EAST);
@@ -60,11 +62,13 @@ void init_simple_board(){
                     break;
                 
             }
+            /*Quand le pawn est au dessus*/
             if (i < 9 && i > 0){
                 add_neighbor(i, EAST);
                 add_neighbor(i, WEST);
                 add_neighbor(i, SOUTH);
             }
+            /*Quand le pawn est au dessous*/
             if (i > 90 && i < 99){
                 add_neighbor(i, NORTH);
                 add_neighbor(i, EAST);
@@ -72,18 +76,19 @@ void init_simple_board(){
             }
 
             int d = i%10;
-
+            /*le pawn est à gauche*/
             if (d == 0){
                 add_neighbor(i, EAST);
                 add_neighbor(i, NORTH);
                 add_neighbor(i, SOUTH);
             }
-
+            /*le pawn est à droite*/
             if (d == 9){
                 add_neighbor(i, WEST);
                 add_neighbor(i, NORTH);
                 add_neighbor(i, SOUTH);
             }
+            /*lorsque le pawn est à l'interieure du board*/
             else{
                 add_neighbor(i, WEST);
                 add_neighbor(i, NORTH);
@@ -95,7 +100,7 @@ void init_simple_board(){
         }
     }
 }
-
+/*L'initialisation de la board lorsque le seed!=0 en prend en considération les mouvements diagonales*/
 void init_diagonal_board(){
     for(int i = 0; i < WORLD_SIZE; i++){
         for(int j = 0; j < MAX_NEIGHBORS+1; j++){
@@ -181,7 +186,7 @@ void init_diagonal_board(){
     Can be called multiple times. */
 void init_neighbors(unsigned int seed){
 
-    // mettre tous les neighbors = à {{UINT, NO_DIR}, ...};
+    // mettre tous les neighbors = à {{UINT, NO_DIR}, {0, 0 }....};
     
     for(int i =0; i < WORLD_SIZE; i++){
         neighbors[i].n[0].i = UINT_MAX;
@@ -193,11 +198,11 @@ void init_neighbors(unsigned int seed){
     }
 
     if (seed == 0) {
-        init_simple_board();
+        init_simple_board();// on considère que les mouvements simples
     }
 
     else {
-        init_diagonal_board();
+        init_diagonal_board();// on considère les mouvements diagonales
     }
 }
 
