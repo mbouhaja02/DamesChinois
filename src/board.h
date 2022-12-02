@@ -16,8 +16,8 @@
 #include "ensemble.h"
 #include "movements.h"
 
-struct world_t* debut();
-void begin();
+struct world_t* debut(struct world_t* w);
+void draw_world(struct world_t* w);
 
 
 
