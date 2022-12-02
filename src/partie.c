@@ -87,6 +87,7 @@ unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p){
     unsigned int module = ens->taille;
     r = r % module;
     unsigned int m = ens->positions[r];
+    
     return m;
 }
 
