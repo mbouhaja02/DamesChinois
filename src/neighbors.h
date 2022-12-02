@@ -29,6 +29,10 @@ void add_neighbor(unsigned int idx, enum dir_t d);
 
 void init_simple_board();
 
+
+void init_diagonal_board();
+
+
 /** Initializes the relation between the neighbors, based on an
     integer `seed`. `seed` must be less than MAX_RELATIONS.
     Can be called multiple times. */

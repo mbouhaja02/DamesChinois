@@ -18,6 +18,30 @@ void init_simple_board(){
             // ajouter les relations à neighbors[i]...
 
         // ajouter les relations communes à toutes les cases à neighbors[i]
+
+    for(int i = 0; i < WORLD_SIZE; i++){
+        for(int j = 0; j < MAX_NEIGHBORS+1; j++){
+            
+            int d  = i%10;
+
+            switch(d)
+            {
+                case 0:
+                    neighbors[i].n[j].i = i+1;
+                    neighbors[i].n[j].d = EAST;
+                    break;
+                case 9:
+                    neighbors[i].n[j].i = i-1;
+                    neighbors[i].n[j].d = WEST;
+                    break;
+                
+            }
+        }
+    }
+}
+
+void init_diagonal_board(){
+
 }
 
 /** Initializes the relation between the neighbors, based on an
@@ -26,9 +50,22 @@ void init_simple_board(){
 void init_neighbors(unsigned int seed){
 
     // mettre tous les neighbors = à {{UINT, NO_DIR}, ...};
+    
+    for(int i =0; i < WORLD_SIZE; i++){
+        neighbors[i].n[0].i = UINT_MAX;
+        neighbors[i].n[0].d = NO_DIR;
+        for(int j = 1; j < MAX_NEIGHBORS+1; j++){
+            neighbors[i].n[j].i = 0;
+            neighbors[i].n[j].d = 0;
+        }
+    }
 
     if (seed == 0) {
         init_simple_board();
+    }
+
+    else {
+        init_diagonal_board();
     }
 }
 
@@ -36,7 +73,7 @@ void init_neighbors(unsigned int seed){
     UINT_MAX if there is no such neighbor (or any other kind of error) */
 unsigned int get_neighbor(unsigned int idx, enum dir_t d){
     switch (d)
-    {   ;
+    {   
         case 1 :
             idx++;
             break;
