@@ -209,36 +209,8 @@ void init_neighbors(unsigned int seed){
 /** Returns the neighbor of the place `idx`, in direction `d`, and
     UINT_MAX if there is no such neighbor (or any other kind of error) */
 unsigned int get_neighbor(unsigned int idx, enum dir_t d){
-    switch (d)
-    {   
-        case 1 :
-            idx++;
-            break;
-        case 2 : 
-            idx=idx-WIDTH+1;
-            break;
-        case 3 : 
-            idx=idx-WIDTH;
-            break;
-        case 4 : 
-            idx=idx-WIDTH-1;
-            break;
-        case -1 : 
-            idx=idx-1;
-            break;
-        case -2 : 
-            idx=idx-1+WIDTH;
-            break;
-        case -3: 
-            idx=idx+WIDTH;
-            break;
-        case -4 : 
-            idx=idx+1+WIDTH;
-            break;
-        default : return idx;
-    
-    }
-    return idx ;
+   
+    return UINT_MAX ;
 }
 
 /** Returns the list of the neighbors of the place `idx`, terminated

@@ -25,20 +25,15 @@ while nobody has won:
 int main() { 
 
   struct world_t* w = world_init();
-  // je fais des trucs sur world
-
-  world_init();
-  // je refais d'autres trucs sur un monde vierge
-
-
   enum color_t current_player = get_random_player();
+
   unsigned int place ; 
   unsigned int move ; 
 
   draw_world(w);
   debut(w);
-  move_piece(w, 1, 0, current_player);
   draw_world(w);
+  
   for ( int i = 0 ; i < 2*MAX_TURNS ; i++){
     place = choose_random_piece_belonging_to(w , current_player);
     move = choose_random_move_for_piece(w , place);
