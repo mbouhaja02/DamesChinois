@@ -18,6 +18,7 @@ void deplacements_simple(struct world_t* w , unsigned int idx , struct ensemble*
     positions_init(ds);
     for (enum dir_t j = SEAST; j < NWEST ;j++){
         gn = get_neighbor(idx , j);
+        printf("%u\n", gn);
         enum sort_t b = world_get_sort(w, gn);
 
         if ( b == NO_SORT){

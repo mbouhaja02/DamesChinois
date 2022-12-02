@@ -1,20 +1,36 @@
 #include <stdio.h>
+
 #include "geometry.h"
 #include "neighbors.h"
 
 
-struct neighbors_t neighbors;
+struct neighbors_t neighbors[WORLD_SIZE];
 
+void add_neighbor(unsigned int idx, enum dir_t d);
+
+void init_simple_board(){
+
+    // for i in range WORLD_SIZE :
+        // if (pas sur le bord gauche) :
+            // ajouter les relations à neighbors[i]...
+
+        // if (pas sur le bord droit) :
+            // ajouter les relations à neighbors[i]...
+
+        // ajouter les relations communes à toutes les cases à neighbors[i]
+}
 
 /** Initializes the relation between the neighbors, based on an
     integer `seed`. `seed` must be less than MAX_RELATIONS.
     Can be called multiple times. */
- /*void init_neighbors(unsigned int seed){
-   if ( seed < MAX_RELATIONS ) {
-        neighbors ;
+void init_neighbors(unsigned int seed){
+
+    // mettre tous les neighbors = à {{UINT, NO_DIR}, ...};
+
+    if (seed == 0) {
+        init_simple_board();
     }
-  
-}*/
+}
 
 /** Returns the neighbor of the place `idx`, in direction `d`, and
     UINT_MAX if there is no such neighbor (or any other kind of error) */
@@ -53,12 +69,11 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
 
 /** Returns the list of the neighbors of the place `idx`, terminated
     by UINT_MAX.  */
-struct neighbors_t get_neighbors(unsigned int idx)
-{   struct neighbors_t nbr;
+struct neighbors_t get_neighbors(unsigned int idx) {   
+    struct neighbors_t nbr;
     for ( enum dir_t j = SEAST; j < NWEST ;j++){
         nbr.n[j+4].i = get_neighbor(idx,j);
         nbr.n[j+4].d = j;
     }
     return nbr;
-    
 }
