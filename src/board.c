@@ -13,8 +13,8 @@
 
 
 
-struct world_t* debut(){
-    struct world_t* w = world_init();
+struct world_t* debut(struct world_t* w){
+
     for(int i =0 ; i<10; i++){
         int nbr = HEIGHT*i;
         int nbr2 = HEIGHT*i + WIDTH-1;
@@ -27,23 +27,23 @@ struct world_t* debut(){
 
 }
 
-void begin(){
-
-    struct world_t* w = debut();
+void draw_world(struct world_t* w){
 
     for (int h = 'A'; h <'A'+WIDTH; h++){
         printf("\t  %c", h);
-        
     }
+
     printf("\n \n");
-    for(int i =0; i < HEIGHT; i++){
+
+    for(int i = 0; i < 10; i++){
         printf("0%d\t ", i);
-        for(int j = 0; j < WIDTH; j++){
+        for(int j = 0; j < 10; j++){
             
             int nbr = i * HEIGHT + j;
             if (world_get_sort( w, nbr) == 0){
                 printf(" .\t");
             }
+
             if (world_get_sort( w, nbr) == 1 && world_get(w, nbr) == 1){
                printf(" B\t");
             }
@@ -52,12 +52,12 @@ void begin(){
                     printf(" W\t");
                 }
                 
-            }
+        }
         printf("\n");
             
-        }
-        
     }
-    
+}
+
+
 
 

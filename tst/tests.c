@@ -20,7 +20,7 @@ while nobody has won:
   m = choose_random_move_for_piece(w, p)
   move_piece(w, m)
   current_player = next_player(current_player)*/
-void begin(); 
+
 
 int main() { 
 
@@ -38,6 +38,7 @@ int main() {
     }
     current_player = next_player(current_player);
   }
+  
   return 0;
 }
 
