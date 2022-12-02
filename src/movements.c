@@ -45,7 +45,7 @@ void saut_multiple(struct world_t* w , unsigned int idx , struct ensemble* sm ){
         while (place_visited ( sm, idx ) == 0){
             saut_simple(w,idx,sm);
             idx = get_neighbor(idx , j);
-            ajout_positions(sm, idx);
+            ajout_position(sm, idx);
         }
     }
     

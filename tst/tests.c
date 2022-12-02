@@ -25,7 +25,7 @@ void begin();
 int main() { 
 
   begin();
-  struct world_t* w = world_init();
+  
     
   return 0;
 }
