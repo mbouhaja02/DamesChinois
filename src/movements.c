@@ -16,7 +16,7 @@
 void deplacements_simple(struct world_t* w , unsigned int idx , struct ensemble* ds ){
     unsigned int gn;
     positions_init(ds);
-    
+
     for (enum dir_t j = SEAST; j < NWEST ;j++){
         gn = get_neighbor(idx , j);
         if (world_get_sort(w , gn ) == 0){
@@ -45,6 +45,7 @@ void saut_multiple(struct world_t* w , unsigned int idx , struct ensemble* sm ){
         while (place_visited ( sm, idx ) == 0){
             saut_simple(w,idx,sm);
             idx = get_neighbor(idx , j);
+            ajout_positions(sm, idx);
         }
     }
     
