@@ -244,10 +244,6 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
 /** Returns the list of the neighbors of the place `idx`, terminated
     by UINT_MAX.  */
 struct neighbors_t get_neighbors(unsigned int idx) {   
-    struct neighbors_t nbr;
-    for ( enum dir_t j = SEAST; j < NWEST ;j++){
-        nbr.n[j+4].i = get_neighbor(idx,j);
-        nbr.n[j+4].d = j;
-    }
-    return nbr;
+    
+    return neighbors[idx];
 }
