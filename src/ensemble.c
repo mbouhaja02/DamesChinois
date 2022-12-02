@@ -15,6 +15,8 @@
 
 
 
+void positions_init(struct ensemble* pi) {
+    pi->taille = 0 ;
 void positions_init(struct ensemble* pi ) {
     pi->taille = 0 ;
 }
@@ -40,7 +42,7 @@ void white_list(struct ensemble* pb, struct world_t* w){
     }
 }
 
-int place_visited (struct ensemble* ens, unsigned int place ){
+int place_visited(struct ensemble* ens, unsigned int place ){
     for (unsigned int i =0; i < ens->taille; i++){
         if (place == ens->positions[i]){
             return 0;
