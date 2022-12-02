@@ -40,9 +40,9 @@ int main() {
   move_piece(w, 1, 0, current_player);
   draw_world(w);
   for ( int i = 0 ; i < 2*MAX_TURNS ; i++){
-    place = choose_random_piece_belonging_to(wt , current_player);
-    move = choose_random_move_for_piece(wt , place);
-    move_piece(wt , move , place , current_player);
+    place = choose_random_piece_belonging_to(w , current_player);
+    move = choose_random_move_for_piece(w , place);
+    move_piece(w , move , place , current_player);
     current_player = next_player(current_player);
   }
   
