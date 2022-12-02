@@ -15,13 +15,13 @@
 
 
 
-void positions_init(struct ensemble* pi) {
+void positions_init(struct ensemble* pi ) {
     pi->taille = 0 ;
 }
 
 void ajout_position(struct ensemble* p ,unsigned int place ){
-    p->positions[p->taille]=place ;
     p->taille+=1;
+    p->positions[p->taille]=place ;
 }
 
 

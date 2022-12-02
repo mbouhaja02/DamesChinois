@@ -11,24 +11,6 @@
 #include "partie.h"
 
 
-/*
-int choose_random_piece_belonging_to(struct world_t* w , enum color_t current_player){
-    struct ensemble* pw;
-    unsigned int a ; 
-    white_list(pw , w);
-    a = rand() % (pw->taille + 1);
-    return pw->positions[a];
-}
-
-unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p){
-    struct ensemble* nb ; 
-    unsigned int b;
-    mvts_disponibles( w , p , nb );
-    b = rand() % (nb->taille + 1);
-    return nb->positions[b];
-
-}
-*/
 
 /*cette fonction est deja tester*/
 /*Il retourne la couleur d'un joueur aléatoire*/
@@ -50,32 +32,21 @@ enum color_t next_player(enum color_t current_player){
 /*cette fonction est deja tester*/
 /*Retourne un unsigned int qui désigne l'index d'une peice white ou black dependant du current_player*/
 unsigned int choose_random_piece_belonging_to(struct world_t* w , enum color_t current_player){
-    int tab_black[10];
-    int j = 0;
-    int tab_white[10];
-    int l = 0;
-    for(int i  = 0; i < WORLD_SIZE; i++){
-        if (world_get(w, i)==1 && world_get_sort(w, i) == 1){
-            tab_black[j] = i;
-            j = j + 1;
-        }
-        
-    }
-    for(int i  = 0; i < WORLD_SIZE; i++){
-        if (world_get(w, i)==1 && world_get_sort(w, i) == 1){
-            tab_white[l] = i;
-            l = l + 1;
-        }
-        
-    }
+    struct ensemble pw, pb;
+
+    positions_init(&pw);
+    positions_init(&pb);
+
+    black_list(&pb, w);
+    white_list(&pw, w);
 
     int a = rand();
-    a = a % 10;
+    a = a % HEIGHT;
     if (current_player == 1)
-        return tab_black[a];
+        return pb.positions[a];
         
     if (current_player == 2)
-        return tab_white[a];
+        return pw.positions[a];
     return 0;
 }
 

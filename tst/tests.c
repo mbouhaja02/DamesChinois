@@ -39,6 +39,18 @@ int main() {
   }
   enum color_t d = world_get(w, 9);
   printf("\n %d \n", (int)d);
+    struct world_t* w = world_init();
+
+    for (int i = 0; i < 10; i++){
+      enum color_t c = get_random_player();
+      enum color_t b = next_player(c);
+      unsigned int p = choose_random_piece_belonging_to(w, c);
+      printf("#\n");
+      unsigned int p2 = choose_random_piece_belonging_to(w, b);
+      printf("%d de couleur %d -- %d de couleur %d \n", (int)c, p, (int)b, p2);
+    }
+    enum color_t d = world_get(w, 9);
+    printf("\n %d \n", (int)d);
 
   enum color_t d1 = world_get(w, 10);
   printf("\n %d \n", (int)d1);
