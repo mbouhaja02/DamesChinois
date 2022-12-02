@@ -9,4 +9,4 @@
 #include "movements.h"
 #include "victoire.h"
 
-void translation_cardinale(int d, 
+void translation_cardinale();
