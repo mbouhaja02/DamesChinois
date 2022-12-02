@@ -11,24 +11,6 @@
 #include "partie.h"
 
 
-/*
-int choose_random_piece_belonging_to(struct world_t* w , enum color_t current_player){
-    struct ensemble* pw;
-    unsigned int a ; 
-    white_list(pw , w);
-    a = rand() % (pw->taille + 1);
-    return pw->positions[a];
-}
-
-unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p){
-    struct ensemble* nb ; 
-    unsigned int b;
-    mvts_disponibles( w , p , nb );
-    b = rand() % (nb->taille + 1);
-    return nb->positions[b];
-
-}
-*/
 
 /*cette fonction est deja tester*/
 /*Il retourne la couleur d'un joueur aléatoire*/
