@@ -29,14 +29,22 @@ int main() {
   enum color_t current_player = get_random_player();
   unsigned int place ; 
   unsigned int move ; 
+
+  draw_world(w);
+  printf("\n # \n");
+  debut(w);
+  move_piece(w, 1, 0, current_player);
+  printf("\n # \n");
+  draw_world(w);
   for ( int i = 0 ; i < 2*MAX_TURNS ; i++){
     place = choose_random_piece_belonging_to(wt , current_player);
+    printf("# \n");
     move = choose_random_move_for_piece(wt , place);
+    printf("# \n");
     move_piece(wt , move , place , current_player);
-    if ((Victoire_Simple(w , move , current_player , i/2 )==1)||(Victoire_complexe(w , i/2 , current_player, wt)==1)){
-      return 1;
-    }
+    printf("# \n");
     current_player = next_player(current_player);
+    printf("# \n");
   }
   
   return 0;

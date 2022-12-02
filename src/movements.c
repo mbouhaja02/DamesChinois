@@ -16,11 +16,15 @@
 void deplacements_simple(struct world_t* w , unsigned int idx , struct ensemble* ds ){
     unsigned int gn;
     positions_init(ds);
-
     for (enum dir_t j = SEAST; j < NWEST ;j++){
         gn = get_neighbor(idx , j);
-        if (world_get_sort(w , gn ) == 0){
+        enum sort_t b = world_get_sort(w, gn);
+        printf("#\n");
+
+        if ( b == NO_SORT){
+            printf("#\n");
             ajout_position( ds , gn);
+            
         }
     }
   
@@ -56,6 +60,7 @@ struct ensemble* mvts_disponibles (struct world_t* w, unsigned int idx, struct e
 {  
     
     deplacements_simple( w , idx , md );
+    printf("#\n");
     saut_multiple( w , idx , md);
     
     return md;
