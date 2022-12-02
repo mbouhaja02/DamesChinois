@@ -10,7 +10,7 @@
 #include "movements.h"
 #include "partie.h"
 
-struct ensemble;
+
 /*
 int choose_random_piece_belonging_to(struct world_t* w , enum color_t current_player){
     struct ensemble* pw;
@@ -30,11 +30,15 @@ unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p){
 }
 */
 
+/*cette fonction est deja tester*/
+/*Il retourne la couleur d'un joueur aléatoire*/
 enum color_t get_random_player(){
     enum color_t r = rand()%2+1;
     return r;
 }
 
+/*cette fonction est deja tester*/
+/*Apres le choix d'un joueur aléatoire cette fonction retourne la couleur du joueur suivant*/
 enum color_t next_player(enum color_t current_player){
     if (current_player == 1)
         return 2;
@@ -43,7 +47,8 @@ enum color_t next_player(enum color_t current_player){
     return 0;
 }
 
-
+/*cette fonction est deja tester*/
+/*Retourne un unsigned int qui désigne l'index d'une peice white ou black dependant du current_player*/
 unsigned int choose_random_piece_belonging_to(struct world_t* w , enum color_t current_player){
     int tab_black[10];
     int j = 0;
@@ -85,6 +90,8 @@ unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p){
     return m;
 }
 
+/*Déja tester*/
+/*la fonction fait des modifications au niveau du monde et il retourne le nouveau monde*/
 struct world_t* move_piece(struct world_t* w,unsigned int m, unsigned int p , enum color_t joueur){
     
     int idx = get_neighbor(p, m);

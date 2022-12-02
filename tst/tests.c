@@ -24,18 +24,27 @@ void begin();
 
 int main() { 
 
+  begin();
     struct world_t* w = world_init();
-    unsigned int seed = 0;
-    init_neighbors(seed);
-    enum color_t current_player = get_random_player();
-    for(unsigned int j = 0 ; j < MAX_TURNS; j++){
-      unsigned int p = choose_random_piece_belonging_to(w, current_player);
+
+    for (int i = 0; i < 10; i++){
+      enum color_t c = get_random_player();
+      enum color_t b = next_player(c);
+      unsigned int p = choose_random_piece_belonging_to(w, c);
       unsigned int m = choose_random_move_for_piece(w, p);
-      w = move_piece(w, m, p, current_player);
-      if (Victoire_Simple(w, p, current_player, j) == 1)
-          return 1;
-      current_player = next_player(current_player);
+      unsigned int p2 = choose_random_piece_belonging_to(w, b);
+      printf("%d de couleur %d et le move %d-- %d de couleur %d \n", (int)c, p, m, (int)b, p2);
     }
+    enum color_t d = world_get(w, 9);
+    printf("\n %d \n", (int)d);
+
+    enum color_t d1 = world_get(w, 10);
+    printf("\n %d \n", (int)d1);
+
+    enum color_t d2 = world_get(w, 19);
+    printf("\n %d \n", (int)d2);
+
+    
   return 0;
 }
 
