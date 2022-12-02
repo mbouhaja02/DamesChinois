@@ -16,15 +16,15 @@
  struct ensemble;
  
 int Victoire_Simple(struct world_t* w , unsigned int place , enum color_t joueur , unsigned int tours ) {
-    struct ensemble* depart_autre_joueur ;
-    positions_init(depart_autre_joueur);
+    struct ensemble depart_autre_joueur ;
+    positions_init(&depart_autre_joueur);
     if (joueur == 1 ){
-        white_list(depart_autre_joueur, w );
+        white_list(&depart_autre_joueur, w );
     }
     else {
-        black_list ( depart_autre_joueur, w);
+        black_list ( &depart_autre_joueur, w);
     }
-    if (place_visited(depart_autre_joueur , place ) && (tours < MAX_TURNS)){
+    if (place_visited(&depart_autre_joueur , place ) && (tours < MAX_TURNS)){
         return 1;
     }
     return 0; 
@@ -34,19 +34,20 @@ int Victoire_Simple(struct world_t* w , unsigned int place , enum color_t joueur
  world initiale et vérifie le joueur dans l'instant t à tous ses 
  pions sur les positions de départs de l'autre joueur */
 
+
 int Victoire_complexe(struct world_t* w , unsigned int tours , enum color_t joueur , struct world_t* wt){
-    struct ensemble* depart_autre_joueur ;
-    struct ensemble* positions_joueur ;
+    struct ensemble depart_autre_joueur ;
+    struct ensemble positions_joueur ;
 
     if (joueur == 1 ){
-        white_list(depart_autre_joueur, w );
-        black_list(positions_joueur, wt);
+        white_list(&depart_autre_joueur, w );
+        black_list(&positions_joueur, wt);
     }
     else {
-        black_list( depart_autre_joueur, w);
-        white_list(positions_joueur, wt);
+        black_list( &depart_autre_joueur, w);
+        white_list(&positions_joueur, wt);
     }
-    if (depart_autre_joueur == positions_joueur && (tours < MAX_TURNS)) {
+    if (egalite_de_deux_ensembles(depart_autre_joueur,positions_joueur)==1 && (tours < MAX_TURNS)) {
         return 1 ; 
     }
     return 0 ; 

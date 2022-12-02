@@ -27,4 +27,7 @@ int place_visited (struct ensemble* p, unsigned int place );
 
 void concatener_ensembles(struct ensemble* a, struct ensemble* b );
 
+int egalite_de_deux_ensembles(struct ensemble a, struct ensemble b);
+
+
 #endif 

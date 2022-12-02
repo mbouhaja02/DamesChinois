@@ -57,3 +57,14 @@ void concatener_ensembles(struct ensemble* a, struct ensemble* b ){
 
 
 
+int egalite_de_deux_ensembles(struct ensemble a,struct ensemble b){
+    if (a.taille==b.taille){
+        for (unsigned int i=0 ; i<a.taille ; i++){
+            if (a.positions[i]!=b.positions[i]){
+                return 0;
+            }
+        return 1;
+        }
+    }
+    return 0 ;
+}
