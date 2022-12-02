@@ -15,8 +15,6 @@
 
 
 
-void positions_init(struct ensemble* pi) {
-    pi->taille = 0 ;
 void positions_init(struct ensemble* pi ) {
     pi->taille = 0 ;
 }
