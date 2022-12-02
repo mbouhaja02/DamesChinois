@@ -2,11 +2,27 @@
 
 #include "geometry.h"
 #include "neighbors.h"
+#include "world.h"
 
 
 struct neighbors_t neighbors[WORLD_SIZE];
 
-void add_neighbor(unsigned int idx, enum dir_t d);
+void add_neighbor(unsigned int idx, enum dir_t d){
+    int j = 0;
+    while (j < WORLD_SIZE){
+        if(neighbors[idx].n[j].i == UINT_MAX){
+            neighbors[idx].n[j].i = get_neighbor(idx, d);
+            neighbors[idx].n[j].d = d;
+            neighbors[idx].n[j+1].i = UINT_MAX;
+            neighbors[idx].n[j+1].d = NO_DIR;
+
+            j = WORLD_SIZE;
+        }
+        j = j + 1;
+    }
+}
+
+
 
 void init_simple_board(){
 
@@ -22,25 +38,141 @@ void init_simple_board(){
     for(int i = 0; i < WORLD_SIZE; i++){
         for(int j = 0; j < MAX_NEIGHBORS+1; j++){
             
-            int d  = i%10;
+            
 
-            switch(d)
+            switch(i)
             {
                 case 0:
-                    neighbors[i].n[j].i = i+1;
-                    neighbors[i].n[j].d = EAST;
+                    add_neighbor(i, EAST);
+                    add_neighbor(i, SOUTH);
                     break;
                 case 9:
-                    neighbors[i].n[j].i = i-1;
-                    neighbors[i].n[j].d = WEST;
+                    add_neighbor(i, WEST);
+                    add_neighbor(i, SOUTH);
+                    break;
+                case 99:
+                    add_neighbor(i, NORTH);
+                    add_neighbor(i, WEST);
+                    break;
+                case 90:
+                    add_neighbor(i, EAST);
+                    add_neighbor(i, NORTH);
                     break;
                 
             }
+            if (i < 9 && i > 0){
+                add_neighbor(i, EAST);
+                add_neighbor(i, WEST);
+                add_neighbor(i, SOUTH);
+            }
+            if (i > 90 && i < 99){
+                add_neighbor(i, NORTH);
+                add_neighbor(i, EAST);
+                add_neighbor(i, SOUTH);
+            }
+
+            int d = i%10;
+
+            if (d == 0){
+                add_neighbor(i, EAST);
+                add_neighbor(i, NORTH);
+                add_neighbor(i, SOUTH);
+            }
+
+            if (d == 9){
+                add_neighbor(i, WEST);
+                add_neighbor(i, NORTH);
+                add_neighbor(i, SOUTH);
+            }
+            else{
+                add_neighbor(i, WEST);
+                add_neighbor(i, NORTH);
+                add_neighbor(i, SOUTH);
+                add_neighbor(i, EAST);
+            }
+
+        
         }
     }
 }
 
 void init_diagonal_board(){
+    for(int i = 0; i < WORLD_SIZE; i++){
+        for(int j = 0; j < MAX_NEIGHBORS+1; j++){
+            
+            
+
+            switch(i)
+            {
+                case 0:
+                    add_neighbor(i, EAST);
+                    add_neighbor(i, SOUTH);
+                    add_neighbor(i, SEAST);
+                    break;
+                case 9:
+                    add_neighbor(i, WEST);
+                    add_neighbor(i, SOUTH);
+                    add_neighbor(i, SWEST);
+                    break;
+                case 99:
+                    add_neighbor(i, NORTH);
+                    add_neighbor(i, WEST);
+                    add_neighbor(i, NWEST);
+                    break;
+                case 90:
+                    add_neighbor(i, EAST);
+                    add_neighbor(i, NORTH);
+                    add_neighbor(i, NEAST);
+                    break;
+                
+            }
+            if (i < 9 && i > 0){
+                add_neighbor(i, EAST);
+                add_neighbor(i, WEST);
+                add_neighbor(i, SOUTH);
+                add_neighbor(i, SEAST);
+                add_neighbor(i, SWEST);
+            }
+            if (i > 90 && i < 99){
+                add_neighbor(i, NORTH);
+                add_neighbor(i, EAST);
+                add_neighbor(i, WEST);
+                add_neighbor(i, NWEST);
+                add_neighbor(i, NEAST);
+
+            }
+
+            int d = i%10;
+
+            if (d == 0){
+                add_neighbor(i, EAST);
+                add_neighbor(i, NORTH);
+                add_neighbor(i, SOUTH);
+                add_neighbor(i, NEAST);
+                add_neighbor(i, SEAST);
+            }
+
+            if (d == 9){
+                add_neighbor(i, WEST);
+                add_neighbor(i, NORTH);
+                add_neighbor(i, SOUTH);
+                add_neighbor(i, SWEST);
+                add_neighbor(i, NWEST);
+            }
+            else{
+                add_neighbor(i, WEST);
+                add_neighbor(i, NORTH);
+                add_neighbor(i, SOUTH);
+                add_neighbor(i, EAST);
+                add_neighbor(i, SWEST);
+                add_neighbor(i, NWEST);
+                add_neighbor(i, NEAST);
+                add_neighbor(i, SEAST);
+            }
+
+        
+        }
+    }
 
 }
 
