@@ -8,7 +8,6 @@
 struct neighbors_t neighbors[WORLD_SIZE];
 
 enum place_board_t place_sur_board(unsigned int idx){
-    enum place_board_t plt;
     if (idx == 0 )
         return NW;
     if (idx == 9)
@@ -27,15 +26,12 @@ enum place_board_t place_sur_board(unsigned int idx){
         return S;
     else
         return MID;
-
-
-
-    return plt;
 }
 
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx, enum dir_t d){
     int j = 0;
+    printf("# \n");
     while (j < WORLD_SIZE){
         if(neighbors[idx].n[j].i == UINT_MAX){
             neighbors[idx].n[j].i = get_neighbor(idx, d);
@@ -66,7 +62,6 @@ void init_simple_board(){
         for(int j = 0; j < MAX_NEIGHBORS+1; j++){
             
             
-
             switch(i)   //lorsque le pawn est sur les corner
             {
                 case 0:
@@ -120,10 +115,11 @@ void init_simple_board(){
                 add_neighbor(i, SOUTH);
                 add_neighbor(i, EAST);
             }
-
+            
         
         }
     }
+    
 }
 /*L'initialisation de la board lorsque le seed!=0 en prend en considération les mouvements diagonales*/
 void init_diagonal_board(){
@@ -217,11 +213,12 @@ void init_neighbors(unsigned int seed){
         neighbors[i].n[0].i = UINT_MAX;
         neighbors[i].n[0].d = NO_DIR;
         for(int j = 1; j < MAX_NEIGHBORS+1; j++){
+            
             neighbors[i].n[j].i = 0;
             neighbors[i].n[j].d = 0;
         }
     }
-
+    
     if (seed == 0) {
         init_simple_board();// on considère que les mouvements simples
     }
@@ -234,7 +231,124 @@ void init_neighbors(unsigned int seed){
 /** Returns the neighbor of the place `idx`, in direction `d`, and
     UINT_MAX if there is no such neighbor (or any other kind of error) */
 unsigned int get_neighbor(unsigned int idx, enum dir_t d){
-   
+    enum place_board_t plt = place_sur_board(idx);
+    switch (plt)
+    {
+        case N:
+            if(d == EAST)
+                return idx+1;
+            if(d == SOUTH)
+                return idx+WIDTH;
+            if(d == SEAST)
+                return idx+WIDTH+1;
+            if(d == SWEST)
+                return idx+WIDTH-1;
+            if(d == WEST)
+                return idx-1;
+            else    
+                return NO_DIR;
+            break;
+
+        case W:
+            if(d == EAST)
+                return idx+1;
+            if(d == SOUTH)
+                return idx+WIDTH;
+            if(d == SEAST)
+                return idx+WIDTH+1;
+            if(d == NORTH)
+                return idx-WIDTH;
+            if(d == NEAST)
+                return idx-WIDTH+1;
+            else    
+                return NO_DIR;
+            break;
+        case E:
+            if(d == WEST)
+                return idx-1;
+            if(d == SOUTH)
+                return idx+WIDTH;
+            if(d == SWEST)
+                return idx+WIDTH-1;
+            if(d == NORTH)
+                return idx-WIDTH;
+            if(d == NWEST)
+                return idx-WIDTH-1;
+            else    
+                return NO_DIR;
+            break;
+        case S:
+            if(d == EAST)
+                return idx+1;
+            if(d == WEST)
+                return idx-1;
+            if(d == NWEST)
+                return idx-WIDTH-1;
+            if(d == NORTH)
+                return idx-WIDTH;
+            if(d == NEAST)
+                return idx-WIDTH+1;
+            else    
+                return NO_DIR;
+            break;
+        case NW:
+            if(d == EAST)
+                return idx+1;
+            if(d == SOUTH)
+                return idx+WIDTH;
+            if(d == SEAST)
+                return idx+WIDTH+1;
+            else    
+                return NO_DIR;
+            break;
+        case NE:
+            if(d == WEST)
+                return idx-1;
+            if(d == SOUTH)
+                return idx+WIDTH;
+            if(d == SWEST)
+                return idx+WIDTH-1;
+            else    
+                return NO_DIR;
+            break;
+        case SW:
+            if(d == EAST)
+                return idx+1;
+            if(d == NORTH)
+                return idx-WIDTH;
+            if(d == NEAST)
+                return idx-WIDTH+1;
+            else    
+                return NO_DIR;
+            break;
+        case SE:
+            if(d == WEST)
+                return idx-1;
+            if(d == NORTH)
+                return idx-WIDTH;
+            if(d == NWEST)
+                return idx-WIDTH-1;
+            else    
+                return NO_DIR;
+            break;
+        case MID:
+            if(d == WEST)
+                return idx-1;
+            if(d == NORTH)
+                return idx-WIDTH;
+            if(d == NWEST)
+                return idx-WIDTH-1;
+            if(d == EAST)
+                return idx+1;
+            if(d == NEAST)
+                return idx-WIDTH+1;
+            else    
+                return NO_DIR;
+            break;
+
+        default:
+            break;
+    }
     return UINT_MAX ;
 }
 
