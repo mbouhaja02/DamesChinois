@@ -31,7 +31,7 @@ enum place_board_t place_sur_board(unsigned int idx){
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx, enum dir_t d){
     int j = 0;
-    printf("# \n");
+    
     while (j < WORLD_SIZE){
         if(neighbors[idx].n[j].i == UINT_MAX){
             neighbors[idx].n[j].i = get_neighbor(idx, d);
@@ -114,13 +114,16 @@ void init_simple_board(){
             add_neighbor(i, SOUTH);
             add_neighbor(i, EAST);
             
-            
+          
         
         }
+        printf("# \n"); 
     }
     
+    printf("# \n");
 }
 /*L'initialisation de la board lorsque le seed!=0 en prend en considération les mouvements diagonales*/
+/*
 void init_diagonal_board(){
     for(int i = 0; i < WORLD_SIZE; i++){
         for(int j = 0; j < MAX_NEIGHBORS+1; j++){
@@ -200,6 +203,7 @@ void init_diagonal_board(){
     }
 
 }
+*/
 
 /** Initializes the relation between the neighbors, based on an
     integer `seed`. `seed` must be less than MAX_RELATIONS.
