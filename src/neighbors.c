@@ -49,65 +49,41 @@ void add_neighbor(unsigned int idx, enum dir_t d){
 /*L'initialisation simple de la board lorsque le seed = 0 donc on distingue 9 cas possible*/
 void init_diagonal_board(){
 
+    init_simple_board();
+
     for(unsigned int i = 0; i < WORLD_SIZE; i++){
         enum place_board_t plt = place_sur_board(i);
         switch (plt){
-
-        
             case N:
-                add_neighbor(i, EAST);
-                add_neighbor(i, WEST);
-                add_neighbor(i, SOUTH);
                 add_neighbor(i, SEAST);
                 add_neighbor(i, SWEST);
                 break;
 
             case W:
-                add_neighbor(i, EAST);
-                add_neighbor(i, NORTH);
-                add_neighbor(i, SOUTH);
                 add_neighbor(i, NEAST);
                 add_neighbor(i, SEAST);
                 break;
             case E:
-                add_neighbor(i, WEST);
-                add_neighbor(i, NORTH);
-                add_neighbor(i, SOUTH);
                 add_neighbor(i, NWEST);
                 add_neighbor(i, SWEST);
                 break;
             case S:
-                add_neighbor(i, NORTH);
-                add_neighbor(i, EAST);
-                add_neighbor(i, SOUTH);
                 add_neighbor(i, NEAST);
                 add_neighbor(i, SEAST);
                 break;
             case NW:
-                add_neighbor(i, EAST);
-                add_neighbor(i, SOUTH);
                 add_neighbor(i, SEAST);
                 break;
             case NE:
-                add_neighbor(i, WEST);
-                add_neighbor(i, SOUTH);
                 add_neighbor(i, SWEST);
                 break;
             case SW:
-                add_neighbor(i, EAST);
-                add_neighbor(i, NORTH);
                 add_neighbor(i, NEAST);
                 break;
             case SE:
-                add_neighbor(i, NORTH);
-                add_neighbor(i, WEST);
                 add_neighbor(i, NWEST);
                 break;
             case MID:
-                add_neighbor(i, WEST);
-                add_neighbor(i, NORTH);
-                add_neighbor(i, SOUTH);
-                add_neighbor(i, EAST);
                 add_neighbor(i, NWEST);
                 add_neighbor(i, SWEST);
                 add_neighbor(i, NEAST);
