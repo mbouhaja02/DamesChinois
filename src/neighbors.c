@@ -7,6 +7,31 @@
 
 struct neighbors_t neighbors[WORLD_SIZE];
 
+enum place_board_t place_sur_board(unsigned int idx){
+    enum place_board_t plt;
+    if (idx == 0 )
+        return NW;
+    if (idx == 9)
+        return NE;
+    if (idx == 90)
+        return SW;
+    if (idx == 99)
+        return SE;
+    if (idx % 10 == 0)
+        return W;
+    if (idx%10 == 9)
+        return E;
+    if ( idx < 9 && idx >0)
+        return N;
+    if (idx < 99 && idx > 90)
+        return S;
+    else
+        return MID;
+
+
+
+    return plt;
+}
 
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx, enum dir_t d){
@@ -216,6 +241,5 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
 /** Returns the list of the neighbors of the place `idx`, terminated
     by UINT_MAX.  */
 struct neighbors_t get_neighbors(unsigned int idx) {   
-    
     return neighbors[idx];
 }
