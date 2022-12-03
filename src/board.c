@@ -65,7 +65,7 @@ void draw_polygone(struct wolrd_t* w){
         printf("\t  %c", h);
     }
 
-    printf("\n \n");
+    printf("\n kjqbhbkjqdbjk \n");
 
 }
 
