@@ -17,7 +17,7 @@ struct ensemble{
 
 void positions_init(struct ensemble* pi);
 
-/*On ajoute une positions place à un ensemble p*/
+/* On ajoute une positions place à un ensemble p */ 
 void ajout_position(struct ensemble* p , unsigned int place );
 
 void black_list(struct ensemble* pw, struct world_t* w);

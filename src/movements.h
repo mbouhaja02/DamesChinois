@@ -23,11 +23,11 @@ void saut_simple(struct world_t* w , unsigned int idx , struct ensemble* ss );
 void saut_multiple(struct world_t* w , unsigned int idx , struct ensemble* sm );
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
-struct ensemble* saut_semi_diagonal(struct world_t* w, unsigned int idx);
+struct ensemble saut_semi_diagonal(struct world_t* w, unsigned int idx);
 
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
-struct ensemble* translation_cardinal(struct world_t* w, unsigned int idx);
+struct ensemble translation_cardinal(struct world_t* w, unsigned int idx);
 
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
 struct ensemble* mvts_disponibles (struct world_t* w, unsigned int idx, struct ensemble* md );

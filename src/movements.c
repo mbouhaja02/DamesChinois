@@ -64,7 +64,31 @@ struct ensemble* mvts_disponibles (struct world_t* w, unsigned int idx, struct e
     return md;
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
-struct ensemble* translation_cardinal(struct world_t* w, unsigned int idx);
+struct ensemble translation_cardinal(struct world_t* w, unsigned int idx){
+    struct ensemble ens;
+    positions_init(&ens);
+    enum dir_t tab_dir[4] = {EAST, WEST, NORTH, SOUTH};
+    for(int i =0; i < 4; i++){
+        unsigned int idx2 = get_neighbor(idx, tab_dir[i]);
+        while(world_get_sort(w, idx2) == 0){
+            ajout_position(&ens, idx2);
+            idx2 = get_neighbor(idx2, tab_dir[i]);
+        }
+    }
+    return ens;
+}
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
-struct ensemble* saut_semi_diagonal(struct world_t* w, unsigned int idx);
+struct ensemble saut_semi_diagonal(struct world_t* w, unsigned int idx){
+    struct ensemble ens;
+    positions_init(&ens);
+    enum dir_t tab_dir[4] = {NEAST, NWEST, SEAST, SWEST};
+    for(int i =0; i < 4; i++){
+        unsigned int idx2 = get_neighbor(idx, tab_dir[i]);
+        while(world_get_sort(w, idx2) == 0){
+            ajout_position(&ens, idx2);
+            idx2 = get_neighbor(idx2, tab_dir[i]);
+        }
+    }
+    return ens;
+}
