@@ -37,14 +37,20 @@ enum place_board_t {
     SE  = 8,
     MID = 9,
 };
+
+
 //Pour determiner la position d'un pawn sur la board
 enum place_board_t place_sur_board(unsigned int idx);
 
+
+//
 void add_neighbor(unsigned int idx, enum dir_t d);
 
+
+//
 void init_simple_board();
 
-
+//
 void init_diagonal_board();
 
 

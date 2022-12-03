@@ -15,7 +15,7 @@
 
 struct world_t* debut(struct world_t* w){
 
-    for(int i =0 ; i<10; i++){
+    for(int i =0 ; i<HEIGHT; i++){
         int nbr = HEIGHT*i;
         int nbr2 = HEIGHT*i + WIDTH-1;
         world_set_sort( w, nbr, 1);
@@ -35,29 +35,39 @@ void draw_world(struct world_t* w){
 
     printf("\n \n");
 
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < HEIGHT; i++){
         printf("0%d\t ", i);
-        for(int j = 0; j < 10; j++){
+        for(int j = 0; j < WIDTH; j++){
             
             int nbr = i * HEIGHT + j;
             if (world_get_sort( w, nbr) == 0){
-                printf(" .\t");
+                printf("  . \t");
             }
 
             if (world_get_sort( w, nbr) == 1 && world_get(w, nbr) == 1){
-               printf(" B\t");
+               printf(" |B|\t");
             }
                 
             if (world_get(w, nbr) == 2 && world_get(w, nbr) == 2){
-                    printf(" W\t");
+                    printf(" |W|\t");
                 }
                 
         }
         printf("\n");
             
     }
+
+    printf("\n \n");
 }
 
+void draw_polygone(struct wolrd_t* w){
+    for (int h = 'A'; h <'A'+WIDTH; h++){
+        printf("\t  %c", h);
+    }
+
+    printf("\n \n");
+
+}
 
 
 
