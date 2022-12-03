@@ -59,62 +59,61 @@ void init_simple_board(){
         // ajouter les relations communes à toutes les cases à neighbors[i]
 
     for(int i = 0; i < WORLD_SIZE; i++){
-        for(int j = 0; j < MAX_NEIGHBORS+1; j++){
             
             
-            switch(i)   //lorsque le pawn est sur les corner
-            {
-                case 0:
-                    add_neighbor(i, EAST);
-                    add_neighbor(i, SOUTH);
-                    break;
-                case 9:
-                    add_neighbor(i, WEST);
-                    add_neighbor(i, SOUTH);
-                    break;
-                case 99:
+        switch(i)   //lorsque le pawn est sur les corner
+        {
+            case 0:
+                add_neighbor(i, EAST);
+                add_neighbor(i, SOUTH);
+                break;
+            case 9:
+                add_neighbor(i, WEST);
+                add_neighbor(i, SOUTH);
+                break;
+            case 99:
                     add_neighbor(i, NORTH);
                     add_neighbor(i, WEST);
                     break;
-                case 90:
-                    add_neighbor(i, EAST);
-                    add_neighbor(i, NORTH);
-                    break;
+            case 90:
+                add_neighbor(i, EAST);
+                add_neighbor(i, NORTH);
+                break;
                 
+        }
+        /*Quand le pawn est au dessus*/
+        if (i < 9 && i > 0){
+            add_neighbor(i, EAST);
+            add_neighbor(i, WEST);
+            add_neighbor(i, SOUTH);
             }
-            /*Quand le pawn est au dessus*/
-            if (i < 9 && i > 0){
-                add_neighbor(i, EAST);
-                add_neighbor(i, WEST);
-                add_neighbor(i, SOUTH);
-            }
-            /*Quand le pawn est au dessous*/
-            if (i > 90 && i < 99){
-                add_neighbor(i, NORTH);
-                add_neighbor(i, EAST);
-                add_neighbor(i, SOUTH);
-            }
+        /*Quand le pawn est au dessous*/
+        if (i > 90 && i < 99){
+            add_neighbor(i, NORTH);
+            add_neighbor(i, EAST);
+            add_neighbor(i, SOUTH);
+        }
 
-            int d = i%10;
-            /*le pawn est à gauche*/
-            if (d == 0){
-                add_neighbor(i, EAST);
-                add_neighbor(i, NORTH);
-                add_neighbor(i, SOUTH);
-            }
-            /*le pawn est à droite*/
-            if (d == 9){
-                add_neighbor(i, WEST);
-                add_neighbor(i, NORTH);
-                add_neighbor(i, SOUTH);
-            }
-            /*lorsque le pawn est à l'interieure du board*/
-            else{
-                add_neighbor(i, WEST);
-                add_neighbor(i, NORTH);
-                add_neighbor(i, SOUTH);
-                add_neighbor(i, EAST);
-            }
+        int d = i%10;
+        /*le pawn est à gauche*/
+        if (d == 0){
+            add_neighbor(i, EAST);
+            add_neighbor(i, NORTH);
+            add_neighbor(i, SOUTH);
+        }
+        /*le pawn est à droite*/
+        if (d == 9){
+            add_neighbor(i, WEST);
+            add_neighbor(i, NORTH);
+            add_neighbor(i, SOUTH);
+        }
+        /*lorsque le pawn est à l'interieure du board*/
+        else{
+            add_neighbor(i, WEST);
+            add_neighbor(i, NORTH);
+            add_neighbor(i, SOUTH);
+            add_neighbor(i, EAST);
+            
             
         
         }
@@ -221,10 +220,6 @@ void init_neighbors(unsigned int seed){
     
     if (seed == 0) {
         init_simple_board();// on considère que les mouvements simples
-    }
-
-    else {
-        init_diagonal_board();// on considère les mouvements diagonales
     }
 }
 
@@ -349,7 +344,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
         default:
             break;
     }
-    return UINT_MAX ;
+    return -1;
 }
 
 /** Returns the list of the neighbors of the place `idx`, terminated
