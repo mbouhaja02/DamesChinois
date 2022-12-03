@@ -91,7 +91,6 @@ void init_diagonal_board(){
                 break;
 
             default:
-                printf("ERROR \n");
                 break;
         }
         
@@ -169,7 +168,6 @@ void init_simple_board(){
                 break;
 
             default:
-                printf("ERROR \n");
                 break;
         }
         
@@ -221,8 +219,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
                 return idx+WIDTH-1;
             if(d == WEST)
                 return idx-1;
-            else    
-                return NO_DIR;
+            
             break;
 
         case W:
@@ -236,8 +233,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
                 return idx-WIDTH;
             if(d == NEAST)
                 return idx-WIDTH+1;
-            else    
-                return NO_DIR;
+            
             break;
         case E:
             if(d == WEST)
@@ -250,8 +246,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
                 return idx-WIDTH;
             if(d == NWEST)
                 return idx-WIDTH-1;
-            else    
-                return NO_DIR;
+           
             break;
         case S:
             if(d == EAST)
@@ -264,8 +259,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
                 return idx-WIDTH;
             if(d == NEAST)
                 return idx-WIDTH+1;
-            else    
-                return NO_DIR;
+         
             break;
         case NW:
             if(d == EAST)
@@ -274,8 +268,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
                 return idx+WIDTH;
             if(d == SEAST)
                 return idx+WIDTH+1;
-            else    
-                return NO_DIR;
+
             break;
         case NE:
             if(d == WEST)
@@ -284,8 +277,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
                 return idx+WIDTH;
             if(d == SWEST)
                 return idx+WIDTH-1;
-            else    
-                return NO_DIR;
+
             break;
         case SW:
             if(d == EAST)
@@ -294,8 +286,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
                 return idx-WIDTH;
             if(d == NEAST)
                 return idx-WIDTH+1;
-            else    
-                return NO_DIR;
+       
             break;
         case SE:
             if(d == WEST)
@@ -304,8 +295,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
                 return idx-WIDTH;
             if(d == NWEST)
                 return idx-WIDTH-1;
-            else    
-                return NO_DIR;
+     
             break;
         case MID:
             if(d == WEST)
@@ -318,14 +308,13 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
                 return idx+1;
             if(d == NEAST)
                 return idx-WIDTH+1;
-            else    
-                return NO_DIR;
+  
             break;
 
         default:
+            return UINT_MAX;
             break;
     }
-    return -1;
 }
 
 /** Returns the list of the neighbors of the place `idx`, terminated
