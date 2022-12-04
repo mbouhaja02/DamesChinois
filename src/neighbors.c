@@ -168,6 +168,7 @@ void init_simple_board(){
                 break;
 
             default:
+                printf("EROOR NO_DIR");
                 break;
         }
         
@@ -312,9 +313,9 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
             break;
 
         default:
-            return UINT_MAX;
             break;
     }
+    return UINT_MAX;
 }
 
 /** Returns the list of the neighbors of the place `idx`, terminated

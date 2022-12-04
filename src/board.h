@@ -21,7 +21,7 @@ struct world_t* debut(struct world_t* w);
 //Une fonction qui trace le monde w
 void draw_world(struct world_t* w);
 
-void draw_polygone(struct wolrd_t* w);
+
 
 
 

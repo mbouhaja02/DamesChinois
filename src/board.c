@@ -60,14 +60,6 @@ void draw_world(struct world_t* w){
     printf("\n \n");
 }
 
-void draw_polygone(struct wolrd_t* w){
-    for (int h = 'A'; h <'A'+WIDTH; h++){
-        printf("\t  %c", h);
-    }
-
-    printf("\n kjqbhbkjqdbjk \n");
-
-}
 
 
 

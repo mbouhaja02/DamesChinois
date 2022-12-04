@@ -27,24 +27,21 @@ int main() {
   struct world_t* w = world_init();
   enum color_t current_player = get_random_player();
   init_neighbors(0);
-  unsigned int place = 5; 
-  unsigned int move = get_neighbor(place, EAST);
+  unsigned int place;
+  unsigned int move;
 
-  printf("%u \n"); 
 
   draw_world(w);
   debut(w);
   draw_world(w);
-  
 
-
-  /*
   for ( int i = 0 ; i < 2*MAX_TURNS ; i++){
     place = choose_random_piece_belonging_to(w , current_player);
     move = choose_random_move_for_piece(w , place);
     move_piece(w , move , place , current_player);
     current_player = next_player(current_player);
-  }*/
+    draw_world(w);
+  }
   
   
   return 0;
