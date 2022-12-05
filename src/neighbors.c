@@ -168,7 +168,6 @@ void init_simple_board(){
                 break;
 
             default:
-                printf("EROOR NO_DIR");
                 break;
         }
         
