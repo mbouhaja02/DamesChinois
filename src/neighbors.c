@@ -312,9 +312,9 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
             break;
 
         default:
-            break;
+            return UINT_MAX;
     }
-    return UINT_MAX;
+   return UINT_MAX;
 }
 
 /** Returns the list of the neighbors of the place `idx`, terminated

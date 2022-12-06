@@ -29,12 +29,10 @@ int main() {
   init_neighbors(0);
   unsigned int place;
   unsigned int move;
-
-
-  draw_world(w);
   debut(w);
-  draw_world(w);
-
+  
+  
+  
   for ( int i = 0 ; i < 2*MAX_TURNS ; i++){
     place = choose_random_piece_belonging_to(w , current_player);
     move = choose_random_move_for_piece(w , place);
