@@ -20,6 +20,6 @@ test_project: tests.o $(OBJS)
 	gcc $(CFLAGS) $^  -o test_project
 
 test : test_project
-	./$^
+	./test_project
 clean:
 	rm -f project test_project *.o *~
