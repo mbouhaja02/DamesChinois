@@ -11,8 +11,8 @@ static struct world_t w;
     Always returns the same pointer */
 struct world_t* world_init() {
     for ( int i = 0 ; i < WORLD_SIZE ; i++){
-        w -> positions[i][0]= 0;
-        w -> positions[i][1]= 0;
+        w.positions[i][0]= NO_COLOR;
+        w.positions[i][1]= NO_SORT;
         
     }
     // mettre tous les éléments du tableau à NO_COLOR, NO_SORT
