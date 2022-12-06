@@ -13,13 +13,14 @@ all: test_project
 %.o: tst/%.c
 	gcc -c $(CFLAGS) $<
 
-project: project.o $(OBJS)
-	cc $(CFLAGS) project.o -o project
+project: tests.o $(OBJS)
+	gcc $(CFLAGS) tests.o -o project
 
 test_project: tests.o $(OBJS)
 	gcc $(CFLAGS) $^  -o test_project
 
 test : test_project
 	./test_project
+
 clean:
 	rm -f project test_project *.o *~
