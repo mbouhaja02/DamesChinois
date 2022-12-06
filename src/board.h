@@ -1,7 +1,7 @@
-#ifdef __BOARD_H__
+#ifndef __BOARD_H__
 #define __BOARD_H__
 
-#ifdef NBR_PAWN
+#ifndef NBR_PAWN
     #define NBR_PAWN 12
 #endif
 
@@ -20,9 +20,6 @@ struct world_t* debut(struct world_t* w);
 
 //Une fonction qui trace le monde w
 void draw_world(struct world_t* w);
-
-
-
 
 
 #endif // __BOARD_H__

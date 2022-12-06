@@ -10,19 +10,19 @@ struct neighbors_t neighbors[WORLD_SIZE];
 enum place_board_t place_sur_board(unsigned int idx){
     if (idx == 0 )
         return NW;
-    if (idx == 9)
+    if (idx == WIDTH-1)
         return NE;
-    if (idx == 90)
+    if (idx == WIDTH*(HEIGHT-1))
         return SW;
-    if (idx == 99)
+    if (idx == WIDTH*HEIGHT - 1)
         return SE;
-    if (idx % 10 == 0)
+    if (idx % HEIGHT == 0)
         return W;
-    if (idx%10 == 9)
+    if (idx%HEIGHT == WIDTH-1)
         return E;
-    if ( idx < 9 && idx >0)
+    if ( idx < WIDTH-1 && idx >0)
         return N;
-    if (idx < 99 && idx > 90)
+    if (idx < WIDTH*HEIGHT - 1 && idx > WIDTH*(HEIGHT-1))
         return S;
     else
         return MID;

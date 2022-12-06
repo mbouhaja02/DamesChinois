@@ -4,15 +4,13 @@
 #include "geometry.h"
 
 
-struct world_t{
-    int positions[WORLD_SIZE][2];
-};
 
 static struct world_t w;
 
 /** Initializes a world (NO_COLOR, NO_SORT everywhere)
     Always returns the same pointer */
 struct world_t* world_init() {
+    
     // mettre tous les éléments du tableau à NO_COLOR, NO_SORT
     return &w;
 }
