@@ -7,26 +7,6 @@
 
 struct neighbors_t neighbors[WORLD_SIZE];
 
-enum place_board_t place_sur_board(unsigned int idx){
-    if (idx == 0 )
-        return NW;
-    if (idx == WIDTH-1)
-        return NE;
-    if (idx == WIDTH*(HEIGHT-1))
-        return SW;
-    if (idx == WIDTH*HEIGHT - 1)
-        return SE;
-    if (idx % HEIGHT == 0)
-        return W;
-    if (idx%HEIGHT == WIDTH-1)
-        return E;
-    if ( idx < WIDTH-1 && idx >0)
-        return N;
-    if (idx < WIDTH*HEIGHT - 1 && idx > WIDTH*(HEIGHT-1))
-        return S;
-    else
-        return MID;
-}
 
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
@@ -51,50 +31,7 @@ void init_diagonal_board(){
 
     init_simple_board();
 
-    for(unsigned int i = 0; i < WORLD_SIZE; i++){
-        enum place_board_t plt = place_sur_board(i);
-        switch (plt){
-            case N:
-                add_neighbor(i, SEAST);
-                add_neighbor(i, SWEST);
-                break;
-
-            case W:
-                add_neighbor(i, NEAST);
-                add_neighbor(i, SEAST);
-                break;
-            case E:
-                add_neighbor(i, NWEST);
-                add_neighbor(i, SWEST);
-                break;
-            case S:
-                add_neighbor(i, NEAST);
-                add_neighbor(i, SEAST);
-                break;
-            case NW:
-                add_neighbor(i, SEAST);
-                break;
-            case NE:
-                add_neighbor(i, SWEST);
-                break;
-            case SW:
-                add_neighbor(i, NEAST);
-                break;
-            case SE:
-                add_neighbor(i, NWEST);
-                break;
-            case MID:
-                add_neighbor(i, NWEST);
-                add_neighbor(i, SWEST);
-                add_neighbor(i, NEAST);
-                add_neighbor(i, SEAST);
-                break;
-
-            default:
-                break;
-        }
-        
-    }
+   
     
 }
 
@@ -109,69 +46,7 @@ void init_simple_board(){
 
         // ajouter les relations communes à toutes les cases à neighbors[i]
 
-    for(unsigned int i = 0; i < WORLD_SIZE; i++){
-        enum place_board_t plt = place_sur_board(i);
-        switch (plt){
-
-        
-            case N:
-                add_neighbor(i, EAST);
-                add_neighbor(i, WEST);
-                add_neighbor(i, SOUTH);
-       
-                break;
-
-            case W:
-                add_neighbor(i, EAST);
-                add_neighbor(i, NORTH);
-                add_neighbor(i, SOUTH);
-         
-                break;
-            case E:
-                add_neighbor(i, WEST);
-                add_neighbor(i, NORTH);
-                add_neighbor(i, SOUTH);
-               
-                break;
-            case S:
-                add_neighbor(i, NORTH);
-                add_neighbor(i, EAST);
-                add_neighbor(i, SOUTH);
-                
-                break;
-            case NW:
-                add_neighbor(i, EAST);
-                add_neighbor(i, SOUTH);
-                
-                break;
-            case NE:
-                add_neighbor(i, WEST);
-                add_neighbor(i, SOUTH);
-                
-                break;
-            case SW:
-                add_neighbor(i, EAST);
-                add_neighbor(i, NORTH);
-                
-                break;
-            case SE:
-                add_neighbor(i, NORTH);
-                add_neighbor(i, WEST);
-
-                break;
-            case MID:
-                add_neighbor(i, WEST);
-                add_neighbor(i, NORTH);
-                add_neighbor(i, SOUTH);
-                add_neighbor(i, EAST);
-                
-                break;
-
-            default:
-                printf("ERROR"); 
-        }
-        
-    }
+    
 }
 
 
@@ -200,115 +75,7 @@ void init_neighbors(unsigned int seed){
 /** Returns the neighbor of the place `idx`, in direction `d`, and
     UINT_MAX if there is no such neighbor (or any other kind of error) */
 unsigned int get_neighbor(unsigned int idx, enum dir_t d){
-    enum place_board_t plt = place_sur_board(idx);
-    switch (plt)
-    {
-        case N:
-            if(d == EAST)
-                return idx+1;
-            if(d == SOUTH)
-                return idx+WIDTH;
-            if(d == SEAST)
-                return idx+WIDTH+1;
-            if(d == SWEST)
-                return idx+WIDTH-1;
-            if(d == WEST)
-                return idx-1;
-            
-            break;
-
-        case W:
-            if(d == EAST)
-                return idx+1;
-            if(d == SOUTH)
-                return idx+WIDTH;
-            if(d == SEAST)
-                return idx+WIDTH+1;
-            if(d == NORTH)
-                return idx-WIDTH;
-            if(d == NEAST)
-                return idx-WIDTH+1;
-            
-            break;
-        case E:
-            if(d == WEST)
-                return idx-1;
-            if(d == SOUTH)
-                return idx+WIDTH;
-            if(d == SWEST)
-                return idx+WIDTH-1;
-            if(d == NORTH)
-                return idx-WIDTH;
-            if(d == NWEST)
-                return idx-WIDTH-1;
-           
-            break;
-        case S:
-            if(d == EAST)
-                return idx+1;
-            if(d == WEST)
-                return idx-1;
-            if(d == NWEST)
-                return idx-WIDTH-1;
-            if(d == NORTH)
-                return idx-WIDTH;
-            if(d == NEAST)
-                return idx-WIDTH+1;
-         
-            break;
-        case NW:
-            if(d == EAST)
-                return idx+1;
-            if(d == SOUTH)
-                return idx+WIDTH;
-            if(d == SEAST)
-                return idx+WIDTH+1;
-
-            break;
-        case NE:
-            if(d == WEST)
-                return idx-1;
-            if(d == SOUTH)
-                return idx+WIDTH;
-            if(d == SWEST)
-                return idx+WIDTH-1;
-
-            break;
-        case SW:
-            if(d == EAST)
-                return idx+1;
-            if(d == NORTH)
-                return idx-WIDTH;
-            if(d == NEAST)
-                return idx-WIDTH+1;
-       
-            break;
-        case SE:
-            if(d == WEST)
-                return idx-1;
-            if(d == NORTH)
-                return idx-WIDTH;
-            if(d == NWEST)
-                return idx-WIDTH-1;
-     
-            break;
-        case MID:
-            if(d == WEST)
-                return idx-1;
-            if(d == NORTH)
-                return idx-WIDTH;
-            if(d == NWEST)
-                return idx-WIDTH-1;
-            if(d == EAST)
-                return idx+1;
-            if(d == NEAST)
-                return idx-WIDTH+1;
-  
-            break;
-
-        default:
-            return UINT_MAX;
-    }
+    
     
 }
 
