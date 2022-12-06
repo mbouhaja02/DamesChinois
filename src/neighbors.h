@@ -25,20 +25,6 @@ struct neighbors_t {
   struct vector_t n[MAX_NEIGHBORS+1];
 };
 
-//les différent positions sur la Board
-enum place_board_t { 
-    N   = 1,
-    W   = 2,
-    S   = 3,
-    E   = 4,
-    NE  = 5,
-    NW  = 6,
-    SW  = 7,
-    SE  = 8,
-    MID = 9,
-};
-
-
 //Pour determiner la position d'un pawn sur la board
 enum place_board_t place_sur_board(unsigned int idx);
 
