@@ -14,7 +14,8 @@ all: test_project
 	gcc -c $(CFLAGS) $<
 
 project: tests.o $(OBJS)
-	gcc $(CFLAGS) tests.o -o project
+	gcc $(CFLAGS) $^ -o project
+	./project
 
 test_project: tests.o $(OBJS)
 	gcc $(CFLAGS) $^  -o test_project
