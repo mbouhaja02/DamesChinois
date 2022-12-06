@@ -15,12 +15,13 @@
 /* Fonction qui retourne l'ensemble des déplacements simple possible */
 void deplacements_simple( struct world_t* w , unsigned int idx , struct ensemble* ds ){
     unsigned int gn;
-    //enum sort_t b;
+    enum sort_t b;
     positions_init(ds);
     for (enum dir_t j = SEAST; j < NWEST ;j++){
         gn = get_neighbor(idx , j);
         //printf("%u\n", gn);
-        //b = world_get_sort(w, gn);
+        b = world_get_sort(w, gn);
+        printf("%d",b);
         if ( world_get_sort(w, gn) == NO_SORT){
             printf("#\n");
             ajout_position( ds , gn);
