@@ -25,12 +25,9 @@ struct neighbors_t {
   struct vector_t n[MAX_NEIGHBORS+1];
 };
 
-//Pour determiner la position d'un pawn sur la board
-enum place_board_t place_sur_board(unsigned int idx);
-
 
 //
-void add_neighbor(unsigned int idx, enum dir_t d);
+void add_neighbor(unsigned int idx_1, unsigned int idx_2 ,enum dir_t d);
 
 
 //

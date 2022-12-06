@@ -54,8 +54,6 @@ unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p){
     struct ensemble sm;
     positions_init(&sm);
     struct ensemble* ens = mvts_disponibles(w, p, &sm);
-    printf("4\n");
-
     unsigned int r = rand();
     unsigned int module = ens->taille;
     r = r % module;
@@ -64,16 +62,11 @@ unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p){
     return m;
 }
 
-/*Déja tester*/
-/*la fonction fait des modifications au niveau du monde et il retourne le nouveau monde*/
-struct world_t* move_piece(struct world_t* w,unsigned int m, unsigned int p , enum color_t joueur){
-    
-    int idx = get_neighbor(p, m);
-    world_set_sort(w, idx, 1);
-    world_set(w, idx, joueur);
-    world_set_sort(w, p, 0);
-    world_set(w, p, 0);
 
-    return w; 
+void move_piece(struct world_t* w, unsigned int dst, unsigned int src){
+    world_set_sort(w, dst, world_get_sort(w, src));
+    world_set(w, dst, world_get(w, src));
+    world_set_sort(w, src, NO_SORT);
+    world_set(w, src, NO_COLOR);
 }
 

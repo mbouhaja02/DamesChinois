@@ -19,24 +19,19 @@ void deplacements_simple( struct world_t* w , unsigned int idx , struct ensemble
     positions_init(ds);
     for (enum dir_t j = SEAST; j < NWEST ;j++){
         gn = get_neighbor(idx , j);
-        //printf("%u\n", gn);
         b = world_get_sort(w, gn);
-        printf("%d",b);
-        if ( world_get_sort(w, gn) == NO_SORT){
-            printf("#\n");
+        if ( b == NO_SORT){
             ajout_position( ds , gn);
-            
         }
     }
-    printf("#\n");
 }
 /* Fonction qui retourne l'ensemble des sauts simples */
 void saut_simple(struct world_t* w , unsigned int idx , struct ensemble* ss ){
-    unsigned int gn;
-    unsigned int gnn; 
+    unsigned int neighbor;
+    unsigned int neighbor_of_neighbor; 
     for (enum dir_t j = SEAST; j < NWEST ;j++){
-        gn = get_neighbor(idx,j);
-        gnn = get_neighbor(gn,j);
+        neighbor = get_neighbor(idx,j);
+        neighbor_of_neighbor = get_neighbor(gn,j);
         if ((world_get_sort(w , gn ) == 1) && (world_get_sort(w , gnn ) == 0)){
             ajout_position( ss , gnn);
         }

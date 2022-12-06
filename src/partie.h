@@ -20,6 +20,6 @@ unsigned int choose_random_piece_belonging_to(struct world_t* w , enum color_t c
 
 unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p);
 
-struct world_t* move_piece(struct world_t* w,unsigned int m, unsigned int p , enum color_t joueur);
+void move_piece(struct world_t* w, unsigned int dst, unsigned int src);
 
 #endif // __PARTIE_H__

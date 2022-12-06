@@ -11,13 +11,13 @@ struct neighbors_t neighbors[WORLD_SIZE];
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
     int j = 0;
-    
+
     while (j < WORLD_SIZE){
-        if(neighbors[idx].n[j].i == UINT_MAX){
-            neighbors[idx].n[j].i = get_neighbor(idx, d);
-            neighbors[idx].n[j].d = d;
-            neighbors[idx].n[j+1].i = UINT_MAX;
-            neighbors[idx].n[j+1].d = NO_DIR;
+        if(neighbors[idx_1].n[j].i == UINT_MAX){
+            neighbors[idx_1].n[j].i = idx_2;
+            neighbors[idx_1].n[j].d = d;
+            neighbors[idx_1].n[j+1].i = UINT_MAX;
+            neighbors[idx_1].n[j+1].d = NO_DIR;
 
             j = WORLD_SIZE;
         }
@@ -45,8 +45,16 @@ void init_simple_board(){
             // ajouter les relations à neighbors[i]...
 
         // ajouter les relations communes à toutes les cases à neighbors[i]
-
-    
+    for (int i = 0 ; i < WORLD_SIZE ; i++){
+        if (i >= WIDTH ) {
+            add_neighbor(i,get_neighbor(i,NORTH),NORTH);}
+        if ( i< WORLD_SIZE - WIDTH){
+            add_neighbor(i, get_neighbor(i, SOUTH),SOUTH);}
+        if (i%WIDTH != 0){
+            add_neighbor(i, get_neighbor(i, WEST),WEST);}
+        if (i%WIDTH != WIDTH - 1){
+            add_neighbor(i , get_neighbor(i, EAST),EAST);}
+    } 
 }
 
 
@@ -75,7 +83,36 @@ void init_neighbors(unsigned int seed){
 /** Returns the neighbor of the place `idx`, in direction `d`, and
     UINT_MAX if there is no such neighbor (or any other kind of error) */
 unsigned int get_neighbor(unsigned int idx, enum dir_t d){
-    
+    unsigned int i = idx;
+    switch (d)
+    {   
+        case 1 :
+            i++;
+            break;
+        case 2 : 
+            i=i-WIDTH+1;
+            break;
+        case 3 : 
+            i=i-WIDTH;
+            break;
+        case 4 : 
+            i=i-WIDTH-1;
+            break;
+        case -1 : 
+            i=i-1;
+            break;
+        case -2 : 
+            i=i-1+WIDTH;
+            break;
+        case -3: 
+            i=i+WIDTH;
+            break;
+        case -4 : 
+            i=i+1+WIDTH;
+            break;
+        default : ;
+    }
+    return i ;
     
 }
 
