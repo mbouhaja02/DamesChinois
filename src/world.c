@@ -10,7 +10,11 @@ static struct world_t w;
 /** Initializes a world (NO_COLOR, NO_SORT everywhere)
     Always returns the same pointer */
 struct world_t* world_init() {
-    
+    for ( int i = 0 ; i < WORLD_SIZE ; i++){
+        w -> positions[i][0]= 0;
+        w -> positions[i][1]= 0;
+        
+    }
     // mettre tous les éléments du tableau à NO_COLOR, NO_SORT
     return &w;
 }
@@ -28,6 +32,7 @@ void world_set(struct world_t* b, unsigned int idx, enum color_t c){
 
 /** Return the sort at a place */
 enum sort_t world_get_sort(const struct world_t* b, unsigned int idx){
+    //return b->positions[idx][1];
     enum sort_t a = b->positions[idx][1];
     return a;
 
