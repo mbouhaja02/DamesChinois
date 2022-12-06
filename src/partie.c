@@ -54,6 +54,8 @@ unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p){
     struct ensemble sm;
     positions_init(&sm);
     struct ensemble* ens = mvts_disponibles(w, p, &sm);
+    printf("4\n");
+
     unsigned int r = rand();
     unsigned int module = ens->taille;
     r = r % module;

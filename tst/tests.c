@@ -38,7 +38,9 @@ int main() {
   for ( int i = 0 ; i < 2*MAX_TURNS ; i++){
     place = choose_random_piece_belonging_to(w , current_player);
     move = choose_random_move_for_piece(w , place);
+    printf("3\n");
     move_piece(w , move , place , current_player);
+    printf("4\n");
     current_player = next_player(current_player);
     draw_world(w);
   }

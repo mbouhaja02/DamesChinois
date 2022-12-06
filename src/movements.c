@@ -13,15 +13,16 @@
 
 
 /* Fonction qui retourne l'ensemble des déplacements simple possible */
-void deplacements_simple(struct world_t* w , unsigned int idx , struct ensemble* ds ){
+void deplacements_simple( struct world_t* w , unsigned int idx , struct ensemble* ds ){
     unsigned int gn;
+    //enum sort_t b;
     positions_init(ds);
     for (enum dir_t j = SEAST; j < NWEST + 1 ;j++){
         gn = get_neighbor(idx , j);
-        printf("%u\n", gn);
-        enum sort_t b = world_get_sort(w, gn);
-
-        if ( b == NO_SORT){
+        //printf("%u\n", gn);
+        //b = world_get_sort(w, gn);
+        if ( world_get_sort(w, gn) == NO_SORT){
+            printf("#\n");
             ajout_position( ds , gn);
             
         }
@@ -57,7 +58,6 @@ void saut_multiple(struct world_t* w , unsigned int idx , struct ensemble* sm ){
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
 struct ensemble* mvts_disponibles (struct world_t* w, unsigned int idx, struct ensemble* md ) 
 {  
-    
     deplacements_simple( w , idx , md );
     saut_multiple( w , idx , md);
     
