@@ -18,6 +18,7 @@ void deplacements_simple( struct world_t* w , unsigned int idx , struct ensemble
     enum sort_t b;
     positions_init(ds);
     for (enum dir_t j = SEAST; j < NWEST ;j++){
+        printf("ds\n");
         gn = get_neighbor(idx , j);
         b = world_get_sort(w, gn);
         if ( b == NO_SORT){
@@ -29,11 +30,15 @@ void deplacements_simple( struct world_t* w , unsigned int idx , struct ensemble
 void saut_simple(struct world_t* w , unsigned int idx , struct ensemble* ss ){
     unsigned int neighbor;
     unsigned int neighbor_of_neighbor; 
+    printf("#\n");
+
     for (enum dir_t j = SEAST; j < NWEST ;j++){
+        printf("ss\n");
+
         neighbor = get_neighbor(idx,j);
-        neighbor_of_neighbor = get_neighbor(gn,j);
-        if ((world_get_sort(w , gn ) == 1) && (world_get_sort(w , gnn ) == 0)){
-            ajout_position( ss , gnn);
+        neighbor_of_neighbor = get_neighbor(neighbor,j);
+        if ((world_get_sort(w , neighbor_of_neighbor ) == 1) && (world_get_sort(w , neighbor_of_neighbor ) == 0)){
+            ajout_position( ss , neighbor_of_neighbor);
         }
     }
  
@@ -41,7 +46,11 @@ void saut_simple(struct world_t* w , unsigned int idx , struct ensemble* ss ){
 
 /* Fonction qui retourne l'ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) */
 void saut_multiple(struct world_t* w , unsigned int idx , struct ensemble* sm ){
+    printf("#\n");
+
     for (enum dir_t j = SEAST; j < NWEST ;j++){
+        printf("sm\n");
+
         while (place_visited ( sm, idx ) == 0){
             saut_simple(w,idx,sm);
             idx = get_neighbor(idx , j);
@@ -56,7 +65,7 @@ struct ensemble* mvts_disponibles (struct world_t* w, unsigned int idx, struct e
 {  
     deplacements_simple( w , idx , md );
     saut_multiple( w , idx , md);
-    
+
     return md;
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/

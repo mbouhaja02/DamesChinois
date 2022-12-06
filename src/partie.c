@@ -12,6 +12,7 @@
 
 
 
+
 /*cette fonction est deja tester*/
 /*Il retourne la couleur d'un joueur aléatoire*/
 enum color_t get_random_player(){
@@ -42,23 +43,34 @@ unsigned int choose_random_piece_belonging_to(struct world_t* w , enum color_t c
 
     int a = rand();
     a = a % HEIGHT;
-    if (current_player == 1)
-        return pb.positions[a];
+    if (current_player == 1){
+        printf("pb = %d\n " , pb.positions[a]);
+        return pb.positions[a];}
         
-    if (current_player == 2)
-        return pw.positions[a];
+    if (current_player == 2){
+        printf("pw = %d\n " , pw.positions[a]);
+        return pw.positions[a];}
     return 0;
 }
 
-unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p){
-    struct ensemble sm;
+unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p, enum color_t current_player){
+    struct ensemble sm ; 
+    unsigned int m ;
     positions_init(&sm);
+    if (current_player == 1)
+        black_list(&sm, w);
+    if (current_player == 2)
+        white_list(&sm, w);
+
     struct ensemble* ens = mvts_disponibles(w, p, &sm);
+    printf("#\n");
+
     unsigned int r = rand();
     unsigned int module = ens->taille;
-    r = r % module;
-    unsigned int m = ens->positions[r];
-    
+    r = r % module + 1 ;
+    printf("r = %d \n",r);
+    m = ens->positions[r];
+    printf("m = %d\n", m );
     return m;
 }
 

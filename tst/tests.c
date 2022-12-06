@@ -29,18 +29,22 @@ int main() {
   init_neighbors(0);
   unsigned int piece;
   unsigned int move;
+  srand(time(NULL));
 
 
   draw_world(w);
   debut(w);
-  draw_world(w);
-
   for ( int i = 0 ; i < 2*MAX_TURNS ; i++){
-    piece = choose_random_piece_belonging_to(w, current_player);
-    move = choose_random_move_for_piece(w, piece);
-    move_piece(w, move, piece);
-    current_player = next_player(current_player);
     draw_world(w);
+    piece = choose_random_piece_belonging_to(w, current_player);
+    printf("piece = %d \n" , piece );
+    move = choose_random_move_for_piece(w, piece , current_player );
+    printf("move = %d \n" , move);
+    move_piece(w, move, piece);
+    printf("mp\n");
+    current_player = next_player(current_player);
+    printf("cp\n");
+    
   }
   
   return 0;
