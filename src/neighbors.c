@@ -29,7 +29,7 @@ enum place_board_t place_sur_board(unsigned int idx){
 }
 
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
-void add_neighbor(unsigned int idx, enum dir_t d){
+void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
     int j = 0;
     
     while (j < WORLD_SIZE){
@@ -168,7 +168,7 @@ void init_simple_board(){
                 break;
 
             default:
-                break;
+                printf("ERROR"); 
         }
         
     }
@@ -187,11 +187,6 @@ void init_neighbors(unsigned int seed){
     for(int i =0; i < WORLD_SIZE; i++){
         neighbors[i].n[0].i = UINT_MAX;
         neighbors[i].n[0].d = NO_DIR;
-        for(int j = 1; j < MAX_NEIGHBORS+1; j++){
-            
-            neighbors[i].n[j].i = 0;
-            neighbors[i].n[j].d = 0;
-        }
     }
     
     if (seed == 0) {

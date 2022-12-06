@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../src/geometry.h"
-#include "../src/world.h"
-#include "../src/neighbors.h"
-#include "../src/ensemble.h"
-#include "../src/movements.h"
-#include "../src/board.h"
-#include "../src/victoire.h"
-#include "../src/partie.h"
+#include "geometry.h"
+#include "world.h"
+#include "neighbors.h"
+#include "ensemble.h"
+#include "movements.h"
+#include "board.h"
+#include "victoire.h"
+#include "partie.h"
 
 
 /*w = world_init();*/
@@ -44,7 +44,6 @@ int main() {
     current_player = next_player(current_player);
     draw_world(w);
   }
-  
   
   return 0;
 }
