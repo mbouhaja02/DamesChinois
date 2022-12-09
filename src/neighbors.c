@@ -112,7 +112,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
             break;
         default : ;
     }
-    return i ;
+    
     
 }
 
