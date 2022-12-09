@@ -32,10 +32,7 @@ void world_set(struct world_t* b, unsigned int idx, enum color_t c){
 
 /** Return the sort at a place */
 enum sort_t world_get_sort(const struct world_t* b, unsigned int idx){
-    //return b->positions[idx][1];
-    enum sort_t a = b->positions[idx][1];
-    return a;
-
+    return b->positions[idx][1];
 }
 
 /** Sets the sort at a place */

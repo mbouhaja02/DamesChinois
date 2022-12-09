@@ -63,6 +63,7 @@ void saut_multiple(struct world_t* w , unsigned int idx , struct ensemble* sm ){
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
 struct ensemble* mvts_disponibles (struct world_t* w, unsigned int idx, struct ensemble* md ) 
 {  
+    positions_init(md);
     deplacements_simple( w , idx , md );
     saut_multiple( w , idx , md);
 
