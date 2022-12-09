@@ -49,7 +49,7 @@ int main() {
       draw_world(w);
     }
   }
-  printf("Victoire de %d", current_player);
+  printf("Victoire de %d\n", current_player);
   return 0;
 }
 
