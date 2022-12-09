@@ -26,6 +26,7 @@ int main() {
 
   struct world_t* w = world_init();
   enum color_t current_player = get_random_player();
+  struct ensemble white_list_initial , black_list_initial;
   init_neighbors(0);
   unsigned int piece=0;
   unsigned int move=0;
@@ -33,10 +34,10 @@ int main() {
   draw_world(w);
   debut(w);
   draw_world(w);
+  white_list(&white_list_initial, w);
+  black_list(&black_list_initial, w);
   for ( unsigned int i = 0 ; i < 2*MAX_TURNS ; i++){
-    printf("#\n");
-    while (Victoire_Simple(w , piece , current_player, i)==0 && Victoire_complexe(*w , i, current_player)==0){
-      
+    while (Victoire_Simple(w , piece , current_player, i)==0 && Victoire_complexe(w , i, current_player, white_list_initial, black_list_initial)==0){
       piece = choose_random_piece_belonging_to(w, current_player);
       printf("piece = %d \n" , piece );
       move = choose_random_move_for_piece(w, piece , current_player );

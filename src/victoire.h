@@ -17,7 +17,7 @@
 
 int Victoire_Simple(struct world_t* w , unsigned int place , enum color_t joueur , unsigned int tours ) ;
 
-int Victoire_complexe(struct world_t* w , unsigned int tours , enum color_t joueur , struct world_t* wt);
+int Victoire_complexe(struct world_t* w , unsigned int tours , enum color_t joueur , struct ensemble wl , struct ensemble bl);
 
 
 #endif
