@@ -48,7 +48,7 @@ int main() {
       draw_world(w);    
     }
   }
-  printf("la vicoire et de %u", current_player);
+  printf("la victoire est de %u \n", current_player);
   return 0;
 
 }
