@@ -87,7 +87,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
     switch (d)
     {   
         case 1 :
-            i++;
+            i = i + 1;
             break;
         case 2 : 
             i=i-WIDTH+1;
