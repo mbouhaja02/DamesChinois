@@ -7,6 +7,7 @@
 
 static struct world_t w;
 
+
 /** Initializes a world (NO_COLOR, NO_SORT everywhere)
     Always returns the same pointer */
 struct world_t* world_init() {
@@ -21,8 +22,7 @@ struct world_t* world_init() {
 
 /** Return the color at a place */
 enum color_t world_get(const struct world_t* b, unsigned int idx){
-    enum color_t c = b->positions[idx][0];
-    return c;
+    return b->positions[idx][0];
 }
 
 /** Sets the color at a place */

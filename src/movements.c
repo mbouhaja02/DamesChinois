@@ -24,21 +24,16 @@ void deplacements_simple( struct world_t* w , unsigned int idx , struct ensemble
             ajout_position( ds , gn);
         }
     }
-    printf("ds\n");
 
 }
 /* Fonction qui retourne l'ensemble des sauts simples */
 void saut_simple(struct world_t* w , unsigned int idx , struct ensemble* ss ){
     unsigned int neighbor;
     unsigned int neighbor_of_neighbor; 
-    printf("#\n");
-
     for (enum dir_t j = SEAST; j < NWEST ;j++){
-        printf("ss\n");
-
         neighbor = get_neighbor(idx,j);
         neighbor_of_neighbor = get_neighbor(neighbor,j);
-        if ((world_get_sort(w , neighbor_of_neighbor ) == 1) && (world_get_sort(w , neighbor_of_neighbor ) == 0)){
+        if ((world_get_sort(w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(w , neighbor ) != NO_SORT)){
             ajout_position( ss , neighbor_of_neighbor);
         }
     }
@@ -47,10 +42,7 @@ void saut_simple(struct world_t* w , unsigned int idx , struct ensemble* ss ){
 
 /* Fonction qui retourne l'ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) */
 void saut_multiple(struct world_t* w , unsigned int idx , struct ensemble* sm ){
-    
     for (enum dir_t j = SEAST; j < NWEST ;j++){
-        printf("sm\n");
-
         while (place_visited ( sm, idx ) == 0){
             saut_simple(w,idx,sm);
             idx = get_neighbor(idx , j);
@@ -61,13 +53,11 @@ void saut_multiple(struct world_t* w , unsigned int idx , struct ensemble* sm ){
 }
 
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
-struct ensemble* mvts_disponibles (struct world_t* w, unsigned int idx, struct ensemble* md ) 
+void mvts_disponibles (struct world_t* w, unsigned int idx, struct ensemble* md ) 
 {  
     positions_init(md);
     deplacements_simple( w , idx , md );
     saut_multiple( w , idx , md);
-
-    return md;
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 struct ensemble translation_cardinal(struct world_t* w, unsigned int idx){
@@ -91,7 +81,7 @@ struct ensemble saut_semi_diagonal(struct world_t* w, unsigned int idx){
     enum dir_t tab_dir[4] = {NEAST, NWEST, SEAST, SWEST};
     for(int i =0; i < 4; i++){
         unsigned int idx2 = get_neighbor(idx, tab_dir[i]);
-        while(world_get_sort(w, idx2) == 0){
+        while(world_get_sort(w, idx2) == NO_SORT){
             ajout_position(&ens, idx2);
             idx2 = get_neighbor(idx2, tab_dir[i]);
         }

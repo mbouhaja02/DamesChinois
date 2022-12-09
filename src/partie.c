@@ -42,10 +42,9 @@ unsigned int choose_random_piece_belonging_to(struct world_t* w , enum color_t c
     white_list(&pw, w);
 
     int a = rand();
-    a = a % HEIGHT  ;
+    a = a % HEIGHT ;
     if (current_player == 1){
         return pb.positions[a];}
-        
     if (current_player == 2){
         return pw.positions[a];}
     return 0;
@@ -60,11 +59,11 @@ unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p, enu
     if (current_player == 2)
         white_list(&sm, w);
 
-    struct ensemble* ens = mvts_disponibles(w, p, &sm);
+    mvts_disponibles(w, p, &sm);
     unsigned int r = rand();
-    unsigned int module = ens->taille;
+    unsigned int module = sm.taille;
     r = r % module + 1 ;
-    m = ens->positions[r];
+    m = sm.positions[r];
     return m;
 }
 
