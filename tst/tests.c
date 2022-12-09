@@ -38,7 +38,7 @@ int main() {
   black_list(&black_list_initial, w);
   for ( unsigned int i = 0 ; i < 2*MAX_TURNS ; i++){
     printf("#\n");
-    while (Victoire_Simple(w , piece , current_player, i)==0 && Victoire_complexe(*w , i, current_player)==0){
+    while (Victoire_Simple(w , piece , current_player, i)==0 && Victoire_complexe(w , i, current_player, white_list_initial, black_list_initial)==0){
       
       piece = choose_random_piece_belonging_to(w, current_player);
       printf("piece = %d \n" , piece );
@@ -53,6 +53,7 @@ int main() {
   }
   printf("Victoire de %d", current_player);
   return 0;
+}
 }
 
     
