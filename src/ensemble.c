@@ -20,12 +20,13 @@ void positions_init(struct ensemble* pi ) {
 }
 
 void ajout_position(struct ensemble* p ,unsigned int place ){
-    p->taille+=1;
     p->positions[p->taille]=place ;
+    p->taille+=1;
 }
 
 
 void black_list(struct ensemble* pw, struct world_t* w){
+    positions_init(pw);
     for (int i=0 ; i< WORLD_SIZE ; i++){
         if (world_get(w,i) == 1){
             ajout_position( pw, i);
@@ -33,6 +34,7 @@ void black_list(struct ensemble* pw, struct world_t* w){
     }
 }
 void white_list(struct ensemble* pb, struct world_t* w){
+    positions_init(pb);
     for (int i=0 ; i< WORLD_SIZE ; i++){
         if (world_get(w,i) == 2){
             ajout_position( pb, i);
@@ -41,6 +43,7 @@ void white_list(struct ensemble* pb, struct world_t* w){
 }
 
 int place_visited(struct ensemble* ens, unsigned int place ){
+    
     for (unsigned int i =0; i < ens->taille; i++){
         if (place == ens->positions[i]){
             return 0;

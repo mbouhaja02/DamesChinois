@@ -37,6 +37,8 @@ int Victoire_Simple(struct world_t* w , unsigned int place , enum color_t joueur
 
 int Victoire_complexe(struct world_t* w , unsigned int tours , enum color_t joueur , struct ensemble wl , struct ensemble bl){
     struct ensemble depart_autre_joueur, positions_joueur ;
+    positions_init(&depart_autre_joueur);
+    positions_init(&positions_joueur);
 
     if (joueur == 1 ){
         black_list(&positions_joueur, w);
