@@ -27,26 +27,28 @@ int main() {
   struct world_t* w = world_init();
   enum color_t current_player = get_random_player();
   init_neighbors(0);
-  unsigned int piece;
-  unsigned int move;
+  unsigned int piece=0;
+  unsigned int move=0;
   srand(time(NULL));
-
-
   draw_world(w);
   debut(w);
-  for ( int i = 0 ; i < 2*MAX_TURNS ; i++){
-    draw_world(w);
-    piece = choose_random_piece_belonging_to(w, current_player);
-    printf("piece = %d \n" , piece );
-    move = choose_random_move_for_piece(w, piece , current_player );
-    printf("move = %d \n" , move);
-    move_piece(w, move, piece);
-    printf("mp\n");
-    current_player = next_player(current_player);
-    printf("cp\n");
-    
+  draw_world(w);
+  for ( unsigned int i = 0 ; i < 2*MAX_TURNS ; i++){
+    printf("#\n");
+    while (Victoire_Simple(w , piece , current_player, i)==0 && Victoire_complexe(*w , i, current_player)==0){
+      
+      piece = choose_random_piece_belonging_to(w, current_player);
+      printf("piece = %d \n" , piece );
+      move = choose_random_move_for_piece(w, piece , current_player );
+      printf("move = %d \n" , move);
+      move_piece(w, move, piece);
+      printf("mp\n");
+      current_player = next_player(current_player);
+      printf("cp\n");
+      draw_world(w);
+    }
   }
-  
+  printf("Victoire de %d", current_player);
   return 0;
 }
 

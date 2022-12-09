@@ -18,13 +18,14 @@ void deplacements_simple( struct world_t* w , unsigned int idx , struct ensemble
     enum sort_t b;
     positions_init(ds);
     for (enum dir_t j = SEAST; j < NWEST ;j++){
-        printf("ds\n");
         gn = get_neighbor(idx , j);
         b = world_get_sort(w, gn);
         if ( b == NO_SORT){
             ajout_position( ds , gn);
         }
     }
+    printf("ds\n");
+
 }
 /* Fonction qui retourne l'ensemble des sauts simples */
 void saut_simple(struct world_t* w , unsigned int idx , struct ensemble* ss ){
@@ -46,8 +47,7 @@ void saut_simple(struct world_t* w , unsigned int idx , struct ensemble* ss ){
 
 /* Fonction qui retourne l'ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) */
 void saut_multiple(struct world_t* w , unsigned int idx , struct ensemble* sm ){
-    printf("#\n");
-
+    
     for (enum dir_t j = SEAST; j < NWEST ;j++){
         printf("sm\n");
 
