@@ -36,9 +36,10 @@ int main() {
   draw_world(w);
   white_list(&white_list_initial, w);
   black_list(&black_list_initial, w);
+
   for ( unsigned int i = 0 ; i < 2*MAX_TURNS ; i++){
-    
-    while (Victoire_Simple(w , piece , current_player, i)==0 && Victoire_complexe(w , i, current_player, white_list_initial, black_list_initial)==0){
+
+    if(Victoire_Simple(w , piece , current_player, i)==0 && Victoire_complexe(w , i, current_player, white_list_initial, black_list_initial)==0){
       
       piece = choose_random_piece_belonging_to(w, current_player);
       move = choose_random_move_for_piece(w, piece , current_player );
@@ -47,7 +48,7 @@ int main() {
       draw_world(w);    
     }
   }
-  printf("Victoire de %d\n", current_player);
+  printf("la vicoire et de %u", current_player);
   return 0;
 
 }

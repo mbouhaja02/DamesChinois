@@ -40,7 +40,7 @@ void draw_world(struct world_t* w){
         for(int j = 0; j < WIDTH; j++){
             
             int nbr = i * HEIGHT + j;
-            if (world_get_sort( w, nbr) == 0&& world_get(w,nbr) == 0){
+            if (world_get_sort( w, nbr) == 0 && world_get(w,nbr) == 0){
                 printf("  . \t");
             }
 

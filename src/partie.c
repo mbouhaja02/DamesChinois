@@ -62,9 +62,9 @@ unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p, enu
     mvts_disponibles(w, p, &sm);
     unsigned int r = rand();
     unsigned int module = sm.taille;
-    r = r % module + 1 ;
+    r = r % module;
     m = sm.positions[r];
-    return m;
+    return m%WORLD_SIZE;
 }
 
 

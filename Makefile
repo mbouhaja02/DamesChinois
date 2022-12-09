@@ -1,5 +1,5 @@
-WIDTH ?= 4
-HEIGHT ?= 4
+WIDTH ?= 10
+HEIGHT ?= 10
 MANSUBA_FLAGS = -DWIDTH=$(WIDTH) -DHEIGHT=$(HEIGHT)
 CFLAGS = -I src -Wall -Wextra -std=c99 -g3 $(MANSUBA_FLAGS)
 SRCS = world.c neighbors.c geometry.c ensemble.c movements.c board.c victoire.c partie.c
