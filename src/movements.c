@@ -33,7 +33,7 @@ void saut_simple(struct world_t* w , unsigned int idx , struct ensemble* ss ){
     for (enum dir_t j = SEAST; j < NWEST ;j++){
         neighbor = get_neighbor(idx,j);
         neighbor_of_neighbor = get_neighbor(neighbor,j);
-        if ((world_get_sort(w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(w , neighbor ) != NO_SORT)){
+        if ((world_get_sort(w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(w , neighbor ) == PAWN)){
             ajout_position( ss , neighbor_of_neighbor);
         }
     }

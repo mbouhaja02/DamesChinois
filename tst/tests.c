@@ -42,10 +42,11 @@ int main() {
     if(Victoire_Simple(w , piece , current_player, i)==0 && Victoire_complexe(w , i, current_player, white_list_initial, black_list_initial)==0){
       
       piece = choose_random_piece_belonging_to(w, current_player);
+      printf("%u \t", piece);
       move = choose_random_move_for_piece(w, piece , current_player );
       move_piece(w, move, piece);
       current_player = next_player(current_player);
-      draw_world(w);    
+      //draw_world(w);    
     }
   }
   printf("la victoire est de %u \n", current_player);
