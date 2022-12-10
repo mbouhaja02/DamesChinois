@@ -2,6 +2,9 @@
 #define __NEIGHBORS_H__
 
 #include "geometry.h"
+#include "neighbors.h"
+#include "world.h"
+#include "neighbors_complement.h"
 #include <limits.h>
 
 /** The number of relations in the code */
@@ -27,14 +30,7 @@ struct neighbors_t {
 
 
 //
-void add_neighbor(unsigned int idx_1, unsigned int idx_2 ,enum dir_t d);
 
-
-//
-void init_simple_board();
-
-//
-void init_diagonal_board();
 
 
 /** Initializes the relation between the neighbors, based on an

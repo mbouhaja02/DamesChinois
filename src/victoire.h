@@ -10,14 +10,21 @@
 #include "world.h"
 #include "ensemble.h"
 #include "movements.h"
-
+#include "partie.h"
 
 
 #define MAX_TURNS 10
+#define VICTORY_TYPES 2
 
-int Victoire_Simple(struct world_t* w , unsigned int place , enum color_t joueur , unsigned int tours ) ;
+enum victoire_t {
+    victoire_simple = 0 ,
+    victoire_complexe = 1 ,
+};
+int Victoire_Simple(struct game_t* game);
 
-int Victoire_complexe(struct world_t* w , unsigned int tours , enum color_t joueur , struct ensemble wl , struct ensemble bl);
+int Victoire_complexe(struct game_t* game , struct ensemble wl , struct ensemble bl);
+
+int victoire_type(struct game_t* game , struct ensemble wl , struct ensemble bl);
 
 
 #endif
