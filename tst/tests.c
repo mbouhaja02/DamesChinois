@@ -51,7 +51,7 @@ int main() {
       game.current_player = next_player(game.current_player); 
         
     }
-    //draw_world(w);  
+    draw_world(game.w);  
   }
 
   printf("la victoire est de %u \n", game.current_player);

@@ -66,7 +66,6 @@ unsigned int choose_random_move_for_piece(struct game_t game){
     unsigned int module = sm.taille;
     r = r % module;
     m = sm.positions[r];
-    printf("m = %u \n", m);
     return m;
 }
 
