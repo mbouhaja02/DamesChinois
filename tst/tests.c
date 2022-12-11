@@ -28,6 +28,7 @@ int main() {
   struct game_t game;
 
   game.w = world_init();
+  debut(game.w);
   game.current_player = get_random_player();
   game.victoire  = choose_random_victory_type();
   game.seed = 0;
