@@ -12,6 +12,8 @@
 /** The maximum number of neighbors for a place */
 #define MAX_NEIGHBORS 8
 
+
+
 /** A struct representing a vector towards a neighbor of a place
     It contains the index of the neighbor, and the direction it's in */
 struct vector_t {
@@ -29,7 +31,7 @@ struct neighbors_t {
 };
 
 
-//
+struct neighbors_t neighbors[WORLD_SIZE];
 
 
 

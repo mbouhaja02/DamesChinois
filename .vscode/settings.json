@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "ensemble.h": "c"
+        "ensemble.h": "c",
+        "geometry.h": "c",
+        "world.h": "c"
     }
 }

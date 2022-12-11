@@ -7,7 +7,6 @@
 #include "neighbors_complement.h"
 
 
-struct neighbors_t neighbors[WORLD_SIZE];
 
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
@@ -30,15 +29,23 @@ void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
 void init_diagonal_board(){
 
     init_simple_board();
+
     for (int i = 0 ; i < WORLD_SIZE ; i++){
         if (i >= WIDTH && i%WIDTH != 0) {
-            add_neighbor(i,get_neighbor(i,NWEST),NWEST);}
+            add_neighbor(i,get_neighbor(i,NWEST),NWEST);
+            }
+
         if ( i< WORLD_SIZE - WIDTH && i%WIDTH != 0){
-            add_neighbor(i, get_neighbor(i, SWEST),SWEST);}
+            add_neighbor(i, get_neighbor(i, SWEST),SWEST);
+            
+            }
         if (i >= WIDTH && i%WIDTH != WIDTH - 1){
-            add_neighbor(i, get_neighbor(i, NEAST),NEAST);}
+            add_neighbor(i, get_neighbor(i, NEAST),NEAST);
+            }
+
         if (i< WORLD_SIZE - WIDTH && i%WIDTH != WIDTH - 1){
-            add_neighbor(i , get_neighbor(i, SEAST),SEAST);}
+            add_neighbor(i , get_neighbor(i, SEAST),SEAST);
+            }
     } 
 }
 
@@ -67,25 +74,23 @@ void init_simple_board(){
 
 //function that get only simple board neighbors
 struct neighbors_t get_neighbors_for_simple_board(unsigned int idx){
-    for (enum dir_t j = SEAST; j < NWEST ;j++){
-        if (j==1 || j==3 || j==-1||j==-3){
-            add_neighbor(idx,get_neighbor(idx,j),j);
-        }
-    }
+    init_simple_board();
+    return neighbors[idx];
 }
 
 //function that gets neighbors depending on seed
 struct neighbors_t get_neighbors_for_board_type(unsigned int idx,unsigned int seed){
     switch (seed)
     {
-    case 0:
-        get_neighbors_for_simple_board(idx);
-        break;
-    case 1 : 
-        get_neighbors(idx);
-        break ;
-    default:
-        init_neighbors(seed);
-        break;
+        case 0:
+            get_neighbors_for_simple_board(idx);
+            break;
+        case 1 : 
+            get_neighbors(idx);
+            break ;
+        default:
+            init_neighbors(seed);
+            break;
     }
-    }
+    return neighbors[idx];
+}
