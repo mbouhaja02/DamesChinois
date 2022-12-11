@@ -9,6 +9,8 @@
 #include "ensemble.h"
 #include "movements.h"
 #include "partie.h"
+#include "victoire.h"
+
 
 
 
@@ -32,34 +34,34 @@ enum color_t next_player(enum color_t current_player){
 
 /*cette fonction est deja tester*/
 /*Retourne un unsigned int qui désigne l'index d'une peice white ou black dependant du current_player*/
-unsigned int choose_random_piece_belonging_to(struct world_t* w , enum color_t current_player){
+void choose_random_piece_belonging_to(struct game_t* game){
     struct ensemble pw, pb;
 
     positions_init(&pw);
     positions_init(&pb);
 
-    black_list(&pb, w);
-    white_list(&pw, w);
+    black_list(&pb, game.w);
+    white_list(&pw, game.w);
 
     int a = rand();
     a = a % HEIGHT ;
-    if (current_player == 1){
-        return pb.positions[a];}
-    if (current_player == 2){
-        return pw.positions[a];}
-    return 0;
+    if (game.current_player == 1){
+        game->position =pb.positions[a];}
+    if (game.current_player == 2){
+        game->position = pw.positions[a];}
 }
 
-unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p, enum color_t current_player){
+unsigned int choose_random_move_for_piece(struct game_t game){
     struct ensemble sm ; 
     unsigned int m ;
     positions_init(&sm);
-    if (current_player == 1)
-        black_list(&sm, w);
-    if (current_player == 2)
-        white_list(&sm, w);
-
-    mvts_disponibles(w, p, &sm);
+    if (game.current_player == 1)
+        black_list(&sm, game.w);
+    if (game.current_player == 2)
+        white_list(&sm, game.w);
+    
+    mvts_disponibles(game.w, game.position, &sm, game.seed);
+  
     unsigned int r = rand();
     unsigned int module = sm.taille;
     r = r % module;
@@ -69,10 +71,15 @@ unsigned int choose_random_move_for_piece(struct world_t* w, unsigned int p, enu
 }
 
 
-void move_piece(struct world_t* w, unsigned int dst, unsigned int src){
-    world_set_sort(w, dst, world_get_sort(w, src));
-    world_set(w, dst, world_get(w, src));
-    world_set_sort(w, src, NO_SORT);
-    world_set(w, src, NO_COLOR);
+void move_piece(struct game_t* game, unsigned int dst){
+    world_set_sort(game->w, dst, world_get_sort(game->w, game->position));
+    world_set(game->w, dst, world_get(game->w, game->position));
+    world_set_sort(game->w, game->position, NO_SORT);
+    world_set(game->w, game->position, NO_COLOR);
+    game->position = dst;
 }
 
+enum victoire_t choose_random_victory_type(){
+    unsigned int r = rand();
+    return r % VICTORY_TYPES ;
+}
