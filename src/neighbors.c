@@ -88,4 +88,6 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
 struct neighbors_t get_neighbors(unsigned int idx) {   
     for (enum dir_t j = SEAST; j < NWEST ;j++){
         add_neighbor(idx , get_neighbor(idx,j),j);
+    }
+    return neighbors[idx];
 }

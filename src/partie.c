@@ -40,14 +40,14 @@ void choose_random_piece_belonging_to(struct game_t* game){
     positions_init(&pw);
     positions_init(&pb);
 
-    black_list(&pb, game.w);
-    white_list(&pw, game.w);
+    black_list(&pb, game->w);
+    white_list(&pw, game->w);
 
     int a = rand();
     a = a % HEIGHT ;
-    if (game.current_player == 1){
+    if (game->current_player == 1){
         game->position =pb.positions[a];}
-    if (game.current_player == 2){
+    if (game->current_player == 2){
         game->position = pw.positions[a];}
 }
 
@@ -60,7 +60,7 @@ unsigned int choose_random_move_for_piece(struct game_t game){
     if (game.current_player == 2)
         white_list(&sm, game.w);
     
-    mvts_disponibles(game.w, game.position, &sm, game.seed);
+    mvts_disponibles(game, &sm);
   
     unsigned int r = rand();
     unsigned int module = sm.taille;

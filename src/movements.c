@@ -24,10 +24,12 @@ void deplacements_simple( struct game_t game, struct ensemble* ds ){
                 gn = get_neighbor(game.position , j);
                 b = world_get_sort(game.w, gn);
                 if ( b == NO_SORT){
-                ajout_position( ds , gn);}
+                ajout_position( ds , gn);
+                }
             }
+        }
         
-        else 
+        else {
             gn = get_neighbor(game.position , j);
             b = world_get_sort(game.w, gn);
             if ( b == NO_SORT){
@@ -38,19 +40,21 @@ void deplacements_simple( struct game_t game, struct ensemble* ds ){
 
 }
 /* Fonction qui retourne l'ensemble des sauts simples */
-void saut_simple(struct game_t game , struct ensemble* ss, ){
+void saut_simple(struct game_t game , struct ensemble* ss){
     unsigned int neighbor;
     unsigned int neighbor_of_neighbor; 
     for (enum dir_t j = SEAST; j < NWEST ;j++){
-        if (game.seed = 0){
+        if (game.seed == 0){
             if (j==1 || j==3 || j==-1||j==-3){
-            neighbor = get_neighbor(game.position,j);
-            neighbor_of_neighbor = get_neighbor(neighbor,j);
-            if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) == PAWN)){
-                ajout_position( ss , neighbor_of_neighbor);
+                neighbor = get_neighbor(game.position,j);
+                neighbor_of_neighbor = get_neighbor(neighbor,j);
+                if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) == PAWN)){
+                    ajout_position( ss , neighbor_of_neighbor);
+                }
             }
-            }
-        else
+        }
+        else{
+        
             neighbor = get_neighbor(game.position,j);
             neighbor_of_neighbor = get_neighbor(neighbor,j);
             if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) == PAWN)){
@@ -77,7 +81,7 @@ void saut_multiple(struct game_t game , struct ensemble* sm  ){
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
 void mvts_disponibles (struct game_t game, struct ensemble* md) 
 {  
-    positions_init(md,game.seed);
+    positions_init(md);
     deplacements_simple( game , md );
     saut_multiple( game , md );
 }

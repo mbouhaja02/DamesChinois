@@ -17,7 +17,7 @@
  l'emmenera vers une des positions de départ dans l'ensemble */
 struct ensemble;
  
-int Victoire_Simple(struct game_t game) {
+int Victoire_Simple(struct game_t* game) {
     struct ensemble depart_autre_joueur ;
     positions_init(&depart_autre_joueur);
     if (game->current_player == 1 ){
@@ -36,20 +36,20 @@ int Victoire_Simple(struct game_t game) {
 départ de l'autre joueur et les positions actuels de current_player*/
 
 
-int Victoire_complexe(struct game_t game , struct ensemble wl , struct ensemble bl){
+int Victoire_complexe(struct game_t* game , struct ensemble wl , struct ensemble bl){
     struct ensemble depart_autre_joueur, positions_joueur ;
     positions_init(&depart_autre_joueur);
     positions_init(&positions_joueur);
 
-    if (game.current_player == 1 ){
-        black_list(&positions_joueur, game.w);
+    if (game->current_player == 1 ){
+        black_list(&positions_joueur, game->w);
         depart_autre_joueur = wl;
     }
     else {
-        white_list(&positions_joueur, game.w);
+        white_list(&positions_joueur, game->w);
         depart_autre_joueur = bl;
     }
-    if (egalite_de_deux_ensembles(depart_autre_joueur,positions_joueur)==1 && (game.tour < MAX_TURNS)) {
+    if (egalite_de_deux_ensembles(depart_autre_joueur,positions_joueur)==1 && (game->tour < MAX_TURNS)) {
         return 1 ; 
     }
     return 0 ; 
@@ -58,7 +58,15 @@ int Victoire_complexe(struct game_t game , struct ensemble wl , struct ensemble 
 int victoire_type(struct game_t* game , struct ensemble wl , struct ensemble bl){
     if (game->victoire == 0){
         Victoire_Simple(game);
-    else  (game->victoire ==1) ;
-        Victoire_complexe(game , wl , bl );
     }
+
+    else  if (game->victoire ==1) {
+        Victoire_complexe(game, wl, bl);
+    }
+    return 0;
+}
+
+enum victoire_t choose_random_victory_type(){
+    enum victoire_t r = rand()%2;
+    return r;
 }

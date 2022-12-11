@@ -6,6 +6,9 @@
 #include "world.h"
 #include "neighbors_complement.h"
 
+
+struct neighbors_t neighbors[WORLD_SIZE];
+
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
     int j = 0;
@@ -43,7 +46,7 @@ void init_diagonal_board(){
 
    
     
-}
+
 
 //function that initializes a simple board with 4 relations
 
@@ -72,7 +75,7 @@ struct neighbors_t get_neighbors_for_simple_board(unsigned int idx){
 }
 
 //function that gets neighbors depending on seed
-struct neighbors_t get_neighbors_for_board_type(unsigned int idx,unsigned int seed);
+struct neighbors_t get_neighbors_for_board_type(unsigned int idx,unsigned int seed){
     switch (seed)
     {
     case 0:
@@ -82,6 +85,7 @@ struct neighbors_t get_neighbors_for_board_type(unsigned int idx,unsigned int se
         get_neighbors(idx);
         break ;
     default:
-        init_neighbors();
+        init_neighbors(seed);
         break;
+    }
     }
