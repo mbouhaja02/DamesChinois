@@ -7,24 +7,6 @@
 
 
 
-struct neighbors_t neighbors[WORLD_SIZE];
-
-
-
-
-
-/*L'initialisation simple de la board lorsque le seed = 0 donc on distingue 9 cas possible*/
-void init_diagonal_board(){
-
-    init_simple_board();
-
-   
-    
-}
-
-
-
-
 
 
 /** Initializes the relation between the neighbors, based on an

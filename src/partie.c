@@ -79,7 +79,3 @@ void move_piece(struct game_t* game, unsigned int dst){
     game->position = dst;
 }
 
-enum victoire_t choose_random_victory_type(){
-    unsigned int r = rand();
-    return r % VICTORY_TYPES ;
-}
