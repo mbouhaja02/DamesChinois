@@ -18,7 +18,7 @@ struct game_t {
     unsigned int tour ;
     struct world_t* w;
     unsigned int seed;
-    unsigned int position; 
+    unsigned int position;
     enum victoire_t victoire;
 };
 
@@ -31,5 +31,8 @@ void choose_random_piece_belonging_to(struct game_t* game);
 unsigned int choose_random_move_for_piece(struct game_t game);
 
 void move_piece(struct game_t* game, unsigned int dst);
+
+struct game_t game_initializer();
+
 
 #endif // __PARTIE_H__

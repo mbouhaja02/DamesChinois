@@ -11,17 +11,16 @@
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
     int j = 0;
-
-    while (j < WORLD_SIZE){
-        if(neighbors[idx_1].n[j].i == UINT_MAX){
-            neighbors[idx_1].n[j].i = idx_2;
-            neighbors[idx_1].n[j].d = d;
-            neighbors[idx_1].n[j+1].i = UINT_MAX;
-            neighbors[idx_1].n[j+1].d = NO_DIR;
-
-            j = WORLD_SIZE;
+    if (existence_of_neighbor(idx_1, idx_2)==1){
+        for(int j = 0; j < MAX_NEIGHBORS; j++){
+            if(neighbors[idx_1].n[j].i == UINT_MAX){
+                neighbors[idx_1].n[j].i = idx_2;
+                neighbors[idx_1].n[j].d = d;
+                neighbors[idx_1].n[j+1].i = UINT_MAX;
+                neighbors[idx_1].n[j+1].d = NO_DIR;
+                break;
+            }
         }
-        j = j + 1;
     }
 }
 
@@ -93,4 +92,16 @@ struct neighbors_t get_neighbors_for_board_type(unsigned int idx,unsigned int se
             break;
     }
     return neighbors[idx];
+}
+
+
+int existence_of_neighbor(unsigned int idx , unsigned int neighbor){
+    int j = 0;
+    while (neighbors[idx].n[j].i!=UINT_MAX){
+        if (neighbors[idx].n[j].i == neighbor){
+            return 1 ;
+        }
+        j++;
+    }
+    return 0;
 }

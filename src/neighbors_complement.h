@@ -30,5 +30,7 @@ struct neighbors_t get_neighbors_for_simple_board(unsigned int idx);
 //function that gets neighbors depending on seed
 struct neighbors_t get_neighbors_for_board_type(unsigned int idx, unsigned int seed);
 
+int existence_of_neighbor(unsigned int idx , unsigned int neighbor);
+
 
 #endif 

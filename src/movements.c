@@ -15,64 +15,46 @@
 
 /* Fonction qui retourne l'ensemble des déplacements simple possible */
 void deplacements_simple( struct game_t game, struct ensemble* ds ){
-    unsigned int gn;
+    unsigned int neighbor;
     enum sort_t b;
     positions_init(ds);
-    for (enum dir_t j = SEAST; j < NWEST ;j++){
-        if (game.seed == 0){
-            if (j==1 || j==3 || j==-1||j==-3){
-                gn = get_neighbor(game.position , j);
-                b = world_get_sort(game.w, gn);
-                if ( b == NO_SORT){
-                ajout_position( ds , gn);
-                }
+    init_neighbors(game.seed);
+    for (enum dir_t j = SEAST; j < NWEST +1  ;j++){
+        neighbor = get_neighbor(game.position,j);
+        if (existence_of_neighbor(game.position, neighbor)==1){
+            b = world_get_sort(game.w, neighbor);
+            if ( b == NO_SORT){
+                ajout_position( ds , neighbor) ;
+                printf("neighbor_simple : %d \n",neighbor);
             }
         }
-        
-        else {
-            gn = get_neighbor(game.position , j);
-            b = world_get_sort(game.w, gn);
-            if ( b == NO_SORT){
-            ajout_position( ds , gn);
-            }
-        }    
     }
-
+      
 }
 /* Fonction qui retourne l'ensemble des sauts simples */
 void saut_simple(struct game_t game , struct ensemble* ss){
     unsigned int neighbor;
     unsigned int neighbor_of_neighbor; 
-    for (enum dir_t j = SEAST; j < NWEST ;j++){
-        if (game.seed == 0){
-            if (j==1 || j==3 || j==-1||j==-3){
-                neighbor = get_neighbor(game.position,j);
-                neighbor_of_neighbor = get_neighbor(neighbor,j);
-                if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) == PAWN)){
-                    ajout_position( ss , neighbor_of_neighbor);
-                }
-            }
-        }
-        else{
-        
-            neighbor = get_neighbor(game.position,j);
-            neighbor_of_neighbor = get_neighbor(neighbor,j);
+    init_neighbors(game.seed);
+    for (enum dir_t j = SEAST; j < NWEST +1 ;j++){
+        neighbor = get_neighbor(game.position,j);
+        neighbor_of_neighbor = get_neighbor(neighbor,j);
+        if (existence_of_neighbor(game.position, neighbor)==1 && existence_of_neighbor(neighbor, neighbor_of_neighbor)==1){
             if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) == PAWN)){
                 ajout_position( ss , neighbor_of_neighbor);
+                printf("saut_simple sur : %d \n",neighbor);
             }
         }
     }
- 
 }
 
 /* Fonction qui retourne l'ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) */
 void saut_multiple(struct game_t game , struct ensemble* sm  ){
-    for (enum dir_t j = SEAST; j < NWEST ;j++){
+    for (enum dir_t j = SEAST; j < NWEST + 1  ;j++){
         while (place_visited ( sm, game.position) == 0){
             saut_simple( game, sm);
-            
-                game.position = get_neighbor(game.position , j);
-                ajout_position(sm, game.position);
+            game.position = get_neighbor(game.position , j);
+            ajout_position(sm, game.position);
         }
     }
     
@@ -84,6 +66,7 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
     positions_init(md);
     deplacements_simple( game , md );
     saut_multiple( game , md );
+    
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 struct ensemble translation_cardinal(struct world_t* w, unsigned int idx){

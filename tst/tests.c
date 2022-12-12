@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #include "geometry.h"
 #include "world.h"
@@ -26,7 +27,9 @@ int main() {
 
 
   struct game_t game;
-
+  time_t t;
+/* Intializes random number generator */
+  srand(time(&t));
   game.w = world_init();
   debut(game.w);
   game.current_player = get_random_player();

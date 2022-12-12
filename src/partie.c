@@ -35,16 +35,27 @@ enum color_t next_player(enum color_t current_player){
 /*cette fonction est deja tester*/
 /*Retourne un unsigned int qui désigne l'index d'une peice white ou black dependant du current_player*/
 void choose_random_piece_belonging_to(struct game_t* game){
+    time_t t;
     struct ensemble pw, pb;
-
+    srand(time(&t));
     positions_init(&pw);
     positions_init(&pb);
 
     black_list(&pb, game->w);
     white_list(&pw, game->w);
+    for(int i = 0; i < HEIGHT; i++){
+        printf("[%d \t]", pb.positions[i]);
+    }
+
+    printf("\n");
+    for(int i = 0; i < HEIGHT; i++){
+        printf("[%d \t]", pw.positions[i]);
+    }
 
     int a = rand();
+    printf("%d \n", a);
     a = a % HEIGHT ;
+    printf("%d \n", a);
     if (game->current_player == 1){
         game->position =pb.positions[a];}
     if (game->current_player == 2){
@@ -52,6 +63,8 @@ void choose_random_piece_belonging_to(struct game_t* game){
 }
 
 unsigned int choose_random_move_for_piece(struct game_t game){
+    time_t t;
+    srand(time(&t));
     struct ensemble sm ; 
     unsigned int m ;
     positions_init(&sm);
@@ -61,6 +74,10 @@ unsigned int choose_random_move_for_piece(struct game_t game){
         white_list(&sm, game.w);
     
     mvts_disponibles(game, &sm);
+    for(unsigned int i = 0; i < sm.taille; i++){
+        printf("%d \t", sm.positions[i]);
+    }
+    printf(" # \n");
   
     unsigned int r = rand();
     unsigned int module = sm.taille;
@@ -78,3 +95,13 @@ void move_piece(struct game_t* game, unsigned int dst){
     game->position = dst;
 }
 
+struct game_t game_initializer(){
+    struct game_t game;
+    game.current_player = 2 ; 
+    game.tour = 0;
+    game.w = world_init();
+    game.seed = 0;
+    game.position = 0;
+    game.victoire = 0 ; 
+    return game ; 
+}

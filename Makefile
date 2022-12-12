@@ -25,3 +25,7 @@ test : test_project
 
 clean:
 	rm -f project test_project *.o *~
+
+test_moves : test_moves.o $(OBJS)
+	gcc $(CFLAGS) $^  -o movements
+	./movements
