@@ -31,7 +31,6 @@ struct neighbors_t {
 };
 
 
-struct neighbors_t neighbors[WORLD_SIZE];
 
 
 
