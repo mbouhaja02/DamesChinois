@@ -25,7 +25,6 @@ void deplacements_simple( struct game_t game, struct ensemble* ds ){
             b = world_get_sort(game.w, neighbor);
             if ( b == NO_SORT){
                 ajout_position( ds , neighbor) ;
-                printf("neighbor_simple : %d \n",neighbor);
             }
         }
     }
@@ -42,7 +41,6 @@ void saut_simple(struct game_t game , struct ensemble* ss){
         if (existence_of_neighbor(game.position, neighbor)==1 && existence_of_neighbor(neighbor, neighbor_of_neighbor)==1){
             if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) == PAWN)){
                 ajout_position( ss , neighbor_of_neighbor);
-                printf("saut_simple sur : %d \n",neighbor);
             }
         }
     }
@@ -65,7 +63,7 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
 {  
     positions_init(md);
     deplacements_simple( game , md );
-    saut_multiple( game , md );
+    saut_simple( game , md );
     
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/

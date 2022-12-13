@@ -40,28 +40,16 @@ void choose_random_piece_belonging_to(struct game_t* game){
     srand(time(&t));
     positions_init(&pw);
     positions_init(&pb);
-
     black_list(&pb, game->w);
     white_list(&pw, game->w);
-    for(int i = 0; i < HEIGHT; i++){
-        printf("[%d \t]", pb.positions[i]);
-    }
-
-    printf("\n");
-    for(int i = 0; i < HEIGHT; i++){
-        printf("[%d \t]", pw.positions[i]);
-    }
-
     int a = rand();
-    printf("%d \n", a);
     a = a % HEIGHT ;
-    printf("%d \n", a);
     if (game->current_player == 1){
         game->position =pb.positions[a];}
     if (game->current_player == 2){
         game->position = pw.positions[a];}
 }
-
+    
 unsigned int choose_random_move_for_piece(struct game_t game){
     time_t t;
     srand(time(&t));
@@ -74,11 +62,6 @@ unsigned int choose_random_move_for_piece(struct game_t game){
         white_list(&sm, game.w);
     
     mvts_disponibles(game, &sm);
-    for(unsigned int i = 0; i < sm.taille; i++){
-        printf("%d \t", sm.positions[i]);
-    }
-    printf(" # \n");
-  
     unsigned int r = rand();
     unsigned int module = sm.taille;
     r = r % module;
