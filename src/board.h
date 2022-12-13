@@ -16,7 +16,7 @@
 #include "ensemble.h"
 #include "movements.h"
 //Une fonction qui retourne un wolrd où les positions des pawn pour les deux joueurs sont initiés
-struct world_t* debut(struct world_t* w);
+struct world_t* start(struct world_t* w);
 
 //Une fonction qui trace le monde w
 void draw_world(struct world_t* w);

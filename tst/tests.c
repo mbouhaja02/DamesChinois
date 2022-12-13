@@ -31,7 +31,7 @@ int main() {
 /* Intializes random number generator */
   srand(time(&t));
   game.w = world_init();
-  debut(game.w);
+  start(game.w);
   game.current_player = get_random_player();
   game.victoire  = choose_random_victory_type();
   game.seed = 0;
@@ -48,6 +48,7 @@ int main() {
   for ( unsigned int i = 0 ; i < MAX_TURNS*2 ; i++){
     game.tour = i;
     choose_random_piece_belonging_to(&game);
+    printf("#\n");
     move = choose_random_move_for_piece(game);
     move_piece(&game, move);
     if (victoire_type(&game, white_list_initial, black_list_initial) == 0){

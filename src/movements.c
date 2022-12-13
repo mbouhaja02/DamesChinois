@@ -11,34 +11,37 @@
 
 
 
+struct neighbors_t neighbors[WORLD_SIZE];
 
 
 /* Fonction qui retourne l'ensemble des déplacements simple possible */
 void deplacements_simple( struct game_t game, struct ensemble* ds ){
     unsigned int neighbor;
     enum sort_t b;
+    int j = 0 ; 
     positions_init(ds);
     init_neighbors(game.seed);
-    for (enum dir_t j = SEAST; j < NWEST +1  ;j++){
-        neighbor = get_neighbor(game.position,j);
-        if (existence_of_neighbor(game.position, neighbor)==1){
-            b = world_get_sort(game.w, neighbor);
-            if ( b == NO_SORT){
-                ajout_position( ds , neighbor) ;
-            }
+    while (neighbors[game.position].n[j].i != UINT_MAX){
+        neighbor = neighbors[game.position].n[j+4].i;
+        b = world_get_sort(game.w, neighbor);
+        if ( b == NO_SORT){
+            ajout_position(ds,neighbor) ;
         }
+        j++ ;
     }
-      
+        
 }
+
 /* Fonction qui retourne l'ensemble des sauts simples */
 void saut_simple(struct game_t game , struct ensemble* ss){
     unsigned int neighbor;
-    unsigned int neighbor_of_neighbor; 
+    unsigned int neighbor_of_neighbor;
+    int j=0; 
     init_neighbors(game.seed);
-    for (enum dir_t j = SEAST; j < NWEST +1 ;j++){
-        neighbor = get_neighbor(game.position,j);
-        neighbor_of_neighbor = get_neighbor(neighbor,j);
-        if (existence_of_neighbor(game.position, neighbor)==1 && existence_of_neighbor(neighbor, neighbor_of_neighbor)==1){
+    while (neighbors[game.position].n[j].i != UINT_MAX){
+        neighbor = neighbors[game.position].n[j].i;
+        if (neighbors[neighbor].n[j].i != UINT_MAX){
+            neighbor_of_neighbor = neighbors[neighbor].n[j+4].i;
             if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) == PAWN)){
                 ajout_position( ss , neighbor_of_neighbor);
             }
@@ -48,14 +51,13 @@ void saut_simple(struct game_t game , struct ensemble* ss){
 
 /* Fonction qui retourne l'ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) */
 void saut_multiple(struct game_t game , struct ensemble* sm  ){
-    for (enum dir_t j = SEAST; j < NWEST + 1  ;j++){
-        while (place_visited ( sm, game.position) == 0){
-            saut_simple( game, sm);
-            game.position = get_neighbor(game.position , j);
-            ajout_position(sm, game.position);
+    saut_simple( game, sm);
+        for (unsigned int i = 0 ; i < sm->taille ; i++){
+            game.position = sm->positions[i];
+            if(place_visited ( sm, game.position ) == 0){
+                saut_multiple(game , sm);
         }
-    }
-    
+    } 
 }
 
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
@@ -63,8 +65,9 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
 {  
     positions_init(md);
     deplacements_simple( game , md );
-    saut_simple( game , md );
-    
+    printf("#\n");
+    saut_multiple( game , md );
+    printf("#\n");
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 struct ensemble translation_cardinal(struct world_t* w, unsigned int idx){

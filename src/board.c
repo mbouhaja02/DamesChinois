@@ -13,9 +13,9 @@
 
 
 
-struct world_t* debut(struct world_t* w){
+struct world_t* start(struct world_t* w){
 
-    for(int i =0 ; i<HEIGHT; i++){
+    for(int i = 0; i<HEIGHT; i++){
         int nbr = HEIGHT*i;
         int nbr2 = HEIGHT*i + WIDTH-1;
         world_set_sort( w, nbr, 1);
