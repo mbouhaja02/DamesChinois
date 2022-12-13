@@ -63,7 +63,7 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
 {  
     positions_init(md);
     deplacements_simple( game , md );
-    //saut_simple( game , md );
+    saut_simple( game , md );
     
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
