@@ -9,7 +9,7 @@
 #include "ensemble.h"
 #include "movements.h"
 #include "board.h"
-#include "partie.h"
+#include "game.h"
 
 
 

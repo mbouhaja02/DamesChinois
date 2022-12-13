@@ -9,7 +9,7 @@
 #include "neighbors.h"
 #include "world.h"
 #include "ensemble.h"
-#include "partie.h"
+#include "game.h"
 
 
 

@@ -10,7 +10,7 @@
 #include "movements.h"
 #include "board.h"
 #include "victoire.h"
-#include "partie.h"
+#include "game.h"
 
 
 /*w = world_init();*/

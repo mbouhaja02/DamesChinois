@@ -8,7 +8,7 @@
 #include "ensemble.h"
 #include "movements.h"
 #include "victoire.h"
-#include "partie.h"
+#include "game.h"
 
 
 

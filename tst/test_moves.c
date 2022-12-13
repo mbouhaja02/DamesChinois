@@ -11,7 +11,7 @@
 #include "movements.h"
 #include "board.h"
 #include "victoire.h"
-#include "partie.h"
+#include "game.h"
 
 
 int main(){
