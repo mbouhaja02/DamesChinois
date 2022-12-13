@@ -45,13 +45,11 @@ int main() {
   draw_world(game.w);
 
 
-  for ( unsigned int i = 0 ; i < MAX_TURNS ; i++){
+  for ( unsigned int i = 0 ; i < MAX_TURNS*3 ; i++){
     game.tour = i;
     choose_random_piece_belonging_to(&game);
     move = choose_random_move_for_piece(game);
-    printf("#\n");
     move_piece(&game, move);
-    printf("#\n");
     if (victoire_type(&game, white_list_initial, black_list_initial) == 0){
       game.current_player = next_player(game.current_player); 
         
