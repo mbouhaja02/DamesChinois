@@ -2,6 +2,7 @@
     "files.associations": {
         "ensemble.h": "c",
         "geometry.h": "c",
-        "world.h": "c"
+        "world.h": "c",
+        "string.h": "c"
     }
 }
