@@ -85,13 +85,20 @@ struct ensemble translation_cardinal(struct world_t* w, unsigned int idx){
 struct ensemble saut_semi_diagonal(struct world_t* w, unsigned int idx){
     struct ensemble ens;
     positions_init(&ens);
-    enum dir_t tab_dir[4] = {NEAST, NWEST, SEAST, SWEST};
-    for(int i =0; i < 4; i++){
-        unsigned int idx2 = get_neighbor(idx, tab_dir[i]);
-        while(world_get_sort(w, idx2) == NO_SORT){
-            ajout_position(&ens, idx2);
-            idx2 = get_neighbor(idx2, tab_dir[i]);
+    enum dir_t tab_dir[4] = {NORTH, SOUTH, EAST, WEST};
+    for(int i =0; i < 2; i++){
+        for(int j = 2; j < 4; j++){
+            unsigned int idx2 = get_neighbor(idx, tab_dir[i]);
+            unsigned int idx3 = get_neighbor(idx2, tab_dir[j]);
+
+            while(world_get_sort(w, idx3) == NO_SORT){
+                ajout_position(&ens, idx3);
+                idx2 = get_neighbor(idx3, tab_dir[i]);
+                idx3 = get_neighbor(idx2, tab_dir[j]);
+            }
+
         }
     }
+    
     return ens;
 }

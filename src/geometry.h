@@ -28,8 +28,8 @@ enum color_t {
 enum sort_t {
   NO_SORT  = 0,   // Default sort (i.e nothing)
   PAWN     = 1,
-//  TOUR     = 2,
-//  ELEPHANT = 3,
+  TOUR     = 2,
+  ELEPHANT = 3,
   MAX_SORT = 4,   // Total number of different sorts
 };
 
