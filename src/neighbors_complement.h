@@ -12,7 +12,8 @@
 /** The maximum number of neighbors for a place */
 #define MAX_NEIGHBORS 8
 
-
+//
+int existence_of_neighbor(unsigned int idx , unsigned int neighbor);
 
 //function that adds a neighbor of idx_1 as a vector with place idx_2 and direction d 
 void add_neighbor(unsigned int idx_1, unsigned int idx_2 ,enum dir_t d);
@@ -30,7 +31,6 @@ struct neighbors_t get_neighbors_for_simple_board(unsigned int idx);
 //function that gets neighbors depending on seed
 struct neighbors_t get_neighbors_for_board_type(unsigned int idx, unsigned int seed);
 
-int existence_of_neighbor(unsigned int idx , unsigned int neighbor);
 
 
 #endif 

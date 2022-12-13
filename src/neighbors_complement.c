@@ -8,6 +8,17 @@
 
 
 
+int existence_of_neighbor(unsigned int idx , unsigned int neighbor){
+    int j = 0;
+    while (neighbors[idx].n[j].i!=UINT_MAX){
+        if (neighbors[idx].n[j].i == neighbor){
+            return 1 ;
+        }
+        j++;
+    }
+    return 0;
+}
+
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
     int j = 0;
@@ -95,13 +106,3 @@ struct neighbors_t get_neighbors_for_board_type(unsigned int idx,unsigned int se
 }
 
 
-int existence_of_neighbor(unsigned int idx , unsigned int neighbor){
-    int j = 0;
-    while (neighbors[idx].n[j].i!=UINT_MAX){
-        if (neighbors[idx].n[j].i == neighbor){
-            return 1 ;
-        }
-        j++;
-    }
-    return 0;
-}

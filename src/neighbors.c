@@ -9,7 +9,7 @@
 
 
 
-/** Initializes the relation between the neighbors, based on an
+/**Initializes the relation between the neighbors, based on an
     integer `seed`. `seed` must be less than MAX_RELATIONS.
     Can be called multiple times. */
 void init_neighbors(unsigned int seed){
@@ -19,6 +19,10 @@ void init_neighbors(unsigned int seed){
     for(int i =0; i < WORLD_SIZE; i++){
         neighbors[i].n[0].i = UINT_MAX;
         neighbors[i].n[0].d = NO_DIR;
+        for (int j = 1 ; j < MAX_NEIGHBORS + 1 ; j++){
+            neighbors[i].n[j].i = 0;
+            neighbors[i].n[j].d = 0;  
+        }
     }
     
     if (seed == 0) {
