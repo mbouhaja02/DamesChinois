@@ -63,7 +63,7 @@ unsigned int choose_random_move_for_piece(struct game_t game){
     
     mvts_disponibles(game, &sm);
     unsigned int r = rand();
-    unsigned int module = sm.taille + 1;
+    unsigned int module = sm.taille;
     r = r % module ;
     m = sm.positions[r];
     return m;
