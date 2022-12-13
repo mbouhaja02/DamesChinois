@@ -21,7 +21,6 @@ int existence_of_neighbor(unsigned int idx , unsigned int neighbor){
 
 /*ajoute un neighbors à la liste des neighbors et déplace {UINT_MAX, NO_DIR} vers la position suivante*/
 void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
-    if (existence_of_neighbor(idx_1, idx_2)==1){
         for(int j = 0; j < MAX_NEIGHBORS; j++){
             if(neighbors[idx_1].n[j].i == UINT_MAX){
                 neighbors[idx_1].n[j].i = idx_2;
@@ -31,7 +30,7 @@ void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
                 break;
             }
         }
-    }
+    
 }
 
 //function that initializes a diagonal board with 8 relations 
