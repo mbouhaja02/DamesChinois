@@ -34,7 +34,6 @@ struct neighbors_t {
 
 
 
-
 /** Initializes the relation between the neighbors, based on an
     integer `seed`. `seed` must be less than MAX_RELATIONS.
     Can be called multiple times. */

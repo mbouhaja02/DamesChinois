@@ -15,14 +15,15 @@
 
 struct world_t* start(struct world_t* w){
 
-    for(int i = 0; i<HEIGHT; i++){
-        int nbr = HEIGHT*i;
-        int nbr2 = HEIGHT*i + WIDTH-1;
+    for(int i =0 ; i<HEIGHT; i++){
+        int nbr = WIDTH *i;
+        int nbr2 = WIDTH *i + WIDTH-1;
         world_set_sort( w, nbr, 1);
         world_set(w, nbr, 1);
         world_set_sort( w, nbr2, 2);
         world_set(w, nbr2, 2);
     }
+
     return w;
 
 }
@@ -39,7 +40,7 @@ void draw_world(struct world_t* w){
         printf("0%d\t ", i);
         for(int j = 0; j < WIDTH; j++){
             
-            int nbr = i * HEIGHT + j;
+            int nbr = i * WIDTH + j;
             if (world_get_sort( w, nbr) == 0 && world_get(w,nbr) == 0){
                 printf("  . \t");
             }
