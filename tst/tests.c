@@ -50,10 +50,12 @@ int main() {
     choose_random_piece_belonging_to(&game);
     move = choose_random_move_for_piece(game);
     move_piece(&game, move);
-    if (victoire_type(&game, white_list_initial, black_list_initial) == 0){
-      game.current_player = next_player(game.current_player); 
+    if (victoire_type(&game, white_list_initial, black_list_initial) == 1){
+      printf("la victoire est de %u \n", game.current_player);
+      break;
         
     }
+    game.current_player = next_player(game.current_player); 
     draw_world(game.w);  
   }
 
