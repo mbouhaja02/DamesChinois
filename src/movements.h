@@ -25,7 +25,7 @@ void saut_simple(struct game_t game , struct ensemble* ss);
 void saut_multiple(struct game_t game , struct ensemble* sm);
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
-struct ensemble saut_semi_diagonal(struct world_t* w, unsigned int idx);
+void saut_semi_diagonal(struct game_t game, struct ensemble* ssd);
 
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
