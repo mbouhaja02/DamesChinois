@@ -79,28 +79,28 @@ void translation_cardinal(struct game_t game, struct ensemble* tc){
                     idx = get_neighbor(idx , tab_dir[i]);
             }
         }
+
     }
     }
 }
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
-struct ensemble saut_semi_diagonal(struct world_t* w, unsigned int idx){
-    struct ensemble ens;
-    positions_init(&ens);
+void saut_semi_diagonal(struct game_t game , struct ensemble* ssd){
+    
     enum dir_t tab_dir[4] = {NORTH, SOUTH, EAST, WEST};
     for(int i =0; i < 2; i++){
         for(int j = 2; j < 4; j++){
-            unsigned int idx2 = get_neighbor(idx, tab_dir[i]);
+            unsigned int idx2 = get_neighbor(game.position, tab_dir[i]);
             unsigned int idx3 = get_neighbor(idx2, tab_dir[j]);
 
-            while(world_get_sort(w, idx3) == NO_SORT){
-                ajout_position(&ens, idx3);
+            while(world_get_sort(game.w, idx3) == NO_SORT){
+                if (existence_of_neighbor(idx2, idx3) == 1){
+                    ajout_position(ssd, idx3);
+                }
                 idx2 = get_neighbor(idx3, tab_dir[i]);
                 idx3 = get_neighbor(idx2, tab_dir[j]);
             }
 
         }
     }
-    
-    return ens;
 }
