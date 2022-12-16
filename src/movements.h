@@ -29,7 +29,7 @@ struct ensemble saut_semi_diagonal(struct world_t* w, unsigned int idx);
 
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
-struct ensemble translation_cardinal(struct world_t* w, unsigned int idx);
+void translation_cardinal(struct game_t game, struct ensemble* tc);
 
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
 void mvts_disponibles (struct game_t game, struct ensemble* md); 
