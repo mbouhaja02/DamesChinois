@@ -18,7 +18,6 @@ void deplacements_simple( struct game_t game, struct ensemble* ds ){
     unsigned int neighbor;
     enum sort_t b;
     positions_init(ds);
-    init_neighbors(game.seed);
     for (enum dir_t j = SEAST; j < NWEST +1  ;j++){
         neighbor = get_neighbor(game.position,j);
         if (existence_of_neighbor(game.position, neighbor)==1){
@@ -34,7 +33,6 @@ void deplacements_simple( struct game_t game, struct ensemble* ds ){
 void saut_simple(struct game_t game , struct ensemble* ss){
     unsigned int neighbor;
     unsigned int neighbor_of_neighbor; 
-    init_neighbors(game.seed);
     for (enum dir_t j = SEAST; j < NWEST +1 ;j++){
         neighbor = get_neighbor(game.position,j);
         neighbor_of_neighbor = get_neighbor(neighbor,j);
@@ -63,7 +61,7 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
 {  
     positions_init(md);
     deplacements_simple( game , md );
-    saut_simple( game , md );
+    saut_multiple( game , md );
     
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
