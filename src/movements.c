@@ -63,22 +63,25 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
     positions_init(md);
     deplacements_simple( game , md );
     saut_multiple( game , md );
-    
+  //translation_cardinal( game, md)
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
-struct ensemble translation_cardinal(struct world_t* w, unsigned int idx){
-    struct ensemble ens;
-    positions_init(&ens);
+void translation_cardinal(struct game_t game, struct ensemble* tc){
     enum dir_t tab_dir[4] = {EAST, WEST, NORTH, SOUTH};
+    unsigned int idx ;
     for(int i =0; i < 4; i++){
-        unsigned int idx2 = get_neighbor(idx, tab_dir[i]);
-        while(world_get_sort(w, idx2) == 0){
-            ajout_position(&ens, idx2);
-            idx2 = get_neighbor(idx2, tab_dir[i]);
+        
+        idx = get_neighbor(game.position, tab_dir[i]);
+        if (existence_of_neighbor(game.position , idx)==1){
+            while(world_get_sort(game.w, idx) == 0){
+                if (existence_of_neighbor(idx, get_neighbor(idx, tab_dir[i]))==1){
+                    ajout_position(tc, idx);
+                    idx = get_neighbor(idx , tab_dir[i]);
+            }
         }
 
     }
-    return ens;
+    }
 }
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
