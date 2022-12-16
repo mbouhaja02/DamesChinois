@@ -21,7 +21,7 @@ struct world_t* debut(struct game_t game){
             int nbr2 = WIDTH *i + WIDTH-1;
             world_set_sort( game.w, nbr, 1);
             world_set(game.w, nbr, 1);
-            world_set_sort( game.w, nbr2, 2);
+            world_set_sort( game.w, nbr2, 1);
             world_set(game.w, nbr2, 2);
         }
     }
@@ -30,7 +30,7 @@ struct world_t* debut(struct game_t game){
 
 }
 
-void draw_world(struct world_t* w){
+void draw_world(struct game_t game){
 
     for (int h = 'A'; h <'A'+WIDTH; h++){
         printf("\t  %c", h);
@@ -43,17 +43,29 @@ void draw_world(struct world_t* w){
         for(int j = 0; j < WIDTH; j++){
             
             int nbr = i * WIDTH + j;
-            if (world_get_sort( w, nbr) == 0 && world_get(w,nbr) == 0){
+            if (world_get_sort( game.w, nbr) == 0 && world_get(game.w,nbr) == 0){
                 printf("  . \t");
             }
 
-            if (world_get_sort( w, nbr) == 1 && world_get(w, nbr) == 1){
+            if (world_get_sort( game.w, nbr) == 1 && world_get(game.w, nbr) == 1){
                printf(" |B|\t");
             }
                 
-            if (world_get(w, nbr) == 2 && world_get(w, nbr) == 2){
+            if (world_get_sort(game.w, nbr) == 1 && world_get(game.w, nbr) == 2){
                     printf(" |W|\t");
                 }
+            if (world_get_sort(game.w, nbr) == 2 && world_get(game.w,nbr) == 1){
+                printf(" TB \t");
+            }
+            if (world_get_sort(game.w, nbr) == 3 && world_get(game.w,nbr) == 1){
+                printf(" EB \t");
+            }
+            if (world_get_sort(game.w, nbr) == 2 && world_get(game.w,nbr) == 2){
+                printf(" TW \t");
+            }
+            if (world_get_sort(game.w, nbr) == 3 && world_get(game.w,nbr) == 2){
+                printf(" EW \t");
+            }
                 
         }
         printf("\n");

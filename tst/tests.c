@@ -41,7 +41,7 @@ int main() {
   init_neighbors(game.seed);
   white_list(&white_list_initial, game.w);
   black_list(&black_list_initial, game.w);
-  draw_world(game.w);
+  draw_world(game);
 
 
   for ( unsigned int i = 0 ; i < MAX_TURNS*2 ; i++){
@@ -53,7 +53,7 @@ int main() {
       game.current_player = next_player(game.current_player); 
         
     }
-    draw_world(game.w);  
+    draw_world(game);  
   }
 
   printf("la victoire est de %u \n", game.current_player);

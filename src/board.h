@@ -22,7 +22,7 @@
 struct world_t* debut(struct game_t game);
 
 //Une fonction qui trace le monde w
-void draw_world(struct world_t* w);
+void draw_world(struct game_t game);
 
 void draw_grille(struct game_t game);
 
