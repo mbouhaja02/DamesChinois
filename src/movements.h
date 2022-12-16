@@ -13,8 +13,6 @@
 
 
 
-struct ensemble;
-
 /* Fonction qui retourne l'ensemble des déplacements simple possible */
 void deplacements_simple( struct game_t game, struct ensemble* ds);
 
@@ -26,7 +24,6 @@ void saut_multiple(struct game_t game , struct ensemble* sm);
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
 void saut_semi_diagonal(struct game_t game, struct ensemble* ssd);
-
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 void translation_cardinal(struct game_t game, struct ensemble* tc);
