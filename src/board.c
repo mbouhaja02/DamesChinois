@@ -66,13 +66,15 @@ void draw_world(struct world_t* w){
 
 void draw_grille(struct game_t game){
 
-    for(int i = 0; i < 5; i++){
-        for (int j = 0; j < 3 ; j++){
-            while (j < 3){
-                printf("\t.\t");
-                j++;
+    if (game.seed == 0){
+        for(int i = 0; i < 5; i++){
+            for (int j = 0; j < 3 ; j++){
+                while (j < 3){
+                    printf("\t.\t");
+                    j++;
+                }
+                printf("\n");
             }
-            printf("\n");
         }
     }
 
