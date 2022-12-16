@@ -48,14 +48,13 @@ void saut_simple(struct game_t game , struct ensemble* ss){
 
 /* Fonction qui retourne l'ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) */
 void saut_multiple(struct game_t game , struct ensemble* sm  ){
-    for (enum dir_t j = SEAST; j < NWEST + 1  ;j++){
-        while (place_visited ( sm, game.position) == 0){
-            saut_simple( game, sm);
-            game.position = get_neighbor(game.position , j);
-            ajout_position(sm, game.position);
+    saut_simple( game, sm);
+    for (unsigned int i = 0 ; i < sm->taille ; i++){
+        game.position = sm->positions[i];
+        if(place_visited ( sm, game.position ) == 0){
+            saut_multiple(game , sm);
         }
     }
-    
 }
 
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
