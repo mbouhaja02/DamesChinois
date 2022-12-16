@@ -16,7 +16,7 @@
 int existence_of_neighbor(unsigned int idx , unsigned int neighbor);
 
 //function that adds a neighbor of idx_1 as a vector with place idx_2 and direction d 
-void add_neighbor(unsigned int idx_1, unsigned int idx_2 ;
+void add_neighbor(unsigned int idx_1, unsigned int idx_2 ,enum dir_t d);
 
 
 //function that initializes a simple board with 4 relations
