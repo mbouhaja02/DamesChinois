@@ -27,6 +27,8 @@ void deplacements_simple( struct game_t game, struct ensemble* ds ){
             }
         }
     }
+
+   
       
 }
 /* Fonction qui retourne l'ensemble des sauts simples */
