@@ -4,7 +4,6 @@
 #include "geometry.h"
 #include "neighbors.h"
 #include "world.h"
-#include "neighbors_complement.h"
 #include <limits.h>
 
 /** The number of relations in the code */
