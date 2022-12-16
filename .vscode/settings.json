@@ -3,7 +3,8 @@
         "ensemble.h": "c",
         "geometry.h": "c",
         "world.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "time.h": "c"
     },
     "C_Cpp.default.includePath": ["src"],
 }

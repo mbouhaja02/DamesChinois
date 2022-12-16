@@ -20,7 +20,7 @@ int main(){
     struct game_t game ;
     unsigned int move ; 
     game = game_initializer();
-    debut(game.w);
+    debut(game);
     choose_random_piece_belonging_to(&game);
 
     struct ensemble ds,sm; 

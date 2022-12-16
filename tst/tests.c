@@ -26,12 +26,11 @@ while nobody has won:
 int main() { 
 
 
-  struct game_t game;
+  struct game_t game = game_initializer();
   time_t t;
 /* Intializes random number generator */
   srand(time(&t));
-  game.w = world_init();
-  debut(game.w);
+  debut(game);
   game.current_player = get_random_player();
   game.victoire  = choose_random_victory_type();
   game.seed = 0;

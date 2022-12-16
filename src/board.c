@@ -13,18 +13,20 @@
 
 
 
-struct world_t* debut(struct world_t* w){
+struct world_t* debut(struct game_t game){
 
-    for(int i =0 ; i<HEIGHT; i++){
-        int nbr = WIDTH *i;
-        int nbr2 = WIDTH *i + WIDTH-1;
-        world_set_sort( w, nbr, 1);
-        world_set(w, nbr, 1);
-        world_set_sort( w, nbr2, 2);
-        world_set(w, nbr2, 2);
+    if (game.seed == 0){
+        for(int i =0 ; i<HEIGHT; i++){
+            int nbr = WIDTH *i;
+            int nbr2 = WIDTH *i + WIDTH-1;
+            world_set_sort( game.w, nbr, 1);
+            world_set(game.w, nbr, 1);
+            world_set_sort( game.w, nbr2, 2);
+            world_set(game.w, nbr2, 2);
+        }
     }
 
-    return w;
+    return game.w;
 
 }
 
@@ -61,6 +63,20 @@ void draw_world(struct world_t* w){
     printf("\n \n");
 }
 
+
+void draw_grille(struct game_t game){
+
+    for(int i = 0; i < 5; i++){
+        for (int j = 0; j < 3 ; j++){
+            while (j < 3){
+                printf("\t.\t");
+                j++;
+            }
+            printf("\n");
+        }
+    }
+
+}
 
 
 
