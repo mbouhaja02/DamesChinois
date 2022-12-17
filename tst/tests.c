@@ -44,7 +44,7 @@ int main() {
   draw_world(game);
 
 
-  for ( unsigned int i = 0 ; i < MAX_TURNS*20 ; i++){
+  for ( unsigned int i = 0 ; i < MAX_TURNS ; i++){
     game.tour = i;
     choose_random_piece_belonging_to(&game);
     move = choose_random_move_for_piece(game);
