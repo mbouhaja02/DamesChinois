@@ -9,6 +9,7 @@
 #include "neighbors.h"
 #include "ensemble.h"
 #include "board.h"
+#include "victoire.h"
 
 void main(){
     struct game_t game = game_initializer();

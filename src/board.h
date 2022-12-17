@@ -19,7 +19,7 @@
 
 
 //Une fonction qui retourne un wolrd où les positions des pawn pour les deux joueurs sont initiés
-struct world_t* debut(struct game_t game);
+struct world_t* start(struct game_t game);
 
 //Une fonction qui trace le monde w
 void draw_world(struct game_t game);

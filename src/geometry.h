@@ -3,11 +3,11 @@
 
 /** The width (number of columns) of the world */
 #ifndef WIDTH
-  #define WIDTH 10
+  #define WIDTH 5
 #endif
 /** The height (number of rows) of the world */
 #ifndef HEIGHT
-  #define HEIGHT 10
+  #define HEIGHT 5
 #endif
 
 /** The number of possible places in the world */

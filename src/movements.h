@@ -29,6 +29,19 @@ void saut_semi_diagonal(struct game_t game, struct ensemble* ssd);
 void translation_cardinal(struct game_t game, struct ensemble* tc);
 
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
-void mvts_disponibles (struct game_t game, struct ensemble* md); 
+void mvts_disponibles (struct game_t game, struct ensemble* md);
+
+
+void capture_deplacements_simple( struct game_t game, struct ensemble* cds );
+
+void capture_saut_simple(struct game_t game , struct ensemble* css);
+
+void capture_saut_multiple(struct game_t game , struct ensemble* csm  );
+
+
+/*Tout mouvement de la pièce qui se termine sur une case 
+  contenant une pièce d'une couleur différente capture 
+          la pièce en question.*/
+void capture_dispo(struct game_t game, struct ensemble* cd);
 
 #endif //__MOVEMENTS_H__

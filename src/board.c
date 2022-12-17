@@ -13,7 +13,7 @@
 
 
 
-struct world_t* debut(struct game_t game){
+struct world_t* start(struct game_t game){
 
     if (game.seed == 0){
         for(int i =0 ; i<HEIGHT; i++){
@@ -31,7 +31,7 @@ struct world_t* debut(struct game_t game){
 }
 
 void draw_world(struct game_t game){
-
+    printf("T%d", game.tour);
     for (int h = 'A'; h <'A'+WIDTH; h++){
         printf("\t  %c", h);
     }

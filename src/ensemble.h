@@ -26,6 +26,8 @@ void white_list(struct ensemble* pb, struct world_t* w);
 
 int place_visited (struct ensemble* p, unsigned int place );
 
+int element_commun(struct ensemble* ens, struct ensemble* ens2);
+
 int egalite_de_deux_ensembles(struct ensemble a, struct ensemble b);
 
 

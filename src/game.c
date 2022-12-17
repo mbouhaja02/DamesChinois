@@ -17,6 +17,8 @@
 /*cette fonction est deja tester*/
 /*Il retourne la couleur d'un joueur aléatoire*/
 enum color_t get_random_player(){
+    time_t t;
+    srand(time(&t));
     enum color_t r = rand()%2+1;
     return r;
 }
@@ -42,7 +44,7 @@ void choose_random_piece_belonging_to(struct game_t* game){
     black_list(&pb, game->w);
     white_list(&pw, game->w);
     int a = rand();
-    a = a % HEIGHT ;
+    a = a % pb.taille ;
     if (game->current_player == 1){
         game->position =pb.positions[a];}
     if (game->current_player == 2){
@@ -79,7 +81,7 @@ void move_piece(struct game_t* game, unsigned int dst){
 
 struct game_t game_initializer(){
     struct game_t game;
-    game.current_player = 2 ; 
+    game.current_player = 0 ; 
     game.tour = 0;
     game.w = world_init();
     game.seed = 0;

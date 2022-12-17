@@ -53,6 +53,17 @@ int place_visited(struct ensemble* ens, unsigned int place ){
     return 0;
 }
 
+int element_commun(struct ensemble* ens, struct ensemble* ens2){
+    for(unsigned int i = 0; i < ens->taille; i++){
+        for(unsigned int j = 0; j < ens2->taille; j++){
+            if (ens->positions[i] == ens2->positions[j]){
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
 void concatener_ensembles(struct ensemble* a, struct ensemble* b ){
     for (unsigned int i=0 ; i < b->taille; i++){
         ajout_position( a , b->positions[i]);
@@ -67,8 +78,7 @@ int egalite_de_deux_ensembles(struct ensemble a,struct ensemble b){
             if (a.positions[i]!=b.positions[i]){
                 return 0;
             }
-        return 1;
         }
     }
-    return 0 ;
+    return 1 ;
 }
