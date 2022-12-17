@@ -59,9 +59,7 @@ int Victoire_complexe(struct game_t* game , struct ensemble wl , struct ensemble
 }
 
 int victoire_type(struct game_t* game , struct ensemble wl , struct ensemble bl){
-    printf("%d \n", game->victoire);
     if (game->victoire == 0){
-        printf("# \n");
         return Victoire_Simple(game, wl, bl);
     }
 
