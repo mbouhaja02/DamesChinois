@@ -34,13 +34,15 @@ void deplacements_simple( struct game_t game, struct ensemble* ds ){
 void capture_deplacements_simple( struct game_t game, struct ensemble* cds ){
     unsigned int neighbor;
     enum sort_t b;
+    enum color_t c;
     positions_init(cds);
     init_neighbors(game.seed);
     for (enum dir_t j = SEAST; j < NWEST +1  ;j++){
         neighbor = get_neighbor(game.position,j);
-        if (existence_of_neighbor(game.position, neighbor)==1){
+        if (existence_of_neighbor(game.position, neighbor)==1 && neighbor % WIDTH != 0 && neighbor % WIDTH != 9){
             b = world_get_sort(game.w, neighbor);
-            if ( b != NO_SORT){
+            c = world_get(game.w, neighbor);
+            if ( b = PAWN && c != game.current_player){
                 ajout_position( cds , neighbor) ;
             }
         }
@@ -72,7 +74,7 @@ void capture_saut_simple(struct game_t game , struct ensemble* css){
     for (enum dir_t j = SEAST; j < NWEST +1 ;j++){
         neighbor = get_neighbor(game.position,j);
         neighbor_of_neighbor = get_neighbor(neighbor,j);
-        if (existence_of_neighbor(game.position, neighbor)==1 && existence_of_neighbor(neighbor, neighbor_of_neighbor)==1){
+        if (existence_of_neighbor(game.position, neighbor)==1 && existence_of_neighbor(neighbor, neighbor_of_neighbor)==1 && neighbor_of_neighbor % WIDTH != 0 && neighbor_of_neighbor % WIDTH != 9){
             if ((world_get_sort(game.w , neighbor_of_neighbor ) == PAWN) && (world_get_sort(game.w , neighbor ) == PAWN)){
                 ajout_position( css , neighbor_of_neighbor);
             }
@@ -115,7 +117,7 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
 void capture_dispo(struct game_t game, struct ensemble* cd){
     positions_init(cd);
     capture_deplacements_simple(game, cd);
-    capture_saut_simple(game, cd);
+    //capture_saut_simple(game, cd);
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 void translation_cardinal(struct game_t game, struct ensemble* tc){

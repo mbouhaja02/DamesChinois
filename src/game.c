@@ -57,12 +57,8 @@ unsigned int choose_random_move_for_piece(struct game_t game){
     struct ensemble sm ; 
     unsigned int m ;
     positions_init(&sm);
-    if (game.current_player == 1)
-        black_list(&sm, game.w);
-    if (game.current_player == 2)
-        white_list(&sm, game.w);
-    
     mvts_disponibles(game, &sm);
+
     unsigned int r = rand();
     unsigned int module = sm.taille;
     r = r % module ;

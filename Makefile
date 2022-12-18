@@ -24,7 +24,7 @@ test : test_project
 	./test_project
 
 clean:
-	rm -f project test_project test_board movements *.o *~
+	rm -f project test_* *.o *~
 
 test_moves : test_moves.o $(OBJS)
 	gcc $(CFLAGS) $^  -o movements
@@ -38,3 +38,6 @@ test_victoire : test_victoire.o $(OBJS)
 
 test_ensemble : test_ensemble.o $(OBJS)
 	gcc $(CFLAGS) $^ -o test_ensemble
+
+test_captures : test_captures.o $(OBJS)
+	gcc $(CFLAGS) $^ -o test_captures
