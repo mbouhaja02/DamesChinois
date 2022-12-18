@@ -42,7 +42,7 @@ void capture_deplacements_simple( struct game_t game, struct ensemble* cds ){
         if (existence_of_neighbor(game.position, neighbor)==1 && neighbor % WIDTH != 0 && neighbor % WIDTH != 9){
             b = world_get_sort(game.w, neighbor);
             c = world_get(game.w, neighbor);
-            if ( b = PAWN && c != game.current_player){
+            if ( b != NO_SORT && c != game.current_player){
                 ajout_position( cds , neighbor) ;
             }
         }
