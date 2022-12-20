@@ -75,7 +75,7 @@ unsigned int choose_random_move_for_piece(struct game_t game){
 void move_piece(struct game_t game, unsigned int dst){
     struct ensemble jail;
     capture_dispo(game, &jail);
-    if(place_visited(&jail, dst) == 1){
+    /*if(place_visited(&jail, dst) == 1){
         add_prisoner(game.prison, game, dst);
         world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
         world_set(game.w, dst, world_get(game.w, game.position));
@@ -84,14 +84,13 @@ void move_piece(struct game_t game, unsigned int dst){
         game.position = dst;
 
         escape_attempts(game);
-    }
-    else{
-        world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
-        world_set(game.w, dst, world_get(game.w, game.position));
-        world_set_sort(game.w, game.position, NO_SORT);
-        world_set(game.w, game.position, NO_COLOR);
-        game.position = dst;
-    }
+    }*/
+    world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
+    world_set(game.w, dst, world_get(game.w, game.position));
+    world_set_sort(game.w, game.position, NO_SORT);
+    world_set(game.w, game.position, NO_COLOR);
+    game.position = dst;
+    
 }
 
 struct game_t game_initializer(){
@@ -99,7 +98,6 @@ struct game_t game_initializer(){
     game.current_player = 0 ; 
     game.tour = 0;
     game.w = world_init();
-    game.prison = init_prison();
     game.seed = 0;
     game.position = 0;
     game.victoire = 0 ; 
