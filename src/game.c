@@ -69,9 +69,6 @@ unsigned int choose_random_move_for_piece(struct game_t game){
     r = r % module ;
     m = sm.positions[r];
 
-    if(place_visited(&cd, m) == 1){
-        printf("#");
-    }
     return m;
 }
 
