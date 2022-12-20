@@ -32,8 +32,12 @@ int main(){
     for ( unsigned int i = 0 ; i < MAX_TURNS ; i++){
         game.tour = i;
         choose_random_piece_belonging_to(&game);
+        printf("piece = %d \n", game.position);
+        printf("1# \n");
         move = choose_random_move_for_piece(game);
-        move_piece(&game, move);
+        printf("move %d \n", move);
+        printf("2# \n");
+        move_piece(game, move);
         draw_world(game);
         if (victoire_type(&game, white_list_initial, black_list_initial) == 1){
             printf("le joueur qui a gagner est %d \n", game.current_player);

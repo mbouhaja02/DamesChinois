@@ -15,16 +15,17 @@
 
 /* Fonction qui retourne l'ensemble des déplacements simple possible */
 void deplacements_simple( struct game_t game, struct ensemble* ds ){
-    unsigned int neighbor;
-    enum sort_t b;
-    positions_init(ds);
-    init_neighbors(game.seed);
-    for (enum dir_t j = SEAST; j < NWEST +1  ;j++){
-        neighbor = get_neighbor(game.position,j);
-        if (existence_of_neighbor(game.position, neighbor)==1){
-            b = world_get_sort(game.w, neighbor);
-            if ( b == NO_SORT){
-                ajout_position( ds , neighbor) ;
+    if(world_get_sort(game.w, game.position) == 1){
+        unsigned int neighbor;
+        enum sort_t b;
+        init_neighbors(game.seed);
+        for (enum dir_t j = SEAST; j < NWEST +1  ;j++){
+            neighbor = get_neighbor(game.position,j);
+            if (existence_of_neighbor(game.position, neighbor)==1){
+                b = world_get_sort(game.w, neighbor);
+                if ( b == NO_SORT){
+                    ajout_position( ds , neighbor) ;
+                }
             }
         }
     }
@@ -35,7 +36,6 @@ void capture_deplacements_simple( struct game_t game, struct ensemble* cds ){
     unsigned int neighbor;
     enum sort_t b;
     enum color_t c;
-    positions_init(cds);
     init_neighbors(game.seed);
     for (enum dir_t j = SEAST; j < NWEST +1  ;j++){
         neighbor = get_neighbor(game.position,j);
@@ -60,7 +60,7 @@ void saut_simple(struct game_t game , struct ensemble* css){
         neighbor = get_neighbor(game.position,j);
         neighbor_of_neighbor = get_neighbor(neighbor,j);
         if (existence_of_neighbor(game.position, neighbor)==1 && existence_of_neighbor(neighbor, neighbor_of_neighbor)==1){
-            if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) == PAWN)){
+            if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) != NO_SORT)){
                 ajout_position( css , neighbor_of_neighbor);
             }
         }
@@ -74,8 +74,9 @@ void capture_saut_simple(struct game_t game , struct ensemble* css){
     for (enum dir_t j = SEAST; j < NWEST +1 ;j++){
         neighbor = get_neighbor(game.position,j);
         neighbor_of_neighbor = get_neighbor(neighbor,j);
+        enum color_t c = world_get(game.w, neighbor_of_neighbor);
         if (existence_of_neighbor(game.position, neighbor)==1 && existence_of_neighbor(neighbor, neighbor_of_neighbor)==1 && neighbor_of_neighbor % WIDTH != 0 && neighbor_of_neighbor % WIDTH != 9){
-            if ((world_get_sort(game.w , neighbor_of_neighbor ) == PAWN) && (world_get_sort(game.w , neighbor ) == PAWN)){
+            if ((world_get_sort(game.w , neighbor_of_neighbor ) != NO_SORT) && (c != game.current_player) && (world_get_sort(game.w , neighbor ) != NO_SORT)){
                 ajout_position( css , neighbor_of_neighbor);
             }
         }
@@ -111,27 +112,36 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
     saut_multiple( game , md );
     translation_cardinal( game, md);
     saut_semi_diagonal(game, md);
-    //capture_dispo(game, md);
+    //capture_deplacements_simple(game, md);
+    //capture_saut_simple(game, md);
+    //capture_saut_multiple(game, md);
 }
 
 void capture_dispo(struct game_t game, struct ensemble* cd){
     positions_init(cd);
     capture_deplacements_simple(game, cd);
-    //capture_saut_simple(game, cd);
+    capture_saut_simple(game, cd);
+    capture_saut_multiple(game, cd);
+    capture_saut_semi_diagonal(game, cd);
+    capture_translation_cardinal(game, cd);
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 void translation_cardinal(struct game_t game, struct ensemble* tc){
     if (world_get_sort(game.w, game.position) == 2){
         enum dir_t tab_dir[4] = {EAST, WEST, NORTH, SOUTH};
         unsigned int idx ;
+        int m;
         for(int i =0; i < 4; i++){
-        
+            m = 0;
             idx = get_neighbor(game.position, tab_dir[i]);
             if (existence_of_neighbor(game.position , idx)==1){
-                while(world_get_sort(game.w, idx) == 0){
+                while(world_get_sort(game.w, idx) == NO_SORT && m == 0){
+                    ajout_position(tc, idx);
                     if (existence_of_neighbor(idx, get_neighbor(idx, tab_dir[i]))==1){
-                        ajout_position(tc, idx);
                         idx = get_neighbor(idx , tab_dir[i]);
+                    }
+                    else{
+                        m = 1;
                     }
                 }
             }
@@ -145,15 +155,67 @@ void saut_semi_diagonal(struct game_t game , struct ensemble* ssd){
         enum dir_t tab_dir[4] = {NORTH, SOUTH, EAST, WEST};
         for(int i =0; i < 2; i++){
             for(int j = 2; j < 4; j++){
-                unsigned int idx2 = get_neighbor(game.position, tab_dir[i]);
-                unsigned int idx3 = get_neighbor(idx2, tab_dir[j]);
+                unsigned int idx = game.position;
+                unsigned int idx1 = get_neighbor(idx, tab_dir[i]);
+                unsigned int idx2  =get_neighbor(idx1, tab_dir[j]);
 
-                while(world_get_sort(game.w, idx3) == NO_SORT){
-                    if (existence_of_neighbor(idx2, idx3) == 1){
-                        ajout_position(ssd, idx3);
+                while(existence_of_neighbor(idx, idx1) == 1 && existence_of_neighbor(idx1, idx2) == 1){
+                    if(world_get_sort(game.w, idx2) == NO_SORT){
+                        ajout_position(ssd, idx2);
                     }
-                    idx2 = get_neighbor(idx3, tab_dir[i]);
-                    idx3 = get_neighbor(idx2, tab_dir[j]);
+                    idx = idx2;
+                    idx1 = get_neighbor(idx, tab_dir[i]);
+                    idx2 = get_neighbor(idx1, tab_dir[j]);
+
+                }
+
+            }
+        }
+    }
+    
+}
+
+void capture_translation_cardinal(struct game_t game, struct ensemble* tc){
+    if (world_get_sort(game.w, game.position) == 2){
+        enum dir_t tab_dir[4] = {EAST, WEST, NORTH, SOUTH};
+        unsigned int idx ;
+        int m;
+        for(int i =0; i < 4; i++){
+            m = 0;
+            idx = get_neighbor(game.position, tab_dir[i]);
+            if (existence_of_neighbor(game.position , idx)==1){
+                while(world_get_sort(game.w, idx) != NO_SORT && m == 0){
+                    ajout_position(tc, idx);
+                    if (existence_of_neighbor(idx, get_neighbor(idx, tab_dir[i]))==1){
+                        idx = get_neighbor(idx , tab_dir[i]);
+                    }
+                    else{
+                        m = 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
+void capture_saut_semi_diagonal(struct game_t game , struct ensemble* ssd){
+    if(world_get_sort(game.w, game.position) == 3){
+        enum dir_t tab_dir[4] = {NORTH, SOUTH, EAST, WEST};
+        for(int i =0; i < 2; i++){
+            for(int j = 2; j < 4; j++){
+                unsigned int idx = game.position;
+                unsigned int idx1 = get_neighbor(idx, tab_dir[i]);
+                unsigned int idx2  =get_neighbor(idx1, tab_dir[j]);
+
+                while(existence_of_neighbor(idx, idx1) == 1 && existence_of_neighbor(idx1, idx2) == 1){
+                    if(world_get_sort(game.w, idx2) != NO_SORT){
+                        ajout_position(ssd, idx2);
+                    }
+                    idx = idx2;
+                    idx1 = get_neighbor(idx, tab_dir[i]);
+                    idx2 = get_neighbor(idx1, tab_dir[j]);
+
                 }
 
             }

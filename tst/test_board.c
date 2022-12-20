@@ -13,7 +13,8 @@
 
 void main(){
     struct game_t game = game_initializer();
-    draw_grille(game);
+    start(game);
+    draw_world(game);
 }
 
 

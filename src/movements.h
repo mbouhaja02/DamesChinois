@@ -28,6 +28,11 @@ void saut_semi_diagonal(struct game_t game, struct ensemble* ssd);
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 void translation_cardinal(struct game_t game, struct ensemble* tc);
 
+void capture_saut_semi_diagonal(struct game_t game, struct ensemble* ssd);
+
+/* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
+void capture_translation_cardinal(struct game_t game, struct ensemble* tc);
+
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
 void mvts_disponibles (struct game_t game, struct ensemble* md);
 
@@ -43,5 +48,4 @@ void capture_saut_multiple(struct game_t game , struct ensemble* csm  );
   contenant une pièce d'une couleur différente capture 
           la pièce en question.*/
 void capture_dispo(struct game_t game, struct ensemble* cd);
-
 #endif //__MOVEMENTS_H__

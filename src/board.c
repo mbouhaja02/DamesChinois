@@ -14,17 +14,32 @@
 
 
 struct world_t* start(struct game_t game){
+    srand(time(NULL));
+    if(game.seed == 0){
+        /*for(int i = 0; i< HEIGHT; i++){
 
-    if (game.seed == 0){
-        for(int i =0 ; i<HEIGHT; i++){
-            int nbr = WIDTH *i;
-            int nbr2 = WIDTH *i + WIDTH-1;
-            world_set_sort( game.w, nbr, 1);
+            int r = rand()%3 + 1;
+            int nbr = WIDTH * i;
+            int nbr2 = WIDTH * i + WIDTH - 1;
+
+            world_set_sort( game.w, nbr, r);
             world_set(game.w, nbr, 1);
-            world_set_sort( game.w, nbr2, 1);
+            world_set_sort( game.w, nbr2, r);
             world_set(game.w, nbr2, 2);
+
+        }*/
+        for(int i = 0; i< HEIGHT; i++){
+            int nbr = WIDTH * i;
+            int nbr2 = WIDTH * i + WIDTH - 1;
+            int r = rand()%3 + 1;
+            world_set_sort( game.w, nbr, r);
+            world_set(game.w, nbr, 1);
+            world_set_sort( game.w, nbr2, r);
+            world_set(game.w, nbr2, 2);
+
         }
     }
+
 
     return game.w;
 
@@ -52,23 +67,24 @@ void draw_world(struct game_t game){
             }
                 
             if (world_get_sort(game.w, nbr) == 1 && world_get(game.w, nbr) == 2){
-                    printf(" |W|\t");
+                printf(" |W|\t");
                 }
             if (world_get_sort(game.w, nbr) == 2 && world_get(game.w,nbr) == 1){
-                printf(" TB \t");
+                printf(" |TB|\t");
+
             }
             if (world_get_sort(game.w, nbr) == 3 && world_get(game.w,nbr) == 1){
-                printf(" EB \t");
+                printf(" |EB|\t");
             }
             if (world_get_sort(game.w, nbr) == 2 && world_get(game.w,nbr) == 2){
-                printf(" TW \t");
+                printf(" |TW|\t");
             }
             if (world_get_sort(game.w, nbr) == 3 && world_get(game.w,nbr) == 2){
-                printf(" EW \t");
+                printf(" |EW|\t");
             }
                 
         }
-        printf("\n");
+        printf("\n \n");
             
     }
 

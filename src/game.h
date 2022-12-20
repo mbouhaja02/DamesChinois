@@ -11,12 +11,15 @@
 #include "world.h"
 #include "ensemble.h"
 #include "victoire.h"
+#include "game.h"
+#include "prison.h"
 
 
 struct game_t {
     enum color_t current_player;
     unsigned int tour;
     struct world_t* w;
+    struct prison_t* prison;
     unsigned int seed;
     unsigned int position;
     enum victoire_t victoire;
@@ -35,7 +38,7 @@ void choose_random_piece_belonging_to(struct game_t* game);
 unsigned int choose_random_move_for_piece(struct game_t game);
 
 /*move a peice knowing the next index of our piece (game.position)*/
-void move_piece(struct game_t* game, unsigned int dst);
+void move_piece(struct game_t game, unsigned int dst);
 
 /*Retrun a game which has been initialized*/
 struct game_t game_initializer();

@@ -10,6 +10,7 @@
 #include "movements.h"
 #include "game.h"
 #include "victoire.h"
+#include "prison.h"
 
 
 
@@ -54,25 +55,34 @@ void choose_random_piece_belonging_to(struct game_t* game){
 unsigned int choose_random_move_for_piece(struct game_t game){
     time_t t;
     srand(time(&t));
-    struct ensemble sm ; 
+    struct ensemble sm, cd; 
+    positions_init(&cd);
+    translation_cardinal(game, &cd);
     unsigned int m ;
-    positions_init(&sm);
     mvts_disponibles(game, &sm);
-
     unsigned int r = rand();
+    while(sm.taille == 0){
+        choose_random_piece_belonging_to(&game);
+        mvts_disponibles(game, &sm);
+    }
     unsigned int module = sm.taille;
     r = r % module ;
     m = sm.positions[r];
+
+    if(place_visited(&cd, m) == 1){
+        printf("#");
+    }
     return m;
 }
 
 
-void move_piece(struct game_t* game, unsigned int dst){
-    world_set_sort(game->w, dst, world_get_sort(game->w, game->position));
-    world_set(game->w, dst, world_get(game->w, game->position));
-    world_set_sort(game->w, game->position, NO_SORT);
-    world_set(game->w, game->position, NO_COLOR);
-    game->position = dst;
+void move_piece(struct game_t game, unsigned int dst){
+
+    world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
+    world_set(game.w, dst, world_get(game.w, game.position));
+    world_set_sort(game.w, game.position, NO_SORT);
+    world_set(game.w, game.position, NO_COLOR);
+    game.position = dst;
 }
 
 struct game_t game_initializer(){
@@ -80,6 +90,7 @@ struct game_t game_initializer(){
     game.current_player = 0 ; 
     game.tour = 0;
     game.w = world_init();
+    game.prison = init_prison();
     game.seed = 0;
     game.position = 0;
     game.victoire = 0 ; 
