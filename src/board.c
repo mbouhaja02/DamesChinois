@@ -45,10 +45,10 @@ struct world_t* start(struct game_t game){
 
 }
 
-void draw_world(struct game_t game){
+void draw_world_simple(struct game_t game){
     printf("T%d", game.tour);
-    for (int h = 'A'; h <'A'+WIDTH; h++){
-        printf("\t  %c", h);
+    for (int q = 'A'; q <'A'+WIDTH; q++){
+        printf("\t    %c", q);
     }
 
     printf("\n \n");
@@ -58,7 +58,7 @@ void draw_world(struct game_t game){
         for(int j = 0; j < WIDTH; j++){
             
             int nbr = i * WIDTH + j;
-            if (world_get_sort( game.w, nbr) == 0 && world_get(game.w,nbr) == 0){
+            if (world_get_sort( game.w, nbr) == 0 || world_get(game.w,nbr) == 0){
                 printf("  . \t");
             }
 
@@ -84,8 +84,155 @@ void draw_world(struct game_t game){
             }
                 
         }
-        printf("\n \n");
+        printf("\n");
             
+    }
+    printf("\n \n");
+}
+
+void draw_world(struct game_t game){
+    printf("T%d", game.tour);
+    for (int q = 'A'; q <'A'+WIDTH; q++){
+        printf("\t    %c", q);
+    }
+
+    printf("\n \n");
+
+
+    for(int i = 0; i < HEIGHT; i++){
+        for(int h = 0; h < 3; h++){
+            if(h != 1){
+                printf("   \t ");
+            }
+            else if( h == 1){
+                printf("0%d\t ", i);
+            }
+            for(int j = 0; j < WIDTH; j++){
+            
+                int nbr = i * WIDTH + j;
+                if (world_get_sort( game.w, nbr) == 0 || world_get(game.w,nbr) == 0){
+                    switch (h)
+                    {
+                    case 0:
+                        printf("      \t");
+                        break;
+                    case 1:
+                        printf("      \t");
+                        break;
+                    case 2:
+                        printf("   .  \t");
+                        break;
+                    
+                    default:
+                        break;
+                    }
+                }
+                if (world_get_sort( game.w, nbr) == 1 && world_get(game.w, nbr) == 1){
+                    switch (h)
+                    {
+                    case 0:
+                        printf("      \t");
+                        break;
+                    case 1:
+                        printf(" _____\t");
+                        break;
+                    case 2:
+                        printf(" |_b_|\t");
+                        break;
+                    
+                    default:
+                        break;
+                    }
+                }
+                if (world_get_sort(game.w, nbr) == 2 && world_get(game.w,nbr) == 1){
+                    switch (h)
+                    {
+                    case 0:
+                        printf(" |---|\t");
+                        break;
+                    case 1:
+                        printf(" |||||\t");
+                        break;
+                    case 2:
+                        printf(" |_b_|\t");
+                        break;
+                    
+                    default:
+                        break;
+                    }
+                }
+                if (world_get_sort(game.w, nbr) == 3 && world_get(game.w,nbr) == 1){
+                    switch (h)
+                    {
+                    case 0:
+                        printf("   _  \t");
+                        break;
+                    case 1:
+                        printf("  | | \t");
+                        break;
+                    case 2:
+                        printf(" |_b_|\t");
+                        break;
+                    
+                    default:
+                        break;
+                    }
+                }
+                if (world_get_sort( game.w, nbr) == 1 && world_get(game.w, nbr) == 2){
+                    switch (h)
+                    {
+                    case 0:
+                        printf("      \t");
+                        break;
+                    case 1:
+                        printf(" _____\t");
+                        break;
+                    case 2:
+                        printf(" |_w_|\t");
+                        break;
+                    
+                    default:
+                        break;
+                    }
+                }
+                if (world_get_sort(game.w, nbr) == 2 && world_get(game.w,nbr) == 2){
+                    switch (h)
+                    {
+                    case 0:
+                        printf(" |---|\t");
+                        break;
+                    case 1:
+                        printf(" |||||\t");
+                        break;
+                    case 2:
+                        printf(" |_w_|\t");
+                        break;
+                    
+                    default:
+                        break;
+                    }
+                }
+                if (world_get_sort(game.w, nbr) == 3 && world_get(game.w,nbr) == 2){
+                    switch (h)
+                    {
+                    case 0:
+                        printf("   _  \t");
+                        break;
+                    case 1:
+                        printf("  | | \t");
+                        break;
+                    case 2:
+                        printf(" |_w_|\t");
+                        break;
+                    
+                    default:
+                        break;
+                    }
+                }
+            }
+            printf("\n");
+        }
+        printf("\n");
     }
 
     printf("\n \n");

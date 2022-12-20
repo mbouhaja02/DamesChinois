@@ -24,6 +24,8 @@ struct world_t* start(struct game_t game);
 //Une fonction qui trace le monde w
 void draw_world(struct game_t game);
 
+void draw_world_simple(struct game_t game);
+
 void draw_grille(struct game_t game);
 
 
