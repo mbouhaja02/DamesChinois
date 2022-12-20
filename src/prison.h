@@ -24,12 +24,13 @@ struct prisoner_t{
 struct prison_t{
   unsigned int len_white;
   unsigned int len_black;
-  struct prisoner_t cells[WORLD_SIZE];
+  struct prisoner_t cells_white[WORLD_SIZE];
+  struct prisoner_t cells_black[WORLD_SIZE];
 };
 
 struct prison_t* init_prison();
 
-void add_prisoner(struct game_t game, unsigned int idx);
+void add_prisoner(struct prison_t* prison, struct game_t game, unsigned int idx);
 
 void escape_attempts(struct game_t game);
 

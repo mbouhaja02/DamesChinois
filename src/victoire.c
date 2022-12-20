@@ -19,7 +19,6 @@
  
 int Victoire_Simple(struct game_t* game, struct ensemble wl, struct ensemble bl) {
     struct ensemble depart_autre_joueur ;
-    positions_init(&depart_autre_joueur);
     if (game->current_player == 1 ){
         black_list(&depart_autre_joueur, game->w );
         if (element_commun(&depart_autre_joueur, &wl) == 1){
@@ -41,7 +40,6 @@ départ de l'autre joueur et les positions actuels de current_player*/
 
 int Victoire_complexe(struct game_t* game , struct ensemble wl , struct ensemble bl){
     struct ensemble positions_joueur ;
-    positions_init(&positions_joueur);
 
     if (game->current_player == 1 ){
         black_list(&positions_joueur, game->w);

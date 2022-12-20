@@ -57,7 +57,6 @@ unsigned int choose_random_move_for_piece(struct game_t game){
     srand(time(&t));
     struct ensemble sm, cd; 
     positions_init(&cd);
-    translation_cardinal(game, &cd);
     unsigned int m ;
     mvts_disponibles(game, &sm);
     unsigned int r = rand();
@@ -74,12 +73,24 @@ unsigned int choose_random_move_for_piece(struct game_t game){
 
 
 void move_piece(struct game_t game, unsigned int dst){
-
-    world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
-    world_set(game.w, dst, world_get(game.w, game.position));
-    world_set_sort(game.w, game.position, NO_SORT);
-    world_set(game.w, game.position, NO_COLOR);
-    game.position = dst;
+    struct ensemble jail;
+    capture_dispo(game, &jail);
+    if(place_visited(&jail, dst) == 1){
+        add_prisoner(game.prison, game, dst);
+        world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
+        world_set(game.w, dst, world_get(game.w, game.position));
+        world_set_sort(game.w, game.position, NO_SORT);
+        world_set(game.w, game.position, NO_COLOR);
+        game.position = dst;
+    }
+    else{
+        world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
+        world_set(game.w, dst, world_get(game.w, game.position));
+        world_set_sort(game.w, game.position, NO_SORT);
+        world_set(game.w, game.position, NO_COLOR);
+        game.position = dst;
+    }
+    escape_attempts(game);
 }
 
 struct game_t game_initializer(){
