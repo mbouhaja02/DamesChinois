@@ -13,13 +13,13 @@
 
 
 
-/* Fonction qui retourne l'ensemble des déplacements simple possible */
+/* Fonction qui ajoute à un ensemble les déplacements simple possible pour un pawn*/
 void deplacements_simple( struct game_t game, struct ensemble* ds);
 
-/* Fonction qui retourne l'ensemble des sauts simples */
+/* Fonction qui ajoute à un ensemble les sauts simples possibles pour un pawn*/
 void saut_simple(struct game_t game , struct ensemble* ss);
 
-/* Fonction qui retourne l'ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) */
+/* Fonction qui ajoute à un ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) pour un pawn*/
 void saut_multiple(struct game_t game , struct ensemble* sm);
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
@@ -28,19 +28,26 @@ void saut_semi_diagonal(struct game_t game, struct ensemble* ssd);
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 void translation_cardinal(struct game_t game, struct ensemble* tc);
 
+
+/* Fonction qui rajoute à un ensemble les differents captures disponibles pour un éléphant*/
 void capture_saut_semi_diagonal(struct game_t game, struct ensemble* ssd);
 
-/* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
+
+/*Fonction qui ajoute à un ensemble les differents captures disponibles pour une tour*/
 void capture_translation_cardinal(struct game_t game, struct ensemble* tc);
 
 /* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
 void mvts_disponibles (struct game_t game, struct ensemble* md);
 
 
+/*Fonction qui ajoute à un ensemble les differents capture simple disponibles pour un pawn*/
 void capture_deplacements_simple( struct game_t game, struct ensemble* cds );
 
+
+/*Fonction qui ajoute à un ensemble les differents capture saut simple disponibles pour un pawn*/
 void capture_saut_simple(struct game_t game , struct ensemble* css);
 
+/*Fonction qui ajoute les differents capture saut simple disponibles pour un pawn*/
 void capture_saut_multiple(struct game_t game , struct ensemble* csm  );
 
 

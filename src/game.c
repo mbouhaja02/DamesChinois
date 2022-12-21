@@ -77,12 +77,6 @@ void move_piece(struct game_t game, unsigned int dst){
     capture_dispo(game, &jail);
     if(place_visited(&jail, dst) == 1){
         add_prisoner(game.prison, game, dst);
-        world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
-        world_set(game.w, dst, world_get(game.w, game.position));
-        world_set_sort(game.w, game.position, NO_SORT);
-        world_set(game.w, game.position, NO_COLOR);
-        game.position = dst;
-
         escape_attempts(game);
     }*/
     world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
@@ -98,6 +92,7 @@ struct game_t game_initializer(){
     game.current_player = 0 ; 
     game.tour = 0;
     game.w = world_init();
+    game.prison = init_prison();
     game.seed = 0;
     game.position = 0;
     game.victoire = 0 ; 

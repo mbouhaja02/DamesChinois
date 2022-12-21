@@ -13,7 +13,7 @@
 
 
 
-/* Fonction qui retourne l'ensemble des déplacements simple possible */
+/* Fonction qui ajoute à un ensemble les déplacements simple possible pour un pawn */
 void deplacements_simple( struct game_t game, struct ensemble* ds ){
     if(world_get_sort(game.w, game.position) == 1){
         unsigned int neighbor;
@@ -31,7 +31,7 @@ void deplacements_simple( struct game_t game, struct ensemble* ds ){
     }
       
 }
-
+/*Fonction qui ajoute à un ensemble les differents capture simple disponibles pour un pawn*/
 void capture_deplacements_simple( struct game_t game, struct ensemble* cds ){
     unsigned int neighbor;
     enum sort_t b;
@@ -53,7 +53,7 @@ void capture_deplacements_simple( struct game_t game, struct ensemble* cds ){
 }
 
 
-/* Fonction qui retourne l'ensemble des sauts simples */
+/* Fonction qui ajoute à un ensemble les sauts simples possibles pour un pawn*/
 void saut_simple(struct game_t game , struct ensemble* css){
     unsigned int neighbor;
     unsigned int neighbor_of_neighbor; 
@@ -70,7 +70,7 @@ void saut_simple(struct game_t game , struct ensemble* css){
         }
     }
 }
-
+/*Fonction qui ajoute à un ensemble les differents capture saut simple disponibles pour un pawn*/
 void capture_saut_simple(struct game_t game , struct ensemble* css){
     unsigned int neighbor;
     unsigned int neighbor_of_neighbor; 
@@ -89,7 +89,7 @@ void capture_saut_simple(struct game_t game , struct ensemble* css){
     }
 }
 
-/* Fonction qui retourne l'ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) */
+/* Fonction qui ajoute à un ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) pour un pawn*/
 void saut_multiple(struct game_t game , struct ensemble* sm  ){
     saut_simple( game, sm);
     if(world_get_sort(game.w, game.position) == 1){
@@ -102,6 +102,7 @@ void saut_multiple(struct game_t game , struct ensemble* sm  ){
     }
 }
 
+/*Fonction qui ajoute les differents capture saut simple disponibles pour un pawn*/
 void capture_saut_multiple(struct game_t game , struct ensemble* csm  ){
     capture_saut_simple( game, csm);
     if(world_get_sort(game.w, game.position) == 1){
@@ -129,13 +130,16 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
     //capture_translation_cardinal(game, md);
 }
 
+/*Tout mouvement de la pièce qui se termine sur une case 
+  contenant une pièce d'une couleur différente capture 
+          la pièce en question.*/
 void capture_dispo(struct game_t game, struct ensemble* cd){
     positions_init(cd);
     capture_deplacements_simple(game, cd);
-    capture_saut_simple(game, cd);
-    capture_saut_multiple(game, cd);
-    capture_saut_semi_diagonal(game, cd);
-    capture_translation_cardinal(game, cd);
+    //capture_saut_simple(game, cd);
+    //capture_saut_multiple(game, cd);
+    //capture_saut_semi_diagonal(game, cd);
+    //capture_translation_cardinal(game, cd);
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 void translation_cardinal(struct game_t game, struct ensemble* tc){
@@ -187,7 +191,7 @@ void saut_semi_diagonal(struct game_t game , struct ensemble* ssd){
     }
     
 }
-
+/*Fonction qui ajoute à un ensemble les differents captures disponibles pour une tour*/
 void capture_translation_cardinal(struct game_t game, struct ensemble* tc){
     if (world_get_sort(game.w, game.position) == 2){
         enum dir_t tab_dir[4] = {EAST, WEST, NORTH, SOUTH};
@@ -212,7 +216,7 @@ void capture_translation_cardinal(struct game_t game, struct ensemble* tc){
     }
 }
 
-/* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
+/* Fonction qui rajoute à un ensemble les differents captures disponibles pour un éléphant*/
 void capture_saut_semi_diagonal(struct game_t game , struct ensemble* ssd){
     if(world_get_sort(game.w, game.position) == 3){
         enum dir_t tab_dir[4] = {NORTH, SOUTH, EAST, WEST};
