@@ -45,11 +45,23 @@ void add_prisoner(struct prison_t* prison,struct game_t game, unsigned int idx){
         prison->len_white = prison->len_white + 1;
 
     }
+    printf("\n [");
+    for(unsigned int i =0; i < prison->len_white; i++){
+        printf("%d, \t", prison->cells_white[i].i);
+    }
+    printf("]\n");
+
+
+    printf("\n [");
+    for(unsigned int i =0; i < prison->len_black; i++){
+        printf("%d, \t", prison->cells_black[i].i);
+    }
+    printf("]\n");
 }
 
 void escape_attempts(struct game_t game){
     srand(time(NULL));
-    int r = rand()%2;
+    int r = 1;
 
     if(world_get(game.w, game.position) == 1){
         for(unsigned int i = 0; i < game.prison->len_white; i++){

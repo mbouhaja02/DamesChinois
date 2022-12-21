@@ -21,11 +21,9 @@ void deplacements_simple( struct game_t game, struct ensemble* ds ){
         init_neighbors(game.seed);
         for (enum dir_t j = SEAST; j < NWEST +1  ;j++){
             neighbor = get_neighbor(game.position,j);
-            if (existence_of_neighbor(game.position, neighbor)==1){
-                b = world_get_sort(game.w, neighbor);
-                if ( b == NO_SORT){
-                    ajout_position( ds , neighbor) ;
-                }
+            b = world_get_sort(game.w, neighbor);
+            if (existence_of_neighbor(game.position, neighbor)==1 &&  b == NO_SORT){
+               ajout_position( ds , neighbor) ;  
             }
         }
     }
@@ -123,8 +121,7 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
     saut_multiple( game , md );
     translation_cardinal( game, md);
     saut_semi_diagonal(game, md);
-    //capture_deplacements_simple(game, md);
-    //capture_saut_simple(game, md);
+    capture_deplacements_simple(game, md);
     //capture_saut_multiple(game, md);
     //capture_saut_semi_diagonal(game, md);
     //capture_translation_cardinal(game, md);
@@ -136,10 +133,9 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
 void capture_dispo(struct game_t game, struct ensemble* cd){
     positions_init(cd);
     capture_deplacements_simple(game, cd);
-    //capture_saut_simple(game, cd);
-    //capture_saut_multiple(game, cd);
-    //capture_saut_semi_diagonal(game, cd);
-    //capture_translation_cardinal(game, cd);
+    capture_saut_multiple(game, cd);
+    capture_saut_semi_diagonal(game, cd);
+    capture_translation_cardinal(game, cd);
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 void translation_cardinal(struct game_t game, struct ensemble* tc){

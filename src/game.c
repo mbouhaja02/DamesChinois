@@ -73,17 +73,18 @@ unsigned int choose_random_move_for_piece(struct game_t game){
 
 
 void move_piece(struct game_t game, unsigned int dst){
-    /*struct ensemble jail;
+    struct ensemble jail;
     capture_dispo(game, &jail);
-    if(place_visited(&jail, dst) == 1){
+    if(place_visited(&jail, dst) == 1 && dst != UINT_MAX){
         add_prisoner(game.prison, game, dst);
-        escape_attempts(game);
-    }*/
+    }
     world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
     world_set(game.w, dst, world_get(game.w, game.position));
     world_set_sort(game.w, game.position, NO_SORT);
     world_set(game.w, game.position, NO_COLOR);
     game.position = dst;
+
+    escape_attempts(game);
     
 }
 
