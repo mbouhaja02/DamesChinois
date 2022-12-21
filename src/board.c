@@ -91,21 +91,26 @@ void draw_world(struct game_t game){
 }
 
 void draw_world_simple(struct game_t game){
-    printf("T%d", game.tour);
-    for (int q = 'A'; q <'A'+WIDTH; q++){
-        printf("\t    %c", q);
+    for(int i =0; i < WIDTH*10; i++){
+        printf("-");
     }
+    printf("\n");
+    printf("|   ");
+    for (int q = 'A'; q <'A'+WIDTH; q++){
+        printf("\t    %c ", q);
+    }
+    printf("\t|");
 
-    printf("\n \n");
+    printf("\n| \n");
 
 
     for(int i = 0; i < HEIGHT; i++){
         for(int h = 0; h < 3; h++){
             if(h != 1){
-                printf("   \t ");
+                printf("|   \t ");
             }
             else if( h == 1){
-                printf("0%d\t ", i);
+                printf("|0%d\t ", i);
             }
             for(int j = 0; j < WIDTH; j++){
             
@@ -230,12 +235,20 @@ void draw_world_simple(struct game_t game){
                     }
                 }
             }
+            printf("|");
             printf("\n");
         }
+        printf("|");
         printf("\n");
     }
 
-    printf("\n \n");
+    for(int i =0; i < WIDTH*10; i++){
+        printf("-");
+    }
+
+    printf("\n ");
+    printf("\t   Tour numéro %d (T%d)", game.tour, game.tour);
+    printf("\n");
 }
 
 
