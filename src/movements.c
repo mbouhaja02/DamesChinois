@@ -121,7 +121,7 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
     saut_multiple( game , md );
     translation_cardinal( game, md);
     saut_semi_diagonal(game, md);
-    capture_deplacements_simple(game, md);
+    //capture_deplacements_simple(game, md);
     //capture_saut_multiple(game, md);
     //capture_saut_semi_diagonal(game, md);
     //capture_translation_cardinal(game, md);
