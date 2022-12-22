@@ -124,10 +124,10 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
     translation_cardinal( game, md);
     saut_semi_diagonal(game, md);
     capture_deplacements_simple(game, md);
-    capture_saut_simple(game, md);
-    capture_saut_multiple(game, md);
-    capture_saut_semi_diagonal(game, md);
-    capture_translation_cardinal(game, md);
+    //capture_saut_simple(game, md);
+    //capture_saut_multiple(game, md);
+    //capture_saut_semi_diagonal(game, md);
+    //capture_translation_cardinal(game, md);
 }
 
 /*Tout mouvement de la pièce qui se termine sur une case 
