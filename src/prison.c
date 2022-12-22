@@ -39,24 +39,12 @@ void add_prisoner(struct prison_t* prison,struct game_t game, unsigned int idx){
 
     }
     else if (world_get(game.w, idx) == 2) {
-        prison->cells_white[prison->len_white + 1].c = world_get(game.w, idx);
-        prison->cells_white[prison->len_white + 1].s = world_get_sort(game.w, idx);
-        prison->cells_white[prison->len_white + 1].i = idx;
+        prison->cells_white[prison->len_white].c = world_get(game.w, idx);
+        prison->cells_white[prison->len_white].s = world_get_sort(game.w, idx);
+        prison->cells_white[prison->len_white].i = idx;
         prison->len_white = prison->len_white + 1;
 
     }
-    printf("\n [");
-    for(unsigned int i =0; i < prison->len_white; i++){
-        printf("%d, \t", prison->cells_white[i].i);
-    }
-    printf("]\n");
-
-
-    printf("\n [");
-    for(unsigned int i =0; i < prison->len_black; i++){
-        printf("%d, \t", prison->cells_black[i].i);
-    }
-    printf("]\n");
 }
 
 void escape_attempts(struct game_t game){

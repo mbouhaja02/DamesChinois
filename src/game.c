@@ -73,17 +73,28 @@ unsigned int choose_random_move_for_piece(struct game_t game){
 
 
 void move_piece(struct game_t game, unsigned int dst){
-    /*struct ensemble jail;
+    struct ensemble jail;
     capture_dispo(game, &jail);
     if(place_visited(&jail, dst) == 1){
         add_prisoner(game.prison, game, dst);
-        escape_attempts(game);
-    }*/
+    }
+    printf("\nprison white [ ");
+    for(unsigned int i = 0; i < game.prison->len_white; i++){
+        printf("%d, \t", game.prison->cells_white[i].i);
+    }
+    printf(" ]");
+
+    printf("\nprison black [ ");
+    for(unsigned int i = 0; i < game.prison->len_black; i++){
+        printf("%d, \t", game.prison->cells_black[i].i);
+    }
+    printf(" ] \n");
     world_set_sort(game.w, dst, world_get_sort(game.w, game.position));
     world_set(game.w, dst, world_get(game.w, game.position));
     world_set_sort(game.w, game.position, NO_SORT);
     world_set(game.w, game.position, NO_COLOR);
     game.position = dst;
+    escape_attempts(game);
     
 }
 
