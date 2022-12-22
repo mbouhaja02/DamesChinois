@@ -15,7 +15,7 @@
 
 /* Fonction qui ajoute à un ensemble les déplacements simple possible pour un pawn */
 void deplacements_simple( struct game_t game, struct ensemble* ds ){
-    if(world_get_sort(game.w, game.position) == 1){
+    if(world_get_sort(game.w, game.position) == PAWN){
         unsigned int neighbor;
         enum sort_t b;
         init_neighbors(game.seed);
@@ -37,13 +37,13 @@ void capture_deplacements_simple( struct game_t game, struct ensemble* cds ){
     enum sort_t b;
     enum color_t c;
     init_neighbors(game.seed);
-    if(world_get_sort(game.w, game.position) == 1){
+    if(world_get_sort(game.w, game.position) == PAWN){
         for (enum dir_t j = SEAST; j < NWEST +1  ;j++){
             neighbor = get_neighbor(game.position,j);
             if (existence_of_neighbor(game.position, neighbor)==1 && neighbor % WIDTH != 0 && neighbor % WIDTH != 9){
                 b = world_get_sort(game.w, neighbor);
                 c = world_get(game.w, neighbor);
-                if ( b != NO_SORT && c != game.current_player){
+                if ( b == PAWN && c != game.current_player){
                     ajout_position( cds , neighbor) ;
                 }
             }
@@ -123,11 +123,11 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
     saut_multiple( game , md );
     translation_cardinal( game, md);
     saut_semi_diagonal(game, md);
-    //capture_deplacements_simple(game, md);
-    //capture_saut_simple(game, md);
-    //capture_saut_multiple(game, md);
-    //capture_saut_semi_diagonal(game, md);
-    //capture_translation_cardinal(game, md);
+    capture_deplacements_simple(game, md);
+    capture_saut_simple(game, md);
+    capture_saut_multiple(game, md);
+    capture_saut_semi_diagonal(game, md);
+    capture_translation_cardinal(game, md);
 }
 
 /*Tout mouvement de la pièce qui se termine sur une case 
@@ -136,10 +136,10 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
 void capture_dispo(struct game_t game, struct ensemble* cd){
     positions_init(cd);
     capture_deplacements_simple(game, cd);
-    //capture_saut_simple(game, cd);
-    //capture_saut_multiple(game, cd);
-    //capture_saut_semi_diagonal(game, cd);
-    //capture_translation_cardinal(game, cd);
+    capture_saut_simple(game, cd);
+    capture_saut_multiple(game, cd);
+    capture_saut_semi_diagonal(game, cd);
+    capture_translation_cardinal(game, cd);
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 void translation_cardinal(struct game_t game, struct ensemble* tc){
