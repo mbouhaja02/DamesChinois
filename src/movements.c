@@ -135,7 +135,7 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
           la pièce en question.*/
 void capture_dispo(struct game_t game, struct ensemble* cd){
     positions_init(cd);
-    //capture_deplacements_simple(game, cd);
+    capture_deplacements_simple(game, cd);
     //capture_saut_simple(game, cd);
     //capture_saut_multiple(game, cd);
     //capture_saut_semi_diagonal(game, cd);

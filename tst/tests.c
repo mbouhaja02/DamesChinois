@@ -32,7 +32,7 @@ int main() {
   srand(time(&t));
   start(game);
   game.current_player = get_random_player();
-  game.victoire  = 1;
+  game.victoire  = choose_random_victory_type();
   game.seed = 0;
   struct ensemble white_list_initial, black_list_initial;
   unsigned int piece=0;
