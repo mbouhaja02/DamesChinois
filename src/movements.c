@@ -135,11 +135,11 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
           la pièce en question.*/
 void capture_dispo(struct game_t game, struct ensemble* cd){
     positions_init(cd);
-    capture_deplacements_simple(game, cd);
-    capture_saut_simple(game, cd);
-    capture_saut_multiple(game, cd);
-    capture_saut_semi_diagonal(game, cd);
-    capture_translation_cardinal(game, cd);
+    //capture_deplacements_simple(game, cd);
+    //capture_saut_simple(game, cd);
+    //capture_saut_multiple(game, cd);
+    //capture_saut_semi_diagonal(game, cd);
+    //capture_translation_cardinal(game, cd);
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 void translation_cardinal(struct game_t game, struct ensemble* tc){
