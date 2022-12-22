@@ -92,7 +92,7 @@ struct game_t game_initializer(){
     game.current_player = 0 ; 
     game.tour = 0;
     game.w = world_init();
-    game.prison = init_prison();
+    //game.prison = init_prison();
     game.seed = 0;
     game.position = 0;
     game.victoire = 0 ; 
