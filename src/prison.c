@@ -49,7 +49,7 @@ void add_prisoner(struct prison_t* prison,struct game_t game, unsigned int idx){
 
 void escape_attempts(struct game_t game){
     srand(time(NULL));
-    int r = 1;
+    int r = rand()%2;
 
     if(world_get(game.w, game.position) == 1){
         for(unsigned int i = 0; i < game.prison->len_white; i++){

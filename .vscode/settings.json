@@ -7,16 +7,5 @@
         "time.h": "c",
         "prison.h": "c"
     },
-
-    "C_Cpp.default.includePath": ["src"],
-    "background.enable" : true,
-    "background.fullscreen": {
-    "image": "https://external-preview.redd.it/kEF6m5ajJKYnVBPjoD2VA_pzUo6xhD5cUEw8AUb4j3M.png?format=pjpg&auto=webp&s=3cf77082f04f186a01e62176679ec26044062a39", // url of your image
-    // "image": ["https://pathtoimage.png"], // An array may be useful when set interval for carousel
-    "opacity": 0.91, // 0.85 ~ 0.95 recommended
-    "size": "cover", // also css, `cover` to self-adaption (recommended)，or `contain`、`200px 200px`
-    "position": "center", // alias to `background-position`, default `center`
-    "interval": 0.5 // seconds of interval for carousel, default `0` to disabled.
-    }
 }
 
