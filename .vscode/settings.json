@@ -5,7 +5,8 @@
         "world.h": "c",
         "string.h": "c",
         "time.h": "c",
-        "prison.h": "c"
+        "prison.h": "c",
+        "game.h": "c"
     },
 
     "C_Cpp.default.includePath": ["src"],

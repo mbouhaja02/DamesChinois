@@ -8,6 +8,7 @@
 #include "ensemble.h"
 #include "movements.h"
 #include "game.h"
+#include "prison.h"
 
 
 

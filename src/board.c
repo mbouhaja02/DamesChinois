@@ -10,6 +10,7 @@
 #include "movements.h"
 #include "board.h"
 #include "game.h"
+#include "prison.h"
 
 
 

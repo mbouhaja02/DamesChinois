@@ -11,6 +11,7 @@
 #include "board.h"
 #include "victoire.h"
 #include "game.h"
+#include "prison.h"
 
 
 /*w = world_init();*/
