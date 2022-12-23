@@ -58,12 +58,12 @@ void saut_simple(struct game_t game , struct ensemble* css){
     unsigned int neighbor;
     unsigned int neighbor_of_neighbor; 
     init_neighbors(game.seed);
-    if(world_get_sort(game.w, game.position) == 1){
+    if(world_get_sort(game.w, game.position) == PAWN){
         for (enum dir_t j = SEAST; j < NWEST +1 ;j++){
             neighbor = get_neighbor(game.position,j);
             neighbor_of_neighbor = get_neighbor(neighbor,j);
             if (existence_of_neighbor(game.position, neighbor)==1 && existence_of_neighbor(neighbor, neighbor_of_neighbor)==1){
-                if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) != NO_SORT)){
+                if ((world_get_sort(game.w , neighbor_of_neighbor ) == NO_SORT) && (world_get_sort(game.w , neighbor ) == PAWN) ){
                     ajout_position( css , neighbor_of_neighbor);
                 }
             }
@@ -92,7 +92,7 @@ void capture_saut_simple(struct game_t game , struct ensemble* css){
 /* Fonction qui ajoute à un ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) pour un pawn*/
 void saut_multiple(struct game_t game , struct ensemble* sm  ){
     saut_simple( game, sm);
-    if(world_get_sort(game.w, game.position) == 1){
+    if(world_get_sort(game.w, game.position) == PAWN){
         for (unsigned int i = 0 ; i < sm->taille ; i++){
             game.position = sm->positions[i];
             if(place_visited ( sm, game.position ) == 0){
@@ -105,7 +105,7 @@ void saut_multiple(struct game_t game , struct ensemble* sm  ){
 /*Fonction qui ajoute les differents capture saut simple disponibles pour un pawn*/
 void capture_saut_multiple(struct game_t game , struct ensemble* csm  ){
     capture_saut_simple( game, csm);
-    if(world_get_sort(game.w, game.position) == 1){
+    if(world_get_sort(game.w, game.position) == PAWN){
         for (unsigned int i = 0 ; i < csm->taille ; i++){
             game.position = csm->positions[i];
             if(place_visited ( csm, game.position ) == 0){
@@ -143,7 +143,7 @@ void capture_dispo(struct game_t game, struct ensemble* cd){
 }
 /* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
 void translation_cardinal(struct game_t game, struct ensemble* tc){
-    if (world_get_sort(game.w, game.position) == 2){
+    if (world_get_sort(game.w, game.position) == TOUR){
         enum dir_t tab_dir[4] = {EAST, WEST, NORTH, SOUTH};
         unsigned int idx ;
         int m;
@@ -168,7 +168,7 @@ void translation_cardinal(struct game_t game, struct ensemble* tc){
 
 /* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
 void saut_semi_diagonal(struct game_t game , struct ensemble* ssd){
-    if(world_get_sort(game.w, game.position) == 3){
+    if(world_get_sort(game.w, game.position) == ELEPHANT){
         enum dir_t tab_dir[4] = {NORTH, SOUTH, EAST, WEST};
         for(int i =0; i < 2; i++){
             for(int j = 2; j < 4; j++){
@@ -193,7 +193,7 @@ void saut_semi_diagonal(struct game_t game , struct ensemble* ssd){
 }
 /*Fonction qui ajoute à un ensemble les differents captures disponibles pour une tour*/
 void capture_translation_cardinal(struct game_t game, struct ensemble* tc){
-    if (world_get_sort(game.w, game.position) == 2){
+    if (world_get_sort(game.w, game.position) == TOUR){
         enum dir_t tab_dir[4] = {EAST, WEST, NORTH, SOUTH};
         unsigned int idx ;
         int m;
@@ -218,7 +218,7 @@ void capture_translation_cardinal(struct game_t game, struct ensemble* tc){
 
 /* Fonction qui rajoute à un ensemble les differents captures disponibles pour un éléphant*/
 void capture_saut_semi_diagonal(struct game_t game , struct ensemble* ssd){
-    if(world_get_sort(game.w, game.position) == 3){
+    if(world_get_sort(game.w, game.position) == ELEPHANT){
         enum dir_t tab_dir[4] = {NORTH, SOUTH, EAST, WEST};
         for(int i =0; i < 2; i++){
             for(int j = 2; j < 4; j++){
