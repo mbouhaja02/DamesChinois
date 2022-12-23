@@ -43,7 +43,7 @@ int main() {
   black_list(&black_list_initial, game.w);
 
 
-  for ( unsigned int i = 0 ; i < MAX_TURNS*10 ; i++){
+  for ( unsigned int i = 0 ; i < MAX_TURNS ; i++){
     game.tour = i;
     choose_random_piece_belonging_to(&game);
     move = choose_random_move_for_piece(game);
