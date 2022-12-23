@@ -28,5 +28,7 @@ void draw_world_simple(struct game_t game);
 
 void draw_grille(struct game_t game);
 
+void draw_legend();
+
 
 #endif // __BOARD_H__

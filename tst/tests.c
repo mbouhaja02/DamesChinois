@@ -42,6 +42,7 @@ int main() {
   init_neighbors(game.seed);
   white_list(&white_list_initial, game.w);
   black_list(&black_list_initial, game.w);
+  draw_legend();
 
 
   for ( unsigned int i = 0 ; i < MAX_TURNS ; i++){

@@ -16,6 +16,7 @@ void main(){
     start(game);
     draw_world(game);
     draw_world_simple(game);
+    draw_legend();
 }
 
 
