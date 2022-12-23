@@ -34,7 +34,7 @@ struct world_t* start(struct game_t game){
 
 }
 
-void draw_world(struct game_t game){
+/*void draw_world(struct game_t game){
     printf("T%d", game.tour);
     for (int q = 'A'; q <'A'+WIDTH; q++){
         printf("\t    %c", q);
@@ -79,7 +79,7 @@ void draw_world(struct game_t game){
     printf("\n \n");
 }
 
-
+*/
 
 
 void draw_world_simple(struct game_t game){
