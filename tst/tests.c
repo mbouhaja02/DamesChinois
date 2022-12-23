@@ -54,6 +54,17 @@ int main() {
             printf("\t victoire complexe = %d \n \n", game.victoire);
             return 0;  
     }
+    printf("\n prison black [");
+    for(unsigned int i =0; i< game.prison->len_black; i++){
+      printf(" %d, ", game.prison->cells_black[i].i);
+    }
+    printf(" ] \n");
+
+    printf("\n prison white [");
+    for(unsigned int i =0; i< game.prison->len_white; i++){
+      printf(" %d, ", game.prison->cells_white[i].i);
+    }
+    printf(" ] \n");
     game.current_player = next_player(game.current_player);  
   }
 
