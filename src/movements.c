@@ -124,7 +124,6 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
     translation_cardinal( game, md);
     saut_semi_diagonal(game, md);
     capture_deplacements_simple(game, md);
-    capture_saut_simple(game, md);
     capture_saut_multiple(game, md);
     capture_saut_semi_diagonal(game, md);
     capture_translation_cardinal(game, md);
@@ -136,7 +135,6 @@ void mvts_disponibles (struct game_t game, struct ensemble* md)
 void capture_dispo(struct game_t game, struct ensemble* cd){
     positions_init(cd);
     capture_deplacements_simple(game, cd);
-    capture_saut_simple(game, cd);
     capture_saut_multiple(game, cd);
     capture_saut_semi_diagonal(game, cd);
     capture_translation_cardinal(game, cd);
