@@ -26,14 +26,14 @@ int main(){
     init_neighbors(game.seed);
     white_list(&white_list_initial, game.w);
     black_list(&black_list_initial, game.w);
-    draw_world(game);
+    draw_world_simple(game);
 
     for(unsigned int i =0 ; i < 5; i++){
         game.tour = i;
         choose_random_piece_belonging_to(&game);
         move = choose_random_move_for_piece(game);
         move_piece(&game, move);
-        draw_world(game);
+        draw_world_simple(game);
         if (Victoire_Simple(&game, white_list_initial, black_list_initial) == 1){
             printf("le joueur qui a gagner est %d \n", game.current_player);
             return 0;

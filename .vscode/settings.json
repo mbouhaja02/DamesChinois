@@ -7,5 +7,7 @@
         "time.h": "c",
         "prison.h": "c"
     },
+
+    "C_Cpp.default.includePath": ["src"],
 }
 

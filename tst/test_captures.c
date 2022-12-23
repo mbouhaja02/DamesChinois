@@ -26,7 +26,7 @@ int main(){
     init_neighbors(game.seed);
     white_list(&white_list_initial, game.w);
     black_list(&black_list_initial, game.w);
-    draw_world(game);
+    draw_world_simple(game);
 
 
     for ( unsigned int i = 0 ; i < MAX_TURNS ; i++){
@@ -38,7 +38,7 @@ int main(){
         printf("move %d \n", move);
         printf("2# \n");
         move_piece(game, move);
-        draw_world(game);
+        draw_world_simple(game);
         if (victoire_type(&game, white_list_initial, black_list_initial) == 1){
             printf("le joueur qui a gagner est %d \n", game.current_player);
             return 0;  
