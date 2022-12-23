@@ -44,7 +44,7 @@ void move_piece(struct game_t game, unsigned int dst);
 struct game_t game_initializer();
 
 
-
+void draw_legend();
 
 
 
