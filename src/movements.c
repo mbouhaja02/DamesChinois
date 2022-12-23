@@ -81,7 +81,7 @@ void capture_saut_simple(struct game_t game , struct ensemble* css){
             neighbor_of_neighbor = get_neighbor(neighbor,j);
             enum color_t c = world_get(game.w, neighbor_of_neighbor);
             if (existence_of_neighbor(game.position, neighbor)==1 && existence_of_neighbor(neighbor, neighbor_of_neighbor)==1 && neighbor_of_neighbor % WIDTH != 0 && neighbor_of_neighbor % WIDTH != 9){
-                if ((world_get_sort(game.w , neighbor_of_neighbor ) != NO_SORT) && (c != game.current_player) && (world_get_sort(game.w , neighbor ) != NO_SORT)){
+                if ((world_get_sort(game.w , neighbor_of_neighbor ) == PAWN) && (c != game.current_player) && (world_get_sort(game.w , neighbor ) == PAWN)){
                     ajout_position( css , neighbor_of_neighbor);
                 }
             }
