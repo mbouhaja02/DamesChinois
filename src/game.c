@@ -101,7 +101,7 @@ struct game_t game_initializer(){
     return game ; 
 }
 
-void draw_legend(){
+/*void draw_legend(){
     printf("\t \t LEGENDE \n");
     for(int i = 0; i < 3; i++){
         printf("\n \t");
@@ -187,4 +187,4 @@ void draw_legend(){
                 
     }
     
-}
+}*/
