@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <getopt.h>
 
 #include "geometry.h"
 #include "world.h"
@@ -24,16 +25,48 @@ while nobody has won:
   current_player = next_player(current_player)*/
 
 
-int main() { 
-
-
+int main(int argc, char* argv[]) { 
   struct game_t game = game_initializer();
   time_t t;
 /* Intializes random number generator */
   srand(time(&t));
   start(game);
+
+  unsigned int victory = 0;
+  int turns = MAX_TURNS;
+  extern char *optarg;
+  int opt = 0;
+  while((opt = getopt(argc, argv, "sm:t:h")) != -1){
+    switch (opt)
+    {
+    case 's':
+      if(optarg != NULL){
+
+      }
+      break;
+    case 'm':
+      if(optarg != NULL){
+        turns = atoi(optarg);
+      }
+      
+      break;
+    case 't':
+      if(strcmp("c", optarg) == 1){
+        victory = 1;
+      }
+      break;
+    case 'h':
+      printf("usage: ./project [-h help] [-s an optional parametre to initialize the RNG]\n \t \t [-m an optional parametre for MAX_TURNS] \n \t \t [-t an optional parametre to set the victory type \n]");
+      return 0;
+      break;
+    
+    default:
+      break;
+    }
+  }
+
+  game.victoire = victory;
   game.current_player = get_random_player();
-  game.victoire  =  choose_random_victory_type();
   game.seed = 0;
   struct ensemble white_list_initial, black_list_initial;
   unsigned int piece=0;
@@ -43,7 +76,7 @@ int main() {
   white_list(&white_list_initial, game.w);
   black_list(&black_list_initial, game.w);
 
-  for ( unsigned int i = 0 ; i < MAX_TURNS ; i++){
+  for (int i = 0 ; i < turns; i++){
     game.tour = i;
     choose_random_piece_belonging_to(&game);
     move = choose_random_move_for_piece(game);
@@ -61,6 +94,7 @@ int main() {
     printf(" ] \n");
 
     printf("\n prison white [");
+
     for(unsigned int i =0; i< game.prison->len_white; i++){
       printf(" %d, ", game.prison->cells_white[i].i);
     }

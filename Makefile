@@ -5,7 +5,7 @@ CFLAGS = -I src -Wall -Wextra -std=c99 -g3 $(MANSUBA_FLAGS)
 SRCS = world.c neighbors.c geometry.c ensemble.c movements.c board.c victoire.c game.c neighbors_complement.c prison.c
 OBJS = $(SRCS:.c=.o)
 
-all: test_project project
+all: project 
 
 %.o: src/%.c
 	gcc -c $(CFLAGS) $<
@@ -15,7 +15,7 @@ all: test_project project
 
 project: tests.o $(OBJS)
 	gcc $(CFLAGS) $^ -o project
-	./project
+
 
 test_project: tests.o $(OBJS)
 	gcc $(CFLAGS) $^  -o test_project
