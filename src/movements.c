@@ -224,15 +224,13 @@ void capture_saut_semi_diagonal(struct game_t game , struct ensemble* ssd){
                 unsigned int idx = game.position;
                 unsigned int idx1 = get_neighbor(idx, tab_dir[i]);
                 unsigned int idx2  =get_neighbor(idx1, tab_dir[j]);
-                enum color_t c = world_get(game.w, idx2);
-                while(existence_of_neighbor(idx, idx1) == 1 && existence_of_neighbor(idx1, idx2) == 1 && c != game.current_player){
+                while(existence_of_neighbor(idx, idx1) == 1 && existence_of_neighbor(idx1, idx2) == 1 && world_get(game.w, idx2) != game.current_player){
                     if(world_get_sort(game.w, idx2) != NO_SORT){
                         ajout_position(ssd, idx2);
                     }
                     idx = idx2;
                     idx1 = get_neighbor(idx, tab_dir[i]);
                     idx2 = get_neighbor(idx1, tab_dir[j]);
-                    c = world_get(game.w, idx2);
 
                 }
 
