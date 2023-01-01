@@ -9,10 +9,10 @@
   <line>Memcheck, a memory error detector</line>
   <line>Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.</line>
   <line>Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info</line>
-  <line>Command: ./project -s 156 -m 10</line>
+  <line>Command: ./project -s 156 -m 2</line>
 </preamble>
 
-<pid>70635</pid>
+<pid>71100</pid>
 <ppid>69711</ppid>
 <tool>memcheck</tool>
 
@@ -27,19 +27,19 @@
     <arg>-s</arg>
     <arg>156</arg>
     <arg>-m</arg>
-    <arg>10</arg>
+    <arg>2</arg>
   </argv>
 </args>
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.034 </time>
+  <time>00:00:00:00.044 </time>
 </status>
 
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.531 </time>
+  <time>00:00:00:00.539 </time>
 </status>
 
 <errorcounts>

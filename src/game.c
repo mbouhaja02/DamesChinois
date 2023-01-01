@@ -57,8 +57,7 @@ void choose_random_piece_belonging_to(struct game_t* game){
 unsigned int choose_random_move_for_piece(struct game_t game){
     time_t t;
     srand(time(&t));
-    struct ensemble sm, cd; 
-    positions_init(&cd);
+    struct ensemble sm;
     unsigned int m ;
     mvts_disponibles(game, &sm);
     unsigned int r = rand();
