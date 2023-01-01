@@ -41,8 +41,9 @@ int main(int argc, char* argv[]) {
     {
     case 's':
       if(optarg != NULL){
-
+        srand(atoi(optarg));
       }
+      
       break;
     case 'm':
       if(optarg != NULL){
@@ -51,9 +52,9 @@ int main(int argc, char* argv[]) {
       
       break;
     case 't':
-      if(strcmp("c", optarg) == 1){
+      if(optarg[0] == 'c'){
         victory = 1;
-      }
+      }      
       break;
     case 'h':
       printf("usage: ./project [-h help] [-s an optional parametre to initialize the RNG]\n \t \t [-m an optional parametre for MAX_TURNS] \n \t \t [-t an optional parametre to set the victory type \n]");
