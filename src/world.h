@@ -8,6 +8,7 @@
 struct world_t{
     unsigned int positions[WORLD_SIZE][2];
 };
+
 /** Initializes a world (NO_COLOR, NO_SORT everywhere)
     Always returns the same pointer */
 struct world_t* world_init();
