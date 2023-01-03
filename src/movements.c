@@ -80,7 +80,7 @@ void capture_saut_simple(struct game_t game , struct ensemble* css){
         for (enum dir_t j = SEAST; j < NWEST +1 ;j++){
             neighbor = get_neighbor(game.position,j);
             neighbor_of_neighbor = get_neighbor(neighbor,j);
-            assert (neighbor_of_neighbor < WORLD_SIZE);
+            assert(neighbor_of_neighbor < WORLD_SIZE);
             enum color_t c = world_get(game.w, neighbor_of_neighbor);
             if (existence_of_neighbor(game.position, neighbor)==1 && existence_of_neighbor(neighbor, neighbor_of_neighbor)==1 && neighbor_of_neighbor % WIDTH != 0 && neighbor_of_neighbor % WIDTH != 9){
                 if ((world_get_sort(game.w , neighbor_of_neighbor ) == PAWN) && (c != game.current_player) && (c != MAX_COLOR) && (world_get_sort(game.w , neighbor ) == PAWN)){
