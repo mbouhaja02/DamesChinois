@@ -6,7 +6,7 @@
 /** Abstract struct representing the possible places in the world
     These places are indexed from 0 to WORLD_SIZE-1 */
 struct world_t{
-    unsigned int positions[WORLD_SIZE+1][2+1];
+    unsigned int positions[WORLD_SIZE+1][2];
 };
 /** Initializes a world (NO_COLOR, NO_SORT everywhere)
     Always returns the same pointer */
