@@ -20,6 +20,7 @@ struct world_t* world_init() {
     return &w;
 }
 
+
 /** Return the color at a place */
 enum color_t world_get(const struct world_t* b, unsigned int idx){
     if (idx < WORLD_SIZE){
