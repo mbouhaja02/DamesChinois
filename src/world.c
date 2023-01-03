@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <limits.h> 
 #include "world.h"
@@ -25,11 +23,10 @@ struct world_t* world_init() {
 
 /** Return the color at a place */
 enum color_t world_get(const struct world_t* b, unsigned int idx){
-    enum color_t a = MAX_COLOR;
     if (idx < WORLD_SIZE){
-        a = b->positions[idx][0];
+        return b->positions[idx][0];
     }
-    return a;
+    return MAX_COLOR;
 }
 
 /** Sets the color at a place */
