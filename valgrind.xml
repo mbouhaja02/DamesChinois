@@ -12,7 +12,7 @@
   <line>Command: ./project -s 156 -m 10</line>
 </preamble>
 
-<pid>26698</pid>
+<pid>1550</pid>
 <ppid>17810</ppid>
 <tool>memcheck</tool>
 
@@ -33,13 +33,13 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.014 </time>
+  <time>00:00:00:00.011 </time>
 </status>
 
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.230 </time>
+  <time>00:00:00:01.635 </time>
 </status>
 
 <errorcounts>
