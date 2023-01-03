@@ -104,6 +104,7 @@ int main(int argc, char* argv[]) {
   }
 
   printf("\tNombre de tours maximal est atteint \n");
+  printf("\t type de relation est %d \n", game.seed);
   printf("\tVictoire complexe = %d \n \n", game.victoire);
   return 0;
 
