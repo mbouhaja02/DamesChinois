@@ -52,24 +52,24 @@ void draw_world(struct game_t game){
             }
 
             if (world_get_sort( game.w, nbr) == 1 && world_get(game.w, nbr) == 1){
-               printf(" ♟\t");
+               printf("  ♟\t");
             }
                 
             if (world_get_sort(game.w, nbr) == 1 && world_get(game.w, nbr) == 2){
-                printf(" ♙\t");
+                printf("  ♙\t");
                 }
             if (world_get_sort(game.w, nbr) == 2 && world_get(game.w,nbr) == 1){
-                printf(" ♜\t");
+                printf("  ♜\t");
 
             }
             if (world_get_sort(game.w, nbr) == 3 && world_get(game.w,nbr) == 1){
-                printf(" ♝\t");
+                printf("  ♝\t");
             }
             if (world_get_sort(game.w, nbr) == 2 && world_get(game.w,nbr) == 2){
-                printf(" ♖\t");
+                printf("  ♖\t");
             }
             if (world_get_sort(game.w, nbr) == 3 && world_get(game.w,nbr) == 2){
-                printf(" ♗\t");
+                printf("  ♗\t");
             }
                 
         }

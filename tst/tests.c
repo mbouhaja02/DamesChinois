@@ -36,7 +36,8 @@ int main(int argc, char* argv[]) {
   unsigned int victory = 0;
   int turns = MAX_TURNS;
   extern char *optarg;
-  int opt = 4;
+  int opt = 0;
+  //int config = 0;
   while((opt = getopt(argc, argv, "sm:t:h")) != -1){
     switch (opt)
     {
@@ -57,6 +58,10 @@ int main(int argc, char* argv[]) {
         victory = 1;
       }      
       break;
+    case 'c':
+      if(optarg != NULL){
+        //config = atoi(optarg);
+      }
     case 'h':
       printf("usage: ./project [-h help] [-s an optional parametre to initialize the RNG]\n \t \t [-m an optional parametre for MAX_TURNS] \n \t \t [-t an optional parametre to set the victory type \n]");
       return 0;
