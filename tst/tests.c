@@ -30,7 +30,6 @@ int main(int argc, char* argv[]) {
   struct game_t game = game_initializer();
   time_t t;
 /* Intializes random number generator */
-  srand(time(&t));
   start(game);
 
   unsigned int victory = 0;
