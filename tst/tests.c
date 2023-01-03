@@ -68,7 +68,7 @@ int main(int argc, char* argv[]) {
 
   game.victoire = victory;
   game.current_player = get_random_player();
-  game.seed = 0;
+  game.seed = 2;
   struct ensemble white_list_initial, black_list_initial;
   unsigned int piece=0;
   unsigned int move=0;
@@ -76,7 +76,7 @@ int main(int argc, char* argv[]) {
   init_neighbors(game.seed);
   white_list(&white_list_initial, game.w);
   black_list(&black_list_initial, game.w);
-
+  //choose_random_relation(&game);
   for (int i = 0 ; i < turns; i++){
     game.tour = i;
     choose_random_piece_belonging_to(&game);

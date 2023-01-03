@@ -122,9 +122,45 @@ void init_diagonal_board(){
     } 
 }
 
+void init_triangular_board(){
 
+    init_simple_board();
+    for (int i = 0 ; i < WORLD_SIZE ; i++){
+        if (i< WORLD_SIZE - WIDTH && i%WIDTH != WIDTH - 1){
+            add_neighbor(i , get_neighbor(i, SEAST),SEAST);
+            }
+    } 
+}
 
-   
+void init_hexagonal_board(){
+    for (int i = 0 ; i < WORLD_SIZE ; i++){
+        if (i%2 == 0){
+            if (i%WIDTH != WIDTH - 1){
+                add_neighbor(i , get_neighbor(i, EAST),EAST);}
+            if (i%WIDTH != 0){
+                add_neighbor(i, get_neighbor(i, WEST),WEST);}
+        }
+        else { 
+            if (i >= WIDTH && i%WIDTH != 0) {
+                add_neighbor(i,get_neighbor(i,NWEST),NWEST);
+            }
+
+            if ( i< WORLD_SIZE - WIDTH && i%WIDTH != 0){
+                add_neighbor(i, get_neighbor(i, SWEST),SWEST);
+            
+            }
+            if (i >= WIDTH && i%WIDTH != WIDTH - 1){
+                add_neighbor(i, get_neighbor(i, NEAST),NEAST);
+            }
+
+            if (i< WORLD_SIZE - WIDTH && i%WIDTH != WIDTH - 1){
+                add_neighbor(i , get_neighbor(i, SEAST),SEAST);
+            }
+
+        }
+    }
+
+}  
     
 
 
@@ -144,6 +180,33 @@ void init_simple_board(){
             add_neighbor(i , get_neighbor(i, EAST),EAST);}
     } 
 }
+
+//initializes triangular board
+/**void init_triangular_neighbors(){
+    unsigned int line ; 
+    unsigned int right_limit ; 
+    unsigned int left_limit ; 
+    if (WIDTH > HEIGHT){
+        for (unsigned int i = 0; i < WORLD_SIZE; i++){
+            line = i/WIDTH ;
+            right_limit = line*WIDTH + line ; 
+            left_limit = (line+1)*WIDTH - HEIGHT + line;
+
+            if (i > right_limit){
+                add_neighbor(i, get_neighbor(i,WEST),WEST);
+            }
+            if (i < left_limit){
+                add_neighbor(i, get_neighbor(i,EAST),EAST);
+            }
+            if (line != 0 && i < left_limit + 1 && i+1 > right_limit ){
+                add_neighbor(i, get_neighbor(i,NORTH),NORTH);
+            }
+            if (line != HEIGHT-1 && i < left_limit +1 && i+1 > right_limit ){
+                add_neighbor(i, get_neighbor(i,SOUTH),SOUTH);
+            }
+        }
+    }
+}**/
 
 //function that get only simple board neighbors
 struct neighbors_t get_neighbors_for_simple_board(unsigned int idx){

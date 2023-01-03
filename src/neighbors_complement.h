@@ -8,7 +8,7 @@
 #include <limits.h>
 
 /** The number of relations in the code */
-#define MAX_RELATIONS 1
+#define MAX_RELATIONS 4
 /** The maximum number of neighbors for a place */
 #define MAX_NEIGHBORS 8
 

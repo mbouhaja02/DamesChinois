@@ -100,6 +100,15 @@ struct game_t game_initializer(){
     return game ; 
 }
 
+//chooses the relation mode randomly
+void choose_random_relation(struct game_t *game){
+    time_t t;
+    srand(time(&t));
+    int a = rand();
+    game->seed = a % MAX_RELATIONS ;
+}
+
+
 /*void draw_legend(){
     printf("\t \t LEGENDE \n");
     for(int i = 0; i < 3; i++){
