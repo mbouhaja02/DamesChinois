@@ -33,13 +33,21 @@
 
 <status>
   <state>RUNNING</state>
+<<<<<<< HEAD
+  <time>00:00:00:00.043 </time>
+=======
   <time>00:00:00:00.042 </time>
+>>>>>>> 23c13228caaf25f735d7b95a35505e30b5dd1130
 </status>
 
 
 <status>
   <state>FINISHED</state>
+<<<<<<< HEAD
+  <time>00:00:00:00.333 </time>
+=======
   <time>00:00:00:00.316 </time>
+>>>>>>> 23c13228caaf25f735d7b95a35505e30b5dd1130
 </status>
 
 <errorcounts>
