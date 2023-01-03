@@ -86,7 +86,7 @@ int main(int argc, char* argv[]) {
     choose_random_piece_belonging_to(&game);
     move = choose_random_move_for_piece(game);
     move_piece(game, move);
-    draw_world_simple(game);
+    draw_world(game);
     if (victoire_type(&game, white_list_initial, black_list_initial) == 1){
             printf("le joueur qui a gagner est %d \n", game.current_player);
             printf("\t victoire complexe = %d \n \n", game.victoire);
