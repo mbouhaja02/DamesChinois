@@ -25,6 +25,10 @@ void init_simple_board();
 //function that initializes a diagonal board with 8 relations 
 void init_diagonal_board();
 
+void init_hexagonal_board();
+
+void init_triangular_board();
+
 //function that gives neighbors in case of a simple board
 struct neighbors_t get_neighbors_for_simple_board(unsigned int idx);
 

@@ -22,12 +22,22 @@ void init_neighbors(unsigned int seed){
         neighbors[i].n[0].i = UINT_MAX;
         neighbors[i].n[0].d = NO_DIR;
     }
-    
-    if (seed == 0) {
-        init_simple_board();// on considère que les mouvements simples
-    }
-    else{
+    switch (seed)
+    {
+    case 0:
+        init_simple_board();
+        break;
+    case 1 : 
         init_diagonal_board();
+        break;
+    case 2 :
+        init_triangular_board();
+        break;
+    case 3 : 
+        init_hexagonal_board();
+        break;
+    default:
+        break;
     }
 }
 
