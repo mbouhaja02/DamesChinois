@@ -3,6 +3,7 @@
 #include <string.h>
 #include <time.h>
 #include <getopt.h>
+#include <math.h>
 
 #include "geometry.h"
 #include "world.h"
@@ -79,6 +80,9 @@ int main(int argc, char* argv[]) {
   choose_random_relation(&game);
   for (int i = 0 ; i < turns; i++){
     game.tour = i;
+    if (game.tour == sqrt(MAX_TURNS)){
+      choose_random_relation(&game);
+    }
     choose_random_piece_belonging_to(&game);
     move = choose_random_move_for_piece(game);
     move_piece(game, move);
