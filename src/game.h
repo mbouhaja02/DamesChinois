@@ -23,6 +23,7 @@ struct game_t {
     unsigned int seed;
     unsigned int position;
     enum victoire_t victoire;
+
 };
 
 /* Return a random color of a player (white or black)*/
@@ -43,6 +44,8 @@ void move_piece(struct game_t game, unsigned int dst);
 /*Retrun a game which has been initialized*/
 struct game_t game_initializer();
 
+//chooses the relation mode randomly
+void choose_random_relation(struct game_t *game);
 
 void draw_legend();
 

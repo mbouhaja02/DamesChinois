@@ -76,7 +76,7 @@ int main(int argc, char* argv[]) {
   init_neighbors(game.seed);
   white_list(&white_list_initial, game.w);
   black_list(&black_list_initial, game.w);
-
+  choose_random_relation(&game);
   for (int i = 0 ; i < turns; i++){
     game.tour = i;
     choose_random_piece_belonging_to(&game);
