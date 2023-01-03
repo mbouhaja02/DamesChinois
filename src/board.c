@@ -81,7 +81,7 @@ void draw_world(struct game_t game){
 
 
 
-void draw_world_simple(struct game_t game){
+/*void draw_world_simple(struct game_t game);{
     for(int i =0; i < WIDTH+1; i++){
         printf(" _______");
     }
@@ -243,7 +243,7 @@ void draw_world_simple(struct game_t game){
     printf("\n ");
     printf("\t   Tour numéro %d (T%d)", game.tour+1, game.tour+1);
     printf("\n");
-}
+}*/
 
 
 void draw_grille(struct game_t game){
