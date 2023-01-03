@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
   unsigned int victory = 0;
   int turns = MAX_TURNS;
   extern char *optarg;
-  int opt = 0;
+  int opt = 4;
   while((opt = getopt(argc, argv, "sm:t:h")) != -1){
     switch (opt)
     {
