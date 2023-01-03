@@ -28,7 +28,6 @@ while nobody has won:
 
 int main(int argc, char* argv[]) { 
   struct game_t game = game_initializer();
-  time_t t;
 /* Intializes random number generator */
   start(game);
 
