@@ -62,6 +62,7 @@ int main(int argc, char* argv[]) {
       if(optarg != NULL){
         //config = atoi(optarg);
       }
+      break;
     case 'h':
       printf("usage: ./project [-h help] [-s an optional parametre to initialize the RNG]\n \t \t [-m an optional parametre for MAX_TURNS] \n \t \t [-t an optional parametre to set the victory type \n]");
       return 0;
