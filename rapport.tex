@@ -91,12 +91,26 @@ sibling distance=3cm}]
 \end{center}
 
 \section{INTRODUCTION}
-
-\subsection{MANSUBA}
-
+\begin{comment}
+MANSUBA est un jeu de plateau qui a un but similaire au jeu de Shtranj mais avec des conditions de victoire légèrement différente. 
+Le nombre de joueur , le nombre de pions et la taille du plateau sont bien définis dans le fichier encadrant la géometrie du sujet (geometry.h)
+BOARD : 
+Le plateau de jeu et la combinaison d'un monde et d'une relation .
+  WORLD : 
+Le monde représente les positions accessibles pour le jeu qui est dans un sens algorithmique une liste de cases . Ce monde est initialisé par la structure world_t ...
+  RELATION : 
+Les voisins sont les cases environant directement une case en question et qui sont dans l'une des directions enuméres dans le fichier geometry et qui dépendent de leurs
+positions dans le monde (enum dir_t) ...
+une relation est l'ensemble des possibilité d'avoir un mouvement directe d'une case à l'autre dans une direction permise par les régles actuelles du jeu pour une case choisie.
+ INITIALISATION : 
+L'état du BOARD qu'on traite dans le début de sujet sera une grille 2D avec deux joueurs et 8 directions d'orientation .
+\end{comment}
 \subsection{Problèmatique}
+\begin{comment}
+Le but de notre projet sera de jouer une partie de jeu aléatoire, puis rendre l'algorithme de plus en plus flexible et général
+et l'orienter vers la victoire. 
 
-
+\end{comment}
 \section{Hypothèse et démarches de validation}
 
 
