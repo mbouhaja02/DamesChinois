@@ -3,13 +3,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "geometry.h"
-#include "neighbors.h"
 #include "world.h"
 #include "ensemble.h"
 #include "movements.h"
 #include "game.h"
-#include "victoire.h"
 #include "prison.h"
 
 
@@ -109,90 +106,3 @@ void choose_random_relation(struct game_t *game){
 }
 
 
-/*void draw_legend(){
-    printf("\t \t LEGENDE \n");
-    for(int i = 0; i < 3; i++){
-        printf("\n \t");
-        if(i == 2){
-            printf("PAWN COLOR:  ");
-        }
-        else{
-            printf("  \t   ");
-        }
-            
-        switch (i)
-        {
-            case 0:
-                printf("      \t");
-                break;
-            case 1:
-                printf("   _____\t");
-                break;
-            case 2:
-                printf(" |_c_|\t");
-                break;
-                    
-                default:
-                    break;
-        }
-        
-                
-    }
-    printf("\n \n");
-    for(int i = 0; i < 3; i++){
-        printf("\t");
-        if(i == 2){
-            printf("TOUR COLOR:  ");
-        }
-        else{
-            printf("  \t   ");
-        }
-            
-        switch (i)
-        {
-            case 0:
-                printf("   |---|\t");
-                break;
-            case 1:
-                printf("   |||||\t");
-                break;
-            case 2:
-                printf(" |_c_|\t");
-                break;
-                    
-                default:
-                    break;
-        }
-        printf("\n");
-                
-    }
-    printf("\n");
-    for(int i = 0; i < 3; i++){
-        printf("\t");
-        if(i == 2){
-            printf("ELEPHANT COLOR:  ");
-        }
-        else{
-            printf("\t \t");
-        }
-            
-        switch (i)
-        {
-            case 0:
-                printf("    _  \t");
-                break;
-            case 1:
-                printf("   | |\t");
-                break;
-            case 2:
-                printf(" |_c_|\t");
-                break;
-                    
-                default:
-                    break;
-        }
-        printf("\n");
-                
-    }
-    
-}*/
