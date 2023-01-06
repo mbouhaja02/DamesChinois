@@ -72,7 +72,7 @@ int main(int argc, char* argv[]) {
   choose_random_relation(&game);
   for (int i = 0 ; i < turns; i++){
     game.tour = i;
-    if (game.tour == floor(sqrt(turns))){
+    if (game.tour == floor(sqrt(MAX_TURNS))){
       choose_random_relation(&game);
     }
     choose_random_piece_belonging_to(&game);
