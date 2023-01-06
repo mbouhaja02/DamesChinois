@@ -21,8 +21,8 @@ struct game_t;
 struct ensemble;
 
 enum victoire_t {
-    victoire_simple   = 0,
-    victoire_complexe = 1,
+    SIMPLE_VICTORY  = 0,
+    COMPLEX_VICTORY = 1,
 };
 
 int Victoire_Simple(struct game_t* game, struct ensemble wl, struct ensemble bl);

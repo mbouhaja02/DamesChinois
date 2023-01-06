@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
 /* Intializes random number generator */
   start(game);
 
-  unsigned int victory = 0;
+  enum victoire_t victory = 0;
   int turns = MAX_TURNS;
   extern char *optarg;
   int opt = 0;
@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
       break;
     case 't':
       if(optarg[0] == 'c'){
-        victory = 1;
+        victory = COMPLEX_VICTORY;
       }      
       break;
     case 'c':
