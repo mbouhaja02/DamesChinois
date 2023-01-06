@@ -16,14 +16,7 @@
 #include "prison.h"
 
 
-/*w = world_init();*/
-/*init_neighbors(0); // Use seed 0 at the beginning of a game
-current_player = get_random_player();
-while nobody has won:
-  p = choose_random_piece_belonging_to(w, current_player)
-  m = choose_random_move_for_piece(w, p)
-  move_piece(w, m)
-  current_player = next_player(current_player)*/
+
 
 
 int main(int argc, char* argv[]) { 
@@ -31,7 +24,7 @@ int main(int argc, char* argv[]) {
 /* Intializes random number generator */
   start(game);
 
-  enum victoire_t victory = 0;
+  enum victoire_t victory = SIMPLE_VICTORY;
   int turns = MAX_TURNS;
   extern char *optarg;
   int opt = 0;
@@ -56,11 +49,6 @@ int main(int argc, char* argv[]) {
         victory = COMPLEX_VICTORY;
       }      
       break;
-    case 'c':
-      if(optarg != NULL){
-        //config = atoi(optarg);
-      }
-      break;
     case 'h':
       printf("usage: ./project [-h help] [-s an optional parametre to initialize the RNG]\n \t \t [-m an optional parametre for MAX_TURNS] \n \t \t [-t an optional parametre to set the victory type \n]");
       return 0;
@@ -84,7 +72,7 @@ int main(int argc, char* argv[]) {
   choose_random_relation(&game);
   for (int i = 0 ; i < turns; i++){
     game.tour = i;
-    if (game.tour == floor(sqrt(MAX_TURNS))){
+    if (game.tour == floor(sqrt(turns))){
       choose_random_relation(&game);
     }
     choose_random_piece_belonging_to(&game);
