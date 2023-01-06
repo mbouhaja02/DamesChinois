@@ -5,10 +5,13 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "geometry.h"
+#include "neighbors.h"
+#include "world.h"
 #include "ensemble.h"
-#include "game.h"
+#include "movements.h"
 #include "victoire.h"
-
+#include "game.h"
 
 #define MAX_TURNS 10
 #define VICTORY_TYPES 2
