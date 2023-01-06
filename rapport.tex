@@ -38,15 +38,6 @@
 
 
 
-\def\arete{3} \def\epaisseur{5} \def\rayon{2}
-\newcommand{\ruban}{(0,0)
-++(0:0.57735*\arete-0.57735*\epaisseur+2*\rayon)
-++(-30:\epaisseur-1.73205*\rayon)
-arc (60:0:\rayon) -- ++(90:\epaisseur)
-arc (0:60:\rayon) -- ++(150:\arete)
-arc (60:120:\rayon) -- ++(210:\epaisseur)
-arc (120:60:\rayon) -- cycle}
-
 
 
 \newpage
@@ -81,7 +72,9 @@ sibling distance=3cm}]
 \end{center}
 
 \section{INTRODUCTION}
+
 \begin{comment}
+
 MANSUBA est un jeu de plateau qui a un but similaire au jeu de Shtranj mais avec des conditions de victoire légèrement différente. 
 Le nombre de joueur , le nombre de pions et la taille du plateau sont bien définis dans le fichier encadrant la géometrie du sujet (geometry.h)
 BOARD : 
@@ -94,13 +87,16 @@ positions dans le monde (enum dir_t) ...
 une relation est l'ensemble des possibilité d'avoir un mouvement directe d'une case à l'autre dans une direction permise par les régles actuelles du jeu pour une case choisie.
  INITIALISATION : 
 L'état du BOARD qu'on traite dans le début de sujet sera une grille 2D avec deux joueurs et 8 directions d'orientation .
+
 \end{comment}
+
 \subsection{Problèmatique}
 \begin{comment}
 Le but de notre projet sera de jouer une partie de jeu aléatoire, puis rendre l'algorithme de plus en plus flexible et général
 et l'orienter vers la victoire. 
 
 \end{comment}
+
 \section{Hypothèse et démarches de validation}
 
 
