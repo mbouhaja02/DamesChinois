@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "ensemble.h"
 #include "geometry.h"
 #include "neighbors.h"
 #include "world.h"

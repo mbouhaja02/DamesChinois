@@ -7,7 +7,7 @@
         "time.h": "c",
         "prison.h": "c",
         "game.h": "c",
-        "iterator": "c",
+        "victoire.h": "c",
         "game.C": "cpp"
     },
 
