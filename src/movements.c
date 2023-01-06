@@ -150,8 +150,7 @@ void translation_cardinal(struct game_t game, struct ensemble* tc){
         for(int i =0; i < 4; i++){
             m = 0;
             idx = get_neighbor(game.position, tab_dir[i]);
-            enum color_t c = world_get(game.w, idx);
-            if (existence_of_neighbor(game.position , idx)==1 && c != game.current_player){
+            if (existence_of_neighbor(game.position , idx)==1 && world_get(game.w, idx) != game.current_player){
                 while(world_get_sort(game.w, idx) == NO_SORT && m == 0){
                     ajout_position(tc, idx);
                     if (existence_of_neighbor(idx, get_neighbor(idx, tab_dir[i]))==1){
@@ -200,9 +199,8 @@ void capture_translation_cardinal(struct game_t game, struct ensemble* tc){
         for(int i =0; i < 4; i++){
             m = 0;
             idx = get_neighbor(game.position, tab_dir[i]);
-            enum color_t c = world_get(game.w, idx);
             if (existence_of_neighbor(game.position , idx)==1){
-                while(world_get_sort(game.w, idx) != NO_SORT && m == 0 && c!= game.current_player){
+                while(world_get_sort(game.w, idx) != NO_SORT && m == 0 && world_get(game.w, idx) != game.current_player){
                     ajout_position(tc, idx);
                     if (existence_of_neighbor(idx, get_neighbor(idx, tab_dir[i]))==1){
                         idx = get_neighbor(idx , tab_dir[i]);
