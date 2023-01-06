@@ -32,8 +32,6 @@ void init_triangular_board();
 //function that gives neighbors in case of a simple board
 struct neighbors_t get_neighbors_for_simple_board(unsigned int idx);
 
-//function that gets neighbors depending on seed
-struct neighbors_t get_neighbors_for_board_type(unsigned int idx, unsigned int seed);
 
 
 
