@@ -48,16 +48,6 @@ arc (60:120:\rayon) -- ++(210:\epaisseur)
 arc (120:60:\rayon) -- cycle}
 
 
-\begin{tikzpicture}[very thick,top color=white,bottom color=gray]
-\shadedraw \ruban;
-\shadedraw [rotate=120] \ruban;
-\shadedraw [rotate=-120] \ruban;
-\draw (-60:4) node[scale=5,rotate=30]{S{\color{orange}\textit{5}}};
-\draw (180:4) node[scale=3,rotate=-90]{PROJET};
-\clip (0,-6) rectangle (6,6); % pour croiser
-\shadedraw \ruban;
-\draw (60:4) node [gray,scale=3,rotate=90]{RAPPORT};
-\end{tikzpicture}
 
 \newpage
 

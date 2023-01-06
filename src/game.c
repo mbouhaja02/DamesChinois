@@ -15,20 +15,19 @@
 /*cette fonction est deja tester*/
 /*Il retourne la couleur d'un joueur aléatoire*/
 enum color_t get_random_player(){
-    time_t t;
-    srand(time(&t));
-    enum color_t r = rand()%2+1;
+    srand(time(NULL));
+    enum color_t r = rand() % 2 + 1;
     return r;
 }
 
 /*cette fonction est deja tester*/
 /*Apres le choix d'un joueur aléatoire cette fonction retourne la couleur du joueur suivant*/
 enum color_t next_player(enum color_t current_player){
-    if (current_player == 1)
-        return 2;
-    if (current_player == 2)
-        return 1;
-    return 0;
+    if (current_player == BLACK)
+        return WHITE;
+    if (current_player == WHITE)
+        return BLACK;
+    return MAX_COLOR;
 }
 
 /*cette fonction est deja tester*/
@@ -87,13 +86,13 @@ void move_piece(struct game_t game, unsigned int dst){
 
 struct game_t game_initializer(){
     struct game_t game;
-    game.current_player = 0 ; 
+    game.current_player = NO_COLOR ; 
     game.tour = 0;
     game.w = world_init();
     game.prison = init_prison();
     game.seed = 0;
     game.position = 0;
-    game.victoire = 0 ; 
+    game.victoire = choose_random_victory_type() ; 
     return game ; 
 }
 
