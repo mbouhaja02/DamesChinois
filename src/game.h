@@ -18,10 +18,10 @@ struct game_t {
     enum color_t current_player;
     unsigned int tour;
     struct world_t* w;
-    struct prison_t* prison;
+    struct jail_t* jail;
     unsigned int seed;
     unsigned int position;
-    enum victoire_t victoire;
+    enum victory_t victory;
 
 };
 
@@ -46,7 +46,6 @@ struct game_t game_initializer();
 //chooses the relation mode randomly
 void choose_random_relation(struct game_t *game);
 
-void draw_legend();
 
 
 

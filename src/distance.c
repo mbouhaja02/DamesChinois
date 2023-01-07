@@ -31,7 +31,7 @@ it'll be something like : */
         black_list(positions_of_player, game.w)
     }
 
-    mvts_disponibles(game , md);
+    available_movements(game , md);
     for (int mouvement = 0; mouvement < md->taille; mouvement++){
         for (int pions_adverses = 0; pions_adverses < positions_of_player->taille; pions_adverses++){
             max_distance_for_position = MAX(max_distance_for_position , md->position[mouvement]-positions_of_player->position[pions_adverses]);}
@@ -93,6 +93,6 @@ unsigned int closest_movement_to_other_player(struct game_t game){
     else {
         black_list(&positions_of_player, game.w);
     }
-    mvts_disponibles(game , &md);
+    available_movements(game , &md);
     return closest_in_ensemble1_to_ensemble2(md, positions_of_player);
 }**/

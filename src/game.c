@@ -55,11 +55,11 @@ unsigned int choose_random_move_for_piece(struct game_t game){
     srand(time(&t));
     struct ensemble sm;
     unsigned int m ;
-    mvts_disponibles(game, &sm);
+    available_movements(game, &sm);
     unsigned int r = rand();
     while(sm.taille == 0){
         choose_random_piece_belonging_to(&game);
-        mvts_disponibles(game, &sm);
+        available_movements(game, &sm);
     }
     unsigned int module = sm.taille;
     r = r % module ;
@@ -71,9 +71,9 @@ unsigned int choose_random_move_for_piece(struct game_t game){
 
 void move_piece(struct game_t game, unsigned int dst){
     struct ensemble jail;
-    capture_dispo(game, &jail);
+    available_captures(game, &jail);
     if(place_visited(&jail, dst) == 1){
-        add_prisoner(game.prison, game, dst);
+        add_prisoner(game.jail, game, dst);
     }
     world_set_sort(game.w, dst, NO_SORT);
     world_set(game.w, dst, NO_COLOR);
@@ -89,10 +89,10 @@ struct game_t game_initializer(){
     game.current_player = NO_COLOR ; 
     game.tour = 0;
     game.w = world_init();
-    game.prison = init_prison();
+    game.jail = init_prison();
     game.seed = 0;
     game.position = 0;
-    game.victoire = choose_random_victory_type() ; 
+    game.victory = choose_random_victory_type() ; 
     return game ; 
 }
 

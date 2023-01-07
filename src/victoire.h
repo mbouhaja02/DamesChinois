@@ -20,17 +20,17 @@ struct game_t;
 
 struct ensemble;
 
-enum victoire_t {
+enum victory_t {
     SIMPLE_VICTORY  = 0,
     COMPLEX_VICTORY = 1,
 };
 
-int Victoire_Simple(struct game_t* game, struct ensemble wl, struct ensemble bl);
+int simple_victory(struct game_t* game, struct ensemble wl, struct ensemble bl);
 
-int Victoire_complexe(struct game_t* game , struct ensemble wl , struct ensemble bl);
+int complex_victory(struct game_t* game , struct ensemble wl , struct ensemble bl);
 
-int victoire_type(struct game_t* game , struct ensemble wl , struct ensemble bl);
+int victory_type(struct game_t* game , struct ensemble wl , struct ensemble bl);
 
-enum victoire_t choose_random_victory_type();
+enum victory_t choose_random_victory_type();
 
 #endif
