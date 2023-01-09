@@ -16,22 +16,16 @@
 #include "prison.h"
 
 
-/*w = world_init();*/
-/*init_neighbors(0); // Use seed 0 at the beginning of a game
-current_player = get_random_player();
-while nobody has won:
-  p = choose_random_piece_belonging_to(w, current_player)
-  m = choose_random_move_for_piece(w, p)
-  move_piece(w, m)
-  current_player = next_player(current_player)*/
 
 
-int main(int argc, char* argv[]) { 
+
+int main(int argc, char* argv[]){ 
+
   struct game_t game = game_initializer();
 /* Intializes random number generator */
   start(game);
 
-  unsigned int victory = 0;
+  enum victory_t victory = SIMPLE_VICTORY;
   int turns = MAX_TURNS;
   extern char *optarg;
   int opt = 0;
@@ -53,13 +47,8 @@ int main(int argc, char* argv[]) {
       break;
     case 't':
       if(optarg[0] == 'c'){
-        victory = 1;
+        victory = COMPLEX_VICTORY;
       }      
-      break;
-    case 'c':
-      if(optarg != NULL){
-        //config = atoi(optarg);
-      }
       break;
     case 'h':
       printf("usage: ./project [-h help] [-s an optional parametre to initialize the RNG]\n \t \t [-m an optional parametre for MAX_TURNS] \n \t \t [-t an optional parametre to set the victory type \n]");
@@ -71,7 +60,7 @@ int main(int argc, char* argv[]) {
     }
   }
 
-  game.victoire = victory;
+  game.victory = victory;
   game.current_player = get_random_player();
   game.seed = 0;
   struct ensemble white_list_initial, black_list_initial;
@@ -91,21 +80,21 @@ int main(int argc, char* argv[]) {
     move = choose_random_move_for_piece(game);
     move_piece(game, move);
     draw_world(game);
-    if (victoire_type(&game, white_list_initial, black_list_initial) == 1){
+    if (victory_type(&game, white_list_initial, black_list_initial) == 1){
             printf("le joueur qui a gagner est %d \n", game.current_player);
-            printf("\t victoire complexe = %d \n \n", game.victoire);
+            printf("\t victoire complexe = %d \n \n", game.victory);
             return 0;  
     }
     printf("\n prison black [");
-    for(unsigned int i =0; i< game.prison->len_black; i++){
-      printf(" %d, ", game.prison->cells_black[i].i);
+    for(unsigned int i =0; i< game.jail->len_black; i++){
+      printf(" %d, ", game.jail->cells_black[i].i);
     }
     printf(" ] \n");
 
     printf("\n prison white [");
 
-    for(unsigned int i =0; i< game.prison->len_white; i++){
-      printf(" %d, ", game.prison->cells_white[i].i);
+    for(unsigned int i =0; i< game.jail->len_white; i++){
+      printf(" %d, ", game.jail->cells_white[i].i);
     }
     printf(" ] \n");
     game.current_player = next_player(game.current_player);  
@@ -113,7 +102,7 @@ int main(int argc, char* argv[]) {
 
   printf("\tNombre de tours maximal est atteint \n");
   printf("\ttype de relation est %d \n", game.seed);
-  printf("\tVictoire complexe = %d \n \n", game.victoire);
+  printf("\tVictoire complexe = %d \n \n", game.victory);
   return 0;
 
 }

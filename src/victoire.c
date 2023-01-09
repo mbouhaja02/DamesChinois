@@ -17,17 +17,17 @@
  l'emmenera vers une des positions de départ dans l'ensemble */
 
  
-int Victoire_Simple(struct game_t* game, struct ensemble wl, struct ensemble bl) {
+int simple_victory(struct game_t* game, struct ensemble wl, struct ensemble bl) {
     struct ensemble depart_autre_joueur ;
     if (game->current_player == 1 ){
         black_list(&depart_autre_joueur, game->w );
-        if (element_commun(&depart_autre_joueur, &wl) == 1){
+        if (common_element(&depart_autre_joueur, &wl) == 1){
             return 1;
         }
     }
     else {
         white_list(&depart_autre_joueur, game->w);
-        if (element_commun(&depart_autre_joueur, &bl) == 1){
+        if (common_element(&depart_autre_joueur, &bl) == 1){
             return 1;
         }
     }
@@ -38,37 +38,37 @@ int Victoire_Simple(struct game_t* game, struct ensemble wl, struct ensemble bl)
 départ de l'autre joueur et les positions actuels de current_player*/
 
 
-int Victoire_complexe(struct game_t* game , struct ensemble wl , struct ensemble bl){
+int complex_victory(struct game_t* game , struct ensemble wl , struct ensemble bl){
     struct ensemble positions_joueur ;
 
     if (game->current_player == 1 ){
         black_list(&positions_joueur, game->w);
-        if (egalite_de_deux_ensembles(wl,positions_joueur)==1) {
+        if (equality_of_two_sets(wl,positions_joueur)==1) {
             return 1; 
         }
     }
     else {
         white_list(&positions_joueur, game->w);
-        if (egalite_de_deux_ensembles(bl,positions_joueur)==1) {
+        if (equality_of_two_sets(bl,positions_joueur)==1) {
             return 1; 
         }
     }
     return 0 ; 
 }
 
-int victoire_type(struct game_t* game , struct ensemble wl , struct ensemble bl){
-    if (game->victoire == 0){
-        return Victoire_Simple(game, wl, bl);
+int victory_type(struct game_t* game , struct ensemble wl , struct ensemble bl){
+    if (game->victory == SIMPLE_VICTORY){
+        return simple_victory(game, wl, bl);
     }
 
     else{
-        return Victoire_complexe(game, wl, bl);
+        return complex_victory(game, wl, bl);
     }
 }
 
-enum victoire_t choose_random_victory_type(){
+enum victory_t choose_random_victory_type(){
     time_t t;
     srand(time(&t));
-    enum victoire_t r = rand()%2;
+    enum victory_t r = rand()%2;
     return r;
 }
