@@ -4,7 +4,7 @@
 #include "geometry.h"
 #include "neighbors.h"
 #include "world.h"
-#include "neighbors_complement.h"
+
 #include <limits.h>
 
 /** The number of relations in the code */
@@ -47,5 +47,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d);
 /** Returns the list of the neighbors of the place `idx`, terminated
     by UINT_MAX.  */
 struct neighbors_t get_neighbors(unsigned int idx);
+
+int existence_of_neighbor(unsigned int idx , unsigned int neighbor);
 
 #endif // __NEIGHBORS_H__

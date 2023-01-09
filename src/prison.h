@@ -2,7 +2,6 @@
 #define __PRISON_H__
 
 
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -11,7 +10,6 @@
 #include "neighbors.h"
 #include "world.h"
 #include "movements.h"
-#include "prison.h"
 #include "game.h"
 
 

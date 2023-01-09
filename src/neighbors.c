@@ -3,7 +3,6 @@
 #include "geometry.h"
 #include "neighbors.h"
 #include "world.h"
-#include "neighbors_complement.h"
 
 
 
@@ -11,35 +10,6 @@
 
 struct neighbors_t neighbors[WORLD_SIZE];
 
-/**Initializes the relation between the neighbors, based on an
-    integer `seed`. `seed` must be less than MAX_RELATIONS.
-    Can be called multiple times. */
-void init_neighbors(unsigned int seed){
-
-    // mettre tous les neighbors = à {{UINT, NO_DIR}, {0, 0 }....};
-    
-    for(int i =0; i < WORLD_SIZE; i++){
-        neighbors[i].n[0].i = UINT_MAX;
-        neighbors[i].n[0].d = NO_DIR;
-    }
-    switch (seed)
-    {
-    case 0:
-        init_simple_board();
-        break;
-    case 1 : 
-        init_diagonal_board();
-        break;
-    case 2 :
-        init_triangular_board();
-        break;
-    case 3 : 
-        init_hexagonal_board();
-        break;
-    default:
-        break;
-    }
-}
 
 /** Returns the neighbor of the place `idx`, in direction `d`, and
     UINT_MAX if there is no such neighbor (or any other kind of error) */
@@ -76,13 +46,6 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
     return i ;
     
 }
-
-/** Returns the list of the neighbors of the place `idx`, terminated
-    by UINT_MAX.  */
-struct neighbors_t get_neighbors(unsigned int idx) {
-    return neighbors[idx];
-}
-
 int existence_of_neighbor(unsigned int idx , unsigned int neighbor){
     int j = 0;
     while (neighbors[idx].n[j].i!=UINT_MAX){
@@ -106,6 +69,22 @@ void add_neighbor(unsigned int idx_1, unsigned int idx_2, enum dir_t d){
             }
         }
     
+}
+
+
+//function that initializes a simple board with 4 relations
+
+void init_simple_board(){
+    for (int i = 0 ; i < WORLD_SIZE ; i++){
+        if (i >= WIDTH ) {
+            add_neighbor(i,get_neighbor(i,NORTH),NORTH);}
+        if ( i< WORLD_SIZE - WIDTH){
+            add_neighbor(i, get_neighbor(i, SOUTH),SOUTH);}
+        if (i%WIDTH != 0){
+            add_neighbor(i, get_neighbor(i, WEST),WEST);}
+        if (i%WIDTH != WIDTH - 1){
+            add_neighbor(i , get_neighbor(i, EAST),EAST);}
+    } 
 }
 
 //function that initializes a diagonal board with 8 relations 
@@ -135,6 +114,7 @@ void init_diagonal_board(){
 void init_triangular_board(){
 
     init_simple_board();
+
     for (int i = 0 ; i < WORLD_SIZE ; i++){
         if (i< WORLD_SIZE - WIDTH && i%WIDTH != WIDTH - 1){
             add_neighbor(i , get_neighbor(i, SEAST),SEAST);
@@ -171,27 +151,48 @@ void init_hexagonal_board(){
     }
 
 }  
+
+/**Initializes the relation between the neighbors, based on an
+    integer `seed`. `seed` must be less than MAX_RELATIONS.
+    Can be called multiple times. */
+void init_neighbors(unsigned int seed){
+
+    // mettre tous les neighbors = à {{UINT, NO_DIR}, {0, 0 }....};
     
-
-
-//function that initializes a simple board with 4 relations
-
-void init_simple_board(){
-
-
-    for (int i = 0 ; i < WORLD_SIZE ; i++){
-        if (i >= WIDTH ) {
-            add_neighbor(i,get_neighbor(i,NORTH),NORTH);}
-        if ( i< WORLD_SIZE - WIDTH){
-            add_neighbor(i, get_neighbor(i, SOUTH),SOUTH);}
-        if (i%WIDTH != 0){
-            add_neighbor(i, get_neighbor(i, WEST),WEST);}
-        if (i%WIDTH != WIDTH - 1){
-            add_neighbor(i , get_neighbor(i, EAST),EAST);}
-    } 
+    for(int i =0; i < WORLD_SIZE; i++){
+        neighbors[i].n[0].i = UINT_MAX;
+        neighbors[i].n[0].d = NO_DIR;
+    }
+    switch (seed)
+    {
+    case 0:
+        init_simple_board();
+        break;
+    case 1 : 
+        init_diagonal_board();
+        break;
+    case 2 :
+        init_triangular_board();
+        break;
+    case 3 : 
+        init_hexagonal_board();
+        break;
+    default:
+        break;
+    }
 }
 
-//initializes triangular board
+
+
+/** Returns the list of the neighbors of the place `idx`, terminated
+    by UINT_MAX.  */
+struct neighbors_t get_neighbors(unsigned int idx) {
+    return neighbors[idx];
+}
+
+
+
+//initializes triangular board not having acess to some places located outside its frame 
 /**void init_triangular_neighbors(){
     unsigned int line ; 
     unsigned int right_limit ; 

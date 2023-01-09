@@ -1,14 +1,11 @@
 #ifndef __ENSEMBLE_H_
 #define __ENSEMBLE_H_
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-#include "ensemble.h"
-#include "geometry.h"
-#include "neighbors.h"
 #include "world.h"
-#include "movements.h"
 
 struct ensemble{
     unsigned int taille;

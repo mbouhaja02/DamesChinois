@@ -9,6 +9,7 @@
 #include "movements.h"
 #include "game.h"
 #include "prison.h"
+
 #include <assert.h>
 
 
@@ -29,8 +30,7 @@ void deplacements_simple( struct game_t game, struct ensemble* ds ){
                 }
             }
         }
-    }
-      
+    }      
 }
 /*Fonction qui ajoute à un ensemble les differents capture simple disponibles pour un pawn*/
 void capture_deplacements_simple( struct game_t game, struct ensemble* cds ){

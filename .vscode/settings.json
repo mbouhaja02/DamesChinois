@@ -8,7 +8,9 @@
         "prison.h": "c",
         "game.h": "c",
         "victoire.h": "c",
-        "game.C": "cpp"
+        "game.C": "cpp",
+        "stdio.h": "c",
+        "board.h": "c"
     },
 
     "C_Cpp.default.includePath": [
