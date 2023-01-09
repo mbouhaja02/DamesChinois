@@ -48,6 +48,7 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d);
     by UINT_MAX.  */
 struct neighbors_t get_neighbors(unsigned int idx);
 
+//This function verifies if it is accesible for an idx to move to a neighbor
 int existence_of_neighbor(unsigned int idx , unsigned int neighbor);
 
 #endif // __NEIGHBORS_H__

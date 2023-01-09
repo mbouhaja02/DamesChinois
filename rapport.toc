@@ -1,4 +1,11 @@
-\contentsline {section}{\numberline {1}INTRODUCTION}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Problèmatique}{3}{}%
-\contentsline {section}{\numberline {2}Hypothèse et démarches de validation}{3}{}%
-\contentsline {section}{\numberline {3}}{3}{}%
+\contentsline {section}{\numberline {1}INTRODUCTION}{3}
+\contentsline {subsection}{\numberline {1.1}Probl\IeC {\`e}matique}{3}
+\contentsline {section}{\numberline {2}Hypoth\IeC {\`e}se et d\IeC {\'e}marches de validation}{3}
+\contentsline {section}{\numberline {3}Version initiale du jeu}{3}
+\contentsline {subsection}{\numberline {3.1}Configurer le plateau de jeu}{3}
+\contentsline {subsubsection}{\numberline {3.1.1}Partie monde}{3}
+\contentsline {subsubsection}{\numberline {3.1.2}Partie relation}{3}
+\contentsline {subsection}{\numberline {3.2}Ensemble}{4}
+\contentsline {subsection}{\numberline {3.3}Mouvements}{4}
+\contentsline {subsection}{\numberline {3.4}Positions de d\IeC {\'e}part et victoires}{4}
+\contentsline {subsection}{\numberline {3.5}Boucle de jeu}{4}

@@ -25,8 +25,11 @@ enum victory_t {
     COMPLEX_VICTORY = 1,
 };
 
+//Verify a simple win : if the current player moves to an initial position of the other player  
 int simple_victory(struct game_t* game, struct ensemble wl, struct ensemble bl);
 
+//Verify a complex victory
+//if all the players positions match with initial positions of the other player 
 int complex_victory(struct game_t* game , struct ensemble wl , struct ensemble bl);
 
 int victory_type(struct game_t* game , struct ensemble wl , struct ensemble bl);

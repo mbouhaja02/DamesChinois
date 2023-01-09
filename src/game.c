@@ -12,16 +12,14 @@
 
 
 
-/*cette fonction est deja tester*/
-/*Il retourne la couleur d'un joueur aléatoire*/
+//chooses a random color designed to a player
 enum color_t get_random_player(){
     srand(time(NULL));
-    enum color_t r = rand() % 2 + 1;
+    enum color_t r = rand() % (MAX_COLOR - 1) + 1;
     return r;
 }
 
-/*cette fonction est deja tester*/
-/*Apres le choix d'un joueur aléatoire cette fonction retourne la couleur du joueur suivant*/
+//helps switch players in the game
 enum color_t next_player(enum color_t current_player){
     if (current_player == BLACK)
         return WHITE;
@@ -30,8 +28,7 @@ enum color_t next_player(enum color_t current_player){
     return MAX_COLOR;
 }
 
-/*cette fonction est deja tester*/
-/*Retourne un unsigned int qui désigne l'index d'une peice white ou black dependant du current_player*/
+//Choose out of the positions of the current player
 void choose_random_piece_belonging_to(struct game_t* game){
     time_t t;
     struct ensemble pw, pb;
@@ -49,7 +46,8 @@ void choose_random_piece_belonging_to(struct game_t* game){
     if (game->current_player == 2){
         game->position = pw.positions[b];}
 }
-    
+
+//Choose out of the list of available moves
 unsigned int choose_random_move_for_piece(struct game_t game){
     time_t t;
     srand(time(&t));
@@ -68,7 +66,8 @@ unsigned int choose_random_move_for_piece(struct game_t game){
     return m;
 }
 
-
+//make the move in the world by changing the initial position in the game to the
+//destination and empties the initial square
 void move_piece(struct game_t game, unsigned int dst){
     struct ensemble jail;
     available_captures(game, &jail);
@@ -84,6 +83,7 @@ void move_piece(struct game_t game, unsigned int dst){
     escape_attempts(game);
 }
 
+//Initializes game
 struct game_t game_initializer(){
     struct game_t game;
     game.current_player = NO_COLOR ; 

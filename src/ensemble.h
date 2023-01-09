@@ -7,34 +7,34 @@
 
 #include "world.h"
 
+//This structure helps create a set that will be used to stock positions and the number of positions in the set
 struct ensemble{
     unsigned int taille;
     unsigned int positions[WORLD_SIZE];
     
 };
 
+//Initializes a set
 void positions_init(struct ensemble* pi);
 
-/* On ajoute une positions place à un ensemble p */ 
+//Add a position to a set
 void add_position(struct ensemble* p , unsigned int place );
 
-/*Fill a set with all the black pieces*/
+//Fill a set with the positions of black pieces in the world
 void black_list(struct ensemble* pw, struct world_t* w);
 
-/*Fill a set with all the white pieces*/
+//Fill a set with the position of white pieces in the world
 void white_list(struct ensemble* pb, struct world_t* w);
 
-/*Return 1 if place exists in set p or 0 if not*/
+//Verify the existence of a place in a set  and return 1 if it does 0 if it doesn't
 int place_visited (struct ensemble* p, unsigned int place );
 
 
-/*Return 1 if there's one element common between set et set2*/
+//If two sets have a common element the function returns 1 return 0 otherwise
 int common_element(struct ensemble* ens, struct ensemble* ens2);
 
-/*Return 1 if two sets are equal or 0 if not*/
+//Verifies if two sets are alike
 int equality_of_two_sets(struct ensemble a, struct ensemble b);
 
-/*Concatenate two sets
-void concatenate_sets(struct ensemble* a, struct ensemble* b )
-*/
+
 #endif 

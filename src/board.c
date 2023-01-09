@@ -13,7 +13,7 @@
 
 
 
-
+//This function initializes the board with pawns  
 struct world_t* start(struct game_t game){
     srand(time(NULL));
     if(game.seed == 0){
@@ -34,6 +34,7 @@ struct world_t* start(struct game_t game){
 
 }
 
+//This function helps draw the world to visualize its current state and position of pawns
 void draw_world(struct game_t game){
     printf("T%d", game.tour);
     for (int q = 'A'; q <'A'+WIDTH; q++){
@@ -80,8 +81,8 @@ void draw_world(struct game_t game){
 }
 
 
-
-void draw_grille(struct game_t game){
+//draws the board we are playing on
+void draw_rack(struct game_t game){
 
     if (game.seed == 0){
         for(int i = 0; i < 5; i++){

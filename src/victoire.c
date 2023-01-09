@@ -12,9 +12,7 @@
 
 
 
-/* fonction qui prend l'ensemble des positions initiales de l'autre
- joueur et cherche si le prochain tour ( s'il en reste )du joueur 
- l'emmenera vers une des positions de départ dans l'ensemble */
+//Verify a simple win : if the current player moves to an initial position of the other player  
 
  
 int simple_victory(struct game_t* game, struct ensemble wl, struct ensemble bl) {
@@ -34,8 +32,8 @@ int simple_victory(struct game_t* game, struct ensemble wl, struct ensemble bl) 
     return 0; 
 }
 
-/* cette fonction va vérifier l'égalité de l'ensemble de positions de 
-départ de l'autre joueur et les positions actuels de current_player*/
+//Verify a complex victory
+//if all the players positions match with initial positions of the other player 
 
 
 int complex_victory(struct game_t* game , struct ensemble wl , struct ensemble bl){
@@ -55,6 +53,7 @@ int complex_victory(struct game_t* game , struct ensemble wl , struct ensemble b
     }
     return 0 ; 
 }
+
 
 int victory_type(struct game_t* game , struct ensemble wl , struct ensemble bl){
     if (game->victory == SIMPLE_VICTORY){

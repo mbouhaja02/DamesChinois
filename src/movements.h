@@ -15,52 +15,50 @@
 
 
 
-/* Fonction qui ajoute à un ensemble les déplacements simple possible pour un pawn*/
+//Stocks a set of available simple moves for the current position
 void simple_moves( struct game_t game, struct ensemble* sm);
 
-/*Fonction qui ajoute à un ensemble les differents capture simple disponibles pour un pawn*/
+//Stocks a set of available simple moves captured for the current position
 void simple_moves_capture( struct game_t game, struct ensemble* smc);
 
 
 
-/* Fonction qui ajoute à un ensemble les sauts simples possibles pour un pawn*/
+//Stocks a set of available simple jumps for the current position
 void simple_jumps(struct game_t game , struct ensemble* sj);
 
-/*Fonction qui ajoute à un ensemble les differents capture saut simple disponibles pour un pawn*/
+//Stocks a set of available simple jumps captured for the current position
 void simple_jumps_capture(struct game_t game , struct ensemble* sjc);
 
 
 
-/* Fonction qui ajoute à un ensemble des sauts multiples sans répétition (sinon la boucle sera infinie) pour un pawn*/
+//Stocks a set of available multiple jumps for the current position
 void multiple_jumps(struct game_t game , struct ensemble* mj);
 
-/*Fonction qui ajoute les differents capture saut simple disponibles pour un pawn*/
+//Stocks a set of available multiple jumps captured for the current position
 void multiple_jumps_capture(struct game_t game , struct ensemble* mjc  );
 
 
 
-/* Fonction qui retourne l'ensemble des mouvements possibles pour l'éléphant*/
+//Stocks a set of available moves for the current position if its an elephant
 void semi_diagonal_jumps(struct game_t game, struct ensemble* sdj);
 
-/* Fonction qui rajoute à un ensemble les differents captures disponibles pour un éléphant*/
+//Stocks a set of available capture jumps for the current position if its an elephant
 void semi_diagonal_jumps_capture(struct game_t game, struct ensemble* sdjc);
 
 
 
-/* Fonction qui retourne l'ensemble des mouvements possibles pour la tour*/
+//Stocks a set of available moves for the current position if its a tower
 void cardinal_translations(struct game_t game, struct ensemble* ct);
 
-/*Fonction qui ajoute à un ensemble les differents captures disponibles pour une tour*/
+//Stocks a set of available capture jumps for the current position if its a tower
 void cardinal_translations_capture(struct game_t game, struct ensemble* ctc);
 
 
 
-/* Fonction qui retourne l'ensemble des mouvements disponibles en concatenons tous les ensemble précédents */
+//Stocks a set of available moves for the current position assembling all the past sets
 void available_movements(struct game_t game, struct ensemble* am);
 
-/*Tout mouvement de la pièce qui se termine sur une case 
-  contenant une pièce d'une couleur différente capture 
-          la pièce en question.*/
+//If a destination of a player pawn meets the other player's pawn it will be captured 
 void available_captures(struct game_t game, struct ensemble* ac);
 
 

@@ -20,15 +20,14 @@
 
 
 
-//Une fonction qui retourne un wolrd où les positions des pawn pour les deux joueurs sont initiés
+//This function initializes the board with pawns  
 struct world_t* start(struct game_t game);
 
-//Une fonction qui trace le monde w
+//This function helps draw the world to visualize its current state and position of pawns
 void draw_world(struct game_t game);
 
-void draw_world_simple(struct game_t game);
-
-void draw_grille(struct game_t game);
+//draws the board we are playing on
+void draw_rack(struct game_t game);
 
 
 

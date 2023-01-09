@@ -46,6 +46,8 @@ unsigned int get_neighbor(unsigned int idx, enum dir_t d){
     return i ;
     
 }
+
+//This function verifies if it is accesible for an idx to move to a neighbor
 int existence_of_neighbor(unsigned int idx , unsigned int neighbor){
     int j = 0;
     while (neighbors[idx].n[j].i!=UINT_MAX){
