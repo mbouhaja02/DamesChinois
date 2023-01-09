@@ -20,13 +20,13 @@ int main(){
     start(game);
     game.current_player = get_random_player();
     struct ensemble white_list_initial, black_list_initial;
-    game.victoire = 0;
+    game.victory = 0;
     game.seed = 0;
     unsigned int move;
     init_neighbors(game.seed);
     white_list(&white_list_initial, game.w);
     black_list(&black_list_initial, game.w);
-    draw_world_simple(game);
+    draw_world(game);
 
 
     for ( unsigned int i = 0 ; i < MAX_TURNS ; i++){
@@ -38,8 +38,8 @@ int main(){
         printf("move %d \n", move);
         printf("2# \n");
         move_piece(game, move);
-        draw_world_simple(game);
-        if (victoire_type(&game, white_list_initial, black_list_initial) == 1){
+        draw_world(game);
+        if (victory_type(&game, white_list_initial, black_list_initial) == 1){
             printf("le joueur qui a gagner est %d \n", game.current_player);
             return 0;  
         }

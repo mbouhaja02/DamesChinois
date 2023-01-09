@@ -13,8 +13,7 @@
 
 int main(){
     
-    struct game = game_initializer();
+    struct game_t game = game_initializer();
     int joueur = get_random_player();
-    choose 
     init_neighbors(game.seed);
 }
