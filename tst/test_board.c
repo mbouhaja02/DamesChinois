@@ -14,7 +14,6 @@
 void main(){
     struct game_t game = game_initializer();
     start(game);
-    draw_world_simple(game);
     draw_world(game);
 }
 
