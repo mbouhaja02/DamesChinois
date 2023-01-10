@@ -30,9 +30,8 @@ enum color_t next_player(enum color_t current_player){
 
 //Choose out of the positions of the current player
 void choose_random_piece_belonging_to(struct game_t* game){
-    time_t t;
     struct set pw, pb;
-    srand(time(&t));
+    srand(time(NULL));
     positions_init(&pw);
     positions_init(&pb);
     black_list(&pb, game->w);
@@ -49,8 +48,7 @@ void choose_random_piece_belonging_to(struct game_t* game){
 
 //Choose out of the list of available moves
 unsigned int choose_random_move_for_piece(struct game_t game){
-    time_t t;
-    srand(time(&t));
+    srand(time(NULL));
     struct set sm;
     unsigned int m ;
     available_movements(game, &sm);
@@ -98,8 +96,7 @@ struct game_t game_initializer(){
 
 //chooses the relation mode randomly
 void choose_random_relation(struct game_t *game){
-    time_t t;
-    srand(time(&t));
+    srand(time(NULL));
     int a = rand();
     game->seed = a % MAX_RELATIONS ;
 }
