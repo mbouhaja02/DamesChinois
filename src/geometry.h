@@ -30,9 +30,6 @@ enum sort_t {
   PAWN     = 1,
   TOUR     = 2,
   ELEPHANT = 3,
-  KING     = 4,
-  QUEEN    = 5,
-  KNIGHT   = 6,
   MAX_SORT = 7,   // Total number of different sorts
 };
 
