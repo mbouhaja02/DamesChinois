@@ -79,14 +79,13 @@ Mansuba est un jeu de plateau , ancêtre de Shtranj , qui a comme but mettre l�
 Le but de notre projet sera de jouer une partie de jeu aléatoire, puis rendre l'algorithme de plus en plus flexible et général
 et l'orienter finalement vers la victoire. 
 \subsection{Hypothèse et démarches de validation}
-
 Pour jouer une partie du jeu, il faut que le plateau de jeu soit définie au préalable. Le plateau de jeu \textit{board}  étant le binôme monde et relation. 
 Le monde \textit{world} est l’set des cases accessibles par les pions et dont les mouvements seront permis . Chaque case a désormais des cases voisines \textit{Neighbors} dans des directions précisé par \lstinline|enum dir_t|.
 Le besoin 
-
 La possibilité d’accès à ses voisins sera contrôlée par la relation de la partie et qui choisira parmis voisins ceux qui sont accessibles par mouvement direct.  
 \section{Version initiale du jeu}
 Dans cette partie le jeu a une configuration spécifique mais qui est plus simple à manipuler. Le jeu s’effectue sur une grille simple dans un monde a $\textcolor{purple}{\textsc{world\_size}} = \textcolor{purple}{\textsc{width}} \times \textcolor{purple}{\textsc{height}}$  case , que des pions simples (\lstinline|enum sort_t|) pour les joueurs ayant la couleur blanc et noir ()\lstinline|enum color_t|) . Cette configuration est surtout gouvernée par \textcolor{green}{\textit{geometry.h}}. \\
+Pendant le développement du jeu 
 Pour jouer une partie aléatoire on aura besoin de :
 \subsection{Configurer le plateau de jeu}
 \subsubsection{Partie monde}
@@ -104,7 +103,11 @@ Pour stocker les mouvements on fera appel à la structure set . Les mouvement po
 
     \textbf{\textcolor{magenta}{Déplacement simple}} : pour les relever il suffit d’utiliser la fonction get\_neighbors pour un indice donné . Ils seront stockés par la fonction \lstinline|void simple_moves( struct game_t game, struct set* sm );|
 
+<<<<<<< HEAD
     \textbf{\textcolor{magenta}{Saut simple}} : si le voisin dans une direction j est occupé, équivalent d’avoir la fonction get\_neighbor dans la direction j qui a un SORT différent de NO\_SORT, et le voisin du voisin dans la meme direction est libre ,  on peut se déplacer vers le voisin du voisin , si le monde le permet. Ils seront stockés par la fonction \lstinline|void simple_jumps(struct game_t game , struct set* sj);|
+=======
+    \textbf{\textcolor{magenta}{Saut simple}} : si le voisin dans une direction j est occupé, équivalent d’avoir la fonction get\_neighbor dans la direction j qui a un \textsc{sort} différent de \textcolor{purple}{\textsc{no\_sort}}, et le voisin du voisin dans la meme direction est libre ,  on peut se déplacer vers le voisin du voisin , si le monde le permet. Ils seront stockés par la fonction \lstinline|void simple_jumps(struct game_t game , struct ensemble* sj);|
+>>>>>>> refs/remotes/origin/master
     
     \textbf{\textcolor{magenta}{Saut multiple}} : s’agit d’une suite de saut simple . Cette fonction avait besoin d’une condition d’arrêt pour éviter de boucler infiniment sur les sauts simples autre que les deux voisins soient occupés. Pour cela il nous fallait une fonction qui vérifie l’existence d’un élément dans un set donné \lstinline int place_visited(struct set* ens, unsigned int place );|Elle renvoie un 0 si la place n’est pas encore mentionnée dans l’set qui sera notre condition pour arrêter la recherche. Ils seront stockés par la fonction \lstinline|void multiple_jumps(struct game_t game , struct set* mj )|
 
