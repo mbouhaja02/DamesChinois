@@ -9,7 +9,7 @@
 #include "neighbors.h"
 #include "set.h"
 #include "board.h"
-#include "victoire.h"
+#include "victory.h"
 
 int main(){
     struct set ens1, ens2;

@@ -5,7 +5,7 @@
 \contentsline {section}{\numberline {2}Bases du jeu}{4}
 \contentsline {subsubsection}{\numberline {2.0.1}Partie monde}{4}
 \contentsline {subsection}{\numberline {2.1}Partie relation}{5}
-\contentsline {subsection}{\numberline {2.2}Ensemble}{5}
+\contentsline {subsection}{\numberline {2.2}set}{5}
 \contentsline {section}{\numberline {3}Mobilit\IeC {\'e}s des pi\IeC {\`e}ces}{5}
 \contentsline {subsection}{\numberline {3.1}Mobilit\IeC {\'e} d'un pion \textit {PAWN}}{5}
 \contentsline {subsection}{\numberline {3.2}Mobilit\IeC {\'e} des autre pi\IeC {\`e}ces \textit {TOWER} et \textit {ELEPHANT }}{6}
@@ -21,7 +21,7 @@
 \contentsline {subsubsection}{\numberline {2.1.2}Partie relation}{4}{}%
 \contentsline {subsection}{\numberline {2.2}set}{4}{}%
 \contentsline {subsection}{\numberline {2.3}Mouvements}{4}{}%
-\contentsline {subsection}{\numberline {2.4}Positions de départ et victoires}{4}{}%
+\contentsline {subsection}{\numberline {2.4}Positions de départ et victorys}{4}{}%
 \contentsline {subsection}{\numberline {2.5}Boucle de jeu}{4}{}%
 \contentsline {section}{\numberline {3}Amélioaration du jeu}{4}{}%
 \contentsline {subsection}{\numberline {3.1}Mettons nous au pièces}{5}{}%

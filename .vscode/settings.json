@@ -7,7 +7,7 @@
         "time.h": "c",
         "prison.h": "c",
         "game.h": "c",
-        "victoire.h": "c",
+        "victory.h": "c",
         "game.C": "cpp",
         "stdio.h": "c",
         "board.h": "c"

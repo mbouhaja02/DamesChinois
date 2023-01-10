@@ -9,7 +9,7 @@
 #include "set.h"
 #include "movements.h"
 #include "board.h"
-#include "victoire.h"
+#include "victory.h"
 #include "game.h"
 
 

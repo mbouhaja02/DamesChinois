@@ -33,8 +33,8 @@ test_moves : test_moves.o $(OBJS)
 test_board : test_board.o $(OBJS)
 	gcc $(CFLAGS) $^ -o test_board
 
-test_victoire : test_victoire.o $(OBJS)
-	gcc $(CFLAGS) $^ -o test_victoire
+test_victory : test_victory.o $(OBJS)
+	gcc $(CFLAGS) $^ -o test_victory
 
 test_set : test_set.o $(OBJS)
 	gcc $(CFLAGS) $^ -o test_set

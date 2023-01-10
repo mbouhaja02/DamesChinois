@@ -1,5 +1,5 @@
-#ifndef __VICTOIRE_H__
-#define __VICTOIRE_H__
+#ifndef __victory_H__
+#define __victory_H__
 
 #include <stdio.h>
 #include <string.h>
