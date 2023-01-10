@@ -7,7 +7,7 @@
 #include "geometry.h"
 #include "world.h"
 #include "neighbors.h"
-#include "ensemble.h"
+#include "set.h"
 #include "movements.h"
 #include "game.h"
 

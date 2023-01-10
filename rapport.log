@@ -1111,8 +1111,18 @@ File: Dessin sans titre.jpg Graphic file (type jpg)
 Package pdftex.def Info: Dessin sans titre.jpg used on input line 69.
 (pdftex.def)             Requested size: 481.79883pt x 361.3491pt.
 
+<<<<<<< HEAD
 Overfull \hbox (115.4243pt too wide) in paragraph at lines 69--70
  [] 
+=======
+Overfull \hbox (134.10916pt too wide) in paragraph at lines 111--112
+<<<<<<< HEAD
+\T1/lmr/m/n/10 fonc-tions au lieu de re-tourner l'set � la fin de cha-cune
+=======
+\T1/lmr/m/n/10 fonc-tions au lieu de re-tourner l'ensemble � la fin de cha-cune
+>>>>>>> refs/remotes/origin/master
+ . En plus, la fonc-tion [][][][][][][][][][][][][][][][][][][][][]fera
+>>>>>>> 8892a7e273b3914d59c0618b66cfd0bc66fde039
  []
 
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 82.

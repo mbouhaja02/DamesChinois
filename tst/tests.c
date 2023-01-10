@@ -8,7 +8,7 @@
 #include "geometry.h"
 #include "world.h"
 #include "neighbors.h"
-#include "ensemble.h"
+#include "set.h"
 #include "movements.h"
 #include "board.h"
 #include "victoire.h"
@@ -63,7 +63,7 @@ int main(int argc, char* argv[]){
   game.victory = victory;
   game.current_player = get_random_player();
   game.seed = 0;
-  struct ensemble white_list_initial, black_list_initial;
+  struct set white_list_initial, black_list_initial;
   unsigned int piece=0;
   unsigned int move=0;
   game.position = piece;

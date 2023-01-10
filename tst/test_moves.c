@@ -7,7 +7,7 @@
 #include "geometry.h"
 #include "world.h"
 #include "neighbors.h"
-#include "ensemble.h"
+#include "set.h"
 #include "movements.h"
 #include "board.h"
 #include "victoire.h"
@@ -23,7 +23,7 @@ int main(){
     start(game);
     choose_random_piece_belonging_to(&game);
 
-    struct ensemble ds,sm; 
+    struct set ds,sm; 
     draw_world(game);
     simple_moves(game, &ds);
     multiple_jumps(game ,&sm );

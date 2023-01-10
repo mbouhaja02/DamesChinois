@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \contentsline {section}{\numberline {1}INTRODUCTION}{3}
 \contentsline {subsection}{\numberline {1.1}Probl\IeC {\`e}matique}{3}
 \contentsline {subsection}{\numberline {1.2}Hypoth\IeC {\`e}se et d\IeC {\'e}marches de validation}{3}
@@ -10,3 +11,23 @@
 \contentsline {subsection}{\numberline {3.2}Mobilit\IeC {\'e} des autre pi\IeC {\`e}ces \textit {TOWER} et \textit {ELEPHANT }}{6}
 \contentsline {subsection}{\numberline {3.3}Possibilit\IeC {\'e} de capture}{6}
 \contentsline {section}{\numberline {4}Boucle de jeu}{6}
+=======
+\contentsline {section}{\numberline {1}INTRODUCTION}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Problèmatique}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Hypothèse et démarches de validation}{3}{}%
+\contentsline {section}{\numberline {2}Version initiale du jeu}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Configurer le plateau de jeu}{3}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Partie monde}{3}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Partie relation}{4}{}%
+\contentsline {subsection}{\numberline {2.2}set}{4}{}%
+\contentsline {subsection}{\numberline {2.3}Mouvements}{4}{}%
+\contentsline {subsection}{\numberline {2.4}Positions de départ et victoires}{4}{}%
+\contentsline {subsection}{\numberline {2.5}Boucle de jeu}{4}{}%
+\contentsline {section}{\numberline {3}Amélioaration du jeu}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Mettons nous au pièces}{5}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Tour}{5}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Éléphant}{5}{}%
+\contentsline {subsection}{\numberline {3.2}grille}{5}{}%
+\contentsline {subsection}{\numberline {3.3}possibilité de capture}{5}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}}{5}{}%
+>>>>>>> 8892a7e273b3914d59c0618b66cfd0bc66fde039

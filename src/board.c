@@ -5,7 +5,7 @@
 
 
 #include "world.h"
-#include "ensemble.h"
+#include "set.h"
 #include "movements.h"
 #include "board.h"
 #include "game.h"
