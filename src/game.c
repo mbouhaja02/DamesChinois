@@ -64,8 +64,8 @@ unsigned int choose_random_move_for_piece(struct game_t game){
     return m;
 }
 
-/*make the move in the world by changing the initial position in the game to the
-destination and empties the initial square*/
+//make the move in the world by changing the initial position in the game to the
+//destination and empties the initial square
 void move_piece(struct game_t game, unsigned int dst){
     struct set jail;
     available_captures(game, &jail);
