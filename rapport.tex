@@ -67,29 +67,10 @@
 
 \newpage
 
-\begin{center}
-\begin{tikzpicture}
-[level 1/.style={level distance=5cm,
-sibling distance=5cm},
-level 2/.style={level distance=5cm,
-sibling distance=3cm},
-level 3/.style={level distance=5cm,
-sibling distance=3cm}]
 
-\node {project}
-    child {node {ensemble.h}}
-    child {node {victoire.h}}
-    child {node {game.h}
-        child {node {mouvements.h}}
-        child {node {prison.h}}
-    }
-    child {node {board.h}
-        child {node {wolrd.h}}
-        child {node {geometry.h}}
-        }
-    
-;
-\end{tikzpicture}
+\begin{center}
+\includegraphics[scale=0.5]{Dessin sans titre.jpg} 
+
 \end{center}
 
 \section{INTRODUCTION}
@@ -137,6 +118,24 @@ Le jeu s’arrête si on atteint une victoire, le choix du type étant aléatoir
 \subsection{Boucle de jeu}
 Avant d’obtenir la boucle de jeu finale il faudra définir des fonctions qui font des choix aléatoires sur tous les paramètres du jeu. 
 Le choix du pion sera fait par \lstinline|void choose_random_piece_belonging_to(struct game_t* game) |qui retournera un indice. La fonction \lstinline| unsigned int choose_random_move_for_piece(struct game_t game)| va chercher entre les mouvements disponibles pour cet indice et va ensuite choisir un indice auquel le pion va bouger. La fonction \lstinline|void move_piece(struct game_t game, unsigned int dst)| agira sur le monde et échangera l’état de la case à l’indice initial avec celle de l’indice du mouvement. On choisira ainsi aléatoirement le premier joueur à commencer. 
+
+
+
 \section{Amélioaration du jeu}
+
+Dans cette partie on cherche à rendre le jeu de plus en plus générique pour qu'il nous offre plus de possibilités. La version initaile (2) est un peu basique car il contient le même type de pièces avec les mêmes déplacements.
+Alors dans la suite on va essayer en premier temps de définir plusieurs types de pièces(Tour, Éléphant) avec de nouveau mouvements possibles(translation cardinal et saut semi-diagonal), avant de passer , et finalement ajouter la possibilité de capturer les pièces du joueur adversaire pour que la partie soit plus intéréssante et amusante.
+\subsection{Mettons nous au pièces}
+\subsubsection{Tour}
+
+
+\subsubsection{Éléphant}
+
+
+\subsection{grille}
+
+
+\subsection{possibilité de capture}
+\subsubsection{}
 
 \end{document}
