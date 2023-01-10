@@ -5,7 +5,7 @@
 #include "geometry.h"
 #include "neighbors.h"
 #include "world.h"
-#include "ensemble.h"
+#include "set.h"
 #include "movements.h"
 #include "victoire.h"
 #include "game.h"
@@ -15,8 +15,8 @@
 //Verify a simple win : if the current player moves to an initial position of the other player  
 
  
-int simple_victory(struct game_t* game, struct ensemble wl, struct ensemble bl) {
-    struct ensemble depart_autre_joueur ;
+int simple_victory(struct game_t* game, struct set wl, struct set bl) {
+    struct set depart_autre_joueur ;
     if (game->current_player == 1 ){
         black_list(&depart_autre_joueur, game->w );
         if (common_element(&depart_autre_joueur, &wl) == 1){
@@ -36,8 +36,8 @@ int simple_victory(struct game_t* game, struct ensemble wl, struct ensemble bl) 
 //if all the players positions match with initial positions of the other player 
 
 
-int complex_victory(struct game_t* game , struct ensemble wl , struct ensemble bl){
-    struct ensemble positions_joueur ;
+int complex_victory(struct game_t* game , struct set wl , struct set bl){
+    struct set positions_joueur ;
 
     if (game->current_player == 1 ){
         black_list(&positions_joueur, game->w);
@@ -55,7 +55,7 @@ int complex_victory(struct game_t* game , struct ensemble wl , struct ensemble b
 }
 
 
-int victory_type(struct game_t* game , struct ensemble wl , struct ensemble bl){
+int victory_type(struct game_t* game , struct set wl , struct set bl){
     if (game->victory == SIMPLE_VICTORY){
         return simple_victory(game, wl, bl);
     }

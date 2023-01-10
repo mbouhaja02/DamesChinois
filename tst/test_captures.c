@@ -6,7 +6,7 @@
 #include "geometry.h"
 #include "world.h"
 #include "neighbors.h"
-#include "ensemble.h"
+#include "set.h"
 #include "movements.h"
 #include "board.h"
 #include "victoire.h"
@@ -19,7 +19,7 @@ int main(){
     srand(time(&t));
     start(game);
     game.current_player = get_random_player();
-    struct ensemble white_list_initial, black_list_initial;
+    struct set white_list_initial, black_list_initial;
     game.victory = 0;
     game.seed = 0;
     unsigned int move;

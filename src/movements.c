@@ -5,7 +5,7 @@
 #include "geometry.h"
 #include "neighbors.h"
 #include "world.h"
-#include "ensemble.h"
+#include "set.h"
 #include "movements.h"
 #include "game.h"
 #include "prison.h"
@@ -16,7 +16,7 @@
 
 
 //Stocks a set of available simple moves for the current position
-void simple_moves( struct game_t game, struct ensemble* sm ){
+void simple_moves( struct game_t game, struct set* sm ){
     if(world_get_sort(game.w, game.position) == PAWN){
         unsigned int neighbor;
         enum sort_t b;
@@ -33,7 +33,7 @@ void simple_moves( struct game_t game, struct ensemble* sm ){
     }      
 }
 //Stocks a set of available simple moves captured for the current position
-void simple_moves_capture( struct game_t game, struct ensemble* smc){
+void simple_moves_capture( struct game_t game, struct set* smc){
     unsigned int neighbor;
     enum sort_t b;
     enum color_t c;
@@ -55,7 +55,7 @@ void simple_moves_capture( struct game_t game, struct ensemble* smc){
 
 
 //Stocks a set of available simple jumps for the current position
-void simple_jumps(struct game_t game , struct ensemble* sj){
+void simple_jumps(struct game_t game , struct set* sj){
     unsigned int neighbor;
     unsigned int neighbor_of_neighbor; 
     init_neighbors(game.seed);
@@ -72,7 +72,7 @@ void simple_jumps(struct game_t game , struct ensemble* sj){
     }
 }
 //Stocks a set of available simple jumps captured for the current position
-void simple_jumps_capture(struct game_t game , struct ensemble* sjc){
+void simple_jumps_capture(struct game_t game , struct set* sjc){
     unsigned int neighbor;
     unsigned int neighbor_of_neighbor; 
     init_neighbors(game.seed);
@@ -90,7 +90,7 @@ void simple_jumps_capture(struct game_t game , struct ensemble* sjc){
 }
 
 //Stocks a set of available multiple jumps for the current position
-void multiple_jumps(struct game_t game , struct ensemble* mj  ){
+void multiple_jumps(struct game_t game , struct set* mj  ){
     simple_jumps( game, mj);
     if(world_get_sort(game.w, game.position) == PAWN){
         for (unsigned int i = 0 ; i < mj->taille ; i++){
@@ -103,7 +103,7 @@ void multiple_jumps(struct game_t game , struct ensemble* mj  ){
 }
 
 //Stocks a set of available multiple jumps captured for the current position
-void multiple_jumps_capture(struct game_t game , struct ensemble* mjc  ){
+void multiple_jumps_capture(struct game_t game , struct set* mjc  ){
     simple_jumps_capture(game, mjc);
     if(world_get_sort(game.w, game.position) == PAWN){
         for (unsigned int i = 0 ; i < mjc->taille ; i++){
@@ -116,7 +116,7 @@ void multiple_jumps_capture(struct game_t game , struct ensemble* mjc  ){
 }
 
 //Stocks a set of available moves for the current position assembling all the past sets
-void available_movements(struct game_t game, struct ensemble* am) 
+void available_movements(struct game_t game, struct set* am) 
 {  
     positions_init(am);
     simple_moves(game, am);
@@ -130,7 +130,7 @@ void available_movements(struct game_t game, struct ensemble* am)
 }
 
 //If a destination of a player pawn meets the other player's pawn it will be captured 
-void available_captures(struct game_t game, struct ensemble* ac){
+void available_captures(struct game_t game, struct set* ac){
     positions_init(ac);
     simple_moves_capture(game, ac);
     multiple_jumps_capture(game, ac);
@@ -139,7 +139,7 @@ void available_captures(struct game_t game, struct ensemble* ac){
 }
 
 //Stocks a set of available moves for the current position if its a tower
-void cardinal_translations(struct game_t game, struct ensemble* ct){
+void cardinal_translations(struct game_t game, struct set* ct){
     if (world_get_sort(game.w, game.position) == TOUR){
         enum dir_t tab_dir[4] = {EAST, WEST, NORTH, SOUTH};
         unsigned int idx ;
@@ -163,7 +163,7 @@ void cardinal_translations(struct game_t game, struct ensemble* ct){
 }
 
 //Stocks a set of available moves for the current position if its an elephant
-void semi_diagonal_jumps(struct game_t game , struct ensemble* sdj){
+void semi_diagonal_jumps(struct game_t game , struct set* sdj){
     if(world_get_sort(game.w, game.position) == ELEPHANT){
         enum dir_t tab_dir[4] = {NORTH, SOUTH, EAST, WEST};
         for(int i =0; i < 2; i++){
@@ -188,7 +188,7 @@ void semi_diagonal_jumps(struct game_t game , struct ensemble* sdj){
     
 }
 //Stocks a set of available capture jumps for the current position if its a tower
-void cardinal_translations_capture(struct game_t game, struct ensemble* ctc){
+void cardinal_translations_capture(struct game_t game, struct set* ctc){
     if (world_get_sort(game.w, game.position) == TOUR){
         enum dir_t tab_dir[4] = {EAST, WEST, NORTH, SOUTH};
         unsigned int idx ;
@@ -212,7 +212,7 @@ void cardinal_translations_capture(struct game_t game, struct ensemble* ctc){
 }
 
 //Stocks a set of available capture jumps for the current position if its an elephant
-void semi_diagonal_jumps_capture(struct game_t game , struct ensemble* sdjc){
+void semi_diagonal_jumps_capture(struct game_t game , struct set* sdjc){
     if(world_get_sort(game.w, game.position) == ELEPHANT){
         enum dir_t tab_dir[4] = {NORTH, SOUTH, EAST, WEST};
         for(int i =0; i < 2; i++){

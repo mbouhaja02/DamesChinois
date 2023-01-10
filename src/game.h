@@ -7,7 +7,7 @@
 #include <time.h>
 
 #include "world.h"
-#include "ensemble.h"
+#include "set.h"
 #include "movements.h"
 #include "victoire.h"
 #include "game.h"

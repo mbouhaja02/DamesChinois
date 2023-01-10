@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        "ensemble.h": "c",
+        "set.h": "c",
         "geometry.h": "c",
         "world.h": "c",
         "string.h": "c",

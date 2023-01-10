@@ -4,7 +4,7 @@
 #include <time.h>
 
 #include "world.h"
-#include "ensemble.h"
+#include "set.h"
 #include "movements.h"
 #include "game.h"
 #include "prison.h"
@@ -31,7 +31,7 @@ enum color_t next_player(enum color_t current_player){
 //Choose out of the positions of the current player
 void choose_random_piece_belonging_to(struct game_t* game){
     time_t t;
-    struct ensemble pw, pb;
+    struct set pw, pb;
     srand(time(&t));
     positions_init(&pw);
     positions_init(&pb);
@@ -51,7 +51,7 @@ void choose_random_piece_belonging_to(struct game_t* game){
 unsigned int choose_random_move_for_piece(struct game_t game){
     time_t t;
     srand(time(&t));
-    struct ensemble sm;
+    struct set sm;
     unsigned int m ;
     available_movements(game, &sm);
     unsigned int r = rand();
@@ -69,7 +69,7 @@ unsigned int choose_random_move_for_piece(struct game_t game){
 //make the move in the world by changing the initial position in the game to the
 //destination and empties the initial square
 void move_piece(struct game_t game, unsigned int dst){
-    struct ensemble jail;
+    struct set jail;
     available_captures(game, &jail);
     if(place_visited(&jail, dst) == 1){
         add_prisoner(game.jail, game, dst);

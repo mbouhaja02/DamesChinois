@@ -2,7 +2,7 @@ WIDTH ?= 10
 HEIGHT ?= 10
 MANSUBA_FLAGS = -DWIDTH=$(WIDTH) -DHEIGHT=$(HEIGHT)
 CFLAGS = -I src -Wall -Wextra -std=c99 -g3 $(MANSUBA_FLAGS)
-SRCS = world.c neighbors.c geometry.c ensemble.c movements.c board.c victoire.c game.c prison.c
+SRCS = world.c neighbors.c geometry.c set.c movements.c board.c victoire.c game.c prison.c
 OBJS = $(SRCS:.c=.o)
 
 all: project 
@@ -36,8 +36,8 @@ test_board : test_board.o $(OBJS)
 test_victoire : test_victoire.o $(OBJS)
 	gcc $(CFLAGS) $^ -o test_victoire
 
-test_ensemble : test_ensemble.o $(OBJS)
-	gcc $(CFLAGS) $^ -o test_ensemble
+test_set : test_set.o $(OBJS)
+	gcc $(CFLAGS) $^ -o test_set
 
 test_captures : test_captures.o $(OBJS)
 	gcc $(CFLAGS) $^ -o test_captures

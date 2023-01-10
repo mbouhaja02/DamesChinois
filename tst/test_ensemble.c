@@ -7,12 +7,12 @@
 #include "world.h"
 #include "game.h"
 #include "neighbors.h"
-#include "ensemble.h"
+#include "set.h"
 #include "board.h"
 #include "victoire.h"
 
 int main(){
-    struct ensemble ens1, ens2;
+    struct set ens1, ens2;
     positions_init(&ens1);
     positions_init(&ens2);
     ens1.taille = 4;

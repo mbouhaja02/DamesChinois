@@ -5,20 +5,20 @@
 #include "geometry.h"
 #include "world.h"
 #include "neighbors.h"
-#include "ensemble.h"
+#include "set.h"
 #include "movements.h"
 
 #define MIN(i, j) (((i) < (j)) ? (i) : (j))
 //Achievement4
 /*calculons la distance parcourue par une pièce lors d'un déplacement donné:  la distance parcourue sera la difference des deux cases % WIDTH , 
-pour chaque déplacement stocke dans un ensemble les distances de chaque déplacement à chaque pièce dans l'ensemble des indices de l'autre joueur
+pour chaque déplacement stocke dans un set les distances de chaque déplacement à chaque pièce dans l'set des indices de l'autre joueur
 de la forme d'un tableau des tableaux avec l'indice du déplacement dans une case donnée donne accès à un tableau de distances on cherche le max 
 dans tous les tableaux et on renvoie l'indice du tableaux qui contient le max ou on peut retenir que le max de chaque déplacement dès le début 
 it'll be something like : */
 /**unsigned int max_distance(struct game_t game){
-    struct ensemble* positions_of_player;
-    struct ensemble* md;
-    struct ensemble* distances;
+    struct set* positions_of_player;
+    struct set* md;
+    struct set* distances;
     positions_init(distances);
     int max_distance_for_position = 0; 
     int max_distance_for_positions = 0; 
@@ -41,7 +41,7 @@ it'll be something like : */
 }**/ 
 
 //this function calculates the distance between a and every other square in the world 
-/**void distance( struct ensemble* distances_of_a, int compteur){
+/**void distance( struct set* distances_of_a, int compteur){
     for (int )    
         distances_of_a->taille = WORLD_SIZE 
         distances_of_a->positions[a]= 0;
@@ -62,31 +62,31 @@ void distances(){
     }
 }       
 
-unsigned int closest_to_ensemble(unsigned int a, struct ensemble ensemble ){
+unsigned int closest_to_set(unsigned int a, struct set set ){
     unsigned int space = WORLD_SIZE ; 
-    for (int i = 0; i < ensemble.taille; i++){
-        if (MIN(space, distance(a, ensemble.positions[i]))!=space){
-            space = distance( a, ensemble.positions[i]);
+    for (int i = 0; i < set.taille; i++){
+        if (MIN(space, distance(a, set.positions[i]))!=space){
+            space = distance( a, set.positions[i]);
         }
     }
     return space;
 }
 
-unsigned int closest_in_ensemble1_to_ensemble2(struct ensemble ensemble1, struct ensemble ensemble2){
+unsigned int closest_in_set1_to_set2(struct set set1, struct set set2){
     unsigned int idx = 0;
     int space = WORLD_SIZE;
-    for (int i = 0; i < ensemble1.taille; i++){
-        if (MIN(closest_to_ensemble(ensemble1.positions[i], ensemble2),space)!= space){
-            space = closest_to_ensemble(ensemble1.positions[i], ensemble2);
-            idx = ensemble1.positions[i];
+    for (int i = 0; i < set1.taille; i++){
+        if (MIN(closest_to_set(set1.positions[i], set2),space)!= space){
+            space = closest_to_set(set1.positions[i], set2);
+            idx = set1.positions[i];
         }
     }
     return idx ;
 }
 
 unsigned int closest_movement_to_other_player(struct game_t game){
-    struct ensemble positions_of_player;
-    struct ensemble md;
+    struct set positions_of_player;
+    struct set md;
     if (game.current_player = BLACK){
         white_list(&positions_of_player, game.w);
     }
@@ -94,5 +94,5 @@ unsigned int closest_movement_to_other_player(struct game_t game){
         black_list(&positions_of_player, game.w);
     }
     available_movements(game , &md);
-    return closest_in_ensemble1_to_ensemble2(md, positions_of_player);
+    return closest_in_set1_to_set2(md, positions_of_player);
 }**/
