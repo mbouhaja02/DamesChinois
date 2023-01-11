@@ -268,4 +268,18 @@ Dans cette partie on cherche à rendre le jeu de plus en plus générique pour q
 Alors dans la suite on va essayer en premier temps de définir plusieurs types de pièces(Tour, Éléphant) avec de nouveau mouvements possibles(translation cardinal et saut semi-diagonal), avant de passer , et finalement ajouter la possibilité de capturer les pièces du joueur adversaire pour que la partie soit plus intéréssante et amusante.
 
 
+\section{Configuration de compilation et exécution}
+\subsection{Makefile}
+
+
+Les fichier .c décrivent dans ce rapport ont été construit et exécuté à l'aide d'un Makefile. Ce fichier de configuration automatise les tâches de compilation et d'exécution, facilitant ainsi la maintenance et l'extensibilité du logiciel. Les options de compilation et les dépendances ont été définies dans le Makefile, ainsi que les cibles pour construire et exécuter le programme. Nous avons utilisé GNU Make, un outil populaire pour créer des Makefiles, pour créer le Makefile de ce projet. En cours de développement, nous avons rencontré des problèmes avec les dépendances de bibliothèques, qui ont été résolus en ajoutant des options de compilation supplémentaires dans le Makefile. La méthodologie de compilation et d'exécution décrite ici a permis un développement efficace et une exécution stable de tous les fichiers.
+
+\subsection{La manipulation des options de ligne de commande}
+
+getopt
+
+\section{Références}
+
+
+
 \end{document}

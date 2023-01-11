@@ -10,3 +10,7 @@
 \contentsline {subsection}{\numberline {3.2}Mobilité des autre pièces \textit {TOWER} et \textit {ELEPHANT }}{8}{}%
 \contentsline {subsection}{\numberline {3.3}Possibilité de capture}{8}{}%
 \contentsline {section}{\numberline {4}Boucle de jeu}{8}{}%
+\contentsline {section}{\numberline {5}Configuration de compilation et exécution}{9}{}%
+\contentsline {subsection}{\numberline {5.1}Makefile}{9}{}%
+\contentsline {subsection}{\numberline {5.2}La manipulation des options de ligne de commande}{9}{}%
+\contentsline {section}{\numberline {6}Références}{9}{}%
