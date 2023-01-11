@@ -95,19 +95,18 @@ void init_diagonal_board(){
     init_simple_board();
 
     for (int i = 0 ; i < WORLD_SIZE ; i++){
-        if (i >= WIDTH && i%WIDTH != 0) {
+        if ((i >= WIDTH) && (i%WIDTH != 0)) {
             add_neighbor(i,get_neighbor(i,NWEST),NWEST);
             }
 
-        if ( i< WORLD_SIZE - WIDTH && i%WIDTH != 0){
+        if ( (i< WORLD_SIZE - WIDTH) && (i%WIDTH != 0)){
             add_neighbor(i, get_neighbor(i, SWEST),SWEST);
-            
             }
-        if (i >= WIDTH && i%WIDTH != WIDTH - 1){
+        if ((i >= WIDTH) && (i%WIDTH != WIDTH - 1)){
             add_neighbor(i, get_neighbor(i, NEAST),NEAST);
             }
 
-        if (i< WORLD_SIZE - WIDTH && i%WIDTH != WIDTH - 1){
+        if ((i< WORLD_SIZE - WIDTH) && (i%WIDTH != WIDTH - 1)){
             add_neighbor(i , get_neighbor(i, SEAST),SEAST);
             }
     } 
@@ -118,7 +117,7 @@ void init_triangular_board(){
     init_simple_board();
 
     for (int i = 0 ; i < WORLD_SIZE ; i++){
-        if (i< WORLD_SIZE - WIDTH && i%WIDTH != WIDTH - 1){
+        if ((i< WORLD_SIZE - WIDTH) && (i%WIDTH != WIDTH - 1)){
             add_neighbor(i , get_neighbor(i, SEAST),SEAST);
             }
     } 
@@ -165,22 +164,34 @@ void init_neighbors(unsigned int seed){
         neighbors[i].n[0].i = UINT_MAX;
         neighbors[i].n[0].d = NO_DIR;
     }
-    switch (seed)
+    /*switch (seed)
     {
     case 0:
         init_simple_board();
         break;
-    case 1 : 
+    case 1: 
         init_diagonal_board();
         break;
-    case 2 :
+    case 2:
         init_triangular_board();
         break;
-    case 3 : 
+    case 3: 
         init_hexagonal_board();
         break;
     default:
         break;
+    }*/
+    if(seed == 0){
+        init_simple_board();
+    }
+    else if(seed == 1){
+        init_diagonal_board();
+    }
+    else if(seed == 2){
+        init_triangular_board();
+    }
+    else{
+        init_simple_board();
     }
 }
 
