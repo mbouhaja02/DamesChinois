@@ -42,3 +42,6 @@ test_set : test_set.o $(OBJS)
 test_captures : test_captures.o $(OBJS)
 	gcc $(CFLAGS) $^ -o test_captures
 
+test_distance: test_distance.o $(OBJS)
+	gcc $(CFLAGS) $^ -o test_distance
+

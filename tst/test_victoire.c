@@ -9,7 +9,7 @@
 #include "neighbors.h"
 #include "set.h"
 #include "board.h"
-#include "victory.h"
+#include "victoire.h"
 
 
 int main(){
