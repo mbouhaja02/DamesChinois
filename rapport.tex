@@ -10,7 +10,7 @@
 \geometry{hmargin=3cm,vmargin=3cm}
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{tikz}
-
+\usepackage{fancyhdr}
 \usepackage{eso-pic}
 \usepackage{xcolor}
 \usepackage{listings}
@@ -50,10 +50,12 @@
   }%
 }
 
-\title{  \includegraphics[scale=0.09]{logo.png} \\ \underline{Rapport de projet S5:} \\ \textbf{MANSUBA} }
+
+\title{  \includegraphics[scale=0.09]{logo.png} \\ \underline{Rapport de projet S5:} \\ \textbf{MANSUBA} \\$\newline$ \includegraphics[scale=0.1]{Chaturanga_Chess_Set.jpg} }
 
 
-\author{Réalisé par:\\MOHAMMED BOUHAJA ET AMIRA ELOUAZZANI \\Encadré par: Julien Allali}
+\author{Réalisé par:\\MOHAMMED BOUHAJA ET AMIRA ELOUAZZANI \\\textbf{Encadré par: Julien Allali}}
+\date{}
 \maketitle
 
 
@@ -227,6 +229,24 @@ $\newline$
 
 Ses fonctions prennent comme paramètre additionnel un set. Il servira comme espace de stockage pour chacune des fonctions au lieu de retourner l’set à la fin de chacune . En plus, la fonction \lstinline|void available_movements(struct game_t game, struct set* am) |fera appel à toutes les fonctions de mouvement citée au-dessus et l’set rentrer comme paramètre dans cette fonction sera le même rentrer dans tous les fonctions pour qu’on puisse stocker tous les mouvements dans un même set.  
 \subsection{Mobilité des autre pièces \textit{TOWER} et \textit{ELEPHANT }}
+
+$\newline$
+
+\textbf{\textcolor{magenta}{Translation cardinale}} : La tour se déplace en ligne droite soit horizontalement soit verticalement de tout nombre de cases inoccupées, donc on réalise une boucle sur les quatres direction SOUTH, NORTH, EAST et WEST, et on ajoute les position libre dans l'ensemble $ct$ de la fonction  \lstinline|void cardinal_translations(struct game_t game, struct set* ct)| jusqu'à ce qu'elle atteigne le bord de l'échiquier ou qu'elle soit bloquée par une autre pièce. Elle ne peut passer au dessus d'une autre pièce.
+
+\begin{center}
+\includegraphics[scale=0.3]{tour2.png} {\\$\hspace*{0.5cm}$Figure x: Translation cardinal d'une tour.}
+\end{center}
+
+$\newline$
+
+\textbf{\textcolor{magenta}{Saut semi diagonal}} : L'éléphant peut se déplacer sur les deux diagonale à partir de sa position initial, pour ce faire on boucle sur les directions $i+j$ $(où ~i \in \{NORTH, ~SOUTH\} ~et~ j \in \{ EAST, ~WEST \})$ et on ajoute les positions libres. finalement on stocke le résultat dans un ensemble $sdj$ à l'aide de la fonction \lstinline|void semi_diagonal_jumps(struct game_t game , struct set* sdj)|.
+
+\begin{center}
+\includegraphics[scale=0.45]{ele2.png} {\\$\hspace*{0.4cm}$Figure x: Saut semi diagonal de l'éléphant.}
+\end{center}
+
+
 \subsection{Possibilité de capture}
 
 \section{Boucle de jeu}
