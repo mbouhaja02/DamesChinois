@@ -47,7 +47,7 @@ it'll be something like : */
 //Tableau de taill WORLD_SIZE**2
 >>>>>>> 60d0975e9198da43ca9792281c880cb7062f4aae
 //this function calculates the distance between a and every other square in the world 
-void distance( struct set* distances_of_a, int compteur){
+/*void distance( struct set* distances_of_a, int compteur){
     for (int )    
         distances_of_a->taille = WORLD_SIZE 
         distances_of_a->positions[a]= 0;
