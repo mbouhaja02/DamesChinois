@@ -176,7 +176,7 @@ void init_neighbors(unsigned int seed){
         init_triangular_board();
         break;
     case 3: 
-        init_hexagonal_board();
+        init_triangular_board();
         break;
     default:
         break;
