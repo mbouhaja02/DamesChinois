@@ -13,15 +13,15 @@
 
 #define MIN(i, j) (((i) < (j)) ? (i) : (j))
 
-unsigned int distance(struct game_t game, unsigned int a , unsigned int b);
+void distances(int* distance, int cpt);
 
-
+/**
 unsigned int closest_to_set(unsigned int a, struct set set );
 
 
 unsigned int closest_in_set1_to_set2(struct set set1, struct set set2);
 
 
-unsigned int closest_movement_to_other_player(struct game_t game);
+unsigned int closest_movement_to_other_player(struct game_t game);**/
 
 #endif

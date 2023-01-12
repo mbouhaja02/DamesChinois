@@ -10,7 +10,8 @@
         "victory.h": "c",
         "game.C": "cpp",
         "stdio.h": "c",
-        "board.h": "c"
+        "board.h": "c",
+        "iterator": "c"
     },
 
     "C_Cpp.default.includePath": [

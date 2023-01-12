@@ -1,6 +1,7 @@
 \documentclass[a4paper]{article}
 
-
+\let\proof\relax
+\let\endproof\relax
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -36,8 +37,10 @@
 }
 
 \lstset{escapechar=@,style=customc}
-\onehalfspacing
 \begin{document}
+
+\onehalfspacing
+
 
 
 \AddToShipoutPicture{%
@@ -70,15 +73,23 @@
 
 
 
+\begin{figure}
+  \includegraphics[width=\linewidth]{Dessin sans titre.jpg}
+  \caption{Graphe des dépendances}
+  \label{fig:length_eight_mouse}
+\end{figure}
+  
+
+
 \section{INTRODUCTION}
 \subsection{Problèmatique}
 Mansuba est un jeu de plateau , ancêtre de Shtranj , qui a comme but mettre l’autre joueur en situation de mat . 
 Le but de notre projet sera de jouer une partie aléatoire, puis rendre l'algorithme de plus en plus flexible
-et l'orienter finalement vers la victory. 
+et l'orienter finalement vers la victoire. 
 \subsection{Hypothèse et démarches de validation}
-Pour jouer une partie, il faut que le plateau de jeu soit définie au préalable. Le plateau de jeu \textit{board}  étant 
+Pour jouer une partie, il faut que le plateau de jeu soit définie au préalable. Le plateau de jeu \textit{board}  est 
 le binôme monde et relation. 
-Le monde \textit{world} est l’set des cases accessibles par les pions et dont les mouvements seront permis . Chaque case a 
+Le monde \textit{world} est l’ensemble des cases accessibles par les pions et dont les mouvements seront permis . Chaque case a 
 désormais des cases voisines \textit{Neighbors} dans des directions précisé par \lstinline|enum dir_t|.
 \begin{lstlisting}
 enum dir_t {
@@ -179,7 +190,9 @@ Avant d’initialiser une relation on pose dans la structure neighbors comme pre
 \textcolor{purple}{\textsc{(uint\_max , no\_dir)}} et un (0,0) pour le reste. \textcolor{purple}{\textsc{uint\_max}} est définie 
 dans \textcolor{green}{\textit{limits.h}}. La fonction add\_neighbor servira par suite à pousser \textcolor{purple}{\textsc{(uint\_max , no\_dir)}} 
 et le remplacer par le pair indice du voisin et sa direction.
-\subsection{set}
+Le paramètre \textit{seed} permettera de désigner la relation de la partie et sera modifiable à $\sqrt{\textsc{max\_turns}}$. On donne le choix entre 4 relations : simple, diagonale, triangulaire, hexagonal.
+
+\subsection{Ensemble}
 \begin{lstlisting}
 struct set{
     unsigned int taille;
@@ -271,8 +284,6 @@ Le jeu s’arrête si on atteint une victory, le choix du type étant aléatoire
 Avant d’obtenir la boucle de jeu finale il faudra définir des fonctions qui font des choix aléatoires sur tous les paramètres du jeu. 
 Le choix du pion sera fait par \lstinline|void choose_random_piece_belonging_to(struct game_t* game) |qui retournera un indice. La fonction \lstinline| unsigned int choose_random_move_for_piece(struct game_t game)| va chercher entre les mouvements disponibles pour cet indice et va ensuite choisir un indice auquel le pion va bouger. La fonction \lstinline|void move_piece(struct game_t game, unsigned int dst)| agira sur le monde et échangera l’état de la case à l’indice initial avec celle de l’indice du mouvement. On choisira ainsi aléatoirement le premier joueur à commencer. 
 
-Dans cette partie on cherche à rendre le jeu de plus en plus générique pour qu'il nous offre plus de possibilités. La version initaile (2) est un peu basique car il contient le même type de pièces avec les mêmes déplacements.
-Alors dans la suite on va essayer en premier temps de définir plusieurs types de pièces(Tour, Éléphant) avec de nouveau mouvements possibles(translation cardinal et saut semi-diagonal), avant de passer , et finalement ajouter la possibilité de capturer les pièces du joueur adversaire pour que la partie soit plus intéréssante et amusante.
 
 
 \section{Configuration de compilation et exécution}

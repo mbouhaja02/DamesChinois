@@ -7,6 +7,7 @@
 #include "neighbors.h"
 #include "set.h"
 #include "movements.h"
+#include "distance.h"
 
 #define MIN(i, j) (((i) < (j)) ? (i) : (j))
 //Achievement4
@@ -38,8 +39,13 @@ it'll be something like : */
         max_distance_for_positions = MAX(max_distance_for_position, max_distance_for_positions ); 
         indice_maximale = max_distance_for_positions = max_distance_for_position ? md->position[]
     }
+<<<<<<< HEAD
 }
 
+=======
+}**/ 
+//Tableau de taill WORLD_SIZE**2
+>>>>>>> 60d0975e9198da43ca9792281c880cb7062f4aae
 //this function calculates the distance between a and every other square in the world 
 void distance( struct set* distances_of_a, int compteur){
     for (int )    
@@ -96,4 +102,25 @@ unsigned int closest_movement_to_other_player(struct game_t game){
     }
     available_movements(game , &md);
     return closest_in_set1_to_set2(md, positions_of_player);
+<<<<<<< HEAD
 }*/
+=======
+}**/
+
+
+/*On crée un tableau de taille WORLD_SIZE**2 (représente une matrice symétrique)*/
+void distances(int* distance,int cpt ){
+    struct neighbors_t neighbors;
+    for (unsigned int i = 0; i<WORLD_SIZE ; i++){ //i line indicator
+        neighbors = get_neighbors(i);
+        for (unsigned int j=i+1; j < WORLD_SIZE ;j++ ){ //j is column indicator , distance between i and j is the same as j and i 
+            distance[i*WORLD_SIZE+j]= distance[i*WORLD_SIZE+j] + 1 ;
+            distance[j*WORLD_SIZE+i]= distance[j*WORLD_SIZE+i] + 1;
+            if (is_neighbor(neighbors,j)==0 && cpt<2) {
+                cpt++;
+                distances(distance,cpt);
+            }
+        }
+    }
+}
+>>>>>>> 60d0975e9198da43ca9792281c880cb7062f4aae

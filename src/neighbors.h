@@ -51,4 +51,8 @@ struct neighbors_t get_neighbors(unsigned int idx);
 //This function verifies if it is accesible for an idx to move to a neighbor
 int existence_of_neighbor(unsigned int idx , unsigned int neighbor);
 
+
+//Verify if a case is a neighbor
+int is_neighbor(struct neighbors_t neighbors , unsigned int idx);
+
 #endif // __NEIGHBORS_H__

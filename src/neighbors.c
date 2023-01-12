@@ -203,6 +203,14 @@ struct neighbors_t get_neighbors(unsigned int idx) {
     return neighbors[idx];
 }
 
+//Verify if a case is a neighbor
+int is_neighbor(struct neighbors_t neighbors , unsigned int idx){
+    for (int j=0; j< MAX_NEIGHBORS; j++)
+        if (neighbors.n[j].i== idx){
+            return 1;
+        }
+    return 0;
+}
 
 
 //initializes triangular board not having acess to some places located outside its frame 
