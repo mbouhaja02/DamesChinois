@@ -164,7 +164,7 @@ void init_neighbors(unsigned int seed){
         neighbors[i].n[0].i = UINT_MAX;
         neighbors[i].n[0].d = NO_DIR;
     }
-    /*switch (seed)
+    switch (seed)
     {
     case 0:
         init_simple_board();
@@ -180,18 +180,6 @@ void init_neighbors(unsigned int seed){
         break;
     default:
         break;
-    }*/
-    if(seed == 0){
-        init_simple_board();
-    }
-    else if(seed == 1){
-        init_diagonal_board();
-    }
-    else if(seed == 2){
-        init_triangular_board();
-    }
-    else{
-        init_simple_board();
     }
 }
 
