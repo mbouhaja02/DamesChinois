@@ -104,7 +104,11 @@ void choose_random_relation(struct game_t *game){
 //Chooses the next relation randomly
 void choose_next_random_relation(struct game_t* game){
     srand(time(NULL));
-    game->seed = (1 + game->seed) % MAX_RELATIONS;
+    unsigned int relation = game->seed;
+    while (game->seed == relation){
+        unsigned int random_uint = rand();
+        game->seed = random_uint % MAX_RELATIONS;
+    }
 }
 
 
