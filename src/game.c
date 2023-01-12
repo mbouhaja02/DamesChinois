@@ -98,7 +98,7 @@ struct game_t game_initializer(){
 void choose_random_relation(struct game_t *game){
     srand(time(NULL));
     int a = rand();
-    game->seed = a % MAX_RELATIONS ;
+    game->seed = a % MAX_RELATIONS;
 }
 
 
