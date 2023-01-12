@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
   for (int i = 0 ; i < turns; i++){
     game.turn = i;
     if (game.turn == floor(sqrt(MAX_TURNS))){
-      choose_random_relation(&game);
+      choose_next_random_relation(&game);
     }
     choose_random_piece_belonging_to(&game);
     move = choose_random_move_for_piece(game);

@@ -47,6 +47,9 @@ struct game_t game_initializer();
 //chooses the relation mode randomly
 void choose_random_relation(struct game_t *game);
 
+//chooses the next relation mode randomly
+void choose_next_random_relation(struct game_t* game);
+
 
 
 
