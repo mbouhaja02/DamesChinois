@@ -48,7 +48,7 @@ struct world_t* start(struct game_t game){
 //This function helps draw the world to visualize its current state and position of pawns
 void draw_world(struct game_t game){
 
-    printf("\t -DEBUT TOUR N°%d-\n", game.turn);
+    printf("\t -DEBUT TOUR N°%d-\n\n", game.turn);
 
 
     if(game.current_player == WHITE){
@@ -117,7 +117,7 @@ void draw_world(struct game_t game){
     }
     printf("\n \n");
 
-    printf("\t -FIN TOUR N°%d-\n", game.turn);
+    printf("\t -FIN TOUR N°%d-\n\n", game.turn);
 }
 
 
