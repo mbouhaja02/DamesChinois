@@ -15,7 +15,7 @@ pour chaque déplacement stocke dans un set les distances de chaque déplacement
 de la forme d'un tableau des tableaux avec l'indice du déplacement dans une case donnée donne accès à un tableau de distances on cherche le max 
 dans tous les tableaux et on renvoie l'indice du tableaux qui contient le max ou on peut retenir que le max de chaque déplacement dès le début 
 it'll be something like : */
-/**unsigned int max_distance(struct game_t game){
+/*unsigned int max_distance(struct game_t game){
     struct set* positions_of_player;
     struct set* md;
     struct set* distances;
@@ -38,10 +38,10 @@ it'll be something like : */
         max_distance_for_positions = MAX(max_distance_for_position, max_distance_for_positions ); 
         indice_maximale = max_distance_for_positions = max_distance_for_position ? md->position[]
     }
-}**/ 
+}
 
 //this function calculates the distance between a and every other square in the world 
-/**void distance( struct set* distances_of_a, int compteur){
+void distance( struct set* distances_of_a, int compteur){
     for (int )    
         distances_of_a->taille = WORLD_SIZE 
         distances_of_a->positions[a]= 0;
@@ -55,10 +55,11 @@ it'll be something like : */
     }
 }
 
-void distances(){
+void distances(unsigned int a, unsigned int position){
     for (int i = 0; i<WORLD_SIZE; i++){
-        if (place_visited(distance_of_square,a)
-        distance(i,)
+        if (place_visited(distance_of_square,a) == 0){
+            distance(i,)
+        }
     }
 }       
 
@@ -95,4 +96,4 @@ unsigned int closest_movement_to_other_player(struct game_t game){
     }
     available_movements(game , &md);
     return closest_in_set1_to_set2(md, positions_of_player);
-}**/
+}*/

@@ -247,7 +247,14 @@ $\newline$
 \end{center}
 
 
-\subsection{Possibilité de capture}
+\subsection{Possibilité de capture et les tentatives d'évasion}
+$\newline$
+
+\textbf{\textcolor{magenta}{Capture simple}} :
+
+$\newline$
+
+\textbf{\textcolor{magenta}{Tentatives d'évasion}} :
 
 \section{Boucle de jeu}
 Le monde étant inacessible par d’autre document autre que \textcolor{green}{\textit{world.h}}. On a utilisé les fonctions
@@ -276,7 +283,18 @@ Les fichier .c décrivent dans ce rapport ont été construit et exécuté à l'
 
 \subsection{La manipulation des options de ligne de commande}
 
-getopt
+
+Pour manipuler la ligne de commande on a utiliser $getopt$, c'est un moyen efficace pour la gestion des optiosn et des arguments lors de la compilation du projet, donc l'utilisation de getopt nous a permis de rendre le terminal une interface utilisateur intuisive et personnalisable. Il utilise une bibliothèque standard $getopt$ de C. Se qui nous a permis de définir avant l'éxusion du projet le type de victoire souhaité par l'utilisateur, le nombre de tours et le nombre qui génére $rand()$. 
+
+La bibliothèque getopt en C utilise la fonction getopt() pour analyser les options et les arguments passés à un programme lors de son exécution. Cette fonction prend en entrée les arguments standard argc et argv du programme, ainsi qu'une chaîne de caractères optstring qui définit les options valides pour le programme.
+
+La fonction getopt() analyse ensuite les arguments dans argv en utilisant les options définies dans optstring. Pour chaque option valide détectée, getopt() retourne le caractère correspondant. Si une option nécessite un argument, celui-ci est stocké dans la variable globale optarg.
+
+Les options peuvent être spécifiées de différentes manières. Les options courtes sont des caractères simples précédés d'un tiret (par exemple: -t pour le type de victoire et -m pour le nombre de tours). Les options longues sont des chaînes de caractères précédées de deux tirets (par exemple: --option).
+
+Après avoir analysé tous les arguments, getopt() retourne -1 pour indiquer qu'il n'y a plus d'options valides. Les développeurs peuvent utiliser cette valeur pour itérer sur les options et les arguments restants.
+
+Il est important de noter que getopt() modifie l'ordre des éléments dans argv pour les options traitées. Les arguments restants sont décalés vers le début de la liste argv.
 
 \section{Références}
 
