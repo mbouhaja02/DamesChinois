@@ -16,7 +16,7 @@
 //this structure helps organize the configuration of a game and put it in one argument
 struct game_t {
     enum color_t current_player;
-    unsigned int tour;
+    unsigned int turn;
     struct world_t* w;
     struct jail_t* jail;
     unsigned int seed;

@@ -85,7 +85,7 @@ void move_piece(struct game_t game, unsigned int dst){
 struct game_t game_initializer(){
     struct game_t game;
     game.current_player = NO_COLOR ; 
-    game.tour = 0;
+    game.turn = 0;
     game.w = world_init();
     game.jail = init_prison();
     game.seed = 0;
