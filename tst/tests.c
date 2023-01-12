@@ -21,9 +21,7 @@
 
 int main(int argc, char* argv[]) { 
   struct game_t game = game_initializer();
-  //choose_random_relation(&game);
-
-  game.seed = 3;
+  choose_random_relation(&game);
 /* Intializes random number generator */
   start(game);
   enum victory_t victory = SIMPLE_VICTORY;
@@ -71,8 +69,8 @@ int main(int argc, char* argv[]) {
   black_list(&black_list_initial, game.w);
   for (int i = 0 ; i < turns; i++){
     game.turn = i;
-    if (game.turn == floor(sqrt(MAX_TURNS))){
-      //choose_next_random_relation(&game);
+    if (game.turn == floor(sqrt(MAX_TURNS)) + 1){
+      choose_next_random_relation(&game);
     }
     choose_random_piece_belonging_to(&game);
     move = choose_random_move_for_piece(game);
