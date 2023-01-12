@@ -36,6 +36,30 @@ struct world_t* start(struct game_t game){
 
 //This function helps draw the world to visualize its current state and position of pawns
 void draw_world(struct game_t game){
+
+    if(game.current_player == WHITE){
+        printf("\n\t|| Le tour des WHITE ♙ ||\n \n");
+    }
+    else{
+        printf("\n\t|| Le tour des BLACk ♟ ||\n \n");
+    }
+
+    if (game.seed == 0){
+        printf("\t|| Le type de relation est SIMPLE ||\n\n");
+    }
+    else if(game.seed == 1){
+        printf("\t|| Le type de relation est DIAGONAL ||\n\n");
+    }
+    else if(game.seed == 2){
+        printf("\t|| Le type de relation est TRIANGULAIRE ||\n\n");
+    }
+    else{
+        printf("\t|| Le type de relation est HEXAGONAL || \n\n");
+    }
+
+
+
+
     printf("T%d", game.tour);
     for (int q = 'A'; q <'A'+WIDTH; q++){
         printf("\t    %c", q);
