@@ -11,16 +11,11 @@
 #include "distance.h"
 #include "game.h"
 
-/*int main(){
+int main(){
     
     struct game_t game = game_initializer();
-    int joueur = get_random_player();
     init_neighbors(game.seed);
-    int distance[WORLD_SIZE*WORLD_SIZE];
-    distances(distance,0);
-    for (int i=0; i<WORLD_SIZE; i++){
-        printf("%d\t",distance[i]);
-    }
+    printf("%d\n",distance_with_simple_moves(7,game));
     return 0;
     
-}**/
+}
