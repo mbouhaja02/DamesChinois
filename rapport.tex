@@ -81,64 +81,34 @@
   
 
 
-\section{INTRODUCTION}
+\section{Introduction}
 \subsection{Problèmatique}
 Mansuba est un jeu de plateau , ancêtre de Shtranj , qui a comme but mettre l’autre joueur en situation de mat . 
-Le but de notre projet sera de jouer une partie aléatoire, puis rendre l'algorithme de plus en plus flexible
-et l'orienter finalement vers la victoire. 
+Le but de notre projet sera de jouer une partie aléatoire avec plusieurs configurations.
 \subsection{Hypothèse et démarches de validation}
-Pour jouer une partie, il faut que le plateau de jeu soit définie au préalable. Le plateau de jeu \textit{board}  est 
+Pour jouer une partie, il faut que le plateau de jeu soit défini au préalable. Le plateau de jeu \textit{board}  est 
 le binôme monde et relation. 
-Le monde \textit{world} est l’ensemble des cases accessibles par les pions et dont les mouvements seront permis . Chaque case a 
-désormais des cases voisines \textit{Neighbors} dans des directions précisé par \lstinline|enum dir_t|.
-\begin{lstlisting}
-enum dir_t {
-  NO_DIR  = 0,    // Default dir (i.e unset)
-  EAST    = 1,
-  NEAST   = 2,
-  NORTH   = 3,
-  NWEST   = 4,
-  WEST    = -1,
-  SWEST   = -2,
-  SOUTH   = -3,
-  SEAST   = -4,
-  MAX_DIR = 9,    // Total number of different directions
-};
-\end{lstlisting}
-La possibilité d’accès à ses voisins sera contrôlée par la relation de la partie et qui choisira parmis les voisins ceux qui sont
- accessibles par mouvement direct.  
+Le monde \textit{world} est l’ensemble des cases accessibles par les pions . Chaque case a 
+désormais des cases voisines \textit{Neighbors} dans différentes direction .
+La possibilité d’accès à ses voisins sera contrôlée par la relation de la partie qui choisira parmis les voisins ceux qui sont
+ accessibles .  
  
 
 
-\section{Bases du jeu}
-
-
-\includegraphics[scale=0.5]{1.png}
+\section{Implémentation}
 
 
 
 
-Le jeu s’effectue un monde de $\textcolor{purple}{\textsc{world\_size}} = \textcolor{purple}{\textsc{width}} \times 
- \textcolor{purple}{\textsc{height}}$  case , des pièces (\lstinline|enum sort_t|) pour les joueurs ayant la couleur 
- dans (\lstinline|enum color_t|) . Cette configuration est surtout gouvernée par \textcolor{green}{\textit{geometry.h}}. \\
-\begin{lstlisting}
-enum sort_t {
-  NO_SORT  = 0,   // Default sort (i.e nothing)
-  PAWN     = 1,
-  TOUR     = 2,
-  ELEPHANT = 3,
-  MAX_SORT = 4,   // Total number of different sorts
-};
-enum color_t {
-  NO_COLOR  = 0,  // Default color, used to initialize worlds
-  BLACK     = 1,
-  WHITE     = 2,
-  MAX_COLOR = 3,  // Total number of different colors 
-};
-\end{lstlisting}
+
+Le jeu s’effectue dans un monde de $\textcolor{purple}{\textsc{world\_size}} = \textcolor{purple}{\textsc{width}} \times 
+ \textcolor{purple}{\textsc{height}}$  cases , avec des pièces appartenant à un nombre de joueurs \textcolor{purple}{\textsc{max\_players}}.
+. Cette configuration est surtout gouvernée par \textcolor{green}{\textit{geometry.h}} qui donne \lstinline|enum color_t| et \lstinline|enum sort_t|. \\
+On s'intéresse dans notre projet à plusieurs structure de base dans la construction de projet , parmi eux des structures statiques dans leurs manipulations
+nécessite plusieurs implémentations.
 
 Pendant le développement du jeu on fera souvent appel à toute la configuration du jeu. On rassemble alors tous les paramètres du monde
- actuel pendant le jeu dans une structure \lstinline|struct game_t|.
+ pendant le jeu dans une structure \lstinline|struct game_t|.
 \begin{lstlisting}
 struct game_t {
     enum color_t current_player;
@@ -154,17 +124,14 @@ Pour jouer une partie aléatoire on aura besoin de configurer le plateau de jeu.
 \subsection{Partie monde}
 La structure world est un tableau de pair couleur et type de pions qui inaccessible que par des fonctions de 
 \textcolor{green}{\textit{world.h}}. On commence d’abord par initier un monde sans aucun pion à l’aide de la structure 
-\lstinline|struct world_t* world_init();|. Cette fonction attribue à chaque case du tableau monde le pair 
-\textcolor{purple}{\textsc{(no\_color , no\_sort)}}. Les fonctions de world.h permettront l’écriture et la lecture de la couleur et
+\lstinline|struct world_t* world_init()|. Les fonctions de world.h permettront l’écriture et la lecture de la couleur et
  du type d’une case donné et seront utilisé fréquemment pour accéder au monde.  
  
  \begin{center}
- \includegraphics[scale=0.4]{boardvide.png}{\\$\hspace*{0.7cm}$Figure x: Un monde avec 64 cases indexées de 0 à 63.}
+ \includegraphics[scale=0.4]{5.png}{\\$\hspace*{0.7cm}$Figure x: Un monde}
  \end{center}
 
 \subsection{Partie relation}
-
-
 
 La structure \lstinline|struct neighbors_t| prédéfinira les voisins de chaque indice donné . 
 \begin{lstlisting}
@@ -178,8 +145,7 @@ struct neighbors_t {
 \end{center}
 
 
-Les voisins seront un tableau dont le contenu pour un indice donné est un tableau de vecteur introduit par la structure \lstinline|struct vector_t| défini par l’indice
- du voisin et sa direction de taille \textcolor{purple}{\textsc{max\_neighbors}} . De la même façon que world, les fonctions qui donne 
+Les voisins seront un tableau précalculé dont le contenu pour un indice donné de taille \textcolor{purple}{\textsc{max\_neighbors}} . De la même façon que world, les fonctions qui donne 
  accès au voisins sont \lstinline|struct neighbors_t get_neighbors(unsigned int idx)| qui cherche dans la structure des voisins 
  l’élement d’indice rentré en paramètre et \lstinline|unsigned int get_neighbor(unsigned int idx, enum dir_t d)|qui aide à obtenir 
  le voisin dans une direction donné par des opérations sur l’indice.\\ 
@@ -191,6 +157,38 @@ dans \textcolor{green}{\textit{limits.h}}. La fonction add\_neighbor servira par
 et le remplacer par le pair indice du voisin et sa direction.
 Le paramètre \textit{seed} permettera de désigner la relation de la partie et sera modifiable à $\sqrt{\textsc{max\_turns}}$. On donne le choix entre 4 relations : simple, diagonale, triangulaire, hexagonal.
 
+\begin{figure}
+  \centering
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=.4\linewidth]{1.png}
+    \captionof{figure}{relation simple}
+    \label{fig:test1}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=.4\linewidth]{2.png}
+    \captionof{figure}{relation diagonale}
+    \label{fig:test2}
+  \end{minipage}
+  \end{figure}
+
+
+  \begin{figure}
+    \centering
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=.4\linewidth]{3.png}
+      \captionof{figure}{relation triangulaire}
+      \label{fig:test1}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=.4\linewidth]{4.png}
+      \captionof{figure}{relation hexagonale}
+      \label{fig:test2}
+    \end{minipage}
+    \end{figure}
 Le passage d'une relation à une relation hexagonal est un peu difficile à gérer puisque l'emplacement des pions n'est pas similaire .  
 
 \subsection{Ensemble}
