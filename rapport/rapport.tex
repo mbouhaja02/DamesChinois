@@ -153,9 +153,13 @@ $\hspace*{0.7cm}$La structure world est un tableau de pair couleur et type de pi
 \lstinline|struct world_t* world_init()|. Les fonctions de world.h permettront l’écriture et la lecture de la couleur et
  du type d’une case donné et seront utilisé fréquemment pour accéder au monde.  
  
+$\newline$
+
  \begin{center}
- \includegraphics[scale=0.4]{5.png}{\\$\hspace*{0.7cm}$Figure x: Un monde}
+ \includegraphics[scale=0.8]{5.png}{\\$\hspace*{0.7cm}$Figure 1: Un monde}
  \end{center}
+
+ $\newline$
 
 \subsection{Partie relation}
 
@@ -166,8 +170,9 @@ struct neighbors_t {
 };
 \end{lstlisting}
 
+
 \begin{center}
-\includegraphics[scale=0.5]{movespawn2.png} {\\$\hspace*{0.7cm}$Figure x: }
+\includegraphics[scale=0.5]{movespawn2.png} {\\$\hspace*{0.7cm}$Figure 2: les mouvements possibles pour un pion. }
 \end{center}
 
 
@@ -187,14 +192,12 @@ Le paramètre \textit{seed} permettera de désigner la relation de la partie et 
   \centering
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=.4\linewidth]{1.png}
-    \captionof{figure}{relation simple}
+    \includegraphics[width=.4\linewidth]{1.png}{\\Figure 3: relation simple.}
     \label{fig:test1}
   \end{minipage}%
   \begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=.4\linewidth]{2.png}
-    \captionof{figure}{relation diagonale}
+    \includegraphics[width=.4\linewidth]{2.png}{\\Figure 4: relation diagonale.}
     \label{fig:test2}
   \end{minipage}
   \end{figure}
@@ -204,17 +207,17 @@ Le paramètre \textit{seed} permettera de désigner la relation de la partie et 
     \centering
     \begin{minipage}{.5\textwidth}
       \centering
-      \includegraphics[width=.4\linewidth]{3.png}
-      \captionof{figure}{relation triangulaire}
+      \includegraphics[width=.4\linewidth]{3.png}{\\Figure 5: relation triangulaire.}
       \label{fig:test1}
     \end{minipage}%
     \begin{minipage}{.5\textwidth}
       \centering
-      \includegraphics[width=.4\linewidth]{4.png}
-      \captionof{figure}{relation hexagonale}
+      \includegraphics[width=.4\linewidth]{4.png}{\\Figure 6: relation hexagonale.}
       \label{fig:test2}
     \end{minipage}
     \end{figure}
+
+    $\newline$
 
 \subsection{Ensemble}
 \begin{lstlisting}
@@ -238,9 +241,10 @@ collection des mouvement possibles  ... .
 Pour stocker les mouvements on fera appel à la structure set . Les mouvement possibles dans la version de bases sont :  
 
     \textbf{\textcolor{magenta}{Déplacement simple}} : Déplacement vers une case directement voisine libre.
-    
+
+$\newline$
 \begin{center}
-\includegraphics[scale=0.5]{movespawn2.png} {\\$\hspace*{0.7cm}$Figure x: Déplacement simple d'un pion.}
+\includegraphics[scale=0.5]{movespawn2.png} {\\$\hspace*{0.7cm}$Figure 7: Déplacement simple d'un pion.}
 \end{center}
 
 $\newline$
@@ -248,7 +252,7 @@ $\newline$
     \textbf{\textcolor{magenta}{Saut simple}} : si le voisin dans une direction j est occupé, et le voisin du voisin dans la meme direction est libre ,  on peut se déplacer vers le voisin du voisin , si le monde le permet. 
 
     \begin{center}
-\includegraphics[scale=0.6]{sautf.png} {\\$\hspace*{0.7cm}$Figure x: Saut simple d'un pion.}
+\includegraphics[scale=0.6]{sautf.png} {\\$\hspace*{0.7cm}$Figure 8: Saut simple d'un pion.}
 \end{center}
 
 $\newline$
@@ -256,14 +260,12 @@ $\newline$
     \textbf{\textcolor{magenta}{Saut multiple}} : s’agit d’une suite de saut simple dans different direction. elle est implémenté récursivement. La condition d’arrêt pour éviter de boucler infiniment sur les sauts simples est que les deux voisins soient occupés , arrête la boucle dans une direction , ou que l'indice soit déjà visité par notre fonction . 
     
 \begin{center}
-\includegraphics[scale=0.6]{sautmf.png} {\\$\hspace*{0.7cm}$Figure x: Saut multiple d'un pion.}
+\includegraphics[scale=0.6]{sautmf.png} {\\$\hspace*{0.7cm}$Figure 9: Saut multiple d'un pion.}
 \end{center}
-
+$\newline$
 La fonction multiple$\_$jumps utilise une récursion qui augmente sa complexité de manière exponentielle, cependant elle
 utilise aussi une fonction simple$\_$jumps qui elle est de complexité constante et sachant que les autres fonctions utilisées sont de complèxité constante.
 
-
-$\newline$
 
 Ses fonctions prennent comme paramètre additionnel un set. Il servira comme espace de stockage . 
 
@@ -275,17 +277,17 @@ $\newline$
 de tout nombre de cases inoccupées, donc on réalise une boucle sur les quatres direction SOUTH, NORTH, EAST et WEST, jusqu'à ce
  qu'elle atteigne le bord de l'échiquier ou qu'elle soit bloquée par une autre pièce. Elle ne peut passer au dessus d'une
   autre pièce.
-
+$\newline$
 \begin{center}
-\includegraphics[scale=0.3]{tour2.png} {\\$\hspace*{0.5cm}$Figure x: Translation cardinal d'une tour.}
+\includegraphics[scale=0.3]{tour2.png} {\\$\hspace*{0.5cm}$Figure 10: Translation cardinal d'une tour.}
 \end{center}
 
 $\newline$
 
 \textbf{\textcolor{magenta}{Saut semi diagonal}} : L'éléphant peut se déplacer sur les deux diagonale à partir de sa position initial, pour ce faire on boucle sur les directions $i+j$ $(où ~i \in \{NORTH, ~SOUTH\} ~et~ j \in \{ EAST, ~WEST \})$ et on ajoute les positions libres. finalement on stocke le résultat dans un ensemble $sdj$.
-
+$\newline$
 \begin{center}
-\includegraphics[scale=0.45]{ele2.png} {\\$\hspace*{0.4cm}$Figure x: Saut semi diagonal de l'éléphant.}
+\includegraphics[scale=0.45]{ele2.png} {\\$\hspace*{0.4cm}$Figure 11: Saut semi diagonal de l'éléphant.}
 \end{center}
 
 
@@ -300,7 +302,7 @@ $\newline$
 
 $\newline$
 
-Une pièce capturée deveint prisonnière, pour gerer cette nouvelle implémentation on crée une structure \textit{prisoner\_t} qui décrit l'état de la pièce capturée et pour manipuler plusieurs prisonèrs on définie une structure \textit{jail\_t} qui contient les différents prisonèrs des deux joueurs. les deux structures sont définie de la manière suivante:
+Une pièce capturée deveint prisonnière, pour gérer cette nouvelle implémentation on crée une structure \textit{prisoner\_t} qui décrit l'état de la pièce capturée et pour manipuler plusieurs prisonniers on définie une structure \textit{jail\_t} qui contient les différents prisonniers des deux joueurs. les deux structures sont définie de la manière suivante:
 
 
 \begin{lstlisting}
@@ -328,7 +330,7 @@ Mais pour ajouter une nouvelle dimension au jeu on implémente la posibilité d'
 
 
 \begin{center}
-\includegraphics[scale=0.5]{evasion.png}{\\$\hspace*{1.5cm}$Figure: Évasion d'une pièce.}
+\includegraphics[scale=0.5]{evasion.png}{\\$\hspace*{1.5cm}$Figure 12: Évasion d'une pièce.}
 \end{center}
 $\newline$
 
@@ -344,7 +346,7 @@ $\newline$
 \subsection{Makefile}
 
 
-Les fichiers .c  ont été construit et exécuté à l'aide d'un Makefile. Ce fichier de configuration automatise les tâches de compilation et d'exécution, facilitant ainsi la maintenance et l'extensibilité du logiciel. Les options de compilation et les dépendances ont été définies dans le Makefile, ainsi que les cibles pour construire et exécuter le programme. Nous avons utilisé GNU Make, un outil populaire pour créer des Makefiles, pour créer le Makefile de ce projet. En cours de développement, nous avons rencontré des problèmes avec les dépendances de bibliothèques, qui ont été résolus en ajoutant des options de compilation supplémentaires dans le Makefile. La méthodologie de compilation et d'exécution décrite ici a permis un développement efficace et une exécution stable de tous les fichiers.
+Les fichiers .c  ont été construit et exécuté à l'aide d'un Makefile. Ce fichier de configuration automatise les tâches de compilation et d'exécution, facilitant ainsi la maintenance et l'extensibilité du logiciel. Les options de compilation et les dépendances ont été définies dans le Makefile, ainsi que les cibles pour construire et exécuter le programme. En cours de développement, nous avons rencontré des problèmes avec les dépendances de bibliothèques, qui ont été résolus en ajoutant des options de compilation supplémentaires dans le Makefile. La méthodologie de compilation et d'exécution décrite ici a permis un développement efficace et une exécution stable de tous les fichiers.
 
 \subsection{La manipulation des options de ligne de commande}
 

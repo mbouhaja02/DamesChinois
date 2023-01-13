@@ -6,12 +6,12 @@
 \contentsline {subsection}{\numberline {2.1}Partie monde}{4}{}%
 \contentsline {subsection}{\numberline {2.2}Partie relation}{4}{}%
 \contentsline {subsection}{\numberline {2.3}Ensemble}{5}{}%
-\contentsline {subsection}{\numberline {2.4}mouvements des pièces}{5}{}%
-\contentsline {subsubsection}{\numberline {2.4.1}Mobilité d'un pion \textit {PAWN}}{5}{}%
+\contentsline {subsection}{\numberline {2.4}mouvements des pièces}{6}{}%
+\contentsline {subsubsection}{\numberline {2.4.1}Mobilité d'un pion \textit {PAWN}}{6}{}%
 \contentsline {subsubsection}{\numberline {2.4.2}Mobilité des autre pièces \textit {TOWER} et \textit {ELEPHANT }}{7}{}%
-\contentsline {subsubsection}{\numberline {2.4.3}Possibilité de capture et les tentatives d'évasion}{7}{}%
+\contentsline {subsubsection}{\numberline {2.4.3}Possibilité de capture et les tentatives d'évasion}{8}{}%
 \contentsline {subsection}{\numberline {2.5}Graphe des inclusions}{9}{}%
-\contentsline {section}{\numberline {3}Configuration de compilation et exécution}{9}{}%
-\contentsline {subsection}{\numberline {3.1}Makefile}{9}{}%
-\contentsline {subsection}{\numberline {3.2}La manipulation des options de ligne de commande}{10}{}%
-\contentsline {section}{\numberline {4}Conclusion}{10}{}%
+\contentsline {section}{\numberline {3}Configuration de compilation et exécution}{10}{}%
+\contentsline {subsection}{\numberline {3.1}Makefile}{10}{}%
+\contentsline {subsection}{\numberline {3.2}La manipulation des options de ligne de commande}{11}{}%
+\contentsline {section}{\numberline {4}Conclusion}{11}{}%

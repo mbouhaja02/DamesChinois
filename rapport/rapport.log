@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  13 JAN 2023 21:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  13 JAN 2023 22:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -789,24 +789,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--126
  []
 
 [3]
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
 <5.png, id=31, 143.03438pt x 138.5175pt>
 File: 5.png Graphic file (type png)
 <use 5.png>
-Package pdftex.def Info: 5.png  used on input line 157.
-(pdftex.def)             Requested size: 57.21272pt x 55.406pt.
+Package pdftex.def Info: 5.png  used on input line 159.
+(pdftex.def)             Requested size: 114.42764pt x 110.81413pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
 <movespawn2.png, id=32, 242.40562pt x 188.95593pt>
 File: movespawn2.png Graphic file (type png)
 <use movespawn2.png>
-Package pdftex.def Info: movespawn2.png  used on input line 170.
+Package pdftex.def Info: movespawn2.png  used on input line 175.
 (pdftex.def)             Requested size: 121.2025pt x 94.47772pt.
 
-Overfull \hbox (31.83508pt too wide) in paragraph at lines 174--178
+Overfull \hbox (31.83508pt too wide) in paragraph at lines 179--183
 []\T1/lmr/m/n/10 Les voisins seront un tableau pré-cal-culé dont le con-tenu po
 ur un in-dice donné de taille []\T1/lmr/m/sc/10 max_neighbors[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--178
+Underfull \hbox (badness 10000) in paragraph at lines 179--183
 
  []
 
@@ -814,124 +823,141 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--178
 <1.png, id=37, 158.84344pt x 147.55125pt>
 File: 1.png Graphic file (type png)
 <use 1.png>
-Package pdftex.def Info: 1.png  used on input line 190.
+Package pdftex.def Info: 1.png  used on input line 195.
 (pdftex.def)             Requested size: 85.35696pt x 79.29147pt.
 <2.png, id=38, 162.6075pt x 148.30406pt>
 File: 2.png Graphic file (type png)
 <use 2.png>
-Package pdftex.def Info: 2.png  used on input line 196.
+Package pdftex.def Info: 2.png  used on input line 200.
 (pdftex.def)             Requested size: 85.35696pt x 77.84947pt.
 <3.png, id=39, 159.59625pt x 151.3153pt>
 File: 3.png Graphic file (type png)
 <use 3.png>
-Package pdftex.def Info: 3.png  used on input line 207.
+Package pdftex.def Info: 3.png  used on input line 210.
 (pdftex.def)             Requested size: 85.35696pt x 80.92863pt.
 <4.png, id=40, 158.09062pt x 152.06813pt>
 File: 4.png Graphic file (type png)
 <use 4.png>
-Package pdftex.def Info: 4.png  used on input line 213.
+Package pdftex.def Info: 4.png  used on input line 215.
 (pdftex.def)             Requested size: 85.35696pt x 82.10628pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
+
+ []
+
+[5 <./1.png> <./2.png> <./3.png> <./4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+ []
+
 File: movespawn2.png Graphic file (type png)
 <use movespawn2.png>
-Package pdftex.def Info: movespawn2.png  used on input line 243.
+Package pdftex.def Info: movespawn2.png  used on input line 247.
 (pdftex.def)             Requested size: 121.2025pt x 94.47772pt.
- [5 <./1.png> <./2.png> <./3.png> <./4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
  []
 
-<sautf.png, id=49, 460.72125pt x 118.94438pt>
+<sautf.png, id=48, 460.72125pt x 118.94438pt>
 File: sautf.png Graphic file (type png)
 <use sautf.png>
-Package pdftex.def Info: sautf.png  used on input line 251.
+Package pdftex.def Info: sautf.png  used on input line 255.
 (pdftex.def)             Requested size: 276.43488pt x 71.36716pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
-<sautmf.png, id=50, 554.82281pt x 328.97906pt>
+<sautmf.png, id=49, 554.82281pt x 328.97906pt>
 File: sautmf.png Graphic file (type png)
 <use sautmf.png>
-Package pdftex.def Info: sautmf.png  used on input line 259.
+Package pdftex.def Info: sautmf.png  used on input line 263.
 (pdftex.def)             Requested size: 332.89626pt x 197.38895pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+[6 <./sautf.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
-[6 <./sautf.png (PNG copy)> <./sautmf.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--281
 
  []
 
 <tour2.png, id=54, 487.8225pt x 458.46281pt>
 File: tour2.png Graphic file (type png)
 <use tour2.png>
-Package pdftex.def Info: tour2.png  used on input line 280.
+Package pdftex.def Info: tour2.png  used on input line 282.
 (pdftex.def)             Requested size: 146.34787pt x 137.5399pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
 
-LaTeX Warning: Command \` invalid in math mode on input line 285.
+LaTeX Warning: Command \` invalid in math mode on input line 287.
 
-<ele2.png, id=55, 336.50719pt x 312.41719pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--289
+
+ []
+
+[7 <./sautmf.png (PNG copy)> <./tour2.png (PNG copy)>]
+<ele2.png, id=60, 336.50719pt x 312.41719pt>
 File: ele2.png Graphic file (type png)
 <use ele2.png>
-Package pdftex.def Info: ele2.png  used on input line 288.
+Package pdftex.def Info: ele2.png  used on input line 290.
 (pdftex.def)             Requested size: 151.42682pt x 140.58643pt.
-[7 <./tour2.png (PNG copy)> <./ele2.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
 
-<evasion.png, id=61, 628.59843pt x 224.33812pt>
+[8 <./ele2.png (PNG copy)>]
+<evasion.png, id=64, 628.59843pt x 224.33812pt>
 File: evasion.png Graphic file (type png)
 <use evasion.png>
-Package pdftex.def Info: evasion.png  used on input line 331.
+Package pdftex.def Info: evasion.png  used on input line 333.
 (pdftex.def)             Requested size: 314.29845pt x 112.16878pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--338
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
 
  []
 
-[8 <./evasion.png (PNG copy)>]
 <diag.png, id=65, 963.6pt x 722.7pt>
 File: diag.png Graphic file (type png)
 <use diag.png>
-Package pdftex.def Info: diag.png  used on input line 340.
+Package pdftex.def Info: diag.png  used on input line 342.
 (pdftex.def)             Requested size: 578.16447pt x 433.62334pt.
 
-Overfull \hbox (151.37312pt too wide) in paragraph at lines 340--341
+Overfull \hbox (151.37312pt too wide) in paragraph at lines 342--343
  [] 
  []
 
-[9 <./diag.png (PNG copy)>] [10] (./rapport.aux)
+[9 <./evasion.png (PNG copy)>] [10 <./diag.png (PNG copy)>] [11] (./rapport.aux
+)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  18398 strings out of 480204
- 349740 string characters out of 5895009
- 844330 words of memory out of 5000000
- 35993 multiletter control sequences out of 15000+600000
- 554398 words of font info for 85 fonts, out of 8000000 for 9000
+ 349719 string characters out of 5895009
+ 837330 words of memory out of 5000000
+ 35992 multiletter control sequences out of 15000+600000
+ 559937 words of font info for 87 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 100i,12n,104p,865b,1189s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 100i,12n,104p,789b,1189s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm
@@ -943,10 +969,10 @@ b></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb>
-Output written on rapport.pdf (10 pages, 2701024 bytes).
+Output written on rapport.pdf (11 pages, 2701363 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 136 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

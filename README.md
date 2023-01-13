@@ -43,9 +43,6 @@ make test_moves
 # Pour tester capture
 make test_capture
 
-# Pour tester distance
-make test_distance
-
 # Rapport
 Ce trouve dans le dossier rapport. 
 
