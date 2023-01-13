@@ -88,6 +88,16 @@
 $\newline$
 $\hspace*{0.7cm}$Mansuba est un jeu de plateau , ancêtre de Shtranj , qui a comme but mettre l’autre joueur en situation de mat . 
 Le but de notre projet sera de jouer une partie aléatoire avec plusieurs configurations.
+
+La programmation d'un tel jeu est un défi qui nécessite une compréhension approfondie des règles et des
+stratégies du jeu, ainsi qu'une maîtrise des concepts de programmation tels que la gestion de la mémoire,
+la récursivité et les algorithmes de recherche. L'un des principaux défis est de concevoir un système d'évaluation des positions pour évaluer
+ la performance des différentes stratégies. Cela peut être difficile car il faut déterminer les facteurs importants
+  à considérer et comment les pondérer. Il est également important dans la programmation de ce projet est de concevoir
+   un système de mouvement de pièces efficace et logique. Il est nécessaire de définir des règles pour les mouvements valides de
+    chaque type de pièce, ainsi que de prendre en compte les situations de pat et de mat.
+
+
 \subsection{Manusba}
 
 $\hspace*{0.7cm}$Pour jouer une partie, il faut que le plateau de jeu soit défini au préalable. Le plateau de jeu \textit{board}  est 
@@ -99,7 +109,14 @@ La possibilité d’accès à ses voisins sera contrôlée par la relation de la
 Les pièces selon leurs types (pions, éléphant, tour) admettent différents types de mouvements : déplacement simple, saut simple, saut diagonal ... .
 Il existe deux types de victoires. La victoire est dite simple si le joueur atteint une des positions de départ de l’autre joueur
  et complexe si le joueur les atteint tous.
-Le jeu s’arrête si on atteint une victoire, le choix du type étant aléatoire pendant la partie, ou si on atteint \textcolor{purple}{\textsc{max\_turns}}. 
+Le jeu s’arrête si on atteint une victoire, le choix du type étant aléatoire pendant la partie, ou si on atteint le nombre de tour maximal. 
+
+
+\subsection{Travail en binôme, git}
+
+Travailler en binôme sur un projet de programmation peut offrir de nombreux avantages tels que la répartition
+ des tâches et la révision de code, mais il est important d'utiliser des outils pour faciliter la gestion des versions
+  et la communication, L'un de ces outils est le Git qui permet de suivre les modifications apportées au code et gérer les conflits potentiels.
 
 \section{Implémentation}
 
@@ -242,6 +259,11 @@ $\newline$
 \includegraphics[scale=0.6]{sautmf.png} {\\$\hspace*{0.7cm}$Figure x: Saut multiple d'un pion.}
 \end{center}
 
+La fonction multiple$\_$jumps utilise une récursion qui augmente sa complexité de manière exponentielle, cependant elle
+utilise aussi une fonction simple$\_$jumps qui elle est de complexité constante. Ce qui donne une complexité globale de
+la fonction multiple$\_$jumps qui est exponentielle avec une constante dépendant de la fonction simple$\_$jumps sachant que
+ les autres fonctions utilisées sont de complèxité constante.
+
 $\newline$
 
 Ses fonctions prennent comme paramètre additionnel un set. Il servira comme espace de stockage . 
@@ -250,7 +272,10 @@ Ses fonctions prennent comme paramètre additionnel un set. Il servira comme esp
 
 $\newline$
 
-\textbf{\textcolor{magenta}{Translation cardinale}} : La tour se déplace en ligne droite soit horizontalement soit verticalement de tout nombre de cases inoccupées, donc on réalise une boucle sur les quatres direction SOUTH, NORTH, EAST et WEST, et on ajoute les position libre dans l'ensemble $ct$ de la fonction  \lstinline|void cardinal_translations(struct game_t game, struct set* ct)| jusqu'à ce qu'elle atteigne le bord de l'échiquier ou qu'elle soit bloquée par une autre pièce. Elle ne peut passer au dessus d'une autre pièce.
+\textbf{\textcolor{magenta}{Translation cardinale}} : La tour se déplace en ligne droite soit horizontalement soit verticalement 
+de tout nombre de cases inoccupées, donc on réalise une boucle sur les quatres direction SOUTH, NORTH, EAST et WEST, jusqu'à ce
+ qu'elle atteigne le bord de l'échiquier ou qu'elle soit bloquée par une autre pièce. Elle ne peut passer au dessus d'une
+  autre pièce.
 
 \begin{center}
 \includegraphics[scale=0.3]{tour2.png} {\\$\hspace*{0.5cm}$Figure x: Translation cardinal d'une tour.}
@@ -302,8 +327,19 @@ Mais pour ajouter une nouvelle dimension au jeu on implémente la posibilité d'
 
 \textbf{\textcolor{magenta}{Tentatives d'évasion}} : Si une pièce est capturée, elle a la possibilité de tenter de s'échapper. Cependant, cette évasion n'est possible que si la case où elle a été capturée est vide. La réussite de cette évasion est aléatoire, avec une chance de 50$\%$ de réussir. Si l'évasion échoue, la pièce reste capturée et le plateau de jeu reste inchangé.
 
+
+\begin{center}
+\includegraphics[scale=0.5]{evasion.png}{\\$\hspace*{1.5cm}$Figure: Évasion d'une pièce.}
+\end{center}
 $\newline$
 
+\subsection{Graphe des inclusions}
+
+$\newline$
+
+\begin{center}
+  \includegraphics[scale=0.5]{Dessin sans titre.jpg}
+\end{center}
 
 \section{Configuration de compilation et exécution}
 \subsection{Makefile}
@@ -326,16 +362,8 @@ Après avoir analysé tous les arguments, getopt() retourne -1 pour indiquer qu'
 
 Il est important de noter que getopt() modifie l'ordre des éléments dans argv pour les options traitées. Les arguments restants sont décalés vers le début de la liste argv.
 
-\section{Références}
 
-
-\section{Annexes}
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{Dessin sans titre.jpg}
-  \caption{Graphe des dépendances}
-  \label{fig:length_eight_mouse}
-\end{figure}
+\section{Conclusion}
 
 
 \end{document}
