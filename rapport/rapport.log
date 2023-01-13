@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  13 JAN 2023 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  13 JAN 2023 20:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -909,24 +909,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 337--338
  []
 
 [8 <./evasion.png (PNG copy)>]
-<Dessin sans titre.jpg, id=65, 963.6pt x 722.7pt>
-File: Dessin sans titre.jpg Graphic file (type jpg)
-<use Dessin sans titre.jpg>
-Package pdftex.def Info: Dessin sans titre.jpg  used on input line 340.
-(pdftex.def)             Requested size: 481.79883pt x 361.3491pt.
+<diag.png, id=65, 963.6pt x 722.7pt>
+File: diag.png Graphic file (type png)
+<use diag.png>
+Package pdftex.def Info: diag.png  used on input line 340.
+(pdftex.def)             Requested size: 578.16447pt x 433.62334pt.
 
-Overfull \hbox (55.00748pt too wide) in paragraph at lines 340--341
+Overfull \hbox (151.37312pt too wide) in paragraph at lines 340--341
  [] 
  []
 
-[9 <./Dessin sans titre.jpg>] [10] (./rapport.aux)
+[9 <./diag.png (PNG copy)>] [10] (./rapport.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  18398 strings out of 480204
- 349833 string characters out of 5895009
+ 349740 string characters out of 5895009
  844330 words of memory out of 5000000
  35993 multiletter control sequences out of 15000+600000
  554398 words of font info for 85 fonts, out of 8000000 for 9000
@@ -943,7 +943,7 @@ b></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb>
-Output written on rapport.pdf (10 pages, 2706466 bytes).
+Output written on rapport.pdf (10 pages, 2701502 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
