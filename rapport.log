@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2022.7.18)  13 JAN 2023 14:22
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.21)  13 JAN 2023 14:25
->>>>>>> e35eea757ba9a88de664f365a12c27961db0031e
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.21)  13 JAN 2023 14:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -609,34 +605,6 @@ Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-<<<<<<< HEAD
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) (./rapport.aux
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 <
-     <<<<<< HEAD
-? x
- 
-Here is how much of TeX's memory you used:
- 14591 strings out of 495063
- 256311 string characters out of 3182201
- 327349 words of memory out of 3000000
- 17513 multiletter control sequences out of 15000+200000
- 4403 words of font info for 15 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 56i,0n,56p,418b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
-No pages of output.
-PDF statistics:
- 3 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 44
@@ -922,7 +890,7 @@ Here is how much of TeX's memory you used:
  36077 multiletter control sequences out of 15000+600000
  560256 words of font info for 88 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 100i,13n,104p,890b,1810s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 100i,13n,104p,880b,1810s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/e
 nc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/
 share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/
@@ -936,11 +904,10 @@ r/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmtt8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb>
-Output written on rapport.pdf (11 pages, 2707178 bytes).
+Output written on rapport.pdf (11 pages, 2707153 bytes).
 PDF statistics:
  138 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> e35eea757ba9a88de664f365a12c27961db0031e
 
