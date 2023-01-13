@@ -17,3 +17,37 @@ La compilation des fichiers source se fait par la commande : make ou make projec
 la commande make test permet de compiler et d'executer le projet 
 
 
+# Compilation
+make 
+
+./project [-h help]
+          [-s an optional parametre to initialize the RNG]
+          [-m an optional parametre for MAX_TURNS] 
+          [-t an optional parametre to set the victory type \n]{c pour la victoire complexe}
+
+# pour tester project
+make project 
+
+# Pour tester board
+make test_board 
+
+# Pour tester victoire
+make test_victoire 
+
+# Pour tester set
+make test_ensemble
+
+# Pour tester movements
+make test_moves
+
+# Pour tester capture
+make test_capture
+
+# Pour tester distance
+make test_distance
+
+# Rapport
+Ce trouve dans le dossier rapport. 
+
+pour compiler fichier latex   :    pdflatex rapport.tex
+pour lancer le pdf du rapport :    evince rapport.pdf
