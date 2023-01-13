@@ -76,11 +76,7 @@
 
 
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{Dessin sans titre.jpg}
-  \caption{Graphe des dépendances}
-  \label{fig:length_eight_mouse}
-\end{figure}
+
   
 
 
@@ -111,13 +107,12 @@ enum dir_t {
 La possibilité d’accès à ses voisins sera contrôlée par la relation de la partie et qui choisira parmis les voisins ceux qui sont
  accessibles par mouvement direct.  
  
- 
- \begin{center}
-\includegraphics[scale=0.5]{Dessin sans titre.jpg} 
 
-\end{center}
 
 \section{Bases du jeu}
+
+
+\includegraphics[scale=0.5]{Capture d'écran_20230112_214222.png}
 
 
 
@@ -195,7 +190,6 @@ dans \textcolor{green}{\textit{limits.h}}. La fonction add\_neighbor servira par
 et le remplacer par le pair indice du voisin et sa direction.
 Le paramètre \textit{seed} permettera de désigner la relation de la partie et sera modifiable à $\sqrt{\textsc{max\_turns}}$. On donne le choix entre 4 relations : simple, diagonale, triangulaire, hexagonal.
 
-\includegraphics[scale=0.5]{Capture d'écran_20230112_214222.png}
 Le passage d'une relation à une relation hexagonal est un peu difficile à gérer puisque l'emplacement des pions n'est pas similaire .  
 
 \subsection{Ensemble}
@@ -362,6 +356,14 @@ Il est important de noter que getopt() modifie l'ordre des éléments dans argv 
 
 \section{Références}
 
+
+\section{Annexes}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Dessin sans titre.jpg}
+  \caption{Graphe des dépendances}
+  \label{fig:length_eight_mouse}
+\end{figure}
 
 
 \end{document}
