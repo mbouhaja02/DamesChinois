@@ -24,18 +24,18 @@ void simple_moves_capture( struct game_t game, struct set* smc);
 
 
 //Stocks a set of available simple jumps for the current position
-void simple_jumps(struct game_t game , struct set* sj);
+void simple_jumps(struct game_t game, struct set* sj);
 
 //Stocks a set of available simple jumps captured for the current position
-void simple_jumps_capture(struct game_t game , struct set* sjc);
+void simple_jumps_capture(struct game_t game, struct set* sjc);
 
 
 
 //Stocks a set of available multiple jumps for the current position
-void multiple_jumps(struct game_t game , struct set* mj);
+void multiple_jumps(struct game_t game, struct set* mj);
 
 //Stocks a set of available multiple jumps captured for the current position
-void multiple_jumps_capture(struct game_t game , struct set* mjc  );
+void multiple_jumps_capture(struct game_t game, struct set* mjc);
 
 
 

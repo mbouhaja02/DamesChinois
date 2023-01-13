@@ -81,23 +81,23 @@ int main(int argc, char* argv[]) {
             printf("\t victoire complexe = %d \n \n", game.victory);
             return 0;  
     }
-    printf("\n Prison : Black [");
+    printf("\n Prison : Black 🏯 [");
     for(unsigned int i =0; i< game.jail->len_black; i++){
       printf(" %d, ", game.jail->cells_black[i].i);
     }
     printf(" ] \n");
 
-    printf("\n \t  White [");
+    printf("\n \t  White 🏯 [");
 
     for(unsigned int i =0; i< game.jail->len_white; i++){
       printf(" %d, ", game.jail->cells_white[i].i);
     }
-    printf(" ] \n");
+    printf(" ] \n\n\n");
     game.current_player = next_player(game.current_player);  
   }
 
   printf("\tNombre de tours maximal est atteint \n");
-  printf("\tVictoire complexe = %d \n \n", game.victory);
+  printf("\t     Victoire complexe = %d \n \n", game.victory);
   return 0;
 
 }
