@@ -16,7 +16,7 @@ pour chaque déplacement stocke dans un set les distances de chaque déplacement
 de la forme d'un tableau des tableaux avec l'indice du déplacement dans une case donnée donne accès à un tableau de distances on cherche le max 
 dans tous les tableaux et on renvoie l'indice du tableaux qui contient le max ou on peut retenir que le max de chaque déplacement dès le début 
 it'll be something like : */
-/*unsigned int max_distance(struct game_t game){
+unsigned int max_distance(struct game_t game){
     struct set* positions_of_player;
     struct set* md;
     struct set* distances;
@@ -42,7 +42,7 @@ it'll be something like : */
 }**/ 
 //Tableau de taill WORLD_SIZE**2
 //this function calculates the distance between a and every other square in the world 
-/*void distance( struct set* distances_of_a, int compteur){
+void distance( struct set* distances_of_a, int compteur){
     for (int )    
         distances_of_a->taille = WORLD_SIZE 
         distances_of_a->positions[a]= 0;
@@ -101,7 +101,7 @@ unsigned int closest_movement_to_other_player(struct game_t game){
 
 
 /*On crée un tableau de taille WORLD_SIZE**2 (représente une matrice symétrique)*/
-/*void distances(int* distance,int cpt ){
+void distances(int* distance,int cpt ){
     struct neighbors_t neighbors;
     for (unsigned int i = 0; i<WORLD_SIZE ; i++){ //i line indicator
         neighbors = get_neighbors(i);
