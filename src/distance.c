@@ -115,3 +115,18 @@ unsigned int closest_movement_to_other_player(struct game_t game){
         }
     }
 }*/
+
+int distance_with_simple_moves(unsigned int b , struct game_t game){
+    struct set sm;
+    positions_init(&sm);
+    simple_moves(game,&sm);
+    int d=0;
+    if (place_visited(&sm,b)==0 && d<WORLD_SIZE){
+        for (unsigned int i=0; i<sm.taille;i++){
+            d++;
+            game.position = sm.positions[i];
+            simple_moves(game,&sm);
+        }
+    }
+    return d;
+}
