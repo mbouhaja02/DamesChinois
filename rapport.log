@@ -965,6 +965,7 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 ) (./rapport.aux)
 \openout1 = `rapport.aux'.
 
+<<<<<<< HEAD
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
@@ -979,12 +980,33 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 45.
+=======
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 44.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
+<<<<<<< HEAD
 LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 45.
+=======
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 44.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1089,25 +1111,43 @@ Package caption Info: End \AtBeginDocument code.
 <logo.png, id=4, 2569.6pt x 1815.78375pt>
 File: logo.png Graphic file (type png)
  <use logo.png>
+<<<<<<< HEAD
 Package pdftex.def Info: logo.png used on input line 66.
 (pdftex.def)             Requested size: 231.25403pt x 163.41348pt.
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 66.
+=======
+Package pdftex.def Info: logo.png used on input line 65.
+(pdftex.def)             Requested size: 231.25403pt x 163.41348pt.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 65.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 66.
+=======
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 65.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 66.
+=======
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 65.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 66.
+=======
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 65.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omxlmex.fd
@@ -1118,13 +1158,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 66.
 LaTeX Font Info:    External font `lmex10' loaded for size
+<<<<<<< HEAD
 (Font)              <10> on input line 66.
 LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+=======
+(Font)              <10> on input line 65.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
+<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+=======
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1133,13 +1182,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: Chaturanga_Chess_Set.jpg Graphic file (type jpg)
 
 <use Chaturanga_Chess_Set.jpg>
+<<<<<<< HEAD
 Package pdftex.def Info: Chaturanga_Chess_Set.jpg used on input line 66.
+=======
+Package pdftex.def Info: Chaturanga_Chess_Set.jpg used on input line 65.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 (pdftex.def)             Requested size: 358.46013pt x 271.22914pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 66.
 LaTeX Font Info:    External font `lmex10' loaded for size
+<<<<<<< HEAD
 (Font)              <6> on input line 66.
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 72.
+=======
+(Font)              <6> on input line 65.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 71.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1147,7 +1205,11 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 72.
 LaTeX Font Info:    External font `lmex10' loaded for size
+<<<<<<< HEAD
 (Font)              <5> on input line 72.
+=======
+(Font)              <5> on input line 71.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
  [1{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./logo.png> <./Chaturanga_Chess_Set.jpg>] (./rapport.toc)
@@ -1155,11 +1217,16 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout4 = `rapport.toc'.
 
  [2]
+<<<<<<< HEAD
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 93.
+=======
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 92.
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
  (/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
+<<<<<<< HEAD
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 93.
 
 ! Missing $ inserted.
@@ -1188,4 +1255,176 @@ PDF statistics:
  23 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 92.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.115 ....5]{Capture d'Ã©cran_20230112_214222.png}
+                                                  
+? 
+
+LaTeX Warning: File `Capture d'\IeC {\'e}cran_20230112_214222.png' not found on
+ input line 115.
+
+
+! Package pdftex.def Error: File `Capture d'écran_20230112_214222.png' not foun
+d.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.115 ....5]{Capture d'Ã©cran_20230112_214222.png}
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.115 ....5]{Capture d'Ã©cran_20230112_214222.png}
+                                                  
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--123
+
+ []
+
+[3] <boardvide.png, id=35, 279.29344pt x 274.02374pt>
+File: boardvide.png Graphic file (type png)
+ <use boardvide.png>
+Package pdftex.def Info: boardvide.png used on input line 161.
+(pdftex.def)             Requested size: 111.7154pt x 109.60754pt.
+
+<movespawn2.png, id=36, 242.40562pt x 188.95593pt>
+File: movespawn2.png Graphic file (type png)
+ <use movespawn2.png>
+Package pdftex.def Info: movespawn2.png used on input line 176.
+(pdftex.def)             Requested size: 121.2025pt x 94.47772pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--185
+
+ []
+
+[4 <./boardvide.png (PNG copy)> <./movespawn2.png (PNG copy)>]
+Overfull \hbox (12.56929pt too wide) in paragraph at lines 193--194
+[]\T1/lmr/m/n/10 Le pas-sage d'une re-la-tion à une re-la-tion hexag-o-nal est 
+un peu dif-fi-cile à gérer puisque l'emplacement
+ []
+
+File: movespawn2.png Graphic file (type png)
+<use movespawn2.png>
+Package pdftex.def Info: movespawn2.png used on input line 225.
+(pdftex.def)             Requested size: 121.2025pt x 94.47772pt.
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+<sautf.png, id=44, 460.72125pt x 118.94438pt>
+File: sautf.png Graphic file (type png)
+ <use sautf.png>
+Package pdftex.def Info: sautf.png used on input line 233.
+(pdftex.def)             Requested size: 276.43488pt x 71.36716pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+
+ []
+
+<sautmf.png, id=45, 554.82281pt x 328.97906pt>
+File: sautmf.png Graphic file (type png)
+ <use sautmf.png>
+Package pdftex.def Info: sautmf.png used on input line 241.
+(pdftex.def)             Requested size: 332.89626pt x 197.38895pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+[6 <./sautf.png (PNG copy)> <./sautmf.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+
+ []
+
+<tour2.png, id=49, 487.8225pt x 458.46281pt>
+File: tour2.png Graphic file (type png)
+ <use tour2.png>
+Package pdftex.def Info: tour2.png used on input line 254.
+(pdftex.def)             Requested size: 146.34787pt x 137.5399pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+
+LaTeX Warning: Command \` invalid in math mode on input line 259.
+
+<ele2.png, id=50, 336.50719pt x 312.41719pt>
+File: ele2.png Graphic file (type png)
+ <use ele2.png>
+Package pdftex.def Info: ele2.png used on input line 262.
+(pdftex.def)             Requested size: 151.42682pt x 140.58643pt.
+ [7 <./tour2.png (PNG copy)> <./ele2.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+[9]
+
+LaTeX Warning: File `Dessin sans titre.jpg' not found on input line 363.
+
+<Dessin sans titre.jpg, id=62, 963.6pt x 722.7pt>
+File: Dessin sans titre.jpg Graphic file (type jpg)
+ <use Dessin sans titre.jpg>
+Package pdftex.def Info: Dessin sans titre.jpg used on input line 363.
+(pdftex.def)             Requested size: 426.79135pt x 320.0842pt.
+
+Overfull \hbox (58.1946pt too wide) in paragraph at lines 363--364
+[]\T1/lmr/m/n/10 sans titre.jpg [] 
+ []
+
+[10] [11 <./Dessin sans titre.jpg>] (./rapport.aux) ) 
+Here is how much of TeX's memory you used:
+ 16259 strings out of 495063
+ 279945 string characters out of 3182201
+ 402349 words of memory out of 3000000
+ 19058 multiletter control sequences out of 15000+200000
+ 89417 words of font info for 73 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 56i,13n,56p,869b,1148s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texlive/texmf-
+dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/
+dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.
+enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/tex
+live/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/lm/lmbxi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmcsc1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/lm/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr1
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/l
+mtk10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on rapport.pdf (11 pages, 2729503 bytes).
+PDF statistics:
+ 128 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
 

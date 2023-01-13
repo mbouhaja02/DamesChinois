@@ -1,0 +1,20 @@
+<<<<<<< HEAD
+=======
+\contentsline {section}{\numberline {1}INTRODUCTION}{3}
+\contentsline {subsection}{\numberline {1.1}Probl\IeC {\`e}matique}{3}
+\contentsline {subsection}{\numberline {1.2}Hypoth\IeC {\`e}se et d\IeC {\'e}marches de validation}{3}
+\contentsline {section}{\numberline {2}Bases du jeu}{3}
+\contentsline {subsection}{\numberline {2.1}Partie monde}{4}
+\contentsline {subsection}{\numberline {2.2}Partie relation}{4}
+\contentsline {subsection}{\numberline {2.3}Ensemble}{5}
+\contentsline {section}{\numberline {3}Mobilit\IeC {\'e}s des pi\IeC {\`e}ces}{5}
+\contentsline {subsection}{\numberline {3.1}Mobilit\IeC {\'e} d'un pion \textit {PAWN}}{5}
+\contentsline {subsection}{\numberline {3.2}Mobilit\IeC {\'e} des autre pi\IeC {\`e}ces \textit {TOWER} et \textit {ELEPHANT }}{7}
+\contentsline {subsection}{\numberline {3.3}Possibilit\IeC {\'e} de capture et les tentatives d'\IeC {\'e}vasion}{8}
+\contentsline {section}{\numberline {4}Boucle de jeu}{9}
+\contentsline {section}{\numberline {5}Configuration de compilation et ex\IeC {\'e}cution}{9}
+\contentsline {subsection}{\numberline {5.1}Makefile}{9}
+\contentsline {subsection}{\numberline {5.2}La manipulation des options de ligne de commande}{9}
+\contentsline {section}{\numberline {6}R\IeC {\'e}f\IeC {\'e}rences}{10}
+\contentsline {section}{\numberline {7}Annexes}{10}
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
