@@ -40,3 +40,9 @@ make test_capture
 
 # Pour tester distance
 make test_distance
+
+# Rapport
+Ce trouve dans le dossier rapport. 
+
+pour compiler fichier latex   :    pdflatex rapport.tex
+pour lancer le pdf du rapport :    evince rapport.pdf
