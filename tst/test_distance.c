@@ -15,7 +15,8 @@ int main(){
     
     struct game_t game = game_initializer();
     init_neighbors(game.seed);
-    printf("%d\n",distance_with_simple_moves(7,game));
+    printf("%d\n",is_neighbor(7,9));
+    printf("%d\n",distance(7,9));
     return 0;
     
 }

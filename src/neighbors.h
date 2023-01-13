@@ -52,7 +52,7 @@ struct neighbors_t get_neighbors(unsigned int idx);
 int existence_of_neighbor(unsigned int idx , unsigned int neighbor);
 
 
-//Verify if a case is a neighbor
-int is_neighbor(struct neighbors_t neighbors , unsigned int idx);
+//Verify if a case idx is a neighbor to a 
+int is_neighbor(unsigned int a , unsigned int idx);
 
 #endif // __NEIGHBORS_H__

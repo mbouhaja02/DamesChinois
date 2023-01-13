@@ -191,43 +191,17 @@ struct neighbors_t get_neighbors(unsigned int idx) {
     return neighbors[idx];
 }
 
-//Verify if a case is a neighbor
-int is_neighbor(struct neighbors_t neighbors , unsigned int idx){
-    for (int j=0; j< MAX_NEIGHBORS; j++)
+//Verify if a case idx is a neighbor to a 
+int is_neighbor(unsigned int a , unsigned int idx){
+    struct neighbors_t neighbors = get_neighbors(a);
+    for (int j=0; j< MAX_NEIGHBORS; j++){
         if (neighbors.n[j].i== idx){
             return 1;
         }
+    }    
     return 0;
+
 }
-
-
-//initializes triangular board not having acess to some places located outside its frame 
-/**void init_triangular_neighbors(){
-    unsigned int line ; 
-    unsigned int right_limit ; 
-    unsigned int left_limit ; 
-    if (WIDTH > HEIGHT){
-        for (unsigned int i = 0; i < WORLD_SIZE; i++){
-            line = i/WIDTH ;
-            right_limit = line*WIDTH + line ; 
-            left_limit = (line+1)*WIDTH - HEIGHT + line;
-
-            if (i > right_limit){
-                add_neighbor(i, get_neighbor(i,WEST),WEST);
-            }
-            if (i < left_limit){
-                add_neighbor(i, get_neighbor(i,EAST),EAST);
-            }
-            if (line != 0 && i < left_limit + 1 && i+1 > right_limit ){
-                add_neighbor(i, get_neighbor(i,NORTH),NORTH);
-            }
-            if (line != HEIGHT-1 && i < left_limit +1 && i+1 > right_limit ){
-                add_neighbor(i, get_neighbor(i,SOUTH),SOUTH);
-            }
-        }
-    }
-}**/
-
 
 
 

@@ -11,47 +11,15 @@
 
 #define MIN(i, j) (((i) < (j)) ? (i) : (j))
 //Achievement4
-/*calculons la distance parcourue par une pièce lors d'un déplacement donné:  la distance parcourue sera la difference des deux cases % WIDTH , 
-pour chaque déplacement stocke dans un set les distances de chaque déplacement à chaque pièce dans l'set des indices de l'autre joueur
-de la forme d'un tableau des tableaux avec l'indice du déplacement dans une case donnée donne accès à un tableau de distances on cherche le max 
-dans tous les tableaux et on renvoie l'indice du tableaux qui contient le max ou on peut retenir que le max de chaque déplacement dès le début 
-it'll be something like : */
-/*unsigned int max_distance(struct game_t game){
-    struct set* positions_of_player;
-    struct set* md;
-    struct set* distances;
-    positions_init(distances);
-    int max_distance_for_position = 0; 
-    int max_distance_for_positions = 0; 
-    unsigned int indice_maximal ;
-    unsigned int max_position ;
-    if (game.current_player = BLACK){
-        white_list(positions_of_player, game.w)
-    }
-    else {
-        black_list(positions_of_player, game.w)
-    }
-
-    available_movements(game , md);
-    for (int mouvement = 0; mouvement < md->taille; mouvement++){
-        for (int pions_adverses = 0; pions_adverses < positions_of_player->taille; pions_adverses++){
-            max_distance_for_position = MAX(max_distance_for_position , md->position[mouvement]-positions_of_player->position[pions_adverses]);}
-        max_distance_for_positions = MAX(max_distance_for_position, max_distance_for_positions ); 
-        indice_maximale = max_distance_for_positions = max_distance_for_position ? md->position[]
-    }
-}**/ 
-//Tableau de taill WORLD_SIZE**2
 //this function calculates the distance between a and every other square in the world 
-/*void distance( struct set* distances_of_a, int compteur){
-    for (int )    
-        distances_of_a->taille = WORLD_SIZE 
-        distances_of_a->positions[a]= 0;
+
+/*void distance( struct set* distances_of_a, unsigned int a ,int compteur){    
         struct neighbors_t neighbor = get_neighbors(a);
         compteur = compteur + 1;
         while compteur<WORLD_SIZE
-        for (int i = 0; i<MAX_RELATIONS; i++){
-            distances_of_a->positions[neighbor[i].i]=compteur;
-            distance(i,distances_of_a,compteur);
+                for (int i = 0; i<MAX_RELATIONS; i++){
+                    distances_of_a->positions[neighbor[i].i]=compteur;
+                    distance(i,distances_of_a,compteur);
         }      
     }
 }
@@ -116,17 +84,21 @@ unsigned int closest_movement_to_other_player(struct game_t game){
     }
 }*/
 
-int distance_with_simple_moves(unsigned int b , struct game_t game){
-    struct set sm;
-    positions_init(&sm);
-    simple_moves(game,&sm);
-    int d=0;
-    if (place_visited(&sm,b)==0 && d<WORLD_SIZE){
-        for (unsigned int i=0; i<sm.taille;i++){
-            d++;
-            game.position = sm.positions[i];
-            simple_moves(game,&sm);
+int distance(unsigned int a , unsigned int b){
+    int d ;
+    struct neighbors_t neighbors = get_neighbors(a);
+    if (is_neighbor(a,b)!=0){
+        return 1;
+    }
+    else {
+        int i=0;
+        while(neighbors.n[i].i!= UINT_MAX && d<WORLD_SIZE){
+            d = MIN(d,distance(neighbors.n[i].i,b))+1;
+            printf("%d\n",WORLD_SIZE);
+            printf("%d\t",d);
+            i++;
         }
     }
     return d;
 }
+   
