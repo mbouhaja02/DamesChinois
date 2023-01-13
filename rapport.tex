@@ -262,12 +262,56 @@ $\newline$
 
 \subsection{Possibilité de capture et les tentatives d'évasion}
 $\newline$
-
-\textbf{\textcolor{magenta}{Capture simple}} :
+Les mobilités des pièces ont un rôle très important dans notre jeu, mais ceci rend le jeu un peu statique où le nombre de pièces reste le même du début jusqu'à la fin. Donc on va améliorer ça en ajoutant d'une part des captures simples qui permettent par exemple dans un jeu d'echecs de retirer les pièces les plus fortes de l'adversaire, affaiblissant ainsi sa position et peut également permettre de créer des opportunités et des ouvertures pour les pièces restantes, d'autre part la possibilité de s'évader pour une pièces prisonnière. 
 
 $\newline$
 
-\textbf{\textcolor{magenta}{Tentatives d'évasion}} :
+\textbf{\textcolor{magenta}{Capture simple}} : Une capture simple pour être définie comme tout déplacement d'une pièce qui aboutit sur une case occupée par une pièce d'une couleur opposée entraîne la capture de cette dernière (prisonnère), et on stocke ces captures dans des ensembles pour chaque type de pièce donné:
+
+\lstinline|void simple_jumps(struct game_t game , struct set* sj)|: pour les captures simples des pions.
+
+
+\lstinline|void simple_jumps_capture(struct game_t game , struct set* sjc)|: pour les captures dans le cas d'un saut simple.
+
+
+
+\lstinline|void multiple_jumps_capture(struct game_t game , struct set* mjc)|: pour les captures dans le cas d'un saut multiple.
+
+
+\lstinline|void semi_diagonal_jumps_capture(struct game_t game, struct set* sdjc)|: pour les captures dans le cas du mouvements semi$\_$diagonal pour l'éléphant.
+
+\lstinline|void cardinal_translations_capture(struct game_t game, struct set* ctc)|: pour les captures dans le cas du mouvement cardinal du tour.
+
+$\newline$
+
+Une pièce capturée deveint prisonnière, pour gerer cette nouvelle implémentation on crée une structure $prisoner\_t$ qui décrit l'état de la pièce capturée et pour manipuler plusieurs prisonèrs on définie une structure $jail_t$ qui contient les différents prisonèrs des deux joueurs. les deux structures sont définie de la manière suivante:
+
+
+\begin{lstlisting}
+
+struct prisoner_t{
+  enum color_t c;
+  enum sort_t s;
+  unsigned int i;
+};
+
+struct jail_t{
+  unsigned int len_white;
+  unsigned int len_black;
+  struct prisoner_t cells_white[WORLD_SIZE];
+  struct prisoner_t cells_black[WORLD_SIZE];
+};
+\end{lstlisting}
+
+
+
+
+Mais pour ajouter une nouvelle dimension au jeu on implémente la posibilité d'évasion.
+
+\textbf{\textcolor{magenta}{Tentatives d'évasion}} : Si une pièce est capturée, elle a la possibilité de tenter de s'échapper. Cependant, cette évasion n'est possible que si la case où elle a été capturée est vide. La réussite de cette évasion est aléatoire, avec une chance de 50$\%$ de réussir. Si l'évasion échoue, la pièce reste capturée et le plateau de jeu reste inchangé.
+
+$\newline$
+
 
 \section{Boucle de jeu}
 Le monde étant inacessible par d’autre document autre que \textcolor{green}{\textit{world.h}}. On a utilisé les fonctions

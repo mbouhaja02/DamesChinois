@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  12 JAN 2023 14:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  13 JAN 2023 13:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -669,84 +669,50 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<<<<<<< HEAD
-\AtBeginShipoutBox=\box40
-\c@lstlisting=\count144
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 58.
-
-(/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 58.
-=======
 \c@lstlisting=\count318
 <logo.png, id=4, 2569.6pt x 1815.78375pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 59.
+Package pdftex.def Info: logo.png  used on input line 62.
 (pdftex.def)             Requested size: 231.25403pt x 163.41348pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
-9.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
+2.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
-9.
->>>>>>> 32e78a86ff284ca92ba38df2943b43e0b450739d
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
+2.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<<<<<<< HEAD
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 58.
-
-=======
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-59.
->>>>>>> 32e78a86ff284ca92ba38df2943b43e0b450739d
+62.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<<<<<<< HEAD
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 58.
-
-=======
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-59.
->>>>>>> 32e78a86ff284ca92ba38df2943b43e0b450739d
+62.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-<<<<<<< HEAD
-(Font)              <12> on input line 58.
+(Font)              <17.28> on input line 62.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 58.
+(Font)              <12> on input line 62.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 58.
-LaTeX Font Info:    Try loading font information for U+msa on input line 58.
-=======
-(Font)              <17.28> on input line 59.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 59.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 59.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
+(Font)              <10> on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
 
->>>>>>> 32e78a86ff284ca92ba38df2943b43e0b450739d
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-<<<<<<< HEAD
-LaTeX Font Info:    Try loading font information for U+msb on input line 58.
-=======
-LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
 
->>>>>>> 32e78a86ff284ca92ba38df2943b43e0b450739d
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -754,230 +720,167 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <Chaturanga_Chess_Set.jpg, id=6, 3584.39125pt x 2712.1325pt>
 File: Chaturanga_Chess_Set.jpg Graphic file (type jpg)
 <use Chaturanga_Chess_Set.jpg>
-Package pdftex.def Info: Chaturanga_Chess_Set.jpg  used on input line 59.
+Package pdftex.def Info: Chaturanga_Chess_Set.jpg  used on input line 62.
 (pdftex.def)             Requested size: 358.46013pt x 271.22914pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 59.
+(Font)              <8> on input line 62.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 59.
+(Font)              <6> on input line 62.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
-5.
+8.
 
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 65.
+(Font)              <7> on input line 68.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 65.
+(Font)              <5> on input line 68.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./logo.png> <./Chaturanga_Chess_Set.jpg>] (./rapport.toc)
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
-<<<<<<< HEAD
- [2]
-
-LaTeX Warning: File `Dessin sans titre.jpg' not found on input line 73.
-=======
->>>>>>> 32e78a86ff284ca92ba38df2943b43e0b450739d
 
 [2]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
-2.
+<Dessin sans titre.jpg, id=23, 963.6pt x 722.7pt>
+File: Dessin sans titre.jpg Graphic file (type jpg)
+<use Dessin sans titre.jpg>
+Package pdftex.def Info: Dessin sans titre.jpg  used on input line 77.
+(pdftex.def)             Requested size: 426.79135pt x 320.0842pt.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
+3.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 82.
-<Dessin sans titre.jpg, id=23, 963.6pt x 722.7pt>
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 93.
+ [3 <./Dessin sans titre.jpg>]
 File: Dessin sans titre.jpg Graphic file (type jpg)
-<<<<<<< HEAD
- <use Dessin sans titre.jpg>
-Package pdftex.def Info: Dessin sans titre.jpg used on input line 73.
-(pdftex.def)             Requested size: 426.79135pt x 320.0842pt.
+<use Dessin sans titre.jpg>
+Package pdftex.def Info: Dessin sans titre.jpg  used on input line 113.
+(pdftex.def)             Requested size: 481.79883pt x 361.3491pt.
 
-Overfull \hbox (58.1946pt too wide) in paragraph at lines 73--74
-[]\T1/lmr/m/n/10 sans titre.jpg [] 
+Overfull \hbox (55.00748pt too wide) in paragraph at lines 113--114
+ [] 
  []
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 89.
-(/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 89.
- [3 <./Dessin sans titre.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 107--110
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--125
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 154--159
-=======
-<use Dessin sans titre.jpg>
-Package pdftex.def Info: Dessin sans titre.jpg  used on input line 102.
-(pdftex.def)             Requested size: 481.79883pt x 361.3491pt.
-
-Overfull \hbox (55.00748pt too wide) in paragraph at lines 102--103
- [] 
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
-
- []
-
-[4 <./Dessin sans titre.jpg>]
 <boardvide.png, id=36, 279.29344pt x 274.02374pt>
 File: boardvide.png Graphic file (type png)
 <use boardvide.png>
-Package pdftex.def Info: boardvide.png  used on input line 152.
+Package pdftex.def Info: boardvide.png  used on input line 163.
 (pdftex.def)             Requested size: 111.7154pt x 109.60754pt.
 <movespawn2.png, id=37, 242.40562pt x 188.95593pt>
 File: movespawn2.png Graphic file (type png)
 <use movespawn2.png>
-Package pdftex.def Info: movespawn2.png  used on input line 167.
+Package pdftex.def Info: movespawn2.png  used on input line 178.
 (pdftex.def)             Requested size: 121.2025pt x 94.47772pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--176
+Underfull \hbox (badness 10000) in paragraph at lines 182--187
 
  []
 
 [5 <./boardvide.png (PNG copy)> <./movespawn2.png (PNG copy)>]
 File: movespawn2.png Graphic file (type png)
 <use movespawn2.png>
-Package pdftex.def Info: movespawn2.png  used on input line 209.
+Package pdftex.def Info: movespawn2.png  used on input line 222.
 (pdftex.def)             Requested size: 121.2025pt x 94.47772pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
->>>>>>> 32e78a86ff284ca92ba38df2943b43e0b450739d
+ [6]
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
-[6]
 <sautf.png, id=45, 460.72125pt x 118.94438pt>
 File: sautf.png Graphic file (type png)
 <use sautf.png>
-Package pdftex.def Info: sautf.png  used on input line 217.
+Package pdftex.def Info: sautf.png  used on input line 230.
 (pdftex.def)             Requested size: 276.43488pt x 71.36716pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
 <sautmf.png, id=46, 554.82281pt x 328.97906pt>
 File: sautmf.png Graphic file (type png)
 <use sautmf.png>
-Package pdftex.def Info: sautmf.png  used on input line 225.
+Package pdftex.def Info: sautmf.png  used on input line 238.
 (pdftex.def)             Requested size: 332.89626pt x 197.38895pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
-
- []
-
-[7 <./sautf.png (PNG copy)> <./sautmf.png (PNG copy)>]
-<tour2.png, id=51, 487.8225pt x 458.46281pt>
-File: tour2.png Graphic file (type png)
-<use tour2.png>
-Package pdftex.def Info: tour2.png  used on input line 238.
-(pdftex.def)             Requested size: 146.34787pt x 137.5399pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
+[7 <./sautf.png (PNG copy)> <./sautmf.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
-LaTeX Warning: Command \` invalid in math mode on input line 243.
+ []
+
+<tour2.png, id=51, 487.8225pt x 458.46281pt>
+File: tour2.png Graphic file (type png)
+<use tour2.png>
+Package pdftex.def Info: tour2.png  used on input line 251.
+(pdftex.def)             Requested size: 146.34787pt x 137.5399pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+
+ []
+
+
+LaTeX Warning: Command \` invalid in math mode on input line 256.
 
 <ele2.png, id=52, 336.50719pt x 312.41719pt>
 File: ele2.png Graphic file (type png)
 <use ele2.png>
-Package pdftex.def Info: ele2.png  used on input line 246.
+Package pdftex.def Info: ele2.png  used on input line 259.
 (pdftex.def)             Requested size: 151.42682pt x 140.58643pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+[8 <./tour2.png (PNG copy)> <./ele2.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
-[8 <./tour2.png (PNG copy)> <./ele2.png (PNG copy)>] [9] [10] (./rapport.aux) )
- 
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
+
+ []
+
+[10] [11] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 14940 strings out of 495063
- 257226 string characters out of 3182201
- 377269 words of memory out of 3000000
- 17769 multiletter control sequences out of 15000+200000
- 76530 words of font info for 64 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 56i,7n,56p,695b,1629s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-e
-c.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
-re/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texlive/texmf-di
-st/fonts/type1/public/lm/lmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbxi
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/lm/lmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lm
-ri10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/lm/lmtti10.pfb>
-Output written on rapport.pdf (6 pages, 309369 bytes).
-=======
- 17105 strings out of 480204
- 324293 string characters out of 5895009
- 834767 words of memory out of 5000000
- 34712 multiletter control sequences out of 15000+600000
- 554717 words of font info for 86 fonts, out of 8000000 for 9000
+ 17139 strings out of 480204
+ 324828 string characters out of 5895009
+ 838767 words of memory out of 5000000
+ 34745 multiletter control sequences out of 15000+600000
+ 560256 words of font info for 88 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 100i,12n,104p,890b,1187s stack positions out of 5000i,500n,10000p,200000b,80000s
-<<<<<<< HEAD
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/l
-mbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmtti10.pfb>
-Output written on rapport.pdf (10 pages, 2695587 bytes).
-=======
-{/usr
-/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/te
-xmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmtti10.pfb>
-Output written on rapport.pdf (9 pages, 2692197 bytes).
->>>>>>> 32e78a86ff284ca92ba38df2943b43e0b450739d
->>>>>>> 60d0975e9198da43ca9792281c880cb7062f4aae
+ 100i,13n,104p,890b,1811s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{
+/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/te
+xmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+bx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi1
+0.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmtti10.pfb>
+Output written on rapport.pdf (11 pages, 2702121 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 136 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
