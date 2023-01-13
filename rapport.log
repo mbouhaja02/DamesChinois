@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  13 JAN 2023 13:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.21)  13 JAN 2023 14:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -744,140 +744,135 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 [2]
-<Dessin sans titre.jpg, id=23, 963.6pt x 722.7pt>
-File: Dessin sans titre.jpg Graphic file (type jpg)
-<use Dessin sans titre.jpg>
-Package pdftex.def Info: Dessin sans titre.jpg  used on input line 77.
-(pdftex.def)             Requested size: 426.79135pt x 320.0842pt.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
-3.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
+9.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 93.
- [3 <./Dessin sans titre.jpg>]
-File: Dessin sans titre.jpg Graphic file (type jpg)
-<use Dessin sans titre.jpg>
-Package pdftex.def Info: Dessin sans titre.jpg  used on input line 113.
-(pdftex.def)             Requested size: 481.79883pt x 361.3491pt.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 89.
 
-Overfull \hbox (55.00748pt too wide) in paragraph at lines 113--114
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--125
+Underfull \hbox (badness 10000) in paragraph at lines 114--117
 
  []
 
-[4]
-<boardvide.png, id=36, 279.29344pt x 274.02374pt>
+[3]
+<boardvide.png, id=32, 279.29344pt x 274.02374pt>
 File: boardvide.png Graphic file (type png)
 <use boardvide.png>
-Package pdftex.def Info: boardvide.png  used on input line 163.
+Package pdftex.def Info: boardvide.png  used on input line 155.
 (pdftex.def)             Requested size: 111.7154pt x 109.60754pt.
-<movespawn2.png, id=37, 242.40562pt x 188.95593pt>
+<movespawn2.png, id=33, 242.40562pt x 188.95593pt>
 File: movespawn2.png Graphic file (type png)
 <use movespawn2.png>
-Package pdftex.def Info: movespawn2.png  used on input line 178.
+Package pdftex.def Info: movespawn2.png  used on input line 170.
 (pdftex.def)             Requested size: 121.2025pt x 94.47772pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--187
+Underfull \hbox (badness 10000) in paragraph at lines 174--179
 
  []
 
-[5 <./boardvide.png (PNG copy)> <./movespawn2.png (PNG copy)>]
+[4 <./boardvide.png (PNG copy)> <./movespawn2.png (PNG copy)>]
 File: movespawn2.png Graphic file (type png)
 <use movespawn2.png>
-Package pdftex.def Info: movespawn2.png  used on input line 222.
+Package pdftex.def Info: movespawn2.png  used on input line 214.
 (pdftex.def)             Requested size: 121.2025pt x 94.47772pt.
- [6]
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
+
+ []
+
+<sautf.png, id=41, 460.72125pt x 118.94438pt>
+File: sautf.png Graphic file (type png)
+<use sautf.png>
+Package pdftex.def Info: sautf.png  used on input line 222.
+(pdftex.def)             Requested size: 276.43488pt x 71.36716pt.
+
 Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
-<sautf.png, id=45, 460.72125pt x 118.94438pt>
-File: sautf.png Graphic file (type png)
-<use sautf.png>
-Package pdftex.def Info: sautf.png  used on input line 230.
-(pdftex.def)             Requested size: 276.43488pt x 71.36716pt.
+<sautmf.png, id=42, 554.82281pt x 328.97906pt>
+File: sautmf.png Graphic file (type png)
+<use sautmf.png>
+Package pdftex.def Info: sautmf.png  used on input line 230.
+(pdftex.def)             Requested size: 332.89626pt x 197.38895pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
-<sautmf.png, id=46, 554.82281pt x 328.97906pt>
-File: sautmf.png Graphic file (type png)
-<use sautmf.png>
-Package pdftex.def Info: sautmf.png  used on input line 238.
-(pdftex.def)             Requested size: 332.89626pt x 197.38895pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+[6 <./sautf.png (PNG copy)> <./sautmf.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
 
-[7 <./sautf.png (PNG copy)> <./sautmf.png (PNG copy)>]
+<tour2.png, id=46, 487.8225pt x 458.46281pt>
+File: tour2.png Graphic file (type png)
+<use tour2.png>
+Package pdftex.def Info: tour2.png  used on input line 243.
+(pdftex.def)             Requested size: 146.34787pt x 137.5399pt.
+
 Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
-<tour2.png, id=51, 487.8225pt x 458.46281pt>
-File: tour2.png Graphic file (type png)
-<use tour2.png>
-Package pdftex.def Info: tour2.png  used on input line 251.
-(pdftex.def)             Requested size: 146.34787pt x 137.5399pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+LaTeX Warning: Command \` invalid in math mode on input line 248.
 
- []
-
-
-LaTeX Warning: Command \` invalid in math mode on input line 256.
-
-<ele2.png, id=52, 336.50719pt x 312.41719pt>
+<ele2.png, id=47, 336.50719pt x 312.41719pt>
 File: ele2.png Graphic file (type png)
 <use ele2.png>
-Package pdftex.def Info: ele2.png  used on input line 259.
+Package pdftex.def Info: ele2.png  used on input line 251.
 (pdftex.def)             Requested size: 151.42682pt x 140.58643pt.
-[8 <./tour2.png (PNG copy)> <./ele2.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+[7 <./tour2.png (PNG copy)> <./ele2.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
+<Dessin sans titre.jpg, id=60, 963.6pt x 722.7pt>
+File: Dessin sans titre.jpg Graphic file (type jpg)
+<use Dessin sans titre.jpg>
+Package pdftex.def Info: Dessin sans titre.jpg  used on input line 352.
+(pdftex.def)             Requested size: 426.79135pt x 320.0842pt.
+ [10] [11 <./Dessin sans titre.jpg>] (./rapport.aux)
 
- []
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-[10] [11] (./rapport.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 17139 strings out of 480204
- 324828 string characters out of 5895009
- 838767 words of memory out of 5000000
- 34745 multiletter control sequences out of 15000+600000
- 560256 words of font info for 88 fonts, out of 8000000 for 9000
+ 17136 strings out of 480204
+ 324793 string characters out of 5895010
+ 897767 words of memory out of 5000000
+ 34743 multiletter control sequences out of 15000+600000
+ 554717 words of font info for 86 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 100i,13n,104p,890b,1811s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{
-/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/te
-xmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-bx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi1
-0.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmtti10.pfb>
-Output written on rapport.pdf (11 pages, 2702121 bytes).
+ 100i,12n,104p,890b,1187s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
+hare/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm
+/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmc
+sc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmtti10.pfb>
+Output written on rapport.pdf (11 pages, 2701768 bytes).
 PDF statistics:
  136 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream
