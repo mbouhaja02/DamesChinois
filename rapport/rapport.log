@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  13 JAN 2023 20:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  13 JAN 2023 20:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -856,55 +856,55 @@ File: sautmf.png Graphic file (type png)
 Package pdftex.def Info: sautmf.png  used on input line 259.
 (pdftex.def)             Requested size: 332.89626pt x 197.38895pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
 [6 <./sautf.png (PNG copy)> <./sautmf.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
 
  []
 
 <tour2.png, id=54, 487.8225pt x 458.46281pt>
 File: tour2.png Graphic file (type png)
 <use tour2.png>
-Package pdftex.def Info: tour2.png  used on input line 281.
+Package pdftex.def Info: tour2.png  used on input line 280.
 (pdftex.def)             Requested size: 146.34787pt x 137.5399pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
 
-LaTeX Warning: Command \` invalid in math mode on input line 286.
+LaTeX Warning: Command \` invalid in math mode on input line 285.
 
 <ele2.png, id=55, 336.50719pt x 312.41719pt>
 File: ele2.png Graphic file (type png)
 <use ele2.png>
-Package pdftex.def Info: ele2.png  used on input line 289.
+Package pdftex.def Info: ele2.png  used on input line 288.
 (pdftex.def)             Requested size: 151.42682pt x 140.58643pt.
 [7 <./tour2.png (PNG copy)> <./ele2.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 297--298
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 
  []
 
 <evasion.png, id=61, 628.59843pt x 224.33812pt>
 File: evasion.png Graphic file (type png)
 <use evasion.png>
-Package pdftex.def Info: evasion.png  used on input line 332.
+Package pdftex.def Info: evasion.png  used on input line 331.
 (pdftex.def)             Requested size: 314.29845pt x 112.16878pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--339
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 
  []
 
@@ -912,10 +912,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 338--339
 <Dessin sans titre.jpg, id=65, 963.6pt x 722.7pt>
 File: Dessin sans titre.jpg Graphic file (type jpg)
 <use Dessin sans titre.jpg>
-Package pdftex.def Info: Dessin sans titre.jpg  used on input line 341.
+Package pdftex.def Info: Dessin sans titre.jpg  used on input line 340.
 (pdftex.def)             Requested size: 481.79883pt x 361.3491pt.
 
-Overfull \hbox (55.00748pt too wide) in paragraph at lines 341--342
+Overfull \hbox (55.00748pt too wide) in paragraph at lines 340--341
  [] 
  []
 
@@ -925,10 +925,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18399 strings out of 480204
- 349857 string characters out of 5895009
+ 18398 strings out of 480204
+ 349833 string characters out of 5895009
  844330 words of memory out of 5000000
- 35994 multiletter control sequences out of 15000+600000
+ 35993 multiletter control sequences out of 15000+600000
  554398 words of font info for 85 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  100i,12n,104p,865b,1189s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -943,7 +943,7 @@ b></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb>
-Output written on rapport.pdf (10 pages, 2706560 bytes).
+Output written on rapport.pdf (10 pages, 2706466 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
