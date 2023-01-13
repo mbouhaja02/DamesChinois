@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.21)  13 JAN 2023 14:40
+=======
+<<<<<<< HEAD
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2022.7.18)  13 JAN 2023 14:38
+=======
+<<<<<<< HEAD
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.21)  13 JAN 2023 14:27
+=======
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2022.7.18)  13 JAN 2023 14:30
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -619,8 +631,20 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box66
 )
 (./rapport.aux)
+<<<<<<< HEAD
+=======
+=======
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+<<<<<<< HEAD
+) (./rapport.aux
+=======
+) (./rapport.aux)
+>>>>>>> origin/master
+>>>>>>> origin/master
 \openout1 = `rapport.aux'.
+>>>>>>> origin/master
 
+<<<<<<< HEAD
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
@@ -783,6 +807,31 @@ Package pdftex.def Info: 1.png  used on input line 116.
 (pdftex.def)             Requested size: 79.42152pt x 73.77544pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 121--124
+=======
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+<<<<<<< HEAD
+l.2 <
+     <<<<<< HEAD
+? x
+ 
+=======
+l.115 ....5]{Capture d'écran_20230112_214222.png}
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.115 ....5]{Capture d'écran_20230112_214222.png}
+                                                  
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--123
+>>>>>>> origin/master
 
  []
 
@@ -909,4 +958,34 @@ PDF statistics:
  81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
+<<<<<<< HEAD
+=======
+=======
+
+Overfull \hbox (58.1946pt too wide) in paragraph at lines 363--364
+[]\T1/lmr/m/n/10 sans titre.jpg [] 
+ []
+
+[10] [11 <./Dessin sans titre.jpg>] (./rapport.aux) ) 
+>>>>>>> origin/master
+Here is how much of TeX's memory you used:
+ 14591 strings out of 495063
+ 256311 string characters out of 3182201
+ 327349 words of memory out of 3000000
+ 17513 multiletter control sequences out of 15000+200000
+ 4403 words of font info for 15 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 56i,0n,56p,418b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
+No pages of output.
+PDF statistics:
+ 3 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+<<<<<<< HEAD
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
 
