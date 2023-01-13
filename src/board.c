@@ -16,32 +16,15 @@
 //This function initializes the board with pawns  
 struct world_t* start(struct game_t game){
     srand(time(NULL));
-    if(game.seed != 3){
-        for(int i = 0; i< HEIGHT; i++){
-            int nbr = WIDTH * i;
-            int nbr2 = WIDTH * i + WIDTH - 1;
-            int r = rand()%3 + 1;
-            world_set_sort( game.w, nbr, r);
-            world_set(game.w, nbr, 1);
-            world_set_sort( game.w, nbr2, r);
-            world_set(game.w, nbr2, 2); 
+    for(int i = 0; i< HEIGHT; i++){
+        int nbr = WIDTH * i;
+        int nbr2 = WIDTH * i + WIDTH - 1;
+        int r = rand()%3 + 1;
+        world_set_sort( game.w, nbr, r);
+        world_set(game.w, nbr, 1);
+        world_set_sort( game.w, nbr2, r);
+        world_set(game.w, nbr2, 2); 
         }
-    }
-    else {
-        for(int i = 0; i< HEIGHT; i++){
-            int r = rand()%3 + 1;
-            if (i%2 == 0){
-                int nbr = WIDTH * i;
-                world_set_sort( game.w, nbr, r);
-                world_set(game.w, nbr, 1);
-            }
-            else {
-                int nbr2 = WIDTH * i + WIDTH - 1;
-                world_set_sort( game.w, nbr2, r);
-                world_set(game.w, nbr2, 2);
-            }
-        }
-    }
     return game.w;
 }
 

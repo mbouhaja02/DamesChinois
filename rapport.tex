@@ -39,7 +39,6 @@
 }
 
 \lstset{escapechar=@,style=customc}
-
 \onehalfspacing
 
 \begin{document}
@@ -86,44 +85,31 @@
 
 \section{Introduction}
 \subsection{Problèmatique}
-Mansuba est un jeu de plateau , ancêtre de Shtranj , qui a comme but mettre l’autre joueur en situation de mat . 
+$\newline$
+$\hspace*{0.7cm}$Mansuba est un jeu de plateau , ancêtre de Shtranj , qui a comme but mettre l’autre joueur en situation de mat . 
 Le but de notre projet sera de jouer une partie aléatoire avec plusieurs configurations.
-\subsection{Hypothèse et démarches de validation}
-Pour jouer une partie, il faut que le plateau de jeu soit défini au préalable. Le plateau de jeu \textit{board}  est 
+\subsection{Manusba}
+
+$\hspace*{0.7cm}$Pour jouer une partie, il faut que le plateau de jeu soit défini au préalable. Le plateau de jeu \textit{board}  est 
 le binôme monde et relation. 
 Le monde \textit{world} est l’ensemble des cases accessibles par les pions . Chaque case a 
-désormais des cases voisines \textit{Neighbors} dans différentes direction .
+désormais des cases voisines \textit{Neighbors} dans différentes directions.
 La possibilité d’accès à ses voisins sera contrôlée par la relation de la partie qui choisira parmis les voisins ceux qui sont
  accessibles .  
- 
-
+Les pièces selon leurs types (pions, éléphant, tour) admettent différents types de mouvements : déplacement simple, saut simple, saut diagonal ... .
+Il existe deux types de victoires. La victoire est dite simple si le joueur atteint une des positions de départ de l’autre joueur
+ et complexe si le joueur les atteint tous.
+Le jeu s’arrête si on atteint une victoire, le choix du type étant aléatoire pendant la partie, ou si on atteint \textcolor{purple}{\textsc{max\_turns}}. 
 
 \section{Implémentation}
 
-Le monde étant inacessible par d’autre document autre que \textcolor{green}{\textit{world.h}}. On a utilisé les fonctions
- \lstinline|void world_set(struct world_t* b, unsigned int idx, enum color_t c)| et \lstinline|void world_set_sort(struct world_t* b, unsigned int idx, enum sort_t c)|
- pour donner à un monde initialisé vide des positions pour chacun des pions. Le nombre des pions étant \textcolor{purple}{\textsc{height}}.  
-
-Il existe deux types de victorys. La victory est dite simple si le joueur atteint une des positions de départ de l’autre joueur
- et complexe si le joueur les atteint tous. En tous cas, on aura besoin de garder la liste de positions de départ des deux joueurs 
- et leurs faire rentrer en paramètre pour pouvoir comparer avec les positions actuelles de l’adversaire. En plus, pour la comparaison on 
- pourra utiliser la fonction place\_visited. 
-
-Le jeu s’arrête si on atteint une victory, le choix du type étant aléatoire pendant la partie, ou si on atteint \textcolor{purple}{\textsc{max\_turns}}. 
-
-Avant d’obtenir la boucle de jeu finale il faudra définir des fonctions qui font des choix aléatoires sur tous les paramètres du jeu. 
-Le choix du pion sera fait par \lstinline|void choose_random_piece_belonging_to(struct game_t* game) |qui retournera un indice. La fonction \lstinline| unsigned int choose_random_move_for_piece(struct game_t game)| va chercher entre les mouvements disponibles pour cet indice et va ensuite choisir un indice auquel le pion va bouger. La fonction \lstinline|void move_piece(struct game_t game, unsigned int dst)| agira sur le monde et échangera l’état de la case à l’indice initial avec celle de l’indice du mouvement. On choisira ainsi aléatoirement le premier joueur à commencer. 
-
-
-$\newline$
-
-
-
-Le jeu s’effectue dans un monde de $\textcolor{purple}{\textsc{world\_size}} = \textcolor{purple}{\textsc{width}} \times 
+$\hspace*{0.7cm}$Le jeu s’effectue dans un monde de $\textcolor{purple}{\textsc{world\_size}} = \textcolor{purple}{\textsc{width}} \times 
  \textcolor{purple}{\textsc{height}}$  cases , avec des pièces appartenant à un nombre de joueurs \textcolor{purple}{\textsc{max\_players}}.
 . Cette configuration est surtout gouvernée par \textcolor{green}{\textit{geometry.h}} qui donne \lstinline|enum color_t| et \lstinline|enum sort_t|. \\
-On s'intéresse dans notre projet à plusieurs structure de base dans la construction de projet , parmi eux des structures statiques dans leurs manipulations
-nécessite plusieurs implémentations.
+
+
+On s'intéresse dans notre projet à plusieurs structure de base dans la construction de projet , parmi eux des structures statiques qui
+nécessite un accés indirecte.
 
 Pendant le développement du jeu on fera souvent appel à toute la configuration du jeu. On rassemble alors tous les paramètres du monde
  pendant le jeu dans une structure \lstinline|struct game_t|.
@@ -138,10 +124,15 @@ struct game_t {
     enum victory_t victory;
 };
 \end{lstlisting}
+
+
 Pour jouer une partie aléatoire on aura besoin de configurer le plateau de jeu.
+
+
 \subsection{Partie monde}
-La structure world est un tableau de pair couleur et type de pions qui inaccessible que par des fonctions de 
-\textcolor{green}{\textit{world.h}}. On commence d’abord par initier un monde sans aucun pion à l’aide de la structure 
+
+$\hspace*{0.7cm}$La structure world est un tableau de pair couleur et type de pions qui inaccessible que par des fonctions de 
+\textcolor{green}{\textit{world.h}}. On commence d’abord par initier un monde sans aucun pion à l’aide de la fonction
 \lstinline|struct world_t* world_init()|. Les fonctions de world.h permettront l’écriture et la lecture de la couleur et
  du type d’une case donné et seront utilisé fréquemment pour accéder au monde.  
  
@@ -207,7 +198,6 @@ Le paramètre \textit{seed} permettera de désigner la relation de la partie et 
       \label{fig:test2}
     \end{minipage}
     \end{figure}
-Le passage d'une relation à une relation hexagonal est un peu difficile à gérer puisque l'emplacement des pions n'est pas similaire .  
 
 \subsection{Ensemble}
 \begin{lstlisting}
@@ -221,16 +211,8 @@ struct set{
 \end{lstlisting}
 Cette structure \lstinline|struct set|  permettra de construire des tableaux d’une taille donnée et simplifier leurs 
 manipulations : lecture et écriture , comme le jeu a plusieurs collections à fournir : l’set des positions des pions, la 
-collection des mouvement possibles (qui sera le but de l’étape qui suit) ... . Elle contient comme attribut un entier qui donne la 
-taille et un tableau d'indice qui sont le contenu de l'set.
-On a défini en plus une fonction qui sera utile pour le reste, add\_position, qui augmente la taille et remplace la position d’indice 
-rentré en paramètre par sa valeur. 
-\begin{lstlisting}
-void add_position(struct set* p ,unsigned int place ){
-    p->positions[p->taille]=place ;
-    p->taille+=1;
-}
-\end{lstlisting}
+collection des mouvement possibles  ... . 
+
 
 \subsection{mouvements des pièces}
 
@@ -238,8 +220,7 @@ void add_position(struct set* p ,unsigned int place ){
 \subsubsection{Mobilité d'un pion \textit{PAWN}}
 Pour stocker les mouvements on fera appel à la structure set . Les mouvement possibles dans la version de bases sont :  
 
-    \textbf{\textcolor{magenta}{Déplacement simple}} : pour les relever il suffit d’utiliser la fonction get\_neighbors pour un indice donné . Ils seront stockés par la fonction \lstinline|void simple_moves( struct game_t game, struct set* sm );|
-    
+    \textbf{\textcolor{magenta}{Déplacement simple}} : Déplacement vers une case directement voisine libre.
     
 \begin{center}
 \includegraphics[scale=0.5]{movespawn2.png} {\\$\hspace*{0.7cm}$Figure x: Déplacement simple d'un pion.}
@@ -247,15 +228,15 @@ Pour stocker les mouvements on fera appel à la structure set . Les mouvement po
 
 $\newline$
 
-    \textbf{\textcolor{magenta}{Saut simple}} : si le voisin dans une direction j est occupé, équivalent d’avoir la fonction get\_neighbor dans la direction j qui a un SORT différent de NO\_SORT, et le voisin du voisin dans la meme direction est libre ,  on peut se déplacer vers le voisin du voisin , si le monde le permet. Ils seront stockés par la fonction \lstinline|void simple_jumps(struct game_t game , struct set* sj);|
-    
+    \textbf{\textcolor{magenta}{Saut simple}} : si le voisin dans une direction j est occupé, et le voisin du voisin dans la meme direction est libre ,  on peut se déplacer vers le voisin du voisin , si le monde le permet. 
+
     \begin{center}
 \includegraphics[scale=0.6]{sautf.png} {\\$\hspace*{0.7cm}$Figure x: Saut simple d'un pion.}
 \end{center}
 
 $\newline$
 
-    \textbf{\textcolor{magenta}{Saut multiple}} : s’agit d’une suite de saut simple . Cette fonction avait besoin d’une condition d’arrêt pour éviter de boucler infiniment sur les sauts simples autre que les deux voisins soient occupés. Pour cela il nous fallait une fonction qui vérifie l’existence d’un élément dans un set donné \lstinline| int place_visited(struct set* ens, unsigned int place );|Elle renvoie un 0 si la place n’est pas encore mentionnée dans l’set qui sera notre condition pour arrêter la recherche. Ils seront stockés par la fonction \lstinline|void multiple_jumps(struct game_t game , struct set* mj )|.
+    \textbf{\textcolor{magenta}{Saut multiple}} : s’agit d’une suite de saut simple dans different direction. elle est implémenté récursivement. La condition d’arrêt pour éviter de boucler infiniment sur les sauts simples est que les deux voisins soient occupés , arrête la boucle dans une direction , ou que l'indice soit déjà visité par notre fonction . 
     
 \begin{center}
 \includegraphics[scale=0.6]{sautmf.png} {\\$\hspace*{0.7cm}$Figure x: Saut multiple d'un pion.}
@@ -263,7 +244,8 @@ $\newline$
 
 $\newline$
 
-Ses fonctions prennent comme paramètre additionnel un set. Il servira comme espace de stockage pour chacune des fonctions au lieu de retourner l’set à la fin de chacune . En plus, la fonction \lstinline|void available_movements(struct game_t game, struct set* am) |fera appel à toutes les fonctions de mouvement citée au-dessus et l’set rentrer comme paramètre dans cette fonction sera le même rentrer dans tous les fonctions pour qu’on puisse stocker tous les mouvements dans un même set.  
+Ses fonctions prennent comme paramètre additionnel un set. Il servira comme espace de stockage . 
+
 \subsubsection{Mobilité des autre pièces \textit{TOWER} et \textit{ELEPHANT }}
 
 $\newline$
@@ -276,7 +258,7 @@ $\newline$
 
 $\newline$
 
-\textbf{\textcolor{magenta}{Saut semi diagonal}} : L'éléphant peut se déplacer sur les deux diagonale à partir de sa position initial, pour ce faire on boucle sur les directions $i+j$ $(où ~i \in \{NORTH, ~SOUTH\} ~et~ j \in \{ EAST, ~WEST \})$ et on ajoute les positions libres. finalement on stocke le résultat dans un ensemble $sdj$ à l'aide de la fonction \lstinline|void semi_diagonal_jumps(struct game_t game , struct set* sdj)|.
+\textbf{\textcolor{magenta}{Saut semi diagonal}} : L'éléphant peut se déplacer sur les deux diagonale à partir de sa position initial, pour ce faire on boucle sur les directions $i+j$ $(où ~i \in \{NORTH, ~SOUTH\} ~et~ j \in \{ EAST, ~WEST \})$ et on ajoute les positions libres. finalement on stocke le résultat dans un ensemble $sdj$.
 
 \begin{center}
 \includegraphics[scale=0.45]{ele2.png} {\\$\hspace*{0.4cm}$Figure x: Saut semi diagonal de l'éléphant.}
@@ -289,25 +271,12 @@ Les mobilités des pièces ont un rôle très important dans notre jeu, mais cec
 
 $\newline$
 
-\textbf{\textcolor{magenta}{Capture simple}} : Une capture simple pour être définie comme tout déplacement d'une pièce qui aboutit sur une case occupée par une pièce d'une couleur opposée entraîne la capture de cette dernière (prisonnère), et on stocke ces captures dans des ensembles pour chaque type de pièce donné:
+\textbf{\textcolor{magenta}{Capture simple}} : Une capture simple pour être définie comme tout déplacement d'une pièce qui aboutit sur une case occupée par une pièce d'une couleur opposée entraîne la capture de cette dernière (prisonnère), et on stocke ces captures dans des ensembles pour chaque type de pièce donné.
 
-\lstinline|void simple_jumps(struct game_t game , struct set* sj)|: pour les captures simples des pions.
-
-
-\lstinline|void simple_jumps_capture(struct game_t game , struct set* sjc)|: pour les captures dans le cas d'un saut simple.
-
-
-
-\lstinline|void multiple_jumps_capture(struct game_t game , struct set* mjc)|: pour les captures dans le cas d'un saut multiple.
-
-
-\lstinline|void semi_diagonal_jumps_capture(struct game_t game, struct set* sdjc)|: pour les captures dans le cas du mouvements semi$\_$diagonal pour l'éléphant.
-
-\lstinline|void cardinal_translations_capture(struct game_t game, struct set* ctc)|: pour les captures dans le cas du mouvement cardinal du tour.
 
 $\newline$
 
-Une pièce capturée deveint prisonnière, pour gerer cette nouvelle implémentation on crée une structure $prisoner\_t$ qui décrit l'état de la pièce capturée et pour manipuler plusieurs prisonèrs on définie une structure $jail_t$ qui contient les différents prisonèrs des deux joueurs. les deux structures sont définie de la manière suivante:
+Une pièce capturée deveint prisonnière, pour gerer cette nouvelle implémentation on crée une structure \textit{prisoner\_t} qui décrit l'état de la pièce capturée et pour manipuler plusieurs prisonèrs on définie une structure \textit{jail\_t} qui contient les différents prisonèrs des deux joueurs. les deux structures sont définie de la manière suivante:
 
 
 \begin{lstlisting}
@@ -340,7 +309,7 @@ $\newline$
 \subsection{Makefile}
 
 
-Les fichier .c  dans ce rapport ont été construit et exécuté à l'aide d'un Makefile. Ce fichier de configuration automatise les tâches de compilation et d'exécution, facilitant ainsi la maintenance et l'extensibilité du logiciel. Les options de compilation et les dépendances ont été définies dans le Makefile, ainsi que les cibles pour construire et exécuter le programme. Nous avons utilisé GNU Make, un outil populaire pour créer des Makefiles, pour créer le Makefile de ce projet. En cours de développement, nous avons rencontré des problèmes avec les dépendances de bibliothèques, qui ont été résolus en ajoutant des options de compilation supplémentaires dans le Makefile. La méthodologie de compilation et d'exécution décrite ici a permis un développement efficace et une exécution stable de tous les fichiers.
+Les fichiers .c  ont été construit et exécuté à l'aide d'un Makefile. Ce fichier de configuration automatise les tâches de compilation et d'exécution, facilitant ainsi la maintenance et l'extensibilité du logiciel. Les options de compilation et les dépendances ont été définies dans le Makefile, ainsi que les cibles pour construire et exécuter le programme. Nous avons utilisé GNU Make, un outil populaire pour créer des Makefiles, pour créer le Makefile de ce projet. En cours de développement, nous avons rencontré des problèmes avec les dépendances de bibliothèques, qui ont été résolus en ajoutant des options de compilation supplémentaires dans le Makefile. La méthodologie de compilation et d'exécution décrite ici a permis un développement efficace et une exécution stable de tous les fichiers.
 
 \subsection{La manipulation des options de ligne de commande}
 

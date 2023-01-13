@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
   black_list(&black_list_initial, game.w);
   for (int i = 0 ; i < turns; i++){
     game.turn = i;
-    if (game.turn == floor(sqrt(MAX_TURNS)) + 1){
+    if (game.turn == floor(sqrt(MAX_TURNS)) ){
       choose_next_random_relation(&game);
     }
     choose_random_piece_belonging_to(&game);
