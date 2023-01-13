@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  13 JAN 2023 22:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.23)  13 JAN 2023 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -957,7 +957,7 @@ Here is how much of TeX's memory you used:
  35992 multiletter control sequences out of 15000+600000
  559937 words of font info for 87 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 100i,12n,104p,789b,1189s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 100i,12n,104p,751b,1189s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm
@@ -969,7 +969,7 @@ b></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/
 public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb>
-Output written on rapport.pdf (11 pages, 2701363 bytes).
+Output written on rapport.pdf (11 pages, 2701667 bytes).
 PDF statistics:
  136 PDF objects out of 1000 (max. 8388607)
  75 compressed objects within 1 object stream
