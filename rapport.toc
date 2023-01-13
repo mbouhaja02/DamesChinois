@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 \contentsline {section}{\numberline {1}INTRODUCTION}{3}
 \contentsline {subsection}{\numberline {1.1}Probl\IeC {\`e}matique}{3}
 \contentsline {subsection}{\numberline {1.2}Hypoth\IeC {\`e}se et d\IeC {\'e}marches de validation}{3}
@@ -17,4 +15,3 @@
 \contentsline {subsection}{\numberline {5.2}La manipulation des options de ligne de commande}{9}
 \contentsline {section}{\numberline {6}R\IeC {\'e}f\IeC {\'e}rences}{10}
 \contentsline {section}{\numberline {7}Annexes}{10}
->>>>>>> c78797843596d1d13c6357fcd7629568a2b665f9
